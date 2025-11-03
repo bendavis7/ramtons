@@ -1,0 +1,152 @@
+.cd-container {
+  width: 100vw;
+  margin: 0;
+  padding: 0;
+}
+.cd-container::after {
+  /* clearfix */
+  content: '';
+  display: table;
+  clear: both;
+}
+#cd-time {
+  position: relative;
+  padding:  0;
+  margin: 0;
+    margin-top: -1px !important;
+}
+#cd-time::before {
+  /* this is the vertical line */
+  border: none;
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 1px;
+  background: #fff !important;
+}
+
+.cd-time-block {
+  position: relative;
+  margin:  1em !important;
+  padding: 0 !important;
+}
+.cd-time-content:hover{
+  transform: scale(1.03);
+}
+.cd-time-block:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+.cd-time-block:first-child {
+  margin-top: 0;
+}
+.cd-time-block:last-child {
+margin-bottom: 0;
+}
+
+.cd-time-img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  text-align: center;
+  line-height: 40px;
+  font-size: 20px;
+  color: rgba(18, 29, 51, 0.9);
+}
+
+.cd-time-content {
+  position: relative;
+  margin-left: 5px;
+  margin: 1px 5px !important;
+  background: rgba(18, 29, 51, 0.7);
+  border-radius: 2px;
+  padding: 3px;
+  box-shadow: 0 5px 5px -5px rgba(0, 0, 0, 0.1);
+}
+@media (max-width: 590px)  {
+  .cd-time-content {
+    position: relative;
+    margin: 1px 1px !important;
+    background: rgba(18, 29, 51, 0.7);
+    padding: 3px;
+    box-shadow: 0 5px 5px -5px rgba(0, 0, 0, 0.1);
+  }
+}
+
+.cd-time-content img {
+  width: 100%;
+  display: block;
+}
+.cd-time-content:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+.cd-time-content h4 {
+  margin: 20px 15px 10px !important;
+  padding: 0 !important;
+  float: left !important;
+  color: rgba(255, 255, 255, 0.7);
+}
+.cd-time-content p, .cd-time-content .cd-read-more, .cd-time-content .cd-date {
+  font-size: 16px;
+  font-weight: 600;
+  font-family:"Montserrat",sans-serif;
+}
+.cd-time-content .cd-read-more, .cd-time-content .cd-date {
+  display: inline-block;
+}
+.cd-time-content p {
+  margin: 1em 0;
+  font-size: 18px;
+  line-height: 25px;
+  color: rgba(255, 255, 255, 0.7);
+}
+@media screen and (max-width: 821px) {
+  .cd-time-content p {
+    font-size: 17px;
+  }
+}
+.cd-time-content .cd-read-more {
+  float: right;
+  padding: .8em 1em;
+  background: #acb7c0;
+  color: white;
+  border-radius: 0.25em;
+}
+.no-touch .cd-time-content .cd-read-more:hover {
+  background-color: #bac4cb;
+}
+.cd-time-content .cd-date {
+  float: left;
+  padding: .8em 0;
+  opacity: .7;
+}
+
+
+
+blink {
+  font-weight: 600;
+  padding: 5px;
+  margin: 5px;
+  font-size: 16px;
+  letter-spacing: 1px !important;
+  position: absolute;
+  right: 5px !important;
+  top: 50px !important;
+  border-radius: 0;
+  text-transform: uppercase;
+}
+
+.tut-imgs {
+  width: 50px !important;
+  height: 50px !important;
+  margin: 10px 50px !important;
+}
+

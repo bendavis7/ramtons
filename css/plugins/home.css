@@ -1,0 +1,324 @@
+@media screen and (max-width: 1026px) {
+  .col-12 {
+    margin-bottom: 25px;
+  }
+  .col-sm-6 {
+    margin-bottom: 5px !important;
+  }
+}
+.therow {
+  margin: 5px -0;
+}
+
+#modalsend .brock {
+  background: rgba(18, 29, 51, 0.5) !important;
+}
+
+div.col-lg-6,
+div.col-lg-3,
+div.col-lg-8,
+div.col-lg-35,
+div.col-12,
+div.col-lg-2 {
+  z-index: 1 !important;
+}
+
+
+#chart-cols {   
+  padding: 0px auto !important;
+  margin-top: 10px !important;
+  margin-bottom: -30px !important;
+}
+
+
+
+#section-key {
+  margin-top: 20px !important;
+  margin-bottom: 5px !important;
+  opacity: 0.6 !important;
+}
+
+@media (max-width: 576px) {
+  #section-key {
+    margin-top: 20px !important;
+    margin-bottom: -10px !important;
+    opacity: 0.6 !important;
+  }
+}
+
+
+
+#section-dey {
+  margin-top: 20px !important;
+  margin-bottom: 10px !important;
+  opacity: 0.6 !important;
+}
+
+@media (max-width: 576px) {
+  #section-dey {
+    margin-top: 30px !important;
+    margin-bottom: -30px !important;
+    opacity: 0.6 !important;
+  }
+}
+
+
+blink {
+  margin: 5px -5px;
+}
+
+.opacity-half-dark{
+  background-color:rgba(0,0,0,.3);
+  position:absolute;
+  height:100%;
+  width:100%;
+  opacity:1;
+  top:0;left:0;
+}
+
+.owl-dots {
+  margin-top: 10px !important;
+}
+
+
+
+
+
+
+#titlelogs2 {
+  font-size: 29px !important;
+  font-weight: 600;
+  color: white;
+  opacity: 0.9 !important;
+  letter-spacing: 1.8px !important;
+}
+
+
+#bitcoin-logo2 {
+  margin: -10px 0px !important;
+  border-radius: 0 !important;
+}
+#bitcoin-logo2 img {
+  width: 64px !important;
+  height: 64px !important;
+}
+
+
+@media (max-width: 576px) {
+  #bitcoin-logo2 {
+    margin: -3px 0px !important;
+  }
+  #bitcoin-logo2 img {
+    width: 64px !important;
+    height: 64px !important;
+  }
+  #titlelogs2 {
+    margin: 3px 3px !important;
+    font-size: 30px !important;
+  }
+}
+
+
+@media (max-width: 420px) {
+  #bitcoin-logo2 img {
+    width: 62px !important;
+    height: 62px !important;
+  }
+  #titlelogs2 {
+    margin: 3px 3px !important;
+    font-size: 30px !important;
+  }
+}
+
+@media (max-width: 406px) {
+  #bitcoin-logo2 img {
+    width: 60px !important;
+    height: 60px !important;
+  }
+  #titlelogs2 {
+    font-size: 29px !important;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.masonry {
+  margin: 10px;
+  padding: 0;
+  -moz-column-gap: 10px;
+  -webkit-column-gap: 10px;
+  column-gap: 10px;
+  transition-duration: .4s;
+  -webkit-transition-duration: .4s;
+  cursor: pointer !important;
+}
+.masonry a {
+  display: block;
+  margin-top: 10px;
+  cursor: pointer !important;
+}
+.masonry a:first-child {
+  margin-top: 0;
+}
+.masonry-item {
+  position: relative;
+  overflow: hidden;
+  -webkit-transition-duration: .4s;
+  transition-duration: .4s;
+}
+.masonry-item img {
+  display: block;
+  width: 100%;
+  height: auto;
+  -webkit-transition-duration: .4s;
+  cursor: pointer !important;
+  transition-duration: .4s;
+}
+.masonry-item-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 100%;
+  max-height: 100%;
+  width: 100%;
+  opacity: 0;
+  background: rgba(0, 0, 0, 0.5);
+  border: 8px solid rgba(18, 29, 51, 0.7);
+  padding: 3%;
+  -webkit-transition-duration: .4s;
+  transition-duration: .4s;
+}
+.masonry-item:hover .masonry-item-overlay {
+  position: absolute;
+  opacity: 1;
+  -webkit-transition-duration: .5s;
+  transition-duration: .5s;
+}
+.masonry-item:hover .masonry-item-overlay h4 {
+  opacity: 1;
+  transform: translate(0,  -50%);
+  -ms-transform: translate(0,  -50%);
+  text-align: center;
+  -webkit-transition-duration: .6s;
+  transition-duration: .6s;
+}
+.masonry-item:hover .masonry-item-overlay ul {
+  opacity: 1;
+  transform: translate(0,  -50%);
+  -ms-transform: translate(0,  -50%);
+  text-align: center;
+  -webkit-transition-duration: .5s;
+  transition-duration: .5s;
+}
+.masonry-item-overlay h4 {
+  color: #fff;
+  font-size: 17px;
+  font-weight: 600;
+  position: absolute;
+  bottom: 40px;
+  margin: 0 0 20px 0;
+  line-height: 20px;
+}
+.masonry-item-overlay ul {
+  position: absolute;
+  padding-left: 0;
+  bottom: 25px;
+  margin: 0;
+}
+.masonry-item-overlay ul li {
+  list-style-type: none;
+  display: inline-block;
+  font-size: 13px;
+  font-weight: 600;
+  color: #fff;
+  padding-left: 0;
+  opacity: 1;
+}
+.masonry-item-overlay ul li:last-child:after {
+  content: none;
+}
+.masonry-item-overlay ul li:after {
+  content: ' / ';
+  font-size: 8px;
+  font-weight: 700;
+  margin: 0 5px;
+}
+.masonry-item-overlay ul li a {
+  color: #fff;
+}
+.masonry-item:first-child {
+  margin-top: 0;
+}
+.masonry-4 {
+  margin: 2px 0;
+  padding: 0;
+  -moz-column-gap: 2px;
+  -webkit-column-gap: 2px;
+  column-gap: 2px;
+
+  -moz-column-count: 13;
+  -webkit-column-count: 13;
+  column-count: 13;
+}
+.masonry-4 a {
+  display: block;
+  margin-top: 7px;
+}
+.masonry-4 a:first-child {
+  margin-top: 0;
+}
+
+@media screen and (min-width: 768px) {
+  .masonry-4 {
+    -moz-column-count: 12;
+    -webkit-column-count: 12;
+    column-count: 12;
+
+    margin: 3px 0;
+    padding: 0;
+    -moz-column-gap: 3px;
+    -webkit-column-gap: 3px;
+    column-gap: 3px;
+  }
+}
+@media screen and (min-width: 812px) {
+  .masonry-4 {
+    -moz-column-count: 12;
+    -webkit-column-count: 12;
+    column-count: 12;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .masonry-4 {
+    -moz-column-count: 20;
+    -webkit-column-count: 20;
+    column-count: 20;
+  }
+}
+
+
+
+
+
+
