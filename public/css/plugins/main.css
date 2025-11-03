@@ -166,13 +166,9 @@
   word-spacing: 2px !important;
   margin: 7px auto 12px !important;
   white-space: nowrap !important;
-  padding: 10px !important;
+  padding: 10px 9px !important;
   font-size: 21.4px !important;
   box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.8) !important;
-}
-.gallery .butn.white.larger {
-  word-spacing: 1px !important;
-  padding: 10px 8px !important;
 }
 
 .butn img {
@@ -198,12 +194,7 @@
 
 @media screen and (max-width: 766px) {
   .gallery .butn {
-    padding: 12px !important;
-    font-size: 22px !important;
-  }
-
-  .gallery .butn.white.larger {
-    padding: 12px 10px !important;
+    padding: 12px 11px !important;
     font-size: 22px !important;
   }
 
@@ -224,12 +215,7 @@
   
 @media screen and (max-width: 406px) {
   .gallery .butn {
-    padding: 11px !important;
-    font-size: 21.5px !important;
-  }
-
-  .gallery .butn.white.larger {
-    padding: 11px 9px !important;
+    padding: 11px 10px !important;
     font-size: 21.5px !important;
   }
 
@@ -245,12 +231,7 @@
 
 @media screen and (max-width: 380px) {
   .gallery .butn {
-    padding: 10px !important;
-    font-size: 21px !important;
-  }
-
-  .gallery .butn.white.larger {
-    padding: 10px 8px !important;
+    padding: 10px 9px !important;
     font-size: 21px !important;
   }
 
@@ -978,14 +959,6 @@ td {
   }
 }
 
-
-
-#escoz-3 {
-  font-weight: 600;
-  font-family: "Montserrat", sans-serif;
-  font-size: 20px;
-  color: rgba(18, 29, 51, 1) !important;
-}
 
 #escoz {
   font-weight: 600;
@@ -2209,7 +2182,7 @@ td {
 
 @media screen and (max-width: 767px) {
   .vpn-section .butn#vpn {
-    margin: 70px auto 110px !important;
+    margin: 60px auto 130px !important;
 
     padding: 19px 16px !important;
     font-size: 32px !important;
@@ -2221,7 +2194,7 @@ td {
 
 @media screen and (max-width: 420px) {
   .vpn-section .butn#vpn {
-    margin: 65px auto 105px !important;
+    margin: 55px auto 120px !important;
 
     padding: 18.5px 15.5px !important;
     font-size: 31px !important;
@@ -2231,7 +2204,7 @@ td {
 
 @media screen and (max-width: 407px) {
   .vpn-section .butn#vpn {
-    margin: 60px auto 100px !important;
+    margin: 50px auto 110px !important;
 
     padding: 18px 15px !important;
     font-size: 30px !important;
@@ -2855,16 +2828,13 @@ blink.nav-blink {
   font-weight: 700 !important;
   font-size: 25.5px !important;
   margin: 13.5px !important;
-  padding: 13.5px !important;
+  padding: 13.5px 12.5px !important;
   letter-spacing: 2px !important;
   color: #121d33;
   border-width: 1.6px !important;
   cursor: pointer !important;
   border: 2px solid rgb(18, 29, 51, 0.7) !important;
   box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.7) !important;
-}
-.butn.money.largers {
-  padding: 13.5px 11.5px  !important;
 }
 
 .butn.money img {
@@ -2878,10 +2848,7 @@ blink.nav-blink {
   .butn.money {
     font-size: 27px !important;
     margin: 14px !important;
-    padding: 14.5px !important;
-  }
-  .butn.money.largers {
-    padding: 14.5px 12.5px  !important;
+    padding: 14.5px 13.5px !important;
   }
   .butn.money img {
     width: 32px !important;
@@ -2894,11 +2861,8 @@ blink.nav-blink {
 @media screen and (max-width: 420px) {
   .butn.money {
     font-size: 26px !important;
-    margin: 13.5px !important;
+    margin: 13.5px 12.5px !important;
     padding: 14px !important;
-  }
-  .butn.money.largers {
-    padding: 14px 12px  !important;
   }
   .butn.money img {
     width: 31px !important;
@@ -2912,12 +2876,8 @@ blink.nav-blink {
     letter-spacing: 1.8px !important;
     font-size: 25px !important;
     margin: 13px !important;
-    padding: 13.5px !important;
+    padding: 13.5px 12.5px !important;
     color: #121d33;
-  }
-
-  .butn.money.largers {
-    padding: 13.5px 11.5px  !important;
   }
 
   .butn.money img {

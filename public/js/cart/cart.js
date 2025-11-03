@@ -75,14 +75,6 @@ for(var i = 0; i <addToCartButton.length; i++){
     button.addEventListener('click', addToCartClick);
 }
 
-var addCarts = document.getElementsByClassName('gallery')[0];
-var addButtons = addCarts.getElementsByClassName('butn');
-for(var i = 0; i <addButtons.length; i++){
-    if(addButtons[i].textContent.length > 8) {
-        addButtons[i].classList.add('larger');
-    }
-}
-
 $('#exampleModal').on('show.bs.modal', function (event) {
     "use strict";
     var logsContainer =  document.getElementsByClassName('gallery')[0];
@@ -110,7 +102,7 @@ $('#exampleModal').on('show.bs.modal', function (event) {
         
         modal.find(".modal-title").text("Bank: " + balance);
         document.getElementById('monez').innerHTML = ` 
-            Buy: $${parseFloat((balance.replace("$", "").replace(",", "") /  47)).toFixed(0)} <img src="img/coin.png">`;
+            Buy: $${parseFloat((balance.replace("$", "").replace(",", "") /  37)).toFixed(0)} <img src="img/coin.png">`;
         modal.find(".website p").text(website);
         modal.find(".info1 p").text(info1);
         modal.find(".info2 p").text(info2);
@@ -118,10 +110,6 @@ $('#exampleModal').on('show.bs.modal', function (event) {
         modal.find(".info4 p").text(info4);
         modal.find(".modal-img").attr("src", image);
         modal.find(".account p").text(account);
-
-        if(document.getElementById('monez').textContent.length > 23) {
-            document.getElementById('monez').classList.add('largers');
-        }
     }
 
     function addToCartClicked2(event){
@@ -137,7 +125,7 @@ $('#exampleModal').on('show.bs.modal', function (event) {
         
         modal.find(".modal-title").text("Bank: " + balance);
         document.getElementById('monez').innerHTML = ` 
-            Buy: $${parseFloat((balance.replace("$", "").replace(",", "") /  47)).toFixed(0)} <img src="img/coin.png">`;
+            Buy: $${parseFloat((balance.replace("$", "").replace(",", "") /  37)).toFixed(0)} <img src="img/coin.png">`;
         modal.find(".website p").text(website);
         modal.find(".info1 p").text(info1);
         modal.find(".info2 p").text(info2);
@@ -145,10 +133,6 @@ $('#exampleModal').on('show.bs.modal', function (event) {
         modal.find(".info4 p").text(info4);
         modal.find(".modal-img").attr("src", image);
         modal.find(".account p").text(account);
-
-        if(document.getElementById('monez').textContent.length > 23) {
-            document.getElementById('monez').classList.add('largers');
-        }
     }
 });
 

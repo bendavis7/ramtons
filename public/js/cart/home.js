@@ -144,7 +144,7 @@ for(j=0; j< jobs.length; j++) {
     var theJob = jobs[j];
     var thePrize = theJob.parentElement.children[1].children[2].innerText;
     
-    var thePr = parseFloat((thePrize.replace("$", "").replace(",", "") / 47).toFixed(0)).toLocaleString();
+    var thePr = parseFloat((thePrize.replace("$", "").replace(",", "") / 37).toFixed(0)).toLocaleString();
     theJob.innerHTML = '$'+ thePr;
 }
 
