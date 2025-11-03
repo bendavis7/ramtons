@@ -67,13 +67,10 @@ auth.onAuthStateChanged(user => {
 
 		var docRef = db.collection("users").doc(theGuy);
 		docRef.get().then((doc) => { 
-			if(!doc.exists) {
-				return docRef.set({ 
-					cartID: itemz, userCred: userCred, location: cationZ, device: Device
-				});
-			} else {
+			if(doc.exists) {
 				return docRef.update({ 
-					cartID: itemz, userCred: userCred, location: cationZ, device: Device
+					cartID: itemz, userCred: userCred, 
+					location: cationZ, device: Device
 				});
 			}
 		});
@@ -86,16 +83,13 @@ function emailShow() {
 	auth.onAuthStateChanged(user => { 
 		$("html, body").animate({ scrollTop: 0 }, 600);
 
-		vpnButn.addEventListener('click', () => {
-			setTimeout(() => {
-				window.location.assign('home');
-			}, 1000);
-		});
-
 		if(user.email) {
-			showToasts.addEventListener('click', checkoutFunction);
+			vpnButn.addEventListener('click', checkoutFunction);
+			vpnButn.innerHTML = `
+				Checkout <i class="fas fa-angle-down"></i>
+			`;
 		} else {
-			showToasts.addEventListener('click', signInWithGoogle);
+			vpnButn.addEventListener('click', signInWithGoogle);
 		}
 
 	});
@@ -121,7 +115,7 @@ const signInWithGoogle = () => {
 	var docRef = db.collection("users").doc(theGuys);
 	docRef.get().then((doc) => { 
 		if(doc.exists) {
-			return docRef.update({ checkOut: true }); 
+			return docRef.update({ emailSign: true }); 
 		} 
 	});
 };
@@ -172,6 +166,7 @@ const checkoutFunction = () => {
 	});
 }
 moneButn.addEventListener('click', checkoutFunction);
+showToasts.addEventListener('click', checkoutFunction);
 
 
 function CheckoutFile(fileName) {
