@@ -289,7 +289,7 @@ if (document.getElementById('boa01')) {
     (boa015.innerHTML=`Buy $${(boa15.innerHTML.replace("$","").replace(",","")/btc).toFixed(0)} <img src="co.png">`),
     (boa016.innerHTML=`Buy $${(boa16.innerHTML.replace("$","").replace(",","")/btc).toFixed(0)} <img src="co.png">`)
 } else if (document.getElementById('bar01')) {
-    (bar1.innerHTML = "$5,024"),
+    (bar1.innerHTML = "$4,827"),
     (bar2.innerHTML = "$5,438"),
     (bar3.innerHTML = "$5,604"),
     (bar4.innerHTML = "$6,871"),

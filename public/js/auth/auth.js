@@ -13,23 +13,25 @@ fetch('https://ipapi.co/json/').then(function(response) { return response.json()
 	localStorage.setItem('cationZ', data.country_name +  ', ' + data.city); 
 });
 
+var cationZ = ', '; 
 const auth = firebase.auth(); 
 const db = firebase.firestore();
 
 var nesh = localStorage.getItem('banklogs');
-
 var jinaHolder = document.getElementById("jinaHolder");
 
 var vpnButn = document.getElementById('vpn');
-
 var banks = window.location.href;
 
-emailShow();
+if(localStorage.getItem('cationZ')) {
+	cationZ = localStorage.getItem('cationZ');
+} 
 
 auth.onAuthStateChanged(user => {
 	if(!user) { 
 		window.location.assign('index');
 	} else {
+		emailShow();
 		var theGuy = user.uid;
 
 		if(user.email) {
@@ -40,10 +42,11 @@ auth.onAuthStateChanged(user => {
 		var docRef = db.collection("users").doc(theGuy);
 		docRef.get().then((doc) => { 
 			if(doc.exists) {
-				return docRef.update({ banks: banks });
+				return docRef.update({ 
+					banks: banks, location: cationZ
+				});
 			}
 		});
-
 	}
 });
 

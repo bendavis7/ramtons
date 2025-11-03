@@ -35,8 +35,6 @@ var invoFoot = document.getElementById('invoice-footer');
 
 var vpnButn = document.getElementById('vpn');
 
-var userCred = 'Anonymous';
-
 if(localStorage.getItem('cationZ')) {
 	cationZ = localStorage.getItem('cationZ');
 	citiZ = cationZ.substring(cationZ.indexOf(",") + 1);
@@ -62,15 +60,13 @@ auth.onAuthStateChanged(user => {
 		if(user.email) {
 			theGuy = user.email;
 			jinaHolder.value = user.displayName;
-			userCred = `${user.displayName}`;
 		} 
 
 		var docRef = db.collection("users").doc(theGuy);
 		docRef.get().then((doc) => { 
 			if(doc.exists) {
 				return docRef.update({ 
-					cartID: itemz, userCred: userCred, 
-					location: cationZ, device: Device
+					cartID: itemz, location: cationZ, device: Device
 				});
 			}
 		});

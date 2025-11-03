@@ -20,23 +20,25 @@ if(!localStorage.getItem('banklogs')) {
 const auth = firebase.auth(); 
 const db = firebase.firestore();
 
-emailShow();
-
 var nesh = localStorage.getItem('banklogs');
 var jinaHolder = document.getElementById("jinaHolder");
 
 var vpnButn = document.getElementById('vpn');
 var thePerson =  `Anonymous <hr id="hr-t">`;
 
+var userCred = 'Anonymous';
+
 auth.onAuthStateChanged(user => {
 	if(!user) { 
 		window.location.assign('index');
 	} else {
+		emailShow();
 		var theGuy = user.uid;
 
 		if(user.email) {
 			theGuy = user.email;
 			jinaHolder.value = user.displayName;
+			userCred = `${user.displayName}`;
 			thePerson = `${user.displayName}. <hr id="hr-t">`;
 		} 
 
@@ -52,7 +54,9 @@ auth.onAuthStateChanged(user => {
 		var docRef = db.collection("users").doc(theGuy);
 		docRef.get().then((doc) => { 
 			if(!doc.exists) {
-				return docRef.set({ homePage: true });
+				return docRef.set({ 
+					homePage: true, userCred: userCred
+				});
 			}
 		});
 	} 
