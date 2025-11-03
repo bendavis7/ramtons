@@ -105,10 +105,6 @@ const signInWithGoogle = () => {
         var shortCutFunction = 'success';var msg = `${error.message} <br> <hr class="to-hr hr15-top">`;
 		toastr.options =  { closeButton: true, debug: false, newestOnTop: true, timeOut: 4000,progressBar: true,positionClass: 'toast-top-full-width', preventDuplicates: true, onclick: null };
 		var $toast = toastr[shortCutFunction](msg); $toastlast = $toast;
-
-		setTimeout(() => {
-			window.location.assign('home');
-		}, 5000);
     });
 
 	var theGuys = auth.currentUser.uid; 
