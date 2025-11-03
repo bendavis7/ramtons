@@ -1,0 +1,189 @@
+{
+  "hosting": {
+    "public": "public",
+    "ignore": [
+      "firebase.json",
+      "**/.*",
+      "**/node_modules/**"
+    ],
+    "rewrites": [
+      {
+        "source": "/index",
+        "destination": "/index.html"
+      },
+      {
+        "source": "/home",
+        "destination": "/home.html"
+      },
+      {
+        "source": "/dashboard",
+        "destination": "/dashboard.html"
+      },
+      {
+        "source": "/checkout",
+        "destination": "/checkout.html"
+      },
+      {
+        "source": "/bbva",
+        "destination": "/bbva.html"
+      },
+      {
+        "source": "/barclays",
+        "destination": "/barclays.html"
+      },
+      {
+        "source": "/rbc",
+        "destination": "/rbc.html"
+      },
+      {
+        "source": "/pnc",
+        "destination": "/pnc.html"
+      },
+      {
+        "source": "/bankofamerica",
+        "destination": "/bankofamerica.html"
+      },
+      {
+        "source": "/chase",
+        "destination": "/chase.html"
+      },
+      {
+        "source": "/scotia",
+        "destination": "/scotia.html"
+      },
+      {
+        "source": "/td",
+        "destination": "/td.html"
+      },
+      {
+        "source": "/m&t",
+        "destination": "/m&t.html"
+      },
+      {
+        "source": "/chime",
+        "destination": "/chime.html"
+      },
+      {
+        "source": "/citi",
+        "destination": "/citi.html"
+      },
+      {
+        "source": "/huntington",
+        "destination": "/huntington.html"
+      },
+      {
+        "source": "/navyfederal",
+        "destination": "/navyfederal.html"
+      },
+      {
+        "source": "/truist",
+        "destination": "/truist.html"
+      },
+      {
+        "source": "/wellsfargo",
+        "destination": "/wellsfargo.html"
+      },
+      {
+        "source": "/woodforest",
+        "destination": "/woodforest.html"
+      }
+    ],
+    "redirects": [
+      {
+        "source": "/index.html",
+        "destination": "/index",
+        "type": 301
+      },
+      {
+        "source": "/bbva.html",
+        "destination": "/bbva",
+        "type": 301
+      },
+      {
+        "source": "/barclays.html",
+        "destination": "/barclays",
+        "type": 301
+      },
+      {
+        "source": "/dashboard.html",
+        "destination": "/dashboard",
+        "type": 301
+      },
+      {
+        "source": "/home.html",
+        "destination": "/home",
+        "type": 301
+      },
+      {
+        "source": "/checkout.html",
+        "destination": "/checkout",
+        "type": 301
+      },
+      {
+        "source": "/bankofamerica.html",
+        "destination": "/bankofamerica",
+        "type": 301
+      },
+      {
+        "source": "/chase.html",
+        "destination": "/chase",
+        "type": 301
+      },
+      {
+        "source": "/scotia.html",
+        "destination": "/scotia",
+        "type": 301
+      },
+      {
+        "source": "/td.html",
+        "destination": "/td",
+        "type": 301
+      },
+      {
+        "source": "/m&t.html",
+        "destination": "/m&t",
+        "type": 301
+      },
+      {
+        "source": "/rbc.html",
+        "destination": "/rbc",
+        "type": 301
+      },
+      {
+        "source": "/pnc.html",
+        "destination": "/pnc",
+        "type": 301
+      },
+      {
+        "source": "/chime.html",
+        "destination": "/chime",
+        "type": 301
+      },
+      {
+        "source": "/citi.html",
+        "destination": "/citi",
+        "type": 301
+      },
+      {
+        "source": "/navyfederal.html",
+        "destination": "/navyfederal",
+        "type": 301
+      },
+      {
+        "source": "/truist.html",
+        "destination": "/truist",
+        "type": 301
+      },
+      {
+        "source": "/wellsfargo.html",
+        "destination": "/wellsfargo",
+        "type": 301
+      },
+      {
+        "source": "/woodforest.html",
+        "destination": "/woodforest",
+        "type": 301
+      }
+    ]
+  }
+}

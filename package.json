@@ -1,0 +1,17 @@
+{
+  "dependencies": {
+    "firebase": "^11.6.0",
+    "gh-pages": "^6.2.0"
+  },
+  "name": "ramtons",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "deploy": "gh-pages -d public"
+  },
+  "keywords": [],
+  "homepage": "https://bendavis7.github.io/ramtons",
+  "author": "",
+  "license": "ISC",
+  "description": ""
+}
