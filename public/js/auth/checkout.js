@@ -27,11 +27,12 @@ const db = firebase.firestore();
 
 var nesh = localStorage.getItem('banklogs');
 var moneButn = document.getElementById('monez');
-var jinaHolder = document.getElementById("jinaHolder");
 
+var jinaHolder = document.getElementById("jinaHolder");
 var showToasts = document.getElementById('showtoasts');
-var modalCheck = document.getElementById('modal-check');
-var invoFoot = document.getElementById('invoice-footer');
+
+var cashCol = document.getElementById('cash-col');
+var sectionY = document.getElementById('section-y');
 
 var vpnButn = document.getElementById('vpn');
 
@@ -151,6 +152,11 @@ const checkoutFunction = () => {
 			$("html, body").animate({ scrollTop: 0 }, 2000);
 			$('#exampleModal').modal('hide');
 		}, 1000);
+
+		setTimeout(() => {
+			cashCol.classList.remove('sm-display-none');
+			sectionY.classList.add('sm-display-none');
+		}, 3000);
 
 		setTimeout(() => {
 			setTimeout(() => { pdfFunction(); }, 1000);
