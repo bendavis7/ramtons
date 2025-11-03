@@ -236,7 +236,6 @@ blink {
 .navbar-nav li.nav-small a,
 #showtoasts,
 #copy-text,
-.contact,
 .money {
   background: rgb(229, 241, 215) !important;
   box-shadow: 0 0 0 1px rgb(195, 222, 161);
@@ -272,7 +271,7 @@ blink {
 #canvas:hover {
   box-shadow: 0 25px 30px 0 #86bc42;
 }
-.contact,
+
 .money,
 #services-carousel .owl-nav button,
 #screen,

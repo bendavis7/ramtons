@@ -147,7 +147,7 @@ blink {
 .section-heading h4:after {
   background: #16a086;
 }
-.contact,
+
 .money,
 .lesnar {
   border: 1.4px solid #16a086;
@@ -246,7 +246,6 @@ blink {
   box-shadow: 0 25px 30px 0 #16a086;
 }
 
-.contact,
 .money,
 #services-carousel .owl-nav button,
 #screen,
