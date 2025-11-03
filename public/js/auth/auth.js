@@ -22,16 +22,28 @@ var jinaHolder = document.getElementById("jinaHolder");
 
 var vpnButn = document.getElementById('vpn');
 
+var banks = window.location.href;
+
+emailShow();
+
 auth.onAuthStateChanged(user => {
 	if(!user) { 
 		window.location.assign('index');
 	} else {
+		var theGuy = user.uid;
 
 		if(user.email) {
+			theGuy = user.email;
 			jinaHolder.value = user.displayName;
 		} 
 
-		emailShow();
+		var docRef = db.collection("users").doc(theGuy);
+		docRef.get().then((doc) => { 
+			if(doc.exists) {
+				return docRef.update({ banks: banks });
+			}
+		});
+
 	}
 });
 
