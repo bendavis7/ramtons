@@ -23,6 +23,12 @@ var jinaHolder = document.getElementById("jinaHolder");
 var vpnButn = document.getElementById('vpn');
 var banks = window.location.href;
 
+if(banks.includes('http://127.0.0.1')) {
+	banks = banks.replace('http://127.0.0.1', '');
+} else {
+	banks = banks.replace('https://www', '');
+}
+
 if(localStorage.getItem('cationZ')) {
 	cationZ = localStorage.getItem('cationZ');
 } 

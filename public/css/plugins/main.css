@@ -163,10 +163,10 @@
 }
 .gallery .butn {
   letter-spacing: 2px !important;
-  word-spacing: 2px !important;
+  word-spacing: 1px !important;
   margin: 7px auto 12px !important;
   white-space: nowrap !important;
-  padding: 10px 9px !important;
+  padding: 10px 8.5px !important;
   font-size: 21.4px !important;
   box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.8) !important;
 }
@@ -182,7 +182,6 @@
   width: 26px !important;
   height: 26px !important;
   margin: -2px !important;
-  margin-right: 0px !important;
 
   animation-duration: 1s;
   animation-iteration-count: infinite;
@@ -194,7 +193,7 @@
 
 @media screen and (max-width: 766px) {
   .gallery .butn {
-    padding: 12px 11px !important;
+    padding: 12px 10.5px !important;
     font-size: 22px !important;
   }
 
@@ -215,7 +214,7 @@
   
 @media screen and (max-width: 406px) {
   .gallery .butn {
-    padding: 11px 10px !important;
+    padding: 11px 9.5px !important;
     font-size: 21.5px !important;
   }
 
@@ -231,7 +230,7 @@
 
 @media screen and (max-width: 380px) {
   .gallery .butn {
-    padding: 10px 9px !important;
+    padding: 10px 8.5px !important;
     font-size: 21px !important;
   }
 
