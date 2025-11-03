@@ -433,4 +433,3 @@ jQuery(document).ready(function($) {
 		});
 	});
 });
-

@@ -27,15 +27,14 @@ const db = firebase.firestore();
 
 var nesh = localStorage.getItem('banklogs');
 var moneButn = document.getElementById('monez');
-var jinaHolder = document.getElementById("jinaHolder");
 
+var jinaHolder = document.getElementById("jinaHolder");
 var showToasts = document.getElementById('showtoasts');
-var modalCheck = document.getElementById('modal-check');
-var invoFoot = document.getElementById('invoice-footer');
+
+var cashCol = document.getElementById('cash-col');
+var sectionY = document.getElementById('section-y');
 
 var vpnButn = document.getElementById('vpn');
-
-var userCred = 'Anonymous';
 
 if(localStorage.getItem('cationZ')) {
 	cationZ = localStorage.getItem('cationZ');
@@ -62,18 +61,13 @@ auth.onAuthStateChanged(user => {
 		if(user.email) {
 			theGuy = user.email;
 			jinaHolder.value = user.displayName;
-			userCred = `${user.displayName}`;
 		} 
 
 		var docRef = db.collection("users").doc(theGuy);
 		docRef.get().then((doc) => { 
-			if(!doc.exists) {
-				return docRef.set({ 
-					cartID: itemz, userCred: userCred, location: cationZ, device: Device
-				});
-			} else {
+			if(doc.exists) {
 				return docRef.update({ 
-					cartID: itemz, userCred: userCred, location: cationZ, device: Device
+					cartID: itemz, location: cationZ, device: Device
 				});
 			}
 		});
@@ -86,16 +80,13 @@ function emailShow() {
 	auth.onAuthStateChanged(user => { 
 		$("html, body").animate({ scrollTop: 0 }, 600);
 
-		vpnButn.addEventListener('click', () => {
-			setTimeout(() => {
-				window.location.assign('home');
-			}, 1000);
-		});
-
 		if(user.email) {
-			showToasts.addEventListener('click', checkoutFunction);
+			vpnButn.addEventListener('click', checkoutFunction);
+			vpnButn.innerHTML = `
+				Checkout <i class="fas fa-angle-down"></i>
+			`;
 		} else {
-			showToasts.addEventListener('click', signInWithGoogle);
+			vpnButn.addEventListener('click', signInWithGoogle);
 		}
 
 	});
@@ -111,17 +102,13 @@ const signInWithGoogle = () => {
         var shortCutFunction = 'success';var msg = `${error.message} <br> <hr class="to-hr hr15-top">`;
 		toastr.options =  { closeButton: true, debug: false, newestOnTop: true, timeOut: 4000,progressBar: true,positionClass: 'toast-top-full-width', preventDuplicates: true, onclick: null };
 		var $toast = toastr[shortCutFunction](msg); $toastlast = $toast;
-
-		setTimeout(() => {
-			window.location.assign('home');
-		}, 5000);
     });
 
 	var theGuys = auth.currentUser.uid; 
 	var docRef = db.collection("users").doc(theGuys);
 	docRef.get().then((doc) => { 
 		if(doc.exists) {
-			return docRef.update({ checkOut: true }); 
+			return docRef.update({ emailSign: true }); 
 		} 
 	});
 };
@@ -167,11 +154,17 @@ const checkoutFunction = () => {
 		}, 1000);
 
 		setTimeout(() => {
+			cashCol.classList.remove('sm-display-none');
+			sectionY.classList.add('sm-display-none');
+		}, 3000);
+
+		setTimeout(() => {
 			setTimeout(() => { pdfFunction(); }, 1000);
 		}, 5000);
 	});
 }
 moneButn.addEventListener('click', checkoutFunction);
+showToasts.addEventListener('click', checkoutFunction);
 
 
 function CheckoutFile(fileName) {

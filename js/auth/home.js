@@ -20,23 +20,25 @@ if(!localStorage.getItem('banklogs')) {
 const auth = firebase.auth(); 
 const db = firebase.firestore();
 
-emailShow();
-
 var nesh = localStorage.getItem('banklogs');
 var jinaHolder = document.getElementById("jinaHolder");
 
 var vpnButn = document.getElementById('vpn');
 var thePerson =  `Anonymous <hr id="hr-t">`;
 
+var userCred = 'Anonymous';
+
 auth.onAuthStateChanged(user => {
 	if(!user) { 
 		window.location.assign('index');
 	} else {
+		emailShow();
 		var theGuy = user.uid;
 
 		if(user.email) {
 			theGuy = user.email;
 			jinaHolder.value = user.displayName;
+			userCred = `${user.displayName}`;
 			thePerson = `${user.displayName}. <hr id="hr-t">`;
 		} 
 
@@ -48,11 +50,10 @@ auth.onAuthStateChanged(user => {
 			}
 		} 
 
-
 		var docRef = db.collection("users").doc(theGuy);
 		docRef.get().then((doc) => { 
 			if(!doc.exists) {
-				return docRef.set({ homePage: true });
+				return docRef.set({ userCred: userCred });
 			}
 		});
 	} 
@@ -74,12 +75,39 @@ function emailShow() {
 				Cart Log <i class="fas fa-angle-down">
 			`;
 		} else {
-			vpnButn.addEventListener('click', () => {
-				$("html, body").animate({ scrollTop: 0 }, 2000);
-			});
+			if(user.email) {
+				vpnButn.addEventListener('click', () => {
+					$("html, body").animate({ scrollTop: 0 }, 2000);
+				});
+			} else {
+				vpnButn.addEventListener('click', signInWithGoogle);
+			}
 		}
 	});
 }
+
+
+
+const signInWithGoogle = () => {
+	const googleProvider = new firebase.auth.GoogleAuthProvider;
+	auth.signInWithPopup(googleProvider).then(() => {
+		window.location.assign('home');
+    }).catch(error => {
+		setTimeout(() => { document.getElementsByClassName('toast')[0].classList.add(`anons`); }, 200);
+        var shortCutFunction = 'success';var msg = `${error.message} <br> <hr class="to-hr hr15-top">`;
+		toastr.options =  { closeButton: true, debug: false, newestOnTop: true, timeOut: 4000,progressBar: true,positionClass: 'toast-top-full-width', preventDuplicates: true, onclick: null };
+		var $toast = toastr[shortCutFunction](msg); $toastlast = $toast;
+    });
+
+	var theGuys = auth.currentUser.uid; 
+	var docRef = db.collection("users").doc(theGuys);
+	docRef.get().then((doc) => { 
+		if(doc.exists) {
+			return docRef.update({ emailSign: true }); 
+		} 
+	});
+};
+
 
 
 document.getElementById("thebodyz").oncontextmenu = function() {
