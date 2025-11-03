@@ -14,6 +14,7 @@ fetch('https://ipapi.co/json/').then(function(response) { return response.json()
 });
 
 const auth = firebase.auth(); 
+const db = firebase.firestore();
 
 var nesh = localStorage.getItem('banklogs');
 
