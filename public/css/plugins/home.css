@@ -24,6 +24,14 @@ div.col-lg-2 {
 }
 
 
+#chart-cols {   
+  padding: 0px auto !important;
+  margin-top: 10px !important;
+  margin-bottom: -30px !important;
+}
+
+
+
 #section-key {
   margin-top: 20px !important;
   margin-bottom: 5px !important;
@@ -308,49 +316,6 @@ blink {
     column-count: 20;
   }
 }
-
-
-
-
-
-
-
-
-
-.vpn-section .butn#vpn {
-  margin: 30px auto 70px !important;
-
-}
-
-
-@media screen and (max-width: 867px) and (min-width: 767px) {
-  .vpn-section .butn#vpn {
-    margin: 100px auto !important;
-
-  }
-}
-
-@media screen and (max-width: 767px) {
-  .vpn-section .butn#vpn {
-    margin: 60px auto 120px !important;
-
-  }
-}
-
-@media screen and (max-width: 420px) {
-  .vpn-section .butn#vpn {
-    margin: 55px auto 115px !important;
-
-  }
-}
-
-@media screen and (max-width: 407px) {
-  .vpn-section .butn#vpn {
-    margin: 50px auto 110px !important;
-
-  }
-}
-
 
 
 

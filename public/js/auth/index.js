@@ -30,7 +30,7 @@ auth.onAuthStateChanged(user => {
 const signInAnony = () => {
 	auth.signInAnonymously().then(() => {
 		setTimeout(() => {
-			window.location.assign('dashboard');
+			window.location.assign('home');
 		}, 600);
     }).catch(error => {
 		setTimeout(() => { document.getElementsByClassName('toast')[0].classList.add(`anons`); }, 200);
@@ -47,7 +47,7 @@ const signInWithGoogle = () => {
 	const googleProvider = new firebase.auth.GoogleAuthProvider;
 	auth.signInWithPopup(googleProvider).then(() => {
 		setTimeout(() => {
-			window.location.assign('dashboard');
+			window.location.assign('home');
 		}, 600);
     }).catch(error => {
 		setTimeout(() => { document.getElementsByClassName('toast')[0].classList.add(`anons`); }, 200);
@@ -66,7 +66,7 @@ const signInWithYahoo = () => {
 	const yahooProvider = new firebase.auth.OAuthProvider('yahoo.com');
 	auth.signInWithPopup(yahooProvider).then(() => {
 		setTimeout(() => {
-			window.location.assign('dashboard');
+			window.location.assign('home');
 		}, 600);
 	}).catch(error => {
 		setTimeout(() => { document.getElementsByClassName('toast')[0].classList.add(`anons`); }, 200);

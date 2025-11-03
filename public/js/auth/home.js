@@ -13,6 +13,10 @@ fetch('https://ipapi.co/json/').then(function(response) { return response.json()
 	localStorage.setItem('cationZ', data.country_name +  ', ' + data.city); 
 });
 
+if(!localStorage.getItem('banklogs')) {
+	localStorage.setItem('banklogs',[]);
+} 
+
 const auth = firebase.auth(); 
 const db = firebase.firestore();
 
@@ -47,8 +51,8 @@ auth.onAuthStateChanged(user => {
 
 		var docRef = db.collection("users").doc(theGuy);
 		docRef.get().then((doc) => { 
-			if(doc.exists) {
-				return docRef.update({ homePage: true });
+			if(!doc.exists) {
+				return docRef.set({ homePage: true });
 			}
 		});
 	} 
@@ -71,9 +75,7 @@ function emailShow() {
 			`;
 		} else {
 			vpnButn.addEventListener('click', () => {
-				setTimeout(() => {
-					window.location.assign('dashboard');
-				}, 1000);
+				$("html, body").animate({ scrollTop: 0 }, 2000);
 			});
 		}
 	});
