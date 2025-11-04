@@ -30,12 +30,9 @@ auth.onAuthStateChanged(user => {
 		window.location.assign('index');
 	} else {
 		emailShow();
-		var theGuy = user.uid;
 
 		if(user.email) {
-			theGuy = user.email;
 			jinaHolder.value = user.displayName;
-			userCred = `${user.displayName}`;
 			thePerson = `${user.displayName}. <hr id="hr-t">`;
 		} 
 
@@ -46,13 +43,6 @@ auth.onAuthStateChanged(user => {
 				document.getElementById(`${userz}`).innerHTML = `${thePerson}`; 
 			}
 		} 
-
-		var docRef = db.collection("users").doc(theGuy);
-		docRef.get().then((doc) => { 
-			if(!doc.exists) {
-				return docRef.set({ userCred: userCred });
-			}
-		});
 	} 
 });
 
