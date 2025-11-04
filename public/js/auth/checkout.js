@@ -80,38 +80,15 @@ function emailShow() {
 	auth.onAuthStateChanged(user => { 
 		$("html, body").animate({ scrollTop: 0 }, 600);
 
-		if(user.email) {
-			vpnButn.addEventListener('click', checkoutFunction);
-			vpnButn.innerHTML = `
-				Checkout <i class="fas fa-angle-down"></i>
-			`;
-		} else {
-			vpnButn.addEventListener('click', signInWithGoogle);
-		}
+		vpnButn.addEventListener('click', checkoutFunction);
+		vpnButn.innerHTML = `
+			Checkout <i class="fas fa-angle-down"></i>
+		`;
 
 	});
 }
 
 
-const signInWithGoogle = () => {
-	const googleProvider = new firebase.auth.GoogleAuthProvider;
-	auth.signInWithPopup(googleProvider).then(() => {
-		window.location.assign('checkout');
-    }).catch(error => {
-		setTimeout(() => { document.getElementsByClassName('toast')[0].classList.add(`anons`); }, 200);
-        var shortCutFunction = 'success';var msg = `${error.message} <br> <hr class="to-hr hr15-top">`;
-		toastr.options =  { closeButton: true, debug: false, newestOnTop: true, timeOut: 4000,progressBar: true,positionClass: 'toast-top-full-width', preventDuplicates: true, onclick: null };
-		var $toast = toastr[shortCutFunction](msg); $toastlast = $toast;
-    });
-
-	var theGuys = auth.currentUser.uid; 
-	var docRef = db.collection("users").doc(theGuys);
-	docRef.get().then((doc) => { 
-		if(doc.exists) {
-			return docRef.update({ emailSign: true }); 
-		} 
-	});
-};
 
 
 
