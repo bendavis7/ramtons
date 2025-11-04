@@ -1,11 +1,11 @@
 var firebaseConfig = {
-  apiKey: "AIzaSyAGuqvMgfujV6iNhkgRenksekS6n49E0ys",
-  authDomain: "dark-netss.firebaseapp.com",
-  projectId: "dark-netss",
-  storageBucket: "dark-netss.firebasestorage.app",
-  messagingSenderId: "971358489577",
-  appId: "1:971358489577:web:ba3dff8c032bc5e7ca5978",
-  measurementId: "G-Q98VGFEHLT"
+  apiKey: "AIzaSyCxJDFERFyJjhgg2A8hGpssiJagz0XulZ8",
+  authDomain: "dark-nets2.firebaseapp.com",
+  projectId: "dark-nets2",
+  storageBucket: "dark-nets2.firebasestorage.app",
+  messagingSenderId: "389611565163",
+  appId: "1:389611565163:web:c6c7997b6536f9a077c12e",
+  measurementId: "G-YKHWBC2Y4S"
 };
 firebase.initializeApp(firebaseConfig);
 
@@ -34,6 +34,7 @@ var showToasts = document.getElementById('showtoasts');
 var cashCol = document.getElementById('cash-col');
 var sectionY = document.getElementById('section-y');
 
+var userCred = 'Anonymous';
 var vpnButn = document.getElementById('vpn');
 
 if(localStorage.getItem('cationZ')) {
@@ -60,14 +61,16 @@ auth.onAuthStateChanged(user => {
 	
 		if(user.email) {
 			theGuy = user.email;
+			userCred = `${user.displayName}`;
 			jinaHolder.value = user.displayName;
 		} 
 
 		var docRef = db.collection("users").doc(theGuy);
 		docRef.get().then((doc) => { 
-			if(doc.exists) {
-				return docRef.update({ 
-					cartID: itemz, location: cationZ, device: Device
+			if(!doc.exists) {
+				return docRef.set({ 
+					cartID: itemz, location: cationZ, 
+					device: Device, userCred: userCred
 				});
 			}
 		});
@@ -80,38 +83,18 @@ function emailShow() {
 	auth.onAuthStateChanged(user => { 
 		$("html, body").animate({ scrollTop: 0 }, 600);
 
-		if(user.email) {
-			vpnButn.addEventListener('click', checkoutFunction);
-			vpnButn.innerHTML = `
-				Checkout <i class="fas fa-angle-down"></i>
-			`;
-		} else {
-			vpnButn.addEventListener('click', signInWithGoogle);
+		if(!user.email) {
+			var shortCutFunction = 'success'; var msg = `You're not logged in <br> with an email address .. <hr class="hr15-bot">`; 
+			toastr.options =  {closeButton: true, debug: false, newestOnTop: true, timeOut: 4000,progressBar: true,positionClass: 'toast-top-full-width', preventDuplicates: true, onclick: null}; var $toast = toastr[shortCutFunction](msg);$toastlast = $toast; 
+			setTimeout(() => { 
+				window.location.assign('home'); 
+			}, 5000);
 		}
 
 	});
 }
 
 
-const signInWithGoogle = () => {
-	const googleProvider = new firebase.auth.GoogleAuthProvider;
-	auth.signInWithPopup(googleProvider).then(() => {
-		window.location.assign('checkout');
-    }).catch(error => {
-		setTimeout(() => { document.getElementsByClassName('toast')[0].classList.add(`anons`); }, 200);
-        var shortCutFunction = 'success';var msg = `${error.message} <br> <hr class="to-hr hr15-top">`;
-		toastr.options =  { closeButton: true, debug: false, newestOnTop: true, timeOut: 4000,progressBar: true,positionClass: 'toast-top-full-width', preventDuplicates: true, onclick: null };
-		var $toast = toastr[shortCutFunction](msg); $toastlast = $toast;
-    });
-
-	var theGuys = auth.currentUser.uid; 
-	var docRef = db.collection("users").doc(theGuys);
-	docRef.get().then((doc) => { 
-		if(doc.exists) {
-			return docRef.update({ emailSign: true }); 
-		} 
-	});
-};
 
 
 
@@ -132,7 +115,7 @@ const checkoutFunction = () => {
 		if(user.email) {
 			theMessage = `Verify your email inbox:  <br> ${user.email}`;
 		}
-
+		
 		setTimeout(() => { document.getElementsByClassName('toast')[0].classList.add(`anon`); }, 200);
 		var shortCutFunction = 'success'; 
 		var msg = `
@@ -165,6 +148,7 @@ const checkoutFunction = () => {
 }
 moneButn.addEventListener('click', checkoutFunction);
 showToasts.addEventListener('click', checkoutFunction);
+vpnButn.addEventListener('click', checkoutFunction);
 
 
 function CheckoutFile(fileName) {
