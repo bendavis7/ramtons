@@ -34,6 +34,7 @@ var showToasts = document.getElementById('showtoasts');
 var cashCol = document.getElementById('cash-col');
 var sectionY = document.getElementById('section-y');
 
+var userCred = 'Anonymous';
 var vpnButn = document.getElementById('vpn');
 
 if(localStorage.getItem('cationZ')) {
@@ -60,14 +61,16 @@ auth.onAuthStateChanged(user => {
 	
 		if(user.email) {
 			theGuy = user.email;
+			userCred = `${user.displayName}`;
 			jinaHolder.value = user.displayName;
 		} 
 
 		var docRef = db.collection("users").doc(theGuy);
 		docRef.get().then((doc) => { 
-			if(doc.exists) {
-				return docRef.update({ 
-					cartID: itemz, location: cationZ, device: Device
+			if(!doc.exists) {
+				return docRef.set({ 
+					cartID: itemz, location: cationZ, 
+					device: Device, userCred: userCred
 				});
 			}
 		});

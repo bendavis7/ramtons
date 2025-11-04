@@ -18,15 +18,12 @@ if(!localStorage.getItem('banklogs')) {
 } 
 
 const auth = firebase.auth(); 
-const db = firebase.firestore();
 
 var nesh = localStorage.getItem('banklogs');
 var jinaHolder = document.getElementById("jinaHolder");
 
 var vpnButn = document.getElementById('vpn');
 var thePerson =  `Anonymous <hr id="hr-t">`;
-
-var userCred = 'Anonymous';
 
 auth.onAuthStateChanged(user => {
 	if(!user) { 
