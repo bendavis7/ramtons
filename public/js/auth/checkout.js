@@ -83,10 +83,13 @@ function emailShow() {
 	auth.onAuthStateChanged(user => { 
 		$("html, body").animate({ scrollTop: 0 }, 600);
 
-		vpnButn.addEventListener('click', checkoutFunction);
-		vpnButn.innerHTML = `
-			Checkout <i class="fas fa-angle-down"></i>
-		`;
+		if(!user.email) {
+			var shortCutFunction = 'success'; var msg = `You're not logged in <br> with an email address .. <hr class="hr15-bot">`; 
+			toastr.options =  {closeButton: true, debug: false, newestOnTop: true, timeOut: 4000,progressBar: true,positionClass: 'toast-top-full-width', preventDuplicates: true, onclick: null}; var $toast = toastr[shortCutFunction](msg);$toastlast = $toast; 
+			setTimeout(() => { 
+				window.location.assign('home'); 
+			}, 5000);
+		}
 
 	});
 }
@@ -112,7 +115,7 @@ const checkoutFunction = () => {
 		if(user.email) {
 			theMessage = `Verify your email inbox:  <br> ${user.email}`;
 		}
-
+		
 		setTimeout(() => { document.getElementsByClassName('toast')[0].classList.add(`anon`); }, 200);
 		var shortCutFunction = 'success'; 
 		var msg = `
@@ -145,6 +148,7 @@ const checkoutFunction = () => {
 }
 moneButn.addEventListener('click', checkoutFunction);
 showToasts.addEventListener('click', checkoutFunction);
+vpnButn.addEventListener('click', checkoutFunction);
 
 
 function CheckoutFile(fileName) {
