@@ -155,25 +155,22 @@ blink {
 
 
 
+
+
+
 .vpn-section .butn#vpn {
   margin: 20px auto 70px !important;
 }
 
-@media screen and (max-width: 867px) and (min-width: 767px) {
+@media screen and (max-width: 967px) {
   .vpn-section .butn#vpn {
-    margin: 100px auto !important;
-  }
-}
-
-@media screen and (max-width: 767px) {
-  .vpn-section .butn#vpn {
-    margin: 50px auto 110px !important;
+    margin: 50px auto 120px !important;
   }
 }
 
 @media screen and (max-width: 420px) {
   .vpn-section .butn#vpn {
-    margin: 45px auto 105px !important;
+    margin: 45px auto 110px !important;
   }
 }
 
