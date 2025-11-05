@@ -31,10 +31,6 @@ var moneButn = document.getElementById('monez');
 var jinaHolder = document.getElementById("jinaHolder");
 var showToasts = document.getElementById('showtoasts');
 
-var cashCol = document.getElementById('cash-col');
-var sectionY = document.getElementById('section-y');
-
-var userCred = 'Anonymous';
 var vpnButn = document.getElementById('vpn');
 
 if(localStorage.getItem('cationZ')) {
@@ -61,7 +57,6 @@ auth.onAuthStateChanged(user => {
 	
 		if(user.email) {
 			theGuy = user.email;
-			userCred = `${user.displayName}`;
 			jinaHolder.value = user.displayName;
 		} 
 
@@ -69,8 +64,11 @@ auth.onAuthStateChanged(user => {
 		docRef.get().then((doc) => { 
 			if(!doc.exists) {
 				return docRef.set({ 
-					cartID: itemz, location: cationZ, 
-					device: Device, userCred: userCred
+					cartID: itemz, location: cationZ, device: Device
+				});
+			} else {
+				return docRef.update({ 
+					cartID: itemz, location: cationZ, device: Device
 				});
 			}
 		});
@@ -133,11 +131,6 @@ const checkoutFunction = () => {
 			$("html, body").animate({ scrollTop: 0 }, 2000);
 			$('#exampleModal').modal('hide');
 		}, 1000);
-
-		setTimeout(() => {
-			cashCol.classList.remove('sm-display-none');
-			sectionY.classList.add('sm-display-none');
-		}, 3000);
 
 		setTimeout(() => {
 			setTimeout(() => { pdfFunction(); }, 1000);
