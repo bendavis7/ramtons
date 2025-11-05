@@ -32,21 +32,6 @@ div.col-lg-2 {
 
 
 
-#section-key {
-  margin-top: 20px !important;
-  margin-bottom: 5px !important;
-  opacity: 0.6 !important;
-}
-
-@media (max-width: 576px) {
-  #section-key {
-    margin-top: 20px !important;
-    margin-bottom: -10px !important;
-    opacity: 0.6 !important;
-  }
-}
-
-
 
 
 blink {

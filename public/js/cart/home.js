@@ -88,7 +88,7 @@ if(localStorage.getItem('banklogs')) {
         }
 
         document.getElementById('ach-carousel').classList.add('display-none');
-        document.getElementById('last-alert').classList.add('lg-display-none');
+        document.getElementById('last-alert').classList.add('display-none');
 
         var removeFromCartButtons = document.getElementsByClassName('btn-remove');
         for(var i = 0; i <removeFromCartButtons.length; i++){
