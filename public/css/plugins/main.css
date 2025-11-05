@@ -940,21 +940,21 @@ td {
 @media screen and (max-width: 508px) {
   td {
     font-size: 17.9px !important;
-    line-height: 46px !important;
+    line-height: 45px !important;
   }
 }
 
 @media screen and (max-width: 420px) {
   td {
     font-size: 17.85px !important;
-    line-height: 45px !important;
+    line-height: 43.5px !important;
   }
 }
 
 @media screen and (max-width: 408px) {
   td {
     font-size: 17.8px !important;
-    line-height: 44px !important;
+    line-height: 42px !important;
   }
 }
 
@@ -3218,7 +3218,7 @@ section #section-y {
 
 
 .thecont{
-  margin-top: 95px;
+  margin-top: 96px;
   margin-bottom: 0;
 }
 

@@ -67,6 +67,20 @@ blink {
 
 
 
+.thecont{
+  margin-top: 95px;
+  margin-bottom: 0;
+}
+
+@media (max-width: 576px) {
+  .thecont{
+    margin-top: 92px;
+    margin-bottom: 0;
+  }
+}
+
+
+
 
 
 
