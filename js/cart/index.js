@@ -43,49 +43,7 @@ if(localStorage.getItem('banklogs')) {
                 website,      
             ]).draw();
         });
-
-
-        for(var i = 0; i < items.length; i++) {
-
-            var cartCol = document.createElement('div');
-            cartCol.classList.add('alert','alert-warning','alert-dismissible');
-            var cartColItems = document.getElementsByClassName('cart-alerts')[0];
-            var cartColContents = `
-                <i class="fas fa-spin fa-sync-alt spinner-bordez"></i> 
-                Pending Sale <strong>${items[i].account}</strong>, ${items[i].balance}
-                <button type="button" class="btn-close" data-bs-dismiss="alert">&times;</button>
-            `;
         
-            var cartRow = document.createElement('tr');
-            var cartRow2 = document.createElement('li');
-            cartRow.classList.add('table-warning');
-            cartRow2.classList.add('total','bg-black');
-            var cartItems =  document.getElementsByClassName('champez3')[0];
-    
-            var cartRowContents = `
-                <td><img src=${items[i].image}></td>       
-                <td>
-                    WAIT
-                    <i class="fas fa-spin fa-sync-alt spinner-bordez"></i>
-                    <hr id="hr-pend">
-                    <span>${(items[i].balance).replace('Balance: ','')}</span> 
-                </td>
-                <td>${items[i].account}</td>
-                <td id=${'table-id' + items.indexOf(items[i])} style="filter: blur(0px); white-space: normal !important;"></td>  
-                
-                <td>${(items[i].price).replace('Price: ', '')}</td>
-                <td>${items[i].info1}</td>
-                <td>${items[i].info2}</td>
-                <td>${items[i].info3}</td>
-                <td>${items[i].info4}</td>
-                <td>${items[i].website}</td>
-            `;
-            cartRow.innerHTML = cartRowContents;
-            cartItems.prepend(cartRow);
-
-            cartCol.innerHTML = cartColContents;
-            cartColItems.prepend(cartCol);
-        }
 
         var removeFromCartButtons = document.getElementsByClassName('btn-remove');
         for(var i = 0; i <removeFromCartButtons.length; i++){

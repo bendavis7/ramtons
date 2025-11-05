@@ -136,7 +136,7 @@ function emptyCart() {
         var shortCutFunction = 'success'; var msg = `Your cart is empty.. <br> add bank logs to cart. <hr class="hr15-bot">`; 
         toastr.options =  {closeButton: true, debug: false, newestOnTop: true, timeOut: 4000,progressBar: true,positionClass: 'toast-top-full-width', preventDuplicates: true, onclick: null}; var $toast = toastr[shortCutFunction](msg);$toastlast = $toast; 
         setTimeout(() => { 
-            window.location.assign('home'); 
+            window.location.assign('index'); 
         }, 5000);
 	});
 }

@@ -5,6 +5,7 @@ var logs = localStorage.getItem('banklogs');
 var thetotS = document.getElementById('thetot');
 var theNos1 = document.getElementById('theno1');
 
+const store = firebase.firestore();
 const login = firebase.auth(); 
 
 var cartLen = document.getElementById('cartlength');
@@ -67,6 +68,13 @@ function showThis() {
             } else {
                 signInWithGoogle();
             }
+
+            var docRef = store.collection("users").doc(user.uid);
+            docRef.get().then((doc) => { 
+                if(doc.exists) {
+                    return docRef.update({ cartItems: true });
+                }
+            });
 		} 
 	});
 }
