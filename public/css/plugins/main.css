@@ -931,8 +931,8 @@ select {
 
 
 td {
-  font-size: 17.4px !important;
-  line-height: 45.5px !important;
+  font-size: 17.5px !important;
+  line-height: 46px !important;
   color: #121d33;
   font-weight: 500 !important;
 }
@@ -940,20 +940,20 @@ td {
 @media screen and (max-width: 508px) {
   td {
     font-size: 17.9px !important;
-    line-height: 47px !important;
+    line-height: 46px !important;
   }
 }
 
 @media screen and (max-width: 420px) {
   td {
-    font-size: 17.8px !important;
-    line-height: 45.5px !important;
+    font-size: 17.85px !important;
+    line-height: 45px !important;
   }
 }
 
 @media screen and (max-width: 408px) {
   td {
-    font-size: 17.7px !important;
+    font-size: 17.8px !important;
     line-height: 44px !important;
   }
 }
@@ -3185,6 +3185,7 @@ hr#hr {
 
 #modal-check {
   border-radius: 0 !important;
+  border-bottom-width: 1.5px !important;
 }
 
 
