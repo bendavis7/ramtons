@@ -16,6 +16,10 @@
         "destination": "/home.html"
       },
       {
+        "source": "/dashboard",
+        "destination": "/dashboard.html"
+      },
+      {
         "source": "/checkout",
         "destination": "/checkout.html"
       },
@@ -98,6 +102,11 @@
       {
         "source": "/barclays.html",
         "destination": "/barclays",
+        "type": 301
+      },
+      {
+        "source": "/dashboard.html",
+        "destination": "/dashboard",
         "type": 301
       },
       {

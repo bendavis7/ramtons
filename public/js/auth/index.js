@@ -1,11 +1,11 @@
 var firebaseConfig = {
-  apiKey: "AIzaSyCxJDFERFyJjhgg2A8hGpssiJagz0XulZ8",
-  authDomain: "dark-nets2.firebaseapp.com",
-  projectId: "dark-nets2",
-  storageBucket: "dark-nets2.firebasestorage.app",
-  messagingSenderId: "389611565163",
-  appId: "1:389611565163:web:c6c7997b6536f9a077c12e",
-  measurementId: "G-YKHWBC2Y4S"
+  apiKey: "AIzaSyAGuqvMgfujV6iNhkgRenksekS6n49E0ys",
+  authDomain: "dark-netss.firebaseapp.com",
+  projectId: "dark-netss",
+  storageBucket: "dark-netss.firebasestorage.app",
+  messagingSenderId: "971358489577",
+  appId: "1:971358489577:web:ba3dff8c032bc5e7ca5978",
+  measurementId: "G-Q98VGFEHLT"
 };
 firebase.initializeApp(firebaseConfig);
 
@@ -22,7 +22,7 @@ const auth = firebase.auth();
 auth.onAuthStateChanged(user => {
 	if(user) {
 		if(user.email) {
-			window.location.assign('home');
+			window.location.assign('dashboard');
 		} 
 	} 
 });
@@ -30,7 +30,7 @@ auth.onAuthStateChanged(user => {
 const signInAnony = () => {
 	auth.signInAnonymously().then(() => {
 		setTimeout(() => {
-			window.location.assign('home');
+			window.location.assign('dashboard');
 		}, 600);
     }).catch(error => {
 		setTimeout(() => { document.getElementsByClassName('toast')[0].classList.add(`anons`); }, 200);
@@ -47,7 +47,7 @@ const signInWithGoogle = () => {
 	const googleProvider = new firebase.auth.GoogleAuthProvider;
 	auth.signInWithPopup(googleProvider).then(() => {
 		setTimeout(() => {
-			window.location.assign('home');
+			window.location.assign('dashboard');
 		}, 600);
     }).catch(error => {
 		setTimeout(() => { document.getElementsByClassName('toast')[0].classList.add(`anons`); }, 200);
@@ -66,7 +66,7 @@ const signInWithYahoo = () => {
 	const yahooProvider = new firebase.auth.OAuthProvider('yahoo.com');
 	auth.signInWithPopup(yahooProvider).then(() => {
 		setTimeout(() => {
-			window.location.assign('home');
+			window.location.assign('dashboard');
 		}, 600);
 	}).catch(error => {
 		setTimeout(() => { document.getElementsByClassName('toast')[0].classList.add(`anons`); }, 200);
