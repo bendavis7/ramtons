@@ -22,7 +22,7 @@ var vpnButn = document.getElementById('vpn');
 
 auth.onAuthStateChanged(user => {
 	if(!user) { 
-		window.location.assign('index');
+		auth.signInAnonymously();
 	} else {
 		emailShow();
 
@@ -47,15 +47,11 @@ function emailShow() {
 				Cart Log <i class="fas fa-angle-down">
 			`;
 		} else {
-			if(user.email) {
-				vpnButn.addEventListener('click', () => {
-					setTimeout(() => {
-						window.location.assign('home');
-					}, 1000);
-				})
-			} else {
-				vpnButn.addEventListener('click', signUpWithGoogle);
-			}
+			vpnButn.addEventListener('click', () => {
+				setTimeout(() => {
+					window.location.assign('home');
+				}, 1000);
+			});
 		}
 	});
 }
