@@ -27,6 +27,8 @@ var banks = window.location.href;
 
 if(banks.includes('http://127.0.0.1:5501')) {
 	banks = banks.replace('http://127.0.0.1:5501', '');
+} else {
+	banks = banks.replace('https://www');
 }
 
 if(localStorage.getItem('cationZ')) {
