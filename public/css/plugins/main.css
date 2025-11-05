@@ -2815,7 +2815,7 @@ blink.nav-blink {
   font-weight: 700 !important;
   font-size: 25.5px !important;
   margin: 13.5px !important;
-  padding: 13.5px 12.5px !important;
+  padding: 14px 12px !important;
   letter-spacing: 2px !important;
   color: #121d33;
   border-width: 1.6px !important;
@@ -2835,7 +2835,7 @@ blink.nav-blink {
   .butn.money {
     font-size: 27px !important;
     margin: 14px !important;
-    padding: 14.5px 13.5px !important;
+    padding: 15px 13px !important;
   }
   .butn.money img {
     width: 32px !important;
@@ -2848,7 +2848,7 @@ blink.nav-blink {
 @media screen and (max-width: 420px) {
   .butn.money {
     font-size: 26px !important;
-    margin: 13.5px 12.5px !important;
+    margin: 14px 12px !important;
     padding: 14px !important;
   }
   .butn.money img {
@@ -2863,7 +2863,7 @@ blink.nav-blink {
     letter-spacing: 1.8px !important;
     font-size: 25px !important;
     margin: 13px !important;
-    padding: 13.5px 12.5px !important;
+    padding: 14px 12px !important;
     color: #121d33;
   }
 
