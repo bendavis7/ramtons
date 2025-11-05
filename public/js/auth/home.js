@@ -67,7 +67,9 @@ function emailShow() {
 			`;
 		} else {
 			vpnButn.addEventListener('click', () => {
-				$("html, body").animate({ scrollTop: 0 }, 2000);
+				setTimeout(() => {
+					window.location.assign('index');
+				}, 1000);
 			});
 		}
 	});
