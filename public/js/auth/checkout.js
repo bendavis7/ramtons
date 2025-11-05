@@ -83,6 +83,12 @@ function emailShow() {
 	auth.onAuthStateChanged(user => { 
 		$("html, body").animate({ scrollTop: 0 }, 600);
 
+		vpnButn.addEventListener('click', () => {
+			setTimeout(() => {
+				window.location.assign('home');
+			}, 1000);
+		})
+
 	});
 }
 
@@ -140,7 +146,6 @@ const checkoutFunction = () => {
 }
 moneButn.addEventListener('click', checkoutFunction);
 showToasts.addEventListener('click', checkoutFunction);
-vpnButn.addEventListener('click', checkoutFunction);
 
 
 function CheckoutFile(fileName) {
