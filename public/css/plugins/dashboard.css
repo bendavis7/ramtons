@@ -27,7 +27,7 @@ div.col-lg-2 {
 #chart-cols {   
   padding: 0px auto !important;
   margin-top: 10px !important;
-  margin-bottom: -30px !important;
+  margin-bottom: -10px !important;
 }
 
 
@@ -47,20 +47,6 @@ div.col-lg-2 {
 }
 
 
-
-#section-dey {
-  margin-top: 20px !important;
-  margin-bottom: 10px !important;
-  opacity: 0.6 !important;
-}
-
-@media (max-width: 576px) {
-  #section-dey {
-    margin-top: 30px !important;
-    margin-bottom: -30px !important;
-    opacity: 0.6 !important;
-  }
-}
 
 
 blink {
