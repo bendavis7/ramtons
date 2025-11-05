@@ -77,14 +77,6 @@ function emailShow() {
 document.getElementById("thebodyz").oncontextmenu = function() {
 	return false
 };
-if(!window.location.href.includes('5502')) {
-	document.addEventListener("keydown", function (event) {
-		if (event.ctrlKey) {
-			event.preventDefault();
-		}   
-	});
-}
-
 
 var canvas = document.getElementById("canvas"); var ctx = canvas.getContext("2d"); var radius = canvas.height / 2;
 ctx.translate(radius, radius); radius = radius * 1;  setInterval(drawClock, 1000);
