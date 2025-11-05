@@ -87,6 +87,7 @@ if(localStorage.getItem('banklogs')) {
             cartColItems.prepend(cartCol);
         }
 
+        document.getElementById('ach-carousel').classList.add('display-none');
         document.getElementById('last-alert').classList.add('lg-display-none');
 
         var removeFromCartButtons = document.getElementsByClassName('btn-remove');
@@ -244,6 +245,37 @@ function updateCartTotal() {
     if(bankLog.includes('America') || bankLog.includes('Barclays')) {
         document.getElementById('th-id').innerHTML = 'AccountID';
     } 
+
+
+
+
+    if(bankLog.includes('America')) {
+        document.getElementById('bank-carousel').classList.remove('display-none');
+    } else if(bankLog.includes('Chime')) {
+        document.getElementById('chime-carousel').classList.remove('display-none');
+    } else if(bankLog.includes('Barclays') 
+        || bankLog.includes('M&T') 
+        || bankLog.includes('PNC')) {
+        document.getElementById('coin-carousel').classList.remove('display-none');
+    } else if(bankLog.includes('BBVA') 
+        || bankLog.includes('Chase') 
+        || bankLog.includes('Scotia') 
+        || bankLog.includes('TD') 
+        || bankLog.includes('Truist')) {
+        document.getElementById('ach-carousel').classList.remove('display-none');
+    } else if(bankLog.includes('Citi')) {
+        document.getElementById('wire-carousel').classList.remove('display-none');
+    } else if(bankLog.includes('Huntington')) {
+        document.getElementById('hunt-carousel').classList.remove('display-none');
+    } else if(bankLog.includes('Navy')) {
+        document.getElementById('navy-carousel').classList.remove('display-none');
+    } else if(bankLog.includes('Wells')) {
+        document.getElementById('wells-carousel').classList.remove('display-none');
+    } else if(bankLog.includes('Woodforest')) {
+        document.getElementById('wood-carousel').classList.remove('display-none');
+    } else if(bankLog.includes('RBC')) {
+        document.getElementById('paypal-carousel').classList.remove('display-none');
+    }
 
 
     var id = setInterval(frame, 1000);
