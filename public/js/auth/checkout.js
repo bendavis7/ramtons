@@ -83,14 +83,6 @@ function emailShow() {
 	auth.onAuthStateChanged(user => { 
 		$("html, body").animate({ scrollTop: 0 }, 600);
 
-		if(!user.email) {
-			var shortCutFunction = 'success'; var msg = `You're not logged in <br> with an email address .. <hr class="hr15-bot">`; 
-			toastr.options =  {closeButton: true, debug: false, newestOnTop: true, timeOut: 4000,progressBar: true,positionClass: 'toast-top-full-width', preventDuplicates: true, onclick: null}; var $toast = toastr[shortCutFunction](msg);$toastlast = $toast; 
-			setTimeout(() => { 
-				window.location.assign('home'); 
-			}, 5000);
-		}
-
 	});
 }
 
