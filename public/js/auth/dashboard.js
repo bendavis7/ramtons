@@ -47,13 +47,35 @@ function emailShow() {
 				Cart Log <i class="fas fa-angle-down">
 			`;
 		} else {
-			vpnButn.addEventListener('click', () => {
-				$("html, body").animate({ scrollTop: 0 }, 2000);
-			});
+			if(user.email) {
+				vpnButn.addEventListener('click', () => {
+					setTimeout(() => {
+						window.location.assign('home');
+					}, 1000);
+				})
+			} else {
+				vpnButn.addEventListener('click', signUpWithGoogle);
+			}
 		}
 	});
 }
 
+
+const signUpWithGoogle = () => {
+    const googleProvider = new firebase.auth.GoogleAuthProvider;
+    auth.signInWithPopup(googleProvider).then(() => {
+		$("html, body").animate({ scrollTop: 0 }, 1000);
+
+        setTimeout(() => {
+			window.location.reload();
+		}, 2000);
+    }).catch(error => {
+        setTimeout(() => { document.getElementsByClassName('toast')[0].classList.add(`anons`); }, 200);
+        var shortCutFunction = 'success';var msg = `${error.message} <br> <hr class="to-hr hr15-top">`;
+        toastr.options =  { closeButton: true, debug: false, newestOnTop: true, timeOut: 4000,progressBar: true,positionClass: 'toast-top-full-width', preventDuplicates: true, onclick: null };
+        var $toast = toastr[shortCutFunction](msg); $toastlast = $toast;
+    });
+};
 
 
 document.getElementById("thebodyz").oncontextmenu = function() {

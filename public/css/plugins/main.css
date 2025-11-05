@@ -932,7 +932,7 @@ select {
 
 td {
   font-size: 17.4px !important;
-  line-height: 45px !important;
+  line-height: 45.5px !important;
   color: #121d33;
   font-weight: 500 !important;
 }
@@ -947,14 +947,14 @@ td {
 @media screen and (max-width: 420px) {
   td {
     font-size: 17.8px !important;
-    line-height: 45px !important;
+    line-height: 45.5px !important;
   }
 }
 
 @media screen and (max-width: 408px) {
   td {
     font-size: 17.7px !important;
-    line-height: 43px !important;
+    line-height: 44px !important;
   }
 }
 
@@ -3217,8 +3217,15 @@ section #section-y {
 
 
 .thecont{
-  margin-top: 94px;
+  margin-top: 97px;
   margin-bottom: 0;
+}
+
+@media screen and (max-width: 867px) {
+  .thecont{
+    margin-top: 94px;
+    margin-bottom: 0;
+  }
 }
 
 
