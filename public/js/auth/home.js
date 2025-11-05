@@ -13,10 +13,6 @@ fetch('https://ipapi.co/json/').then(function(response) { return response.json()
 	localStorage.setItem('cationZ', data.country_name +  ', ' + data.city); 
 });
 
-if(!localStorage.getItem('banklogs')) {
-	localStorage.setItem('banklogs',[]);
-} 
-
 const auth = firebase.auth(); 
 
 var nesh = localStorage.getItem('banklogs');
