@@ -57,29 +57,11 @@ function emailShow() {
 }
 
 
-const signUpWithGoogle = () => {
-    const googleProvider = new firebase.auth.GoogleAuthProvider;
-    auth.signInWithPopup(googleProvider).then(() => {
-		window.location.assign('index');
-    }).catch(error => {
-        setTimeout(() => { document.getElementsByClassName('toast')[0].classList.add(`anons`); }, 200);
-        var shortCutFunction = 'success';var msg = `${error.message} <br> <hr class="to-hr hr15-top">`;
-        toastr.options =  { closeButton: true, debug: false, newestOnTop: true, timeOut: 4000,progressBar: true,positionClass: 'toast-top-full-width', preventDuplicates: true, onclick: null };
-        var $toast = toastr[shortCutFunction](msg); $toastlast = $toast;
-    });
-};
 
 
 document.getElementById("thebodyz").oncontextmenu = function() {
 	return false
 };
-if(!window.location.href.includes('5502')) {
-	document.addEventListener("keydown", function (event) {
-		if (event.ctrlKey) {
-			event.preventDefault();
-		}   
-	});
-}
 
 
 var canvas = document.getElementById("canvas"); var ctx = canvas.getContext("2d"); var radius = canvas.height / 2;

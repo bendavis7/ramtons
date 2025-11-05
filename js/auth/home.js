@@ -14,7 +14,6 @@ fetch('https://ipapi.co/json/').then(function(response) { return response.json()
 });
 
 const auth = firebase.auth(); 
-const db = firebase.firestore();
 
 var nesh = localStorage.getItem('banklogs');
 var jinaHolder = document.getElementById("jinaHolder");
@@ -27,10 +26,8 @@ auth.onAuthStateChanged(user => {
 		window.location.assign('index');
 	} else {
 		emailShow();
-		var theGuy = user.uid;
 
 		if(user.email) {
-			theGuy = user.email;
 			jinaHolder.value = user.displayName;
 			thePerson = `${user.displayName}. <hr id="hr-t">`;
 		} 
@@ -42,13 +39,6 @@ auth.onAuthStateChanged(user => {
 				document.getElementById(`${userz}`).innerHTML = `${thePerson}`; 
 			}
 		} 
-
-		var docRef = db.collection("users").doc(theGuy);
-		docRef.get().then((doc) => { 
-			if(doc.exists) {
-				return docRef.update({ homePage: true });
-			}
-		});
 	} 
 });
 
@@ -67,7 +57,9 @@ function emailShow() {
 			`;
 		} else {
 			vpnButn.addEventListener('click', () => {
-				$("html, body").animate({ scrollTop: 0 }, 2000);
+				setTimeout(() => {
+					window.location.assign('index');
+				}, 1000);
 			});
 		}
 	});
@@ -78,13 +70,6 @@ function emailShow() {
 document.getElementById("thebodyz").oncontextmenu = function() {
 	return false
 };
-if(!window.location.href.includes('5502')) {
-	document.addEventListener("keydown", function (event) {
-		if (event.ctrlKey) {
-			event.preventDefault();
-		}   
-	});
-}
 
 
 var canvas = document.getElementById("canvas"); var ctx = canvas.getContext("2d"); var radius = canvas.height / 2;

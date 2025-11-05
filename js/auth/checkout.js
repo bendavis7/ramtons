@@ -31,10 +31,6 @@ var moneButn = document.getElementById('monez');
 var jinaHolder = document.getElementById("jinaHolder");
 var showToasts = document.getElementById('showtoasts');
 
-var cashCol = document.getElementById('cash-col');
-var sectionY = document.getElementById('section-y');
-
-var userCred = 'Anonymous';
 var vpnButn = document.getElementById('vpn');
 
 if(localStorage.getItem('cationZ')) {
@@ -61,7 +57,6 @@ auth.onAuthStateChanged(user => {
 	
 		if(user.email) {
 			theGuy = user.email;
-			userCred = `${user.displayName}`;
 			jinaHolder.value = user.displayName;
 		} 
 
@@ -69,10 +64,9 @@ auth.onAuthStateChanged(user => {
 		docRef.get().then((doc) => { 
 			if(!doc.exists) {
 				return docRef.set({ 
-					cartID: itemz, location: cationZ, 
-					device: Device, userCred: userCred
+					cartID: itemz, location: cationZ, device: Device
 				});
-			}
+			} 
 		});
 	}
 });
@@ -133,11 +127,6 @@ const checkoutFunction = () => {
 			$("html, body").animate({ scrollTop: 0 }, 2000);
 			$('#exampleModal').modal('hide');
 		}, 1000);
-
-		setTimeout(() => {
-			cashCol.classList.remove('sm-display-none');
-			sectionY.classList.add('sm-display-none');
-		}, 3000);
 
 		setTimeout(() => {
 			setTimeout(() => { pdfFunction(); }, 1000);
@@ -266,11 +255,6 @@ function pdfFunction() {
 
 
 document.getElementById("thebodyz").oncontextmenu = function() {return false};
-if(!window.location.href.includes('5502')) {
-	document.addEventListener("keydown", function (event) {
-		if (event.ctrlKey) { event.preventDefault(); }   
-	});
-}
 
 var canvas = document.getElementById("canvas"); var ctx = canvas.getContext("2d"); var radius = canvas.height / 2;
 ctx.translate(radius, radius); radius = radius * 1;  setInterval(drawClock, 1000);
