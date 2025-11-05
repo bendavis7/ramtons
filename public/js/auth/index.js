@@ -22,7 +22,7 @@ var vpnButn = document.getElementById('vpn');
 
 auth.onAuthStateChanged(user => {
 	if(!user) { 
-		window.location.assign('index');
+		auth.signInAnonymously();
 	} else {
 		emailShow();
 
