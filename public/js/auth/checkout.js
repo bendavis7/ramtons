@@ -77,11 +77,19 @@ function emailShow() {
 	auth.onAuthStateChanged(user => { 
 		$("html, body").animate({ scrollTop: 0 }, 600);
 
-		vpnButn.addEventListener('click', () => {
-			setTimeout(() => {
-				window.location.assign('home');
-			}, 1000);
-		})
+		var theGuy = user.uid;
+		if(user.email) { theGuy = user.email } 
+
+		var docRef = db.collection("users").doc(theGuy);
+		docRef.get().then((doc) => { 
+			if(doc.exists && doc.data().checkOut) {
+				vpnButn.addEventListener('click', () => {
+					setTimeout(() => {
+						window.location.assign('home');
+					}, 1000);
+				});
+			} 
+		});
 
 	});
 }
@@ -124,7 +132,7 @@ const checkoutFunction = () => {
 		});
 
 		setTimeout(() => {
-			$("html, body").animate({ scrollTop: 0 }, 2000);
+			$("html, body").animate({ scrollTop: 0 }, 3000);
 			$('#exampleModal').modal('hide');
 		}, 1000);
 
