@@ -3218,15 +3218,8 @@ section #section-y {
 
 
 .thecont{
-  margin-top: 97px;
+  margin-top: 96px;
   margin-bottom: 0;
-}
-
-@media screen and (max-width: 867px) {
-  .thecont{
-    margin-top: 94px;
-    margin-bottom: 0;
-  }
 }
 
 
