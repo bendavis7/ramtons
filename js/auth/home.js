@@ -1,11 +1,11 @@
 var firebaseConfig = {
-  apiKey: "AIzaSyCxJDFERFyJjhgg2A8hGpssiJagz0XulZ8",
-  authDomain: "dark-nets2.firebaseapp.com",
-  projectId: "dark-nets2",
-  storageBucket: "dark-nets2.firebasestorage.app",
-  messagingSenderId: "389611565163",
-  appId: "1:389611565163:web:c6c7997b6536f9a077c12e",
-  measurementId: "G-YKHWBC2Y4S"
+  apiKey: "AIzaSyAGuqvMgfujV6iNhkgRenksekS6n49E0ys",
+  authDomain: "dark-netss.firebaseapp.com",
+  projectId: "dark-netss",
+  storageBucket: "dark-netss.firebasestorage.app",
+  messagingSenderId: "971358489577",
+  appId: "1:971358489577:web:ba3dff8c032bc5e7ca5978",
+  measurementId: "G-Q98VGFEHLT"
 };
 firebase.initializeApp(firebaseConfig);
 
@@ -13,11 +13,8 @@ fetch('https://ipapi.co/json/').then(function(response) { return response.json()
 	localStorage.setItem('cationZ', data.country_name +  ', ' + data.city); 
 });
 
-if(!localStorage.getItem('banklogs')) {
-	localStorage.setItem('banklogs',[]);
-} 
-
 const auth = firebase.auth(); 
+const db = firebase.firestore();
 
 var nesh = localStorage.getItem('banklogs');
 var jinaHolder = document.getElementById("jinaHolder");
@@ -30,8 +27,10 @@ auth.onAuthStateChanged(user => {
 		window.location.assign('index');
 	} else {
 		emailShow();
+		var theGuy = user.uid;
 
 		if(user.email) {
+			theGuy = user.email;
 			jinaHolder.value = user.displayName;
 			thePerson = `${user.displayName}. <hr id="hr-t">`;
 		} 
@@ -43,6 +42,13 @@ auth.onAuthStateChanged(user => {
 				document.getElementById(`${userz}`).innerHTML = `${thePerson}`; 
 			}
 		} 
+
+		var docRef = db.collection("users").doc(theGuy);
+		docRef.get().then((doc) => { 
+			if(doc.exists) {
+				return docRef.update({ homePage: true });
+			}
+		});
 	} 
 });
 
