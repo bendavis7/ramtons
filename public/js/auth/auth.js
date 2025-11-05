@@ -52,11 +52,7 @@ auth.onAuthStateChanged(user => {
 				return docRef.set({ 
 					banks: banks, location: cationZ, userCred: userCred
 				});
-			} else {
-				return docRef.update({ 
-					banks: banks, location: cationZ, userCred: userCred
-				});
-			}
+			} 
 		});
 	}
 });
