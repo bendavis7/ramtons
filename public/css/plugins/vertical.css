@@ -169,13 +169,13 @@ blink {
 
 @media screen and (max-width: 420px) {
   .vpn-section .butn#vpn {
-    margin: 40px auto 110px !important;
+    margin: 45px auto 110px !important;
   }
 }
 
 @media screen and (max-width: 407px) {
   .vpn-section .butn#vpn {
-    margin: 35px auto 100px !important;
+    margin: 40px auto 100px !important;
 
   }
 }
