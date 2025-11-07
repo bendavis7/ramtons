@@ -310,29 +310,3 @@ section #section-x {
 
 
 
-#showtoasts {
-  font-size: 29px !important;
-  padding: 15.5px 13.5px !important;
-  letter-spacing: 1.5px !important;
-
-  margin: 18px 20px !important;
-}
-
-
-@media (max-width: 520px) {
-  #showtoasts {
-    margin: 18px 22px !important;
-  }  
-}
-
-@media (max-width: 420px) {
-  #showtoasts {
-    margin: 17px 21px !important;
-  }  
-}
-
-@media (max-width: 400px) {
-  #showtoasts {
-    margin: 16px 20px !important;
-  }  
-}
