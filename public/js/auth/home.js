@@ -83,14 +83,14 @@ function emailShow() {
 					$("html, body").animate({ scrollTop: 0 }, 3000);
 				});
 			} else {
-				vpnButn.addEventListener("click", signUpWithGoogle);
+				vpnButn.addEventListener("click", signInWithGoogle);
 			}
 		}
 	});
 }
 
 
-const signUpWithGoogle = () => {
+const signInWithGoogle = () => {
 	const googleProvider = new firebase.auth.GoogleAuthProvider;
 	auth.signInWithPopup(googleProvider).then(() => {
 		auth.currentUser.sendEmailVerification();
