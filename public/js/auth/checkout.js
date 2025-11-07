@@ -27,7 +27,6 @@ const db = firebase.firestore();
 
 var nesh = localStorage.getItem('banklogs');
 var moneButn = document.getElementById('monez');
-var btnCloze = document.getElementsByClassName('btn-cloze')[0];
 
 var jinaHolder = document.getElementById("jinaHolder");
 var showToasts = document.getElementById('showtoasts');
@@ -91,11 +90,21 @@ function emailShow() {
 	auth.onAuthStateChanged(user => { 
 		$("html, body").animate({ scrollTop: 0 }, 1000);
 
+		var theGuy = user.uid;
 		if(user.email) { 
+			theGuy = user.email;
 			vpnButn.addEventListener('click', checkoutFunction);
 		} else {
 			vpnButn.addEventListener('click', signUpWithGoogle);
 		}
+
+		var docRef = db.collection("users").doc(theGuy);
+		docRef.get().then((doc) => { 
+			if(!doc.exists || !doc.data().checkOut) {
+				setTimeout(() => { checkoutFunction(); }, 3000);
+			} 
+		});
+
 	});
 }
 
@@ -222,9 +231,11 @@ function pdfFunction() {
 			if(Browser == 'Safari') { 
 				CheckoutFile(`${bankLog}.pdf`);
 
-				setTimeout(() => {
-					jsPDFInvoiceTemplate.default(props); 
-				}, 2000);
+				if(user.email) {
+					setTimeout(() => {
+						jsPDFInvoiceTemplate.default(props); 
+					}, 2000);
+				}
 			} else { 
 				jsPDFInvoiceTemplate.default(props); 
 			}
