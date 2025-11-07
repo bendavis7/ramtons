@@ -1005,9 +1005,9 @@ td {
   border-bottom: none;
 }
 #modal-amount {
-  font-size: 34px !important;
-  margin: 10px 10px !important;
-  letter-spacing: 1.7px !important;
+  font-size: 35px !important;
+  margin: 15px 15px 20px !important;
+  letter-spacing: 2px !important;
   word-spacing: 3px !important;
   font-weight: 700;
   display: flex;
@@ -1015,11 +1015,11 @@ td {
   color: white !important;
 }
 #bitcoin-logo {
-  margin: 10px;
+  margin: 15px 15px;
 }
 #bitcoin-logo img {
-  width: 45px !important;
-  height: 45px !important;
+  width: 47px !important;
+  height: 47px !important;
   border-radius: 50% !important;
 }
 
