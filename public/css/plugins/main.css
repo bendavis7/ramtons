@@ -969,7 +969,7 @@ td {
 #pablos {
   height: 35px !important;
   box-shadow: 0 0 0 1.9px #49c0d0 !important;
-  margin: 10px 0 !important;
+  margin: 7px 0 !important;
 }
 .progress {
 
@@ -1055,7 +1055,7 @@ td {
   #modal-amount {
     font-size: 39px !important;
     letter-spacing: 2px !important;
-    margin: 15px 20px 25px !important;
+    margin: 15px 15px 25px !important;
   }
 
   #bitcoin-logo2 {
@@ -1072,7 +1072,7 @@ td {
   #modal-amount {
     font-size: 38px !important;
     letter-spacing: 2px !important;
-    margin: 15px 20px 25px !important;
+    margin: 15px 15px 25px !important;
   }
 
   #bitcoin-logo2 {
@@ -1088,7 +1088,7 @@ td {
   #modal-amount {
     font-size: 37px !important;
     letter-spacing: 2px !important;
-    margin: 15px 20px 25px !important;
+    margin: 15px 15px 25px !important;
   }
 
   #bitcoin-logo2 {
@@ -1320,7 +1320,7 @@ td {
 #showtoasts {
   text-transform: capitalize !important;
   font-size: 31px !important;
-  padding: 16.5px 15.5px !important;
+  padding: 16.5px 15px !important;
   letter-spacing: 1.5px !important;
   font-weight: 700 !important;
   float: right !important;
@@ -1346,8 +1346,8 @@ td {
 
 @media (max-width: 520px) {
   #showtoasts {
-    font-size: 29.5px !important;
-    padding: 16px 14px !important;
+    font-size: 30.5px !important;
+    padding: 16.5px 14.5px !important;
 
     float: right !important;
     margin: 22px 30px !important;
@@ -1360,8 +1360,8 @@ td {
 
 @media (max-width: 420px) {
   #showtoasts {
-    font-size: 29px !important;
-    padding: 15.7px 13.7px !important;
+    font-size: 30px !important;
+    padding: 16px 14.5px !important;
 
     margin: 21px 30px !important;
   }  
@@ -1370,8 +1370,8 @@ td {
 
 @media (max-width: 400px) {
   #showtoasts {
-    font-size: 28px !important;
-    padding: 15px 13px !important;
+    font-size: 29px !important;
+    padding: 15.5px 14px !important;
 
     margin: 20px 30px !important;
   }  
@@ -3058,7 +3058,7 @@ button.butn.in-cart,
 
 section .dataTables_wrapper .dataTables_paginate {
   display: block !important;
-  opacity: 0.8 !important;
+  opacity: 0.85 !important;
 }
 
 section .dataTables_wrapper .dataTables_paginate {
