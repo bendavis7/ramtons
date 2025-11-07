@@ -1,11 +1,11 @@
 var firebaseConfig = {
-  apiKey: "AIzaSyAYY5RbVDqsBWrGWtK6ExXPqXjGp5cWqvs",
-  authDomain: "dark-nets3.firebaseapp.com",
-  projectId: "dark-nets3",
-  storageBucket: "dark-nets3.firebasestorage.app",
-  messagingSenderId: "823307936035",
-  appId: "1:823307936035:web:a0352460278d49adb6ac96",
-  measurementId: "G-YE4EBL1FWV"
+  apiKey: "AIzaSyCxJDFERFyJjhgg2A8hGpssiJagz0XulZ8",
+  authDomain: "dark-nets2.firebaseapp.com",
+  projectId: "dark-nets2",
+  storageBucket: "dark-nets2.firebasestorage.app",
+  messagingSenderId: "389611565163",
+  appId: "1:389611565163:web:c6c7997b6536f9a077c12e",
+  measurementId: "G-YKHWBC2Y4S"
 };
 firebase.initializeApp(firebaseConfig);
 
@@ -22,7 +22,6 @@ var nesh = localStorage.getItem('banklogs');
 var jinaHolder = document.getElementById("jinaHolder");
 var vpnButn = document.getElementById('vpn');
 
-var userCred = 'Anonymous';
 var banks = window.location.href;
 
 if(banks.includes('http://127.0.0.1:5501')) {
@@ -44,15 +43,14 @@ auth.onAuthStateChanged(user => {
 	
 		if(user.email) {
 			theGuy = user.email;
-			userCred = `${user.displayName}`;
 			jinaHolder.value = user.displayName;
 		} 
 
 		var docRef = db.collection("users").doc(theGuy);
 		docRef.get().then((doc) => { 
-			if(!doc.exists) {
-				return docRef.set({ 
-					banks: banks, location: cationZ, userCred: userCred
+			if(doc.exists) {
+				return docRef.update({ 
+					banks: banks, location: cationZ
 				});
 			} 
 		});
