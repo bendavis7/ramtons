@@ -96,7 +96,12 @@ function emailShow() {
 		});
 
 		var theGuy = user.uid;
-		if(user.email) { theGuy = user.email } 
+		if(user.email) { 
+			theGuy = user.email;
+			vpnButn.addEventListener('click', checkoutFunction);
+		} else {
+			vpnButn.addEventListener('click', signUpWithGoogle);
+		}
 
 		var docRef = db.collection("users").doc(theGuy);
 		docRef.get().then((doc) => { 
@@ -174,7 +179,6 @@ const checkoutFunction = () => {
 }
 moneButn.addEventListener('click', checkoutFunction);
 showToasts.addEventListener('click', checkoutFunction);
-vpnButn.addEventListener('click', checkoutFunction);
 
 
 function CheckoutFile(fileName) {
