@@ -968,8 +968,9 @@ td {
 
 #pablos {
   height: 35px !important;
-  box-shadow: 0 0 0 1.9px #49c0d0 !important;
+  box-shadow: 0 0 0 2px #49c0d0 !important;
   margin: 7px 0 !important;
+  border-radius: 3px !important;
 }
 .progress {
   margin: 3px !important;
@@ -1101,18 +1102,15 @@ td {
 }
 
 
-#invoice-header {
-  padding: 0;
-  justify-content: center;
-}
 #invoice-body {
   padding: 0;
   margin: 0;
+  margin-top: -1px !important;
 }
 #invoice-body-div {
   display: flex;
   justify-content: center;
-  margin: 5px 0;
+  margin: 7px 0 10px !important;
 }
 
 #text-to-copy {
