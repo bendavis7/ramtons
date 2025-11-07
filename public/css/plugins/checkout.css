@@ -112,7 +112,8 @@ blink {
 div.xzoom {
   padding: 4px !important; 
   background: rgba(255, 255, 255, 0.7) !important;
-  border-bottom: 1px solid rgb(37 ,84 ,104) !important
+  border-bottom: 1px solid rgb(37 ,84 ,104) !important;
+  border-radius: 2px !important;
 }
 
 #table-email {
