@@ -1025,11 +1025,11 @@ td {
 
 @media (max-width: 576px) {
   #bitcoin-logo {
-    margin: 10px;
+    margin: 15px 20px 10px;
   }
   #bitcoin-logo img {
-    width: 55px !important;
-    height: 55px !important;
+    width: 57px !important;
+    height: 57px !important;
     border-radius: 50% !important;
   }
 }
@@ -1091,7 +1091,7 @@ td {
   #modal-amount {
     font-size: 37px !important;
     letter-spacing: 2px !important;
-    margin: 10px 12px !important;
+    margin: 20px 20px !important;
   }
 
   #bitcoin-logo2 {
@@ -2199,7 +2199,7 @@ td {
 
 @media screen and (max-width: 967px) {
   .vpn-section .butn#vpn {
-    margin: 60px auto 140px !important;
+    margin: 60px auto 145px !important;
 
     padding: 19px 16px !important;
     font-size: 32px !important;
@@ -2211,7 +2211,7 @@ td {
 
 @media screen and (max-width: 420px) {
   .vpn-section .butn#vpn {
-    margin: 55px auto 130px !important;
+    margin: 55px auto 135px !important;
 
     padding: 18.5px 15.5px !important;
     font-size: 31px !important;
@@ -2221,7 +2221,7 @@ td {
 
 @media screen and (max-width: 407px) {
   .vpn-section .butn#vpn {
-    margin: 50px auto 120px !important;
+    margin: 50px auto 125px !important;
 
     padding: 18px 15px !important;
     font-size: 30px !important;
@@ -3379,7 +3379,7 @@ td.burro {
 }
 @media (max-width: 420px) {
   .alert {
-    font-size: 17.5px !important;
+    font-size: 17.7px !important;
     letter-spacing: 0.75 !important;
     line-height: 42.5px !important;
   }
@@ -3387,7 +3387,7 @@ td.burro {
 
 @media (max-width: 406px) {
   .alert {
-    font-size: 17px !important;
+    font-size: 17.4px !important;
     letter-spacing: 0.7 !important;
     line-height: 40px !important;
   }
