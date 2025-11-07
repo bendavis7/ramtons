@@ -91,27 +91,11 @@ function emailShow() {
 	auth.onAuthStateChanged(user => { 
 		$("html, body").animate({ scrollTop: 0 }, 1000);
 
-		btnCloze.addEventListener('click', () => {
-			$("html, body").animate({ scrollTop: 0 }, 1000);
-		});
-
-		var theGuy = user.uid;
 		if(user.email) { 
-			theGuy = user.email;
 			vpnButn.addEventListener('click', checkoutFunction);
 		} else {
 			vpnButn.addEventListener('click', signUpWithGoogle);
 		}
-
-		// var docRef = db.collection("users").doc(theGuy);
-		// docRef.get().then((doc) => { 
-		// 	if(!doc.exists || !doc.data().checkOut) {
-		// 		setTimeout(() => {
-		// 			document.getElementById('modem').click();
-		// 		}, 2000);
-		// 	} 
-		// });
-
 	});
 }
 
