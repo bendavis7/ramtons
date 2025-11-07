@@ -962,12 +962,12 @@ td {
 #escoz {
   font-weight: 600;
   font-family: "Montserrat", sans-serif;
-  font-size: 20px;
+  font-size: 21.5px;
   color: rgba(18, 29, 51, 1) !important;
 }
 
 #pablos {
-  height: 30px !important;
+  height: 35px !important;
   box-shadow: 0 0 0 1.9px #49c0d0 !important;
   margin: 10px 0 !important;
 }
@@ -1005,8 +1005,8 @@ td {
   border-bottom: none;
 }
 #modal-amount {
-  font-size: 36px !important;
-  margin: 12px 15px 20px !important;
+  font-size: 35px !important;
+  margin: 15px 10px 20px !important;
   letter-spacing: 2px !important;
   word-spacing: 3px !important;
   font-weight: 700;
@@ -1015,7 +1015,7 @@ td {
   color: white !important;
 }
 #bitcoin-logo {
-  margin: 15px 15px;
+  margin: 15px;
 }
 #bitcoin-logo img {
   width: 47px !important;
@@ -3058,6 +3058,7 @@ button.butn.in-cart,
 
 section .dataTables_wrapper .dataTables_paginate {
   display: block !important;
+  opacity: 0.8 !important;
 }
 
 section .dataTables_wrapper .dataTables_paginate {

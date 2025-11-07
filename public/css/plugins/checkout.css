@@ -80,9 +80,9 @@ blink {
   }
 
   .col-lg-41 {
-    -ms-flex:0 0 28%;
-    flex:0 0 28%;
-    max-width: 28%;
+    -ms-flex:0 0 27.5%;
+    flex:0 0 27.5%;
+    max-width: 27.5%;
   }  
   .col-lg-70 {
     -ms-flex:0 0 70%;
@@ -323,13 +323,6 @@ section #section-x {
   white-space: nowrap !important;
 }
 
-#modal-one .dataTables_wrapper .dataTables_paginate {
-  display: none !important;
-}
-#modal-one .dataTables_wrapper .dataTables_length {
-  display: none !important;
-}
-
 
 @media screen and (max-width: 1067px) {
   .dataTables_wrapper .dataTables_filter {
@@ -348,13 +341,6 @@ section #section-x {
     word-spacing: 1px !important;
     font-size: 23px !important;
     white-space: nowrap !important;
-  }
-
-  #profileModal .dataTables_wrapper .dataTables_filter {
-    width: 70% !important;
-  }
-  #profileModal .dataTables_wrapper .dataTables_filter input {
-    width: 60% !important;
   }
 }
 
@@ -423,55 +409,19 @@ section #section-x {
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 #showtoasts {
-  font-size: 30px !important;
-  padding: 16px 14px !important;
-  letter-spacing: 1.5px !important;
-
   margin: 15px 20px !important;
 }
 
 
 @media (max-width: 500px) {
   #showtoasts {
-    font-size: 31px !important;
-    padding: 16.5px 14.5px !important;
-
-    float: right !important;
     margin: 18px 20px !important;
   }  
 }
 
 @media (max-width: 420px) {
   #showtoasts {
-    font-size: 30px !important;
-    padding: 16px 14px !important;
-
     margin: 18px 20px !important;
   }  
 }
@@ -479,10 +429,41 @@ section #section-x {
 
 @media (max-width: 400px) {
   #showtoasts {
-    font-size: 29px !important;
-    padding: 15.5px 13.5px !important;
-
     margin: 18px 20px !important;
   }  
 }
 
+
+
+
+
+
+
+
+
+
+td {
+  font-size: 17.4px !important;
+  line-height: 50px !important;
+}
+
+@media screen and (max-width: 508px) {
+  td {
+    font-size: 17.9px !important;
+    line-height: 52px !important;
+  }
+}
+
+@media screen and (max-width: 420px) {
+  td {
+    font-size: 17.85px !important;
+    line-height: 50px !important;
+  }
+}
+
+@media screen and (max-width: 408px) {
+  td {
+    font-size: 17.8px !important;
+    line-height: 48px !important;
+  }
+}
