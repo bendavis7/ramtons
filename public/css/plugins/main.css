@@ -940,21 +940,21 @@ td {
 @media screen and (max-width: 508px) {
   td {
     font-size: 17.9px !important;
-    line-height: 45px !important;
+    line-height: 47px !important;
   }
 }
 
 @media screen and (max-width: 420px) {
   td {
     font-size: 17.85px !important;
-    line-height: 43.5px !important;
+    line-height: 45.5px !important;
   }
 }
 
 @media screen and (max-width: 408px) {
   td {
     font-size: 17.8px !important;
-    line-height: 42px !important;
+    line-height: 44px !important;
   }
 }
 
@@ -1319,11 +1319,6 @@ td {
 }
 
 
-#showtoasts img,
-#showtoasts i {
-  margin-left: 7px !important;
-  margin-right: 2px !important;
-}
 
 
 #showtoasts {
@@ -1346,12 +1341,14 @@ td {
   animation-timing-function: ease-in-out;
 }
 
-#showtoasts img {
+#showtoasts img,
+#showtoasts i {
   width: 31px !important;
   height: 31px !important;
+
+  margin-left: 7px !important;
+  margin-right: 2px !important;
 }
-
-
 
 
 
@@ -1364,9 +1361,12 @@ td {
     margin: 24px 30px !important;
   }  
 
-  #showtoasts img {
-    width: 30px !important;
-    height: 30px !important;
+  #showtoasts img,
+  #showtoasts i {
+    width: 29.5px !important;
+    height: 29.5px !important;
+
+    margin-left: 5px !important;
   }
 }
 
@@ -1379,7 +1379,8 @@ td {
     margin: 23px 30px !important;
   }  
 
-  #showtoasts img {
+  #showtoasts img,
+  #showtoasts i {
     width: 29px !important;
     height: 29px !important;
   }
@@ -1395,17 +1396,15 @@ td {
     margin: 22px 30px !important;
   }  
 
-  #showtoasts img {
+  #showtoasts img,
+  #showtoasts i {
     width: 28px !important;
     height: 28px !important;
   }
 }
 
 
-#showtoasts img,
-#showtoasts i {
-  margin-left: 5px !important;
-}
+
 
 
 @keyframes Floating7 {

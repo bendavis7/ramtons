@@ -80,9 +80,9 @@ blink {
   }
 
   .col-lg-41 {
-    -ms-flex:0 0 27%;
-    flex:0 0 27%;
-    max-width: 27%;
+    -ms-flex:0 0 28%;
+    flex:0 0 28%;
+    max-width: 28%;
   }  
   .col-lg-70 {
     -ms-flex:0 0 70%;
@@ -414,4 +414,107 @@ section #section-x {
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#showtoasts {
+  font-size: 30px !important;
+  padding: 16px 15px !important;
+  letter-spacing: 1.5px !important;
+
+  margin: 18px 20px !important;
+}
+
+#showtoasts img,
+#showtoasts i {
+  width: 30px !important;
+  height: 30px !important;
+
+  margin-left: 7px !important;
+  margin-right: 2px !important;
+}
+
+
+
+@media (max-width: 520px) {
+  #showtoasts {
+    font-size: 29.5px !important;
+    padding: 16px 14px !important;
+
+    float: right !important;
+    margin: 24px 30px !important;
+  }  
+
+  #showtoasts img,
+  #showtoasts i {
+    width: 29.5px !important;
+    height: 29.5px !important;
+
+    margin-left: 5px !important;
+  }
+}
+
+@media (max-width: 420px) {
+  #showtoasts {
+    font-size: 29px !important;
+    padding: 15.7px 13.7px !important;
+
+    float: right !important;
+    margin: 23px 30px !important;
+  }  
+
+  #showtoasts img,
+  #showtoasts i {
+    width: 29px !important;
+    height: 29px !important;
+  }
+}
+
+
+@media (max-width: 400px) {
+  #showtoasts {
+    font-size: 28px !important;
+    padding: 15px 13px !important;
+
+    float: right !important;
+    margin: 22px 30px !important;
+  }  
+
+  #showtoasts img,
+  #showtoasts i {
+    width: 28px !important;
+    height: 28px !important;
+  }
+}
 

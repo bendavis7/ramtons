@@ -323,28 +323,3 @@ blink {
 
 
 
-
-
-
-.vpn-section .butn#vpn {
-  margin: 20px auto 70px !important;
-}
-
-@media screen and (max-width: 967px) {
-  .vpn-section .butn#vpn {
-    margin: 50px auto 120px !important;
-  }
-}
-
-@media screen and (max-width: 420px) {
-  .vpn-section .butn#vpn {
-    margin: 40px auto 110px !important;
-  }
-}
-
-@media screen and (max-width: 407px) {
-  .vpn-section .butn#vpn {
-    margin: 35px auto 100px !important;
-
-  }
-}
