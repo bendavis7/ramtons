@@ -970,7 +970,7 @@ td {
   height: 35px !important;
   box-shadow: 0 0 0 2px #49c0d0 !important;
   margin: 7px 0 !important;
-  border-radius: 2px !important;
+  border-radius: 1px !important;
 }
 .progress {
   margin: 3px !important;
