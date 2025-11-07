@@ -103,14 +103,14 @@ function emailShow() {
 			vpnButn.addEventListener('click', signUpWithGoogle);
 		}
 
-		var docRef = db.collection("users").doc(theGuy);
-		docRef.get().then((doc) => { 
-			if(!doc.exists || !doc.data().checkOut) {
-				setTimeout(() => {
-					document.getElementById('modem').click();
-				}, 2000);
-			} 
-		});
+		// var docRef = db.collection("users").doc(theGuy);
+		// docRef.get().then((doc) => { 
+		// 	if(!doc.exists || !doc.data().checkOut) {
+		// 		setTimeout(() => {
+		// 			document.getElementById('modem').click();
+		// 		}, 2000);
+		// 	} 
+		// });
 
 	});
 }
