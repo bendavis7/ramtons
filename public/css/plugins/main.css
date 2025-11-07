@@ -1179,27 +1179,36 @@ td {
 
 #example1 td {
   font-size: 17.4px !important;
-  line-height: 47px !important;
+  line-height: 48px !important;
 }
 #example1 tr:last-child td {
-  padding-bottom: 42px !important;
+  padding-bottom: 44px !important;
 }
 @media (max-width: 769px) {
   #example1 td {
     font-size: 17.9px !important;
-    line-height: 47px !important;
+    line-height: 48px !important;
   }
   #example1 tr:last-child td {
     padding-bottom: 12px !important;
+  }
+}
+@media (max-width: 420px) {
+  #example1 td {
+    font-size: 17.85px !important;
+    line-height: 46px !important;
+  }
+  #example1 tr:last-child td {
+    padding-bottom: 11px !important;
   }
 }
 @media (max-width: 409px) {
   #example1 td {
     font-size: 17.8px !important;
-    line-height: 43px !important;
+    line-height: 44px !important;
   }
   #example1 tr:last-child td {
-    padding-bottom: 12px !important;
+    padding-bottom: 10px !important;
   }
 }
 
