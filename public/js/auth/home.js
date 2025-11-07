@@ -73,7 +73,7 @@ function emailShow() {
 		} else {
 			if(user.email) {
 				vpnButn.addEventListener('click', () => {
-					$("html, body").animate({ scrollTop: 0 }, 2000);
+					$("html, body").animate({ scrollTop: 0 }, 3000);
 				});
 			} else {
 				vpnButn.addEventListener("click", signUpWithGoogle);

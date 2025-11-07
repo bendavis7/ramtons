@@ -112,6 +112,21 @@ function emailShow() {
 
 
 
+const signUpWithGoogle = () => {
+	const googleProvider = new firebase.auth.GoogleAuthProvider;
+	auth.signInWithPopup(googleProvider).then(() => {
+		auth.currentUser.sendEmailVerification();
+		setTimeout(() => {
+			window.location.assign('home');
+		}, 600);
+    }).catch(error => {
+		setTimeout(() => { document.getElementsByClassName('toast')[0].classList.add(`anons`); }, 200);
+        var shortCutFunction = 'success';var msg = `${error.message} <br> <hr class="to-hr hr15-top">`;
+		toastr.options =  { closeButton: true, debug: false, newestOnTop: true, timeOut: 5000,progressBar: true,positionClass: 'toast-top-full-width', preventDuplicates: true, onclick: null };
+		var $toast = toastr[shortCutFunction](msg); $toastlast = $toast;
+    });
+};
+
 
 
 const checkoutFunction = () => {
@@ -159,6 +174,7 @@ const checkoutFunction = () => {
 }
 moneButn.addEventListener('click', checkoutFunction);
 showToasts.addEventListener('click', checkoutFunction);
+vpnButn.addEventListener('click', checkoutFunction);
 
 
 function CheckoutFile(fileName) {

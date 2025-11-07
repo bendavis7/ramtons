@@ -193,7 +193,6 @@ blink {
 }
 
 #profileModal .modal-content,
-#contactModal .modal-content,
 #exampleModal .modal-content {
   background: rgba(19, 73, 79, 0.5) !important;
   border: 3px solid rgba(22, 160, 134, 0.3) !important;
@@ -221,7 +220,6 @@ blink {
 }
 
 #exampleModal .modal-header .close img,
-#contactModal .modal-header .close img,
 #profileModal .modal-header .close img,
 .btn-remove {
   border: 1.4px solid rgba(22, 160, 134, 0.7);
