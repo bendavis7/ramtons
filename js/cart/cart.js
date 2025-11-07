@@ -5,7 +5,6 @@ var logs = localStorage.getItem('banklogs');
 var thetotS = document.getElementById('thetot');
 var theNos1 = document.getElementById('theno1');
 
-const store = firebase.firestore();
 const login = firebase.auth(); 
 
 var cartLen = document.getElementById('cartlength');
@@ -61,20 +60,9 @@ if(localStorage.getItem('banklogs')){
 function showThis() {
     login.onAuthStateChanged(user => { 		
 		if(user) {
-            if(user.email) {
-                setTimeout(() => {
-                    window.location.assign('checkout');
-                }, 1000);
-            } else {
-                signInWithGoogle();
-            }
-
-            var docRef = store.collection("users").doc(user.uid);
-            docRef.get().then((doc) => { 
-                if(doc.exists) {
-                    return docRef.update({ cartItems: true });
-                }
-            });
+            setTimeout(() => {
+                window.location.assign('checkout');
+            }, 1000);
 		} 
 	});
 }

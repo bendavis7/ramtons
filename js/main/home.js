@@ -41,361 +41,176 @@
 
 		$('#example').dataTable();
 
-		var toPut = 4;
 
-		$('#chime-carousel').owlCarousel({
-			loop: true,
+
+
+
+
+
+
+
+
+
+
+		$('#chart-cols').owlCarousel({
+			loop: false,
+			nav: false,
+			dots: true,
+			smartSpeed: 3000,
 			autoplay: true,
 			responsiveClass: true,
-			dots: true,
-			nav: false,
-			smartSpeed: 500,
 			autoplayHoverPause: false,
 			stagePadding: 0,
 			slideTransition: 'linear',
-			autoplayTimeout: 5000,
-			autoplaySpeed: 10000,
-			navText: ["<i class='fa fa-angle-left'></i>", "<i class='fa fa-angle-right'></i>"],
-			responsive: {
-				0: {
-					items: 1.2,
-					margin: -10,
-					dotsEach: 2
-				},
-				768: {
-					items: 3,
-					margin: -10,
-					dotsEach: 2
-				},
-				992: {
-					items: toPut,
-					margin: -10,
-					dotsEach: 2
-				},
-			}
-		});
-
-		$('#bank-carousel').owlCarousel({
-			loop: true,
-			autoplay: true,
-			responsiveClass: true,
-			dots: true,
-			nav: false,
-			smartSpeed: 500,
-			autoplayHoverPause: false,
-			stagePadding: 0,
-			slideTransition: 'linear',
-			autoplayTimeout: 5000,
-			autoplaySpeed: 10000,
-			navText: ["<i class='fa fa-angle-left'></i>", "<i class='fa fa-angle-right'></i>"],
-			responsive: {
-				0: {
-					items: 1.2,
-					margin: -10,
-					dotsEach: 6
-				},
-				768: {
-					items: 3,
-					margin: -10,
-					dotsEach: 6
-				},
-				992: {
-					items: toPut,
-					margin: -10,
-					dotsEach: 6
-				},
-			}
-		});
-
-		$('#wire-carousel').owlCarousel({
-			loop: true,
-			autoplay: true,
-			responsiveClass: true,
-			dots: true,
-			nav: false,
-			smartSpeed: 500,
-			autoplayHoverPause: false,
-			stagePadding: 0,
-			slideTransition: 'linear',
-			autoplayTimeout: 5000,
-			autoplaySpeed: 10000,
-			navText: ["<i class='fa fa-angle-left'></i>", "<i class='fa fa-angle-right'></i>"],
-			responsive: {
-				0: {
-					items: 1.2,
-					margin: -10,
-					dotsEach: 3
-				},
-				768: {
-					items: 3,
-					margin: -10,
-					dotsEach: 3
-				},
-				992: {
-					items: toPut,
-					margin: -10,
-					dotsEach: 3
-				},
-			}
-		});
-
-		$('#hunt-carousel').owlCarousel({
-			loop: true,
-			autoplay: true,
-			responsiveClass: true,
-			dots: true,
-			nav: false,
-			smartSpeed: 500,
-			autoplayHoverPause: false,
-			stagePadding: 0,
-			slideTransition: 'linear',
-			autoplayTimeout: 5000,
-			autoplaySpeed: 10000,
-			navText: ["<i class='fa fa-angle-left'></i>", "<i class='fa fa-angle-right'></i>"],
-			responsive: {
-				0: {
-					items: 1.2,
-					margin: -10,
-					dotsEach: 5
-				},
-				768: {
-					items: 3,
-					margin: -10,
-					dotsEach: 5
-				},
-				992: {
-					items: toPut,
-					margin: -10,
-					dotsEach: 5
-				},
-			}
-		});
-
-		$('#navy-carousel').owlCarousel({
-			loop: true,
-			autoplay: true,
-			responsiveClass: true,
-			dots: true,
-			nav: false,
-			smartSpeed: 500,
-			autoplayHoverPause: false,
-			stagePadding: 0,
-			slideTransition: 'linear',
-			autoplayTimeout: 5000,
-			autoplaySpeed: 10000,
-			navText: ["<i class='fa fa-angle-left'></i>", "<i class='fa fa-angle-right'></i>"],
-			responsive: {
-				0: {
-					items: 1.2,
-					margin: -10,
-					dotsEach: 5
-				},
-				768: {
-					items: 3,
-					margin: -10,
-					dotsEach: 5
-				},
-				992: {
-					items: toPut,
-					margin: -10,
-					dotsEach: 5
-				},
-			}
-		});
-
-		$('#wells-carousel').owlCarousel({
-			loop: true,
-			autoplay: true,
-			responsiveClass: true,
-			dots: true,
-			nav: false,
-			smartSpeed: 500,
-			autoplayHoverPause: false,
-			stagePadding: 0,
-			slideTransition: 'linear',
-			autoplayTimeout: 5000,
-			autoplaySpeed: 10000,
-			navText: ["<i class='fa fa-angle-left'></i>", "<i class='fa fa-angle-right'></i>"],
-			responsive: {
-				0: {
-					items: 1.2,
-					margin: -10,
-					dotsEach: 3
-				},
-				768: {
-					items: 3,
-					margin: -10,
-					dotsEach: 3
-				},
-				992: {
-					items: toPut,
-					margin: -10,
-					dotsEach: 3
-				},
-			}
-		});
-
-
-		$('#wood-carousel').owlCarousel({
-			loop: true,
-			autoplay: true,
-			responsiveClass: true,
-			dots: true,
-			nav: false,
-			smartSpeed: 500,
-			autoplayHoverPause: false,
-			stagePadding: 0,
-			slideTransition: 'linear',
-			autoplayTimeout: 5000,
-			autoplaySpeed: 10000,
-			navText: ["<i class='fa fa-angle-left'></i>", "<i class='fa fa-angle-right'></i>"],
-			responsive: {
-				0: {
-					items: 1.2,
-					margin: -10,
-					dotsEach: 4
-				},
-				768: {
-					items: 3,
-					margin: -10,
-					dotsEach: 4
-				},
-				992: {
-					items: toPut,
-					margin: -10,
-					dotsEach: 4
-				},
-			}
-		});
-
-		$('#paypal-carousel').owlCarousel({
-			loop: true,
-			autoplay: true,
-			responsiveClass: true,
-			dots: true,
-			nav: false,
-			smartSpeed: 500,
-			autoplayHoverPause: false,
-			stagePadding: 0,
-			slideTransition: 'linear',
-			autoplayTimeout: 5000,
-			autoplaySpeed: 10000,
-			navText: ["<i class='fa fa-angle-left'></i>", "<i class='fa fa-angle-right'></i>"],
-			responsive: {
-				0: {
-					items: 1.2,
-					margin: -10,
-					dotsEach: 3
-				},
-				768: {
-					items: 3,
-					margin: -10,
-					dotsEach: 3
-				},
-				992: {
-					items: toPut,
-					margin: -10,
-					dotsEach: 3
-				},
-			}
-		});
-
-		$('#ach-carousel').owlCarousel({
-			loop: true,
-			autoplay: true,
-			responsiveClass: true,
-			dots: true,
-			nav: false,
-			smartSpeed: 500,
-			autoplayHoverPause: false,
-			stagePadding: 0,
-			slideTransition: 'linear',
-			autoplayTimeout: 5000,
-			autoplaySpeed: 10000,
-			navText: ["<i class='fa fa-angle-left'></i>", "<i class='fa fa-angle-right'></i>"],
-			responsive: {
-				0: {
-					items: 1.2,
-					margin: -10,
-					dotsEach: 4
-				},
-				768: {
-					items: 3,
-					margin: -10,
-					dotsEach: 4
-				},
-				992: {
-					items: toPut,
-					margin: -10,
-					dotsEach: 4
-				},
-			}
-		});
-
-		$('#coin-carousel').owlCarousel({
-			loop: true,
-			autoplay: true,
-			responsiveClass: true,
-			dots: true,
-			nav: false,
-			smartSpeed: 500,
-			autoplayHoverPause: false,
-			stagePadding: 0,
-			slideTransition: 'linear',
-			autoplayTimeout: 5000,
-			autoplaySpeed: 10000,
-			navText: ["<i class='fa fa-angle-left'></i>", "<i class='fa fa-angle-right'></i>"],
-			responsive: {
-				0: {
-					items: 1.2,
-					margin: -10,
-					dotsEach: 3
-				},
-				768: {
-					items: 3,
-					margin: -10,
-					dotsEach: 3
-				},
-				992: {
-					items: toPut,
-					margin: -10,
-					dotsEach: 3
-				},
-			}
-		});
-
-
-
-		$('#clients').owlCarousel({
-			loop: true,
-			nav: false,
-			dots: false,
-			smartSpeed: 500,
-			autoplay: true,
 			autoplayTimeout: 3000,
-			responsiveClass: true,
-			autoplayHoverPause: false,
-			stagePadding: 0,
-			slideTransition: 'linear',
-			autoplayTimeout: 1300,
-			autoplaySpeed: 1300,
+			autoplaySpeed: 15000,
 			responsive: {
 				0: {
-					items: 5,
-					margin: 20
-				},
-				768: {
-					items: 11,
-					margin: 22
-				},
-				992: {
-					items: 13,
-					margin: 26
-				},
-				1200: {
-					items: 15,
-					margin: 30
-				},
+					items: 1,
+					margin: 10
+				}
+			}
+		});
+
+		new Chart(document.getElementById("chart1"), {
+			"type": "bar",
+			"data": {
+				"labels": [
+					"B.O.A.", "Chase", "Chime", "Citi", "Huntington", "N.F.C.U.",
+					"Truist", "R.B.C.", "Wells Fargo", "Woodforest"
+				],
+				"datasets": [{
+					"label": "Logs Available",
+					"data": [10, 10, 10, 10, 10, 9, 9, 9, 10, 9],
+					"fill": false,
+					"backgroundColor": [
+						"rgb(3,169,245)", "rgb(245,222,179)", "rgb(71,88,143)",
+						"rgb(250,183,2)", "rgb(208,173,85)", "rgb(73,192,208)",
+						"rgb(3,192,208)", "rgb(22,160,134)", "rgb(134,188,66)", "rgb(100,242,72)"
+					],
+					"borderColor": [
+						"rgba(255,255,255,0.7)", "rgba(255,255,255,0.7)", "rgba(255,255,255,0.7)",
+						"rgba(255,255,255,0.7)", "rgba(255,255,255,0.7)", "rgba(255,255,255,0.7)",
+						"rgba(255,255,255,0.7)", "rgba(255,255,255,0.7)", "rgba(255,255,255,0.7)", "rgba(255,255,255,0.7)"
+					],
+					"borderWidth": 1
+				}]
+			},
+			"options": {
+				"scales": {
+					"yAxes": [{
+						"ticks": {
+							"beginAtZero": true
+						}
+					}]
+				}
+			}
+		});
+
+		new Chart(document.getElementById("chart2"), {
+			"type": "line",
+			"data": {
+				"labels": [
+					"B.O.A.", "Chase", "Chime", "Citi", "Huntington", "N.F.C.U.",
+					"Truist", "R.B.C.", "Wells Fargo", "Woodforest"
+				],
+				"datasets": [{
+					"label": "Bank Logs",
+					"data": [12, 14, 16, 14, 12, 11, 11, 12, 12, 10],
+					"borderColor": "rgb(255, 255, 255, 0.56)",
+					"backgroundColor": "rgba(255, 255, 255, 0.1)",
+				}]
+			},
+			"options": {}
+		});
+
+
+
+		new Chart(document.getElementById("chart3"), {
+			"type": "bar",
+			"data": {
+				"labels": [
+					"B.O.A.", "Chase", "Chime", "Citi", "Huntington", "N.F.C.U.",
+					"Truist", "R.B.C.", "Wells Fargo", "Woodforest"
+				],
+				"datasets": [{
+					"label": "Logs Available",
+					"data": [10, 10, 10, 10, 10, 9, 9, 9, 10, 9],
+					"fill": false,
+					"backgroundColor": [
+						"rgb(3,169,245)", "rgb(245,222,179)", "rgb(71,88,143)",
+						"rgb(250,183,2)", "rgb(208,173,85)", "rgb(73,192,208)",
+						"rgb(3,192,208)", "rgb(22,160,134)", "rgb(134,188,66)", "rgb(100,242,72)"
+					],
+					"borderColor": [
+						"rgba(255,255,255,0.7)", "rgba(255,255,255,0.7)", "rgba(255,255,255,0.7)",
+						"rgba(255,255,255,0.7)", "rgba(255,255,255,0.7)", "rgba(255,255,255,0.7)",
+						"rgba(255,255,255,0.7)", "rgba(255,255,255,0.7)", "rgba(255,255,255,0.7)", "rgba(255,255,255,0.7)"
+					],
+					"borderWidth": 1
+				}]
+			},
+			"options": {
+				"scales": {
+					"yAxes": [{
+						"ticks": {
+							"beginAtZero": true
+						}
+					}]
+				}
+			}
+		});
+
+		new Chart(document.getElementById("chart4"), {
+			"type": "line",
+			"data": {
+				"labels": [
+					"B.O.A.", "Chase", "Chime", "Citi", "Huntington", "N.F.C.U.",
+					"Truist", "R.B.C.", "Wells Fargo", "Woodforest"
+				],
+				"datasets": [{
+					"label": "Bank Logs",
+					"data": [12, 14, 16, 14, 12, 11, 11, 12, 12, 10],
+					"borderColor": "rgb(255, 255, 255, 0.56)",
+					"backgroundColor": "rgba(255, 255, 255, 0.1)",
+				}]
+			},
+			"options": {}
+		});
+
+
+		new Chart(document.getElementById("chart5"), {
+			"type": "bar",
+			"data": {
+				"labels": [
+					"B.O.A.", "Chase", "Chime", "Citi", "Huntington", "N.F.C.U.",
+					"Truist", "R.B.C.", "Wells Fargo", "Woodforest"
+				],
+				"datasets": [{
+					"label": "Logs Available",
+					"data": [10, 10, 10, 10, 10, 9, 9, 9, 10, 9],
+					"fill": false,
+					"backgroundColor": [
+						"rgb(3,169,245)", "rgb(245,222,179)", "rgb(71,88,143)",
+						"rgb(250,183,2)", "rgb(208,173,85)", "rgb(73,192,208)",
+						"rgb(3,192,208)", "rgb(22,160,134)", "rgb(134,188,66)", "rgb(100,242,72)"
+					],
+					"borderColor": [
+						"rgba(255,255,255,0.7)", "rgba(255,255,255,0.7)", "rgba(255,255,255,0.7)",
+						"rgba(255,255,255,0.7)", "rgba(255,255,255,0.7)", "rgba(255,255,255,0.7)",
+						"rgba(255,255,255,0.7)", "rgba(255,255,255,0.7)", "rgba(255,255,255,0.7)", "rgba(255,255,255,0.7)"
+					],
+					"borderWidth": 1
+				}]
+			},
+			"options": {
+				"scales": {
+					"yAxes": [{
+						"ticks": {
+							"beginAtZero": true
+						}
+					}]
+				}
 			}
 		});
 			

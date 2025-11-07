@@ -60,21 +60,9 @@
 			autoplaySpeed: 10000,
 			navText: ["<i class='fa fa-angle-left'></i>", "<i class='fa fa-angle-right'></i>"],
 			responsive: {
-				0: {
-					items: 1.2,
-					margin: -10,
-					dotsEach: 2
-				},
-				768: {
-					items: 3,
-					margin: -10,
-					dotsEach: 2
-				},
-				992: {
-					items: toPut,
-					margin: -10,
-					dotsEach: 2
-				},
+				0: { items: 1.2, margin: -10, dotsEach: 2 },
+				768: { items: 3, margin: -10, dotsEach: 2 },
+				992: { items: toPut, margin: -10, dotsEach: 2 },
 			}
 		});
 
@@ -92,21 +80,9 @@
 			autoplaySpeed: 10000,
 			navText: ["<i class='fa fa-angle-left'></i>", "<i class='fa fa-angle-right'></i>"],
 			responsive: {
-				0: {
-					items: 1.2,
-					margin: -10,
-					dotsEach: 6
-				},
-				768: {
-					items: 3,
-					margin: -10,
-					dotsEach: 6
-				},
-				992: {
-					items: toPut,
-					margin: -10,
-					dotsEach: 6
-				},
+				0: { items: 1.2, margin: -10, dotsEach: 6 },
+				768: { items: 3, margin: -10, dotsEach: 6 },
+				992: { items: toPut, margin: -10, dotsEach: 6 },
 			}
 		});
 
@@ -124,21 +100,9 @@
 			autoplaySpeed: 10000,
 			navText: ["<i class='fa fa-angle-left'></i>", "<i class='fa fa-angle-right'></i>"],
 			responsive: {
-				0: {
-					items: 1.2,
-					margin: -10,
-					dotsEach: 3
-				},
-				768: {
-					items: 3,
-					margin: -10,
-					dotsEach: 3
-				},
-				992: {
-					items: toPut,
-					margin: -10,
-					dotsEach: 3
-				},
+				0: { items: 1.2, margin: -10, dotsEach: 3 },
+				768: { items: 3, margin: -10, dotsEach: 3 },
+				992: { items: toPut, margin: -10, dotsEach: 3 },
 			}
 		});
 
@@ -156,21 +120,9 @@
 			autoplaySpeed: 10000,
 			navText: ["<i class='fa fa-angle-left'></i>", "<i class='fa fa-angle-right'></i>"],
 			responsive: {
-				0: {
-					items: 1.2,
-					margin: -10,
-					dotsEach: 5
-				},
-				768: {
-					items: 3,
-					margin: -10,
-					dotsEach: 5
-				},
-				992: {
-					items: toPut,
-					margin: -10,
-					dotsEach: 5
-				},
+				0: { items: 1.2, margin: -10, dotsEach: 5 },
+				768: { items: 3, margin: -10, dotsEach: 5 },
+				992: { items: toPut, margin: -10, dotsEach: 5 },
 			}
 		});
 
@@ -188,21 +140,9 @@
 			autoplaySpeed: 10000,
 			navText: ["<i class='fa fa-angle-left'></i>", "<i class='fa fa-angle-right'></i>"],
 			responsive: {
-				0: {
-					items: 1.2,
-					margin: -10,
-					dotsEach: 5
-				},
-				768: {
-					items: 3,
-					margin: -10,
-					dotsEach: 5
-				},
-				992: {
-					items: toPut,
-					margin: -10,
-					dotsEach: 5
-				},
+				0: { items: 1.2, margin: -10, dotsEach: 5 },
+				768: { items: 3, margin: -10, dotsEach: 5 },
+				992: { items: toPut, margin: -10, dotsEach: 5 },
 			}
 		});
 
@@ -220,21 +160,9 @@
 			autoplaySpeed: 10000,
 			navText: ["<i class='fa fa-angle-left'></i>", "<i class='fa fa-angle-right'></i>"],
 			responsive: {
-				0: {
-					items: 1.2,
-					margin: -10,
-					dotsEach: 3
-				},
-				768: {
-					items: 3,
-					margin: -10,
-					dotsEach: 3
-				},
-				992: {
-					items: toPut,
-					margin: -10,
-					dotsEach: 3
-				},
+				0: { items: 1.2, margin: -10, dotsEach: 3 },
+				768: { items: 3, margin: -10, dotsEach: 3 },
+				992: { items: toPut, margin: -10, dotsEach: 3 },
 			}
 		});
 
@@ -253,21 +181,9 @@
 			autoplaySpeed: 10000,
 			navText: ["<i class='fa fa-angle-left'></i>", "<i class='fa fa-angle-right'></i>"],
 			responsive: {
-				0: {
-					items: 1.2,
-					margin: -10,
-					dotsEach: 4
-				},
-				768: {
-					items: 3,
-					margin: -10,
-					dotsEach: 4
-				},
-				992: {
-					items: toPut,
-					margin: -10,
-					dotsEach: 4
-				},
+				0: { items: 1.2, margin: -10, dotsEach: 4 },
+				768: { items: 3, margin: -10, dotsEach: 4 },
+				992: { items: toPut, margin: -10, dotsEach: 4 },
 			}
 		});
 
@@ -285,21 +201,9 @@
 			autoplaySpeed: 10000,
 			navText: ["<i class='fa fa-angle-left'></i>", "<i class='fa fa-angle-right'></i>"],
 			responsive: {
-				0: {
-					items: 1.2,
-					margin: -10,
-					dotsEach: 3
-				},
-				768: {
-					items: 3,
-					margin: -10,
-					dotsEach: 3
-				},
-				992: {
-					items: toPut,
-					margin: -10,
-					dotsEach: 3
-				},
+				0: { items: 1.2, margin: -10, dotsEach: 3 },
+				768: { items: 3, margin: -10, dotsEach: 3 },
+				992: { items: toPut, margin: -10, dotsEach: 3 },
 			}
 		});
 
@@ -317,21 +221,9 @@
 			autoplaySpeed: 10000,
 			navText: ["<i class='fa fa-angle-left'></i>", "<i class='fa fa-angle-right'></i>"],
 			responsive: {
-				0: {
-					items: 1.2,
-					margin: -10,
-					dotsEach: 4
-				},
-				768: {
-					items: 3,
-					margin: -10,
-					dotsEach: 4
-				},
-				992: {
-					items: toPut,
-					margin: -10,
-					dotsEach: 4
-				},
+				0: { items: 1.2, margin: -10, dotsEach: 4 },
+				768: { items: 3, margin: -10, dotsEach: 4 },
+				992: { items: toPut, margin: -10, dotsEach: 4 },
 			}
 		});
 
@@ -349,21 +241,9 @@
 			autoplaySpeed: 10000,
 			navText: ["<i class='fa fa-angle-left'></i>", "<i class='fa fa-angle-right'></i>"],
 			responsive: {
-				0: {
-					items: 1.2,
-					margin: -10,
-					dotsEach: 3
-				},
-				768: {
-					items: 3,
-					margin: -10,
-					dotsEach: 3
-				},
-				992: {
-					items: toPut,
-					margin: -10,
-					dotsEach: 3
-				},
+				0: { items: 1.2, margin: -10, dotsEach: 3 },
+				768: { items: 3, margin: -10, dotsEach: 3 },
+				992: { items: toPut, margin: -10, dotsEach: 3 },
 			}
 		});
 

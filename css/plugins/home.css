@@ -10,10 +10,6 @@
   margin: 5px -0;
 }
 
-#modalsend .brock {
-  background: rgba(18, 29, 51, 0.5) !important;
-}
-
 div.col-lg-6,
 div.col-lg-3,
 div.col-lg-8,
@@ -82,6 +78,12 @@ blink {
   margin-top: 10px !important;
 }
 
+
+#chart-cols {   
+  padding: 0px auto !important;
+  margin-top: 10px !important;
+  margin-bottom: -30px !important;
+}
 
 
 .thecont{
@@ -157,14 +159,6 @@ blink {
 }
 
 
-
-@media (min-width: 1070px) {
-  .col-lg-12 {
-    -ms-flex:0 0 96%;
-    flex:0 0 96%;
-    max-width: 96%;
-  }
-}
 
 
 .masonry {
@@ -315,9 +309,9 @@ blink {
 
 @media screen and (min-width: 1050px) {
   .masonry-4 {
-    -moz-column-count: 18;
-    -webkit-column-count: 18;
-    column-count: 18;
+    -moz-column-count: 21;
+    -webkit-column-count: 21;
+    column-count: 21;
   }
 }
 
@@ -325,28 +319,3 @@ blink {
 
 
 
-
-
-
-.vpn-section .butn#vpn {
-  margin: 20px auto 70px !important;
-}
-
-@media screen and (max-width: 967px) {
-  .vpn-section .butn#vpn {
-    margin: 50px auto 120px !important;
-  }
-}
-
-@media screen and (max-width: 420px) {
-  .vpn-section .butn#vpn {
-    margin: 40px auto 110px !important;
-  }
-}
-
-@media screen and (max-width: 407px) {
-  .vpn-section .butn#vpn {
-    margin: 35px auto 100px !important;
-
-  }
-}

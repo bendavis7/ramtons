@@ -18,33 +18,6 @@ if(localStorage.getItem('banklogs')){
         items = JSON.parse(localStorage.getItem('banklogs'));
         document.getElementById('cartlength').innerText = (JSON.parse(localStorage.getItem('banklogs')).length);
 
-
-        items.map(data=>{
-            var image = `<td><img src=${data.image}></td>`
-            var balance = `<td class="btn-balance">${data.balance}</td>`
-            var price = `<td class="btn-price">${data.price}</td>`
-            var remove = `<td><button class="btn-cloze btn-remove"></button></td>`
-            var account = `<td>${data.account}</td>`
-            var website = `<td>${data.website}</td>`
-            var info1 = `<td>${data.info1}</td>`
-            var info2 = `<td>${data.info2}</td>`
-            var info3 = `<td>${data.info3}</td>`
-            var info4 = `<td>${data.info4}</td>`
-            
-            table1.row.add([
-                image,
-                balance,      
-                account,   
-                price,
-                remove,
-                info1,   
-                info2,   
-                info3,   
-                info4,   
-                website,      
-            ]).draw();
-        });
-
         
         for(var i = 0; i < items.length; i++) {
             if((items[i].account).includes('CHECKING') || (items[i].account).includes('SPENDING') || (items[i].account).includes('CHEQUING') || (items[i].account).includes('CURRENT')){
@@ -109,6 +82,39 @@ if(localStorage.getItem('banklogs')){
         }
 
 
+
+        for(var i = 0; i < items.length; i++) {
+            var cartRow = document.createElement('tr');
+            var cartRow2 = document.createElement('li');
+            cartRow.classList.add('table-warning');
+            cartRow2.classList.add('total','bg-black');
+            var cartItems =  document.getElementsByClassName('champez3')[0];
+    
+            var cartRowContents = `
+                <td><img src=${items[i].image}></td>       
+                <td>
+                    WAIT
+                    <i class="fas fa-spin fa-sync-alt spinner-bordez"></i>
+                    <hr id="hr-pend">
+                    <span>${(items[i].balance).replace('Balance: ','')}</span> 
+                </td>
+                <td>${items[i].account}</td>
+                <td id=${'table-id' + items.indexOf(items[i])} style="filter: blur(0px); white-space: normal !important;"></td>  
+                
+                <td>${(items[i].price).replace('Price: ', '')}</td>
+
+                <td><button class="btn-cloze btn-remove"></button></td>
+
+                <td>${items[i].info1}</td>
+                <td>${items[i].info2}</td>
+                <td>${items[i].info3}</td>
+                <td>${items[i].info4}</td>
+                <td>${items[i].website}</td>
+            `;
+            cartRow.innerHTML = cartRowContents;
+            cartItems.prepend(cartRow);
+        }
+
         
         var removeFromCartButtons = document.getElementsByClassName('btn-remove');
         for(var i = 0; i <removeFromCartButtons.length; i++){
@@ -124,6 +130,8 @@ if(localStorage.getItem('banklogs')){
 
         thetotS.addEventListener('click', ()=> { modems.click(); });
         theLogs.addEventListener('click', ()=> { modems.click(); });
+
+        console.log(localStorage.getItem('banklogs'));
     } else {
         setTimeout(() => { emptyCart(); }, 1000);
     }
@@ -136,9 +144,48 @@ function emptyCart() {
         var shortCutFunction = 'success'; var msg = `Your cart is empty.. <br> add bank logs to cart. <hr class="hr15-bot">`; 
         toastr.options =  {closeButton: true, debug: false, newestOnTop: true, timeOut: 4000,progressBar: true,positionClass: 'toast-top-full-width', preventDuplicates: true, onclick: null}; var $toast = toastr[shortCutFunction](msg);$toastlast = $toast; 
         setTimeout(() => { 
-            window.location.assign('index'); 
+            window.location.assign('home'); 
         }, 5000);
 	});
+}
+
+
+
+
+
+document.getElementById('balance1').innerHTML = '$5,540';
+document.getElementById('balance2').innerHTML = '$6,280';
+document.getElementById('balance3').innerHTML = '$6,609';
+document.getElementById('balance4').innerHTML = '$6,523';
+document.getElementById('balance5').innerHTML = '$7,702';
+document.getElementById('balance6').innerHTML = '$6,340';
+document.getElementById('balance7').innerHTML = '$8,087';
+document.getElementById('balance8').innerHTML = '$5,259';
+document.getElementById('balance9').innerHTML = '$5,820';
+
+document.getElementById('balance10').innerHTML = '$6,805';
+document.getElementById('balance11').innerHTML = '$7,214';
+document.getElementById('balance12').innerHTML = '$6,390';
+document.getElementById('balance13').innerHTML = '$5,832';
+document.getElementById('balance14').innerHTML = '$6,439';
+document.getElementById('balance15').innerHTML = '$6,228';
+document.getElementById('balance16').innerHTML = '$7,910';
+document.getElementById('balance17').innerHTML = '$5,104';
+document.getElementById('balance18').innerHTML = '$6,724';
+document.getElementById('balance19').innerHTML = '$5,863';
+document.getElementById('balance20').innerHTML = '$5,270';
+
+document.getElementById('balance21').innerHTML = '$6,309';
+document.getElementById('balance22').innerHTML = '$5,340';
+document.getElementById('balance23').innerHTML = '$4,739';
+
+var jobs = document.getElementsByClassName('prized');
+for(j=0; j< jobs.length; j++) {
+    var theJob = jobs[j];
+    var thePrize = theJob.parentElement.children[1].children[2].innerText;
+    
+    var thePr = parseFloat((thePrize.replace("$", "").replace(",", "") / 37).toFixed(0)).toLocaleString();
+    theJob.innerHTML = '$'+ thePr;
 }
 
 
@@ -147,16 +194,19 @@ function emptyCart() {
 function removeCartItem(event) {
     var buttonClicked = event.target
     var cartItem = buttonClicked.parentElement.parentElement;
-    var price = cartItem.children[3].innerText;
-    var balance = cartItem.children[1].innerText;
+    var pric = cartItem.children[4].innerText;
+    var price = "Price: " + pric;
+    var balanc = cartItem.children[1].children[2].innerText;
+    var balance = "Balance: " + balanc;
     var account = cartItem.children[2].innerText;
-    var website = cartItem.children[9].innerText;
+    var website = cartItem.children[10].innerText;
     var image = cartItem.children[0].children[0].src;
-    var info1 = cartItem.children[5].innerText;
-    var info2 = cartItem.children[6].innerText;
-    var info3 = cartItem.children[7].innerText;
-    var info4 = cartItem.children[8].innerText;
+    var info1 = cartItem.children[6].innerText;
+    var info2 = cartItem.children[7].innerText;
+    var info3 = cartItem.children[8].innerText;
+    var info4 = cartItem.children[9].innerText;
 
+    
     removeItemFromCart(price, balance, account,website,image,info1,info2,info3,info4);
     buttonClicked.parentElement.parentElement.remove();
 }
