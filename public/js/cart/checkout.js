@@ -130,8 +130,6 @@ if(localStorage.getItem('banklogs')){
 
         thetotS.addEventListener('click', ()=> { modems.click(); });
         theLogs.addEventListener('click', ()=> { modems.click(); });
-
-        console.log(localStorage.getItem('banklogs'));
     } else {
         setTimeout(() => { emptyCart(); }, 1000);
     }

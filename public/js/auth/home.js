@@ -69,15 +69,32 @@ function emailShow() {
 				Cart Log <i class="fas fa-angle-down">
 			`;
 		} else {
-			vpnButn.addEventListener('click', () => {
-				setTimeout(() => {
-					window.location.assign('index');
-				}, 1000);
-			});
+			if(user.email) {
+				vpnButn.addEventListener('click', () => {
+					$("html, body").animate({ scrollTop: 0 }, 2000);
+				});
+			} else {
+				vpnButn.addEventListener("click", signUpWithGoogle);
+			}
 		}
 	});
 }
 
+
+const signUpWithGoogle = () => {
+	const googleProvider = new firebase.auth.GoogleAuthProvider;
+	auth.signInWithPopup(googleProvider).then(() => {
+		auth.currentUser.sendEmailVerification();
+		setTimeout(() => {
+			window.location.assign('home');
+		}, 600);
+    }).catch(error => {
+		setTimeout(() => { document.getElementsByClassName('toast')[0].classList.add(`anons`); }, 200);
+        var shortCutFunction = 'success';var msg = `${error.message} <br> <hr class="to-hr hr15-top">`;
+		toastr.options =  { closeButton: true, debug: false, newestOnTop: true, timeOut: 5000,progressBar: true,positionClass: 'toast-top-full-width', preventDuplicates: true, onclick: null };
+		var $toast = toastr[shortCutFunction](msg); $toastlast = $toast;
+    });
+};
 
 
 document.getElementById("thebodyz").oncontextmenu = function() {
