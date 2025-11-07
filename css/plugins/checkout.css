@@ -314,27 +314,27 @@ section #section-x {
   padding: 15.5px 13.5px !important;
   letter-spacing: 1.5px !important;
 
-  margin: 15px 20px !important;
+  margin: 16px 20px 18px !important;
 }
 
 
 @media (max-width: 520px) {
   #showtoasts {
-    margin: 16px 22px !important;
+    margin: 16px 22px 18px !important;
 
   }  
 }
 
 @media (max-width: 420px) {
   #showtoasts {
-    margin: 15.5px 21px !important;
+    margin: 15.5px 21px 17.5px !important;
 
   }  
 }
 
 @media (max-width: 400px) {
   #showtoasts {
-    margin: 15px 20px !important;
+    margin: 15px 20px 17px !important;
 
   }  
 }

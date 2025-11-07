@@ -20,6 +20,7 @@ var nesh = localStorage.getItem('banklogs');
 var jinaHolder = document.getElementById("jinaHolder");
 
 var vpnButn = document.getElementById('vpn');
+var lastAlerts = document.getElementById('last-alert');
 
 var userCred = 'Anonymous';
 var thePerson =  `Anonymous <hr id="hr-t">`;
@@ -36,6 +37,12 @@ auth.onAuthStateChanged(user => {
 			jinaHolder.value = user.displayName;
 			userCred = `${user.displayName}`;
 			thePerson = `${user.displayName}. <hr id="hr-t">`;
+			lastAlerts.innerHTML = `
+				<i class="fas fa-check"></i>
+				Invoices will be sent to: <br> <strong>${user.email}</strong>
+                                    
+            	<button type="button" class="btn-close" data-bs-dismiss="alert">&times;</button>               
+			`;
 		} 
 
 		if(nesh) { 
