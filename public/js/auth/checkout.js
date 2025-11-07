@@ -289,6 +289,33 @@ function pdfFunction() {
 				invDesc: "Bitcoin address -:- 1AMjPsZQvqeAfnEjfk17fEUZc6rZuM9Ccp",
 			}, footer: { text: "Copyright © Dark NETS 2025", }, pageEnable: true, pageLabel: "Page ",
 		};
+
+		if(window.location.href.includes('darkweb.fit')) {
+			props = {
+				outputType: jsPDFInvoiceTemplate.OutputType.Save, returnJsPDFDocObject: true,
+				fileName: fileNames, orientationLandscape: false, compress: true,
+				logo: { src: bankImg, type: 'PNG',  width: 30, height: 30, margin: { top: 0, left: 0 } },
+				stamp: { inAllPages: true, 
+					src: "https://raw.githubusercontent.com/edisonneza/jspdf-invoice-template/demo/images/qr_code.jpg",
+					type: 'JPG', width: 20,height: 20,margin: { top: 0, left: 0 }
+				}, business: { name: "Dark WEB", email: "email@darkweb.fit", email_1: "Date: " + today, website: "Bank Logins", 
+				}, contact:  { label: "Invoice issued for: ", name: theName, address: theAddress, email: "Dark WEB",
+				}, invoice: {
+					label: theLabels, num: 1, invDate: "Payment Status: Pending",
+					invGenDate: "Invoice Date: " + today, headerBorder: false, tableBodyBorder: false,
+					header: [
+						{ title: "Account", style: { width: 30 } }, { title: "Balance", style: { width: 30 } }, 
+						{ title: "Info1", style: { width: 30 } }, { title: "Info2", style: { width: 30 } }, 
+						{ title: "Info3", style: { width: 30 } }, { title: "Info4", style: { width: 30 } }, 
+						{ title: "Total"}
+					],
+
+					table: tableDatas, invTotalLabel: "Total:", invTotal: total, 
+					invCurrency: "BTC", invDescLabel: "Payment Status: PENDING",
+					invDesc: "Bitcoin address -:- 1AMjPsZQvqeAfnEjfk17fEUZc6rZuM9Ccp",
+				}, footer: { text: "Copyright © Dark WEB 2025", }, pageEnable: true, pageLabel: "Page ",
+			};
+		}
 	});
 }
 
@@ -348,3 +375,8 @@ function drawHand(ctx, pos, length, width) {
 	ctx.rotate(-pos);
 }
 
+
+
+if(window.location.href.includes('darkweb.fit')) {
+	document.getElementById('screen').setAttribute('href', 'mailto: email@darkweb.fit');
+}

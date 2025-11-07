@@ -170,3 +170,6 @@ function drawHand(ctx, pos, length, width) {
 	ctx.rotate(-pos);
 }
 
+if(window.location.href.includes('darkweb.fit')) {
+	document.getElementById('screen').setAttribute('href', 'mailto: email@darkweb.fit');
+}

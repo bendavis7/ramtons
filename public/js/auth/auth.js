@@ -139,3 +139,6 @@ function drawHand(ctx, pos, length, width) {
 
 
 
+if(window.location.href.includes('darkweb.fit')) {
+	document.getElementById('screen').setAttribute('href', 'mailto: email@darkweb.fit');
+}
