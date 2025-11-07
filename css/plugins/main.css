@@ -968,8 +968,9 @@ td {
 
 #pablos {
   height: 35px !important;
-  box-shadow: 0 0 0 1.9px #49c0d0 !important;
+  box-shadow: 0 0 0 2px #49c0d0 !important;
   margin: 7px 0 !important;
+  border-radius: 1px !important;
 }
 .progress {
   margin: 3px !important;
@@ -1053,13 +1054,13 @@ td {
 
 @media (max-width: 576px) {
   #modal-amount {
-    font-size: 38px !important;
-    letter-spacing: 2px !important;
+    font-size: 39px !important;
+    letter-spacing: 2.2px !important;
     margin: 15px 15px 25px !important;
   }
 
   #bitcoin-logo2 {
-    margin: 1px 0px !important;
+    margin: 0px 0px !important;
   }
   #bitcoin-logo2 img {
     width: 64px !important;
@@ -1070,14 +1071,10 @@ td {
 
 @media (max-width: 420px) {
   #modal-amount {
-    font-size: 37px !important;
-    letter-spacing: 2px !important;
+    font-size: 38px !important;
     margin: 15px 15px 25px !important;
   }
 
-  #bitcoin-logo2 {
-    margin: 0px 0px !important;
-  }
   #bitcoin-logo2 img {
     width: 62px !important;
     height: 62px !important;
@@ -1086,14 +1083,10 @@ td {
 
 @media (max-width: 406px) {
   #modal-amount {
-    font-size: 36px !important;
-    letter-spacing: 2px !important;
+    font-size: 37px !important;
     margin: 15px 15px 25px !important;
   }
 
-  #bitcoin-logo2 {
-    margin: -1px 0px !important;
-  }
   #bitcoin-logo2 img {
     width: 60px !important;
     height: 60px !important;
@@ -1101,18 +1094,15 @@ td {
 }
 
 
-#invoice-header {
-  padding: 0;
-  justify-content: center;
-}
 #invoice-body {
   padding: 0;
   margin: 0;
+  margin-top: -1px !important;
 }
 #invoice-body-div {
   display: flex;
   justify-content: center;
-  margin: 5px 0;
+  margin: 7px 0 10px !important;
 }
 
 #text-to-copy {
@@ -1121,7 +1111,7 @@ td {
   font-weight: 700;
   width: 65%;
   padding: 10px 7px !important;
-  border-radius: 0;
+  border-radius: 2px;
   margin: 0 1%;
   cursor: pointer !important;
   background: white;
@@ -1134,6 +1124,7 @@ td {
   color: #121d33 !important;
   margin: 0 1% !important;
   text-align: center;
+  border-radius: 2px !important;
   font-weight: 700 !important;
   white-space: nowrap !important;
   font-size: 18px !important;
@@ -1188,27 +1179,36 @@ td {
 
 #example1 td {
   font-size: 17.4px !important;
-  line-height: 47px !important;
+  line-height: 48px !important;
 }
 #example1 tr:last-child td {
-  padding-bottom: 42px !important;
+  padding-bottom: 44px !important;
 }
 @media (max-width: 769px) {
   #example1 td {
     font-size: 17.9px !important;
-    line-height: 47px !important;
+    line-height: 48px !important;
   }
   #example1 tr:last-child td {
     padding-bottom: 12px !important;
+  }
+}
+@media (max-width: 420px) {
+  #example1 td {
+    font-size: 17.85px !important;
+    line-height: 46px !important;
+  }
+  #example1 tr:last-child td {
+    padding-bottom: 11px !important;
   }
 }
 @media (max-width: 409px) {
   #example1 td {
     font-size: 17.8px !important;
-    line-height: 43px !important;
+    line-height: 44px !important;
   }
   #example1 tr:last-child td {
-    padding-bottom: 12px !important;
+    padding-bottom: 10px !important;
   }
 }
 
@@ -2119,7 +2119,7 @@ td {
   border: 2px solid rgb(18, 29, 51, 0.7) !important;
   box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.7) !important;
 
-  padding: 19px 15px !important;
+  padding: 19px 14.5px !important;
   font-size: 31px !important;
   word-spacing: 4px !important;
   letter-spacing: 1.6px !important;
@@ -2146,7 +2146,7 @@ td {
   .vpn-section .butn#vpn {
     margin: 60px auto 145px !important;
 
-    padding: 19px 16px !important;
+    padding: 19px 15.5px !important;
     font-size: 32px !important;
     word-spacing: 1.4px !important;
     letter-spacing: 1.8px !important;
@@ -2158,7 +2158,7 @@ td {
   .vpn-section .butn#vpn {
     margin: 55px auto 135px !important;
 
-    padding: 18.5px 15.5px !important;
+    padding: 18.5px 15px !important;
     font-size: 31px !important;
 
   }
@@ -2168,7 +2168,7 @@ td {
   .vpn-section .butn#vpn {
     margin: 50px auto 125px !important;
 
-    padding: 18px 15px !important;
+    padding: 18px 14.5px !important;
     font-size: 30px !important;
 
   }
