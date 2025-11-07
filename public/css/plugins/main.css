@@ -1326,7 +1326,7 @@ td {
   float: right !important;
   cursor: pointer !important;
   white-space: nowrap !important;
-  margin: 25px 50px !important;
+  margin: 22px 40px !important;
 
   border: 2px solid rgb(18, 29, 51, 1) !important;
   box-shadow: 0 0 0 1.7px rgba(255, 255, 255, 0.8) !important;
@@ -1350,7 +1350,7 @@ td {
     padding: 16px 14px !important;
 
     float: right !important;
-    margin: 24px 30px !important;
+    margin: 22px 30px !important;
   }  
 
   #showtoasts i {
@@ -1363,7 +1363,7 @@ td {
     font-size: 29px !important;
     padding: 15.7px 13.7px !important;
 
-    margin: 23px 30px !important;
+    margin: 21px 30px !important;
   }  
 }
 
@@ -1373,7 +1373,7 @@ td {
     font-size: 28px !important;
     padding: 15px 13px !important;
 
-    margin: 22px 30px !important;
+    margin: 20px 30px !important;
   }  
 }
 
@@ -2952,7 +2952,7 @@ button.butn.in-cart,
 
 
 .dataTables_wrapper .dataTables_filter {
-  margin: 7px 10px 1px !important;
+  margin: 10px 10px 1px !important;
   letter-spacing: 1.5px !important;
   word-spacing: 2px !important;
   font-size: 23px !important;
@@ -3020,7 +3020,7 @@ button.butn.in-cart,
 @media screen and (max-width: 420px) {
   .dataTables_wrapper .dataTables_filter {
     width: 65% !important;
-    margin: 2px 15px !important;
+    margin: 3px 15px !important;
   }
   .dataTables_wrapper .dataTables_filter input{
     width: 60% !important;
