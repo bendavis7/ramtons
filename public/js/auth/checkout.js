@@ -72,8 +72,8 @@ auth.onAuthStateChanged(user => {
 
 		var docRef = db.collection("users").doc(theGuy);
 		docRef.get().then((doc) => { 
-			if(doc.exists) {
-				return docRef.update({ 
+			if(!doc.exists) {
+				return docRef.set({ 
 					cartID: itemz, location: cationZ, device: Device
 				});
 			} 
@@ -92,12 +92,10 @@ function emailShow() {
 
 		var docRef = db.collection("users").doc(theGuy);
 		docRef.get().then((doc) => { 
-			if(doc.exists && doc.data().checkOut) {
-				vpnButn.addEventListener('click', () => {
-					setTimeout(() => {
-						window.location.assign('home');
-					}, 1000);
-				});
+			if(!doc.exists || !doc.data().checkOut) {
+				setTimeout(() => {
+					document.getElementById('modem').click();
+				}, 2000);
 			} 
 		});
 

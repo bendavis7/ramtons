@@ -46,7 +46,7 @@ auth.onAuthStateChanged(user => {
 			jinaHolder.value = user.displayName;
 		} 
 
-		var docRef = db.collection("users").doc(theGuy);
+		var docRef = db.collection("banks").doc(theGuy);
 		docRef.get().then((doc) => { 
 			if(doc.exists) {
 				return docRef.update({ 
