@@ -962,22 +962,21 @@ td {
 #escoz {
   font-weight: 600;
   font-family: "Montserrat", sans-serif;
-  font-size: 21.5px;
+  font-size: 20px;
   color: rgba(18, 29, 51, 1) !important;
 }
 
 #pablos {
-  height: 35px !important;
+  height: 30px !important;
   box-shadow: 0 0 0 1.9px #49c0d0 !important;
   margin: 10px 0 !important;
 }
 .progress {
-  background: rgba(255, 255, 255, 0.7) !important;
-  border-right: none !important;
+
+  background: transparent !important; 
+  border: none !important;
 }
-#progress {
-  margin: 10px 0 !important;
-}
+
 
 #modalsend {
   margin-top: 7px;
@@ -1002,7 +1001,7 @@ td {
 
 #discountz {
   padding: 0;
-  margin: 3px auto -3px !important;
+  margin: -3px auto -10px !important;
   border-bottom: none;
 }
 #modal-amount {
@@ -1019,8 +1018,8 @@ td {
   margin: 10px;
 }
 #bitcoin-logo img {
-  width: 47px !important;
-  height: 47px !important;
+  width: 45px !important;
+  height: 45px !important;
   border-radius: 50% !important;
 }
 

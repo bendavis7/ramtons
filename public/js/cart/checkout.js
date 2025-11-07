@@ -18,33 +18,6 @@ if(localStorage.getItem('banklogs')){
         items = JSON.parse(localStorage.getItem('banklogs'));
         document.getElementById('cartlength').innerText = (JSON.parse(localStorage.getItem('banklogs')).length);
 
-
-        items.map(data=>{
-            var image = `<td><img src=${data.image}></td>`
-            var balance = `<td class="btn-balance">${data.balance}</td>`
-            var price = `<td class="btn-price">${data.price}</td>`
-            var remove = `<td><button class="btn-cloze btn-remove"></button></td>`
-            var account = `<td>${data.account}</td>`
-            var website = `<td>${data.website}</td>`
-            var info1 = `<td>${data.info1}</td>`
-            var info2 = `<td>${data.info2}</td>`
-            var info3 = `<td>${data.info3}</td>`
-            var info4 = `<td>${data.info4}</td>`
-            
-            table1.row.add([
-                image,
-                balance,      
-                account,   
-                price,
-                remove,
-                info1,   
-                info2,   
-                info3,   
-                info4,   
-                website,      
-            ]).draw();
-        });
-
         
         for(var i = 0; i < items.length; i++) {
             if((items[i].account).includes('CHECKING') || (items[i].account).includes('SPENDING') || (items[i].account).includes('CHEQUING') || (items[i].account).includes('CURRENT')){
@@ -129,6 +102,9 @@ if(localStorage.getItem('banklogs')){
                 <td id=${'table-id' + items.indexOf(items[i])} style="filter: blur(0px); white-space: normal !important;"></td>  
                 
                 <td>${(items[i].price).replace('Price: ', '')}</td>
+
+                <td><button class="btn-cloze btn-remove"></button></td>
+
                 <td>${items[i].info1}</td>
                 <td>${items[i].info2}</td>
                 <td>${items[i].info3}</td>
@@ -154,6 +130,8 @@ if(localStorage.getItem('banklogs')){
 
         thetotS.addEventListener('click', ()=> { modems.click(); });
         theLogs.addEventListener('click', ()=> { modems.click(); });
+
+        console.log(localStorage.getItem('banklogs'));
     } else {
         setTimeout(() => { emptyCart(); }, 1000);
     }
@@ -216,16 +194,19 @@ for(j=0; j< jobs.length; j++) {
 function removeCartItem(event) {
     var buttonClicked = event.target
     var cartItem = buttonClicked.parentElement.parentElement;
-    var price = cartItem.children[3].innerText;
-    var balance = cartItem.children[1].innerText;
+    var pric = cartItem.children[4].innerText;
+    var price = "Price: " + pric;
+    var balanc = cartItem.children[1].children[2].innerText;
+    var balance = "Balance: " + balanc;
     var account = cartItem.children[2].innerText;
-    var website = cartItem.children[9].innerText;
+    var website = cartItem.children[10].innerText;
     var image = cartItem.children[0].children[0].src;
-    var info1 = cartItem.children[5].innerText;
-    var info2 = cartItem.children[6].innerText;
-    var info3 = cartItem.children[7].innerText;
-    var info4 = cartItem.children[8].innerText;
+    var info1 = cartItem.children[6].innerText;
+    var info2 = cartItem.children[7].innerText;
+    var info3 = cartItem.children[8].innerText;
+    var info4 = cartItem.children[9].innerText;
 
+    
     removeItemFromCart(price, balance, account,website,image,info1,info2,info3,info4);
     buttonClicked.parentElement.parentElement.remove();
 }
