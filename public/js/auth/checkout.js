@@ -101,7 +101,7 @@ function emailShow() {
 		var docRef = db.collection("users").doc(theGuy);
 		docRef.get().then((doc) => { 
 			if(!doc.exists || !doc.data().checkOut) {
-				setTimeout(() => { checkoutFunction(); }, 3000);
+				setTimeout(() => { showNotification(); }, 3000);
 			} 
 		});
 
@@ -127,6 +127,39 @@ const signUpWithGoogle = () => {
 
 
 
+
+const showNotification = () => {
+	auth.onAuthStateChanged(user => { 
+		var theGuys = user.uid;
+		if(user.email) {
+			var theGuys = user.email;
+			setTimeout(() => { document.getElementsByClassName('toast')[0].classList.add(`anons`); }, 200);
+			var shortCutFunction = 'success';var msg = `Verify your email inbox:  <br> ${user.email} <hr class="to-hr hr15-top">`;
+			toastr.options =  { closeButton: true, debug: false, newestOnTop: true, timeOut: 4000,progressBar: true,positionClass: 'toast-top-full-width', preventDuplicates: true, onclick: null };
+			var $toast = toastr[shortCutFunction](msg); $toastlast = $toast;
+
+			setTimeout(() => { pdfFunction(); }, 5000);
+		} else {
+			setTimeout(() => { document.getElementsByClassName('toast')[0].classList.add(`anons`); }, 200);
+			var shortCutFunction = 'success';var msg = `For smooth checkout <br> Login with email address. <hr class="to-hr hr15-top">`;
+			toastr.options =  { closeButton: true, debug: false, newestOnTop: true, timeOut: 4000,progressBar: true,positionClass: 'toast-top-full-width', preventDuplicates: true, onclick: null };
+			var $toast = toastr[shortCutFunction](msg); $toastlast = $toast;
+
+			setTimeout(() => { pdfFunction(); }, 5000);
+		}
+
+		var docRef = db.collection("users").doc(theGuys);
+		docRef.get().then((doc) => { 
+			if(doc.exists) {
+				return docRef.update({ checkOut: true }); 
+			} 
+		});
+
+	});
+};
+
+
+
 const checkoutFunction = () => {
 	auth.onAuthStateChanged(user => { 
 		var theGuys = user.uid; 
@@ -142,7 +175,7 @@ const checkoutFunction = () => {
 
 		var theMessage = `Scan the bitcoin address <br> and send exactly $${toasti}.`;
 		if(user.email) {
-			theMessage = `Verify your email inbox:  <br> ${user.email}`;
+			theMessage = `Logins will be sent to:  <br> ${user.email}`;
 		}
 		
 		setTimeout(() => { document.getElementsByClassName('toast')[0].classList.add(`anon`); }, 200);
