@@ -313,9 +313,9 @@ blink {
 
 @media screen and (min-width: 1050px) {
   .masonry-4 {
-    -moz-column-count: 18;
-    -webkit-column-count: 18;
-    column-count: 18;
+    -moz-column-count: 21;
+    -webkit-column-count: 21;
+    column-count: 21;
   }
 }
 

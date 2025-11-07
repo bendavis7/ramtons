@@ -1591,15 +1591,20 @@ td {
   color: #fff !important;
   font-size: 25px !important;
 }
-#contactModal .modal-dialog,
+
 #exampleModal .modal-dialog {
   top: 7vh !important;
 }
+#contactModal .modal-dialog {
+  top: 5vh !important;
+}
 
 @media screen and (min-width: 1370px) {
-  #contactModal .modal-dialog,
   #exampleModal .modal-dialog {
     top: 11vh !important;
+  }
+  #contactModal .modal-dialog {
+    top: 9vh !important;
   }
 }
 
@@ -1698,9 +1703,12 @@ td {
 
 @media screen and (min-width: 1025px) {
   .modal-dialog,
-  #contactModal .modal-content,
   #exampleModal .modal-content {
     max-width: 28vw !important;
+  }
+
+  #contactModal .modal-content {
+    min-width: 65vw !important;
   }
 }
 
@@ -1709,6 +1717,13 @@ td {
   #contactModal .modal-content,
   #exampleModal .modal-content {
     max-width: 24.7vw !important;
+  }
+}
+
+@media (min-width: 1092px) {
+  #contactModal .modal-dialog {
+    min-width: 65vw;
+    margin: 1.75rem auto;
   }
 }
 
