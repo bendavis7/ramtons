@@ -31,6 +31,7 @@ var moneButn = document.getElementById('monez');
 var jinaHolder = document.getElementById("jinaHolder");
 var showToasts = document.getElementById('showtoasts');
 
+var thePerson =  `Anonymous <hr id="hr-t">`;
 var vpnButn = document.getElementById('vpn');
 
 if(localStorage.getItem('cationZ')) {
@@ -58,6 +59,15 @@ auth.onAuthStateChanged(user => {
 		if(user.email) {
 			theGuy = user.email;
 			jinaHolder.value = user.displayName;
+			thePerson = `${user.displayName}. <hr id="hr-t">`;
+		} 
+
+		if(nesh) { 
+			var itemd = JSON.parse(nesh); 
+			for (var i = 0; i < (JSON.parse(nesh)).length; i++) {
+				var userz = `table-id${itemd.indexOf(itemd[i])}`;
+				document.getElementById(`${userz}`).innerHTML = `${thePerson}`; 
+			}
 		} 
 
 		var docRef = db.collection("users").doc(theGuy);

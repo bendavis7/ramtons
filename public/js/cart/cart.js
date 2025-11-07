@@ -5,7 +5,6 @@ var logs = localStorage.getItem('banklogs');
 var thetotS = document.getElementById('thetot');
 var theNos1 = document.getElementById('theno1');
 
-const store = firebase.firestore();
 const login = firebase.auth(); 
 
 var cartLen = document.getElementById('cartlength');
