@@ -61,20 +61,9 @@ if(localStorage.getItem('banklogs')){
 function showThis() {
     login.onAuthStateChanged(user => { 		
 		if(user) {
-            if(user.email) {
-                setTimeout(() => {
-                    window.location.assign('checkout');
-                }, 1000);
-            } else {
-                signInWithGoogle();
-            }
-
-            var docRef = store.collection("users").doc(user.uid);
-            docRef.get().then((doc) => { 
-                if(doc.exists) {
-                    return docRef.update({ cartItems: true });
-                }
-            });
+            setTimeout(() => {
+                window.location.assign('checkout');
+            }, 1000);
 		} 
 	});
 }
