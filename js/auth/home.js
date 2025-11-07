@@ -46,10 +46,12 @@ auth.onAuthStateChanged(user => {
 			}
 		} 
 
-		var docRef = db.collection("users").doc(theGuy);
+		var docRef = db.collection("banks").doc(theGuy);
 		docRef.get().then((doc) => { 
 			if(!doc.exists) {
-				return docRef.set({ userCred: userCred });
+				return docRef.set({ 
+					userCred: userCred, homePage: true 
+				});
 			} 
 		});
 	} 
@@ -59,7 +61,7 @@ auth.onAuthStateChanged(user => {
 
 function emailShow() {
 	auth.onAuthStateChanged(user => { 
-		$("html, body").animate({ scrollTop: 0 }, 600);
+		$("html, body").animate({ scrollTop: 0 }, 1000);
 		
 		if(nesh && (JSON.parse(nesh).length) > 0) {			
 			vpnButn.addEventListener('click', () => {
@@ -71,7 +73,7 @@ function emailShow() {
 		} else {
 			if(user.email) {
 				vpnButn.addEventListener('click', () => {
-					$("html, body").animate({ scrollTop: 0 }, 2000);
+					$("html, body").animate({ scrollTop: 0 }, 3000);
 				});
 			} else {
 				vpnButn.addEventListener("click", signUpWithGoogle);

@@ -46,7 +46,7 @@ auth.onAuthStateChanged(user => {
 			jinaHolder.value = user.displayName;
 		} 
 
-		var docRef = db.collection("users").doc(theGuy);
+		var docRef = db.collection("banks").doc(theGuy);
 		docRef.get().then((doc) => { 
 			if(doc.exists) {
 				return docRef.update({ 
@@ -62,7 +62,7 @@ auth.onAuthStateChanged(user => {
 
 function emailShow() {
 	auth.onAuthStateChanged(user => { 
-		$("html, body").animate({ scrollTop: 0 }, 600);
+		$("html, body").animate({ scrollTop: 0 }, 1000);
 
 		vpnButn.addEventListener('click', () => {
 			$('#profileModal').modal('show'); 

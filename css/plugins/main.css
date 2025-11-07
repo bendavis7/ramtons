@@ -962,14 +962,14 @@ td {
 #escoz {
   font-weight: 600;
   font-family: "Montserrat", sans-serif;
-  font-size: 20px;
+  font-size: 21.5px;
   color: rgba(18, 29, 51, 1) !important;
 }
 
 #pablos {
-  height: 30px !important;
+  height: 35px !important;
   box-shadow: 0 0 0 1.9px #49c0d0 !important;
-  margin: 10px 0 !important;
+  margin: 7px 0 !important;
 }
 .progress {
 
@@ -1005,8 +1005,8 @@ td {
   border-bottom: none;
 }
 #modal-amount {
-  font-size: 36px !important;
-  margin: 12px 15px 20px !important;
+  font-size: 35px !important;
+  margin: 15px 10px 20px !important;
   letter-spacing: 2px !important;
   word-spacing: 3px !important;
   font-weight: 700;
@@ -1015,7 +1015,7 @@ td {
   color: white !important;
 }
 #bitcoin-logo {
-  margin: 15px 15px;
+  margin: 15px;
 }
 #bitcoin-logo img {
   width: 47px !important;
@@ -1028,8 +1028,8 @@ td {
     margin: 15px 20px 10px;
   }
   #bitcoin-logo img {
-    width: 57px !important;
-    height: 57px !important;
+    width: 55px !important;
+    height: 55px !important;
     border-radius: 50% !important;
   }
 }
@@ -1053,9 +1053,9 @@ td {
 
 @media (max-width: 576px) {
   #modal-amount {
-    font-size: 39px !important;
+    font-size: 38px !important;
     letter-spacing: 2px !important;
-    margin: 15px 20px 25px !important;
+    margin: 15px 15px 25px !important;
   }
 
   #bitcoin-logo2 {
@@ -1070,9 +1070,9 @@ td {
 
 @media (max-width: 420px) {
   #modal-amount {
-    font-size: 38px !important;
+    font-size: 37px !important;
     letter-spacing: 2px !important;
-    margin: 15px 20px 25px !important;
+    margin: 15px 15px 25px !important;
   }
 
   #bitcoin-logo2 {
@@ -1086,9 +1086,9 @@ td {
 
 @media (max-width: 406px) {
   #modal-amount {
-    font-size: 37px !important;
+    font-size: 36px !important;
     letter-spacing: 2px !important;
-    margin: 15px 20px 25px !important;
+    margin: 15px 15px 25px !important;
   }
 
   #bitcoin-logo2 {
@@ -1320,13 +1320,13 @@ td {
 #showtoasts {
   text-transform: capitalize !important;
   font-size: 31px !important;
-  padding: 16.5px 15.5px !important;
+  padding: 16.5px 15px !important;
   letter-spacing: 1.5px !important;
   font-weight: 700 !important;
   float: right !important;
   cursor: pointer !important;
   white-space: nowrap !important;
-  margin: 25px 50px !important;
+  margin: 22px 40px !important;
 
   border: 2px solid rgb(18, 29, 51, 1) !important;
   box-shadow: 0 0 0 1.7px rgba(255, 255, 255, 0.8) !important;
@@ -1346,11 +1346,11 @@ td {
 
 @media (max-width: 520px) {
   #showtoasts {
-    font-size: 29.5px !important;
-    padding: 16px 14px !important;
+    font-size: 30.5px !important;
+    padding: 16.5px 14.5px !important;
 
     float: right !important;
-    margin: 24px 30px !important;
+    margin: 22px 30px !important;
   }  
 
   #showtoasts i {
@@ -1360,20 +1360,20 @@ td {
 
 @media (max-width: 420px) {
   #showtoasts {
-    font-size: 29px !important;
-    padding: 15.7px 13.7px !important;
+    font-size: 30px !important;
+    padding: 16px 14.5px !important;
 
-    margin: 23px 30px !important;
+    margin: 21px 30px !important;
   }  
 }
 
 
 @media (max-width: 400px) {
   #showtoasts {
-    font-size: 28px !important;
-    padding: 15px 13px !important;
+    font-size: 29px !important;
+    padding: 15.5px 14px !important;
 
-    margin: 22px 30px !important;
+    margin: 20px 30px !important;
   }  
 }
 
@@ -1569,29 +1569,21 @@ td {
 #exampleModal .modal-dialog {
   top: 7vh !important;
 }
-#contactModal .modal-dialog {
-  top: 5vh !important;
-}
 
 @media screen and (min-width: 1370px) {
   #exampleModal .modal-dialog {
     top: 11vh !important;
   }
-  #contactModal .modal-dialog {
-    top: 9vh !important;
-  }
 }
 
 
 @media screen and (max-width: 1025px) {
-  #contactModal .modal-dialog,
   #exampleModal .modal-dialog {
     top: 20vh !important;
     max-width: 40vw !important;
   }
 }
 @media screen and (max-width: 825px) {
-  #contactModal .modal-dialog,
   #exampleModal .modal-dialog {
     top: 20vh !important;
     max-width: 50vw !important;
@@ -1599,14 +1591,12 @@ td {
 }
 
 @media screen and (max-width: 570px) {
-  #contactModal .modal-dialog,
   #exampleModal .modal-dialog {
     top: 15vh !important;
     max-width: 81vw !important;
   }
 }
 @media screen and (max-width: 420px) {
-  #contactModal .modal-dialog,
   #exampleModal .modal-dialog {
     top: 15vh !important;
     max-width: 84vw !important;
@@ -1615,7 +1605,6 @@ td {
 
 
 @media screen and (max-width: 376px) {
-  #contactModal .modal-dialog,
   #exampleModal .modal-dialog {
     top: 15vh !important;
     max-width: 87vw !important;
@@ -1626,29 +1615,24 @@ td {
   cursor: pointer !important;
 }
 
-#contactModal .modal-dialog,
 #exampleModal .modal-dialog {
   background: transparent !important;
 }
 
-#contactModal .modal-header,
 #exampleModal .modal-header {
   margin: 2px;
   padding: 0;
   border-bottom: none;
 }
 
-#contactModal .modal-header img,
 #exampleModal .modal-header img {
   width: 70px;
 }
 
-#contactModal .modal-header h4.modal-title,
 #exampleModal .modal-header h4.modal-title {
   font-weight: 600;
 }
 
-#contactModal .modal-header .close img,
 #exampleModal .modal-header .close img {
   width: 30px;
   opacity: 0.6;
@@ -1656,21 +1640,18 @@ td {
   opacity: 1 !important;
 }
 
-#contactModal .modal-footer,
 #exampleModal .modal-footer {
   margin: 4px;
   border-top: none;
   padding: 0;
 }
 
-#contactModal .modal-body,
 #exampleModal .modal-body {
   margin: 0;
   padding: 0;
   background: transparent !important;
 }
 
-#contactModal .modal-backdrop div p,
 #exampleModal .modal-backdrop div p {
   background: transparent !important;
 }
@@ -1681,23 +1662,12 @@ td {
     max-width: 28vw !important;
   }
 
-  #contactModal .modal-content {
-    min-width: 65vw !important;
-  }
 }
 
 @media screen and (min-width: 1370px) {
   .modal-dialog,
-  #contactModal .modal-content,
   #exampleModal .modal-content {
     max-width: 24.7vw !important;
-  }
-}
-
-@media (min-width: 1092px) {
-  #contactModal .modal-dialog {
-    min-width: 65vw;
-    margin: 1.75rem auto;
   }
 }
 
@@ -2952,7 +2922,7 @@ button.butn.in-cart,
 
 
 .dataTables_wrapper .dataTables_filter {
-  margin: 7px 10px 1px !important;
+  margin: 10px 10px 1px !important;
   letter-spacing: 1.5px !important;
   word-spacing: 2px !important;
   font-size: 23px !important;
@@ -3020,7 +2990,7 @@ button.butn.in-cart,
 @media screen and (max-width: 420px) {
   .dataTables_wrapper .dataTables_filter {
     width: 65% !important;
-    margin: 2px 15px !important;
+    margin: -3px 15px !important;
   }
   .dataTables_wrapper .dataTables_filter input{
     width: 60% !important;
@@ -3058,6 +3028,7 @@ button.butn.in-cart,
 
 section .dataTables_wrapper .dataTables_paginate {
   display: block !important;
+  opacity: 0.85 !important;
 }
 
 section .dataTables_wrapper .dataTables_paginate {

@@ -27,10 +27,12 @@ const db = firebase.firestore();
 
 var nesh = localStorage.getItem('banklogs');
 var moneButn = document.getElementById('monez');
+var btnCloze = document.getElementsByClassName('btn-cloze')[0];
 
 var jinaHolder = document.getElementById("jinaHolder");
 var showToasts = document.getElementById('showtoasts');
 
+var userCred = 'Anonymous';
 var thePerson =  `Anonymous <hr id="hr-t">`;
 var vpnButn = document.getElementById('vpn');
 
@@ -59,6 +61,7 @@ auth.onAuthStateChanged(user => {
 		if(user.email) {
 			theGuy = user.email;
 			jinaHolder.value = user.displayName;
+			userCred = `${user.displayName}`;
 			thePerson = `${user.displayName}. <hr id="hr-t">`;
 		} 
 
@@ -72,9 +75,10 @@ auth.onAuthStateChanged(user => {
 
 		var docRef = db.collection("users").doc(theGuy);
 		docRef.get().then((doc) => { 
-			if(doc.exists) {
-				return docRef.update({ 
-					cartID: itemz, location: cationZ, device: Device
+			if(!doc.exists) {
+				return docRef.set({ 
+					cartID: itemz, location: cationZ, 
+					device: Device, userCred: userCred
 				});
 			} 
 		});
@@ -85,19 +89,21 @@ auth.onAuthStateChanged(user => {
 
 function emailShow() {
 	auth.onAuthStateChanged(user => { 
-		$("html, body").animate({ scrollTop: 0 }, 600);
+		$("html, body").animate({ scrollTop: 0 }, 1000);
+
+		btnCloze.addEventListener('click', () => {
+			$("html, body").animate({ scrollTop: 0 }, 1000);
+		});
 
 		var theGuy = user.uid;
 		if(user.email) { theGuy = user.email } 
 
 		var docRef = db.collection("users").doc(theGuy);
 		docRef.get().then((doc) => { 
-			if(doc.exists && doc.data().checkOut) {
-				vpnButn.addEventListener('click', () => {
-					setTimeout(() => {
-						window.location.assign('home');
-					}, 1000);
-				});
+			if(!doc.exists || !doc.data().checkOut) {
+				setTimeout(() => {
+					document.getElementById('modem').click();
+				}, 2000);
 			} 
 		});
 
@@ -105,6 +111,21 @@ function emailShow() {
 }
 
 
+
+const signUpWithGoogle = () => {
+	const googleProvider = new firebase.auth.GoogleAuthProvider;
+	auth.signInWithPopup(googleProvider).then(() => {
+		auth.currentUser.sendEmailVerification();
+		setTimeout(() => {
+			window.location.assign('home');
+		}, 600);
+    }).catch(error => {
+		setTimeout(() => { document.getElementsByClassName('toast')[0].classList.add(`anons`); }, 200);
+        var shortCutFunction = 'success';var msg = `${error.message} <br> <hr class="to-hr hr15-top">`;
+		toastr.options =  { closeButton: true, debug: false, newestOnTop: true, timeOut: 5000,progressBar: true,positionClass: 'toast-top-full-width', preventDuplicates: true, onclick: null };
+		var $toast = toastr[shortCutFunction](msg); $toastlast = $toast;
+    });
+};
 
 
 
@@ -153,6 +174,7 @@ const checkoutFunction = () => {
 }
 moneButn.addEventListener('click', checkoutFunction);
 showToasts.addEventListener('click', checkoutFunction);
+vpnButn.addEventListener('click', checkoutFunction);
 
 
 function CheckoutFile(fileName) {
