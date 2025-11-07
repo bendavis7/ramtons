@@ -970,7 +970,7 @@ td {
   height: 35px !important;
   box-shadow: 0 0 0 2px #49c0d0 !important;
   margin: 7px 0 !important;
-  border-radius: 3px !important;
+  border-radius: 2px !important;
 }
 .progress {
   margin: 3px !important;
@@ -1119,7 +1119,7 @@ td {
   font-weight: 700;
   width: 65%;
   padding: 10px 7px !important;
-  border-radius: 0;
+  border-radius: 2px;
   margin: 0 1%;
   cursor: pointer !important;
   background: white;
@@ -1132,6 +1132,7 @@ td {
   color: #121d33 !important;
   margin: 0 1% !important;
   text-align: center;
+  border-radius: 2px !important;
   font-weight: 700 !important;
   white-space: nowrap !important;
   font-size: 18px !important;
