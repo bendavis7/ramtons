@@ -972,7 +972,7 @@ td {
   margin: 7px 0 !important;
 }
 .progress {
-
+  margin: 3px !important;
   background: transparent !important; 
   border: none !important;
 }
