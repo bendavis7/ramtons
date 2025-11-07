@@ -86,7 +86,7 @@ blink {
 #chart-cols {   
   padding: 0px auto !important;
   margin-top: 10px !important;
-  margin-bottom: -10px !important;
+  margin-bottom: -30px !important;
 }
 
 
@@ -163,14 +163,6 @@ blink {
 }
 
 
-
-@media (min-width: 1070px) {
-  .col-lg-12 {
-    -ms-flex:0 0 96%;
-    flex:0 0 96%;
-    max-width: 96%;
-  }
-}
 
 
 .masonry {
