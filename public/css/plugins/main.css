@@ -1054,13 +1054,13 @@ td {
 
 @media (max-width: 576px) {
   #modal-amount {
-    font-size: 38px !important;
+    font-size: 39px !important;
     letter-spacing: 2px !important;
     margin: 15px 15px 25px !important;
   }
 
   #bitcoin-logo2 {
-    margin: 1px 0px !important;
+    margin: 0px 0px !important;
   }
   #bitcoin-logo2 img {
     width: 64px !important;
@@ -1071,14 +1071,11 @@ td {
 
 @media (max-width: 420px) {
   #modal-amount {
-    font-size: 37px !important;
+    font-size: 38px !important;
     letter-spacing: 2px !important;
     margin: 15px 15px 25px !important;
   }
 
-  #bitcoin-logo2 {
-    margin: 0px 0px !important;
-  }
   #bitcoin-logo2 img {
     width: 62px !important;
     height: 62px !important;
@@ -1087,14 +1084,11 @@ td {
 
 @media (max-width: 406px) {
   #modal-amount {
-    font-size: 36px !important;
+    font-size: 37px !important;
     letter-spacing: 2px !important;
     margin: 15px 15px 25px !important;
   }
 
-  #bitcoin-logo2 {
-    margin: -1px 0px !important;
-  }
   #bitcoin-logo2 img {
     width: 60px !important;
     height: 60px !important;
