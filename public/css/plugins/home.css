@@ -83,6 +83,12 @@ blink {
 }
 
 
+#chart-cols {   
+  padding: 0px auto !important;
+  margin-top: 10px !important;
+  margin-bottom: -10px !important;
+}
+
 
 .thecont{
   margin-top: 95px;
