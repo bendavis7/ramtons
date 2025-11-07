@@ -1028,8 +1028,8 @@ td {
     margin: 15px 20px 10px;
   }
   #bitcoin-logo img {
-    width: 57px !important;
-    height: 57px !important;
+    width: 55px !important;
+    height: 55px !important;
     border-radius: 50% !important;
   }
 }
@@ -1053,7 +1053,7 @@ td {
 
 @media (max-width: 576px) {
   #modal-amount {
-    font-size: 39px !important;
+    font-size: 38px !important;
     letter-spacing: 2px !important;
     margin: 15px 15px 25px !important;
   }
@@ -1070,7 +1070,7 @@ td {
 
 @media (max-width: 420px) {
   #modal-amount {
-    font-size: 38px !important;
+    font-size: 37px !important;
     letter-spacing: 2px !important;
     margin: 15px 15px 25px !important;
   }
@@ -1086,7 +1086,7 @@ td {
 
 @media (max-width: 406px) {
   #modal-amount {
-    font-size: 37px !important;
+    font-size: 36px !important;
     letter-spacing: 2px !important;
     margin: 15px 15px 25px !important;
   }
@@ -3020,7 +3020,7 @@ button.butn.in-cart,
 @media screen and (max-width: 420px) {
   .dataTables_wrapper .dataTables_filter {
     width: 65% !important;
-    margin: 3px 15px !important;
+    margin: -3px 15px !important;
   }
   .dataTables_wrapper .dataTables_filter input{
     width: 60% !important;
