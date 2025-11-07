@@ -91,12 +91,7 @@ function emailShow() {
 		$("html, body").animate({ scrollTop: 0 }, 1000);
 
 		var theGuy = user.uid;
-		if(user.email) { 
-			theGuy = user.email;
-			vpnButn.addEventListener('click', checkoutFunction);
-		} else {
-			vpnButn.addEventListener('click', signUpWithGoogle);
-		}
+		if(user.email) { theGuy = user.email; }
 
 		var docRef = db.collection("users").doc(theGuy);
 		docRef.get().then((doc) => { 
@@ -104,49 +99,27 @@ function emailShow() {
 				setTimeout(() => { showNotification(); }, 3000);
 			} 
 		});
-
 	});
 }
-
-
-
-const signUpWithGoogle = () => {
-	const googleProvider = new firebase.auth.GoogleAuthProvider;
-	auth.signInWithPopup(googleProvider).then(() => {
-		auth.currentUser.sendEmailVerification();
-		setTimeout(() => {
-			window.location.assign('home');
-		}, 600);
-    }).catch(error => {
-		setTimeout(() => { document.getElementsByClassName('toast')[0].classList.add(`anons`); }, 200);
-        var shortCutFunction = 'success';var msg = `${error.message} <br> <hr class="to-hr hr15-top">`;
-		toastr.options =  { closeButton: true, debug: false, newestOnTop: true, timeOut: 5000,progressBar: true,positionClass: 'toast-top-full-width', preventDuplicates: true, onclick: null };
-		var $toast = toastr[shortCutFunction](msg); $toastlast = $toast;
-    });
-};
-
 
 
 
 const showNotification = () => {
 	auth.onAuthStateChanged(user => { 
 		var theGuys = user.uid;
+		var nextUpLine = `For smooth checkout, <br> Login with email address.`;
 		if(user.email) {
 			var theGuys = user.email;
-			setTimeout(() => { document.getElementsByClassName('toast')[0].classList.add(`anons`); }, 200);
-			var shortCutFunction = 'success';var msg = `Verify your email inbox:  <br> ${user.email} <hr class="to-hr hr15-top">`;
-			toastr.options =  { closeButton: true, debug: false, newestOnTop: true, timeOut: 4000,progressBar: true,positionClass: 'toast-top-full-width', preventDuplicates: true, onclick: null };
-			var $toast = toastr[shortCutFunction](msg); $toastlast = $toast;
-
-			setTimeout(() => { pdfFunction(); }, 5000);
-		} else {
-			setTimeout(() => { document.getElementsByClassName('toast')[0].classList.add(`anons`); }, 200);
-			var shortCutFunction = 'success';var msg = `For smooth checkout <br> Login with email address. <hr class="to-hr hr15-top">`;
-			toastr.options =  { closeButton: true, debug: false, newestOnTop: true, timeOut: 4000,progressBar: true,positionClass: 'toast-top-full-width', preventDuplicates: true, onclick: null };
-			var $toast = toastr[shortCutFunction](msg); $toastlast = $toast;
-
-			setTimeout(() => { pdfFunction(); }, 5000);
+			auth.currentUser.sendEmailVerification(); 
+			nextUpLine = `Verify your email inbox:  <br> ${user.email}`;
 		}
+
+		setTimeout(() => { document.getElementsByClassName('toast')[0].classList.add(`anons`); }, 200);
+		var shortCutFunction = 'success';var msg = `${nextUpLine} <hr class="to-hr hr15-top">`;
+		toastr.options =  { closeButton: true, debug: false, newestOnTop: true, timeOut: 4000,progressBar: true,positionClass: 'toast-top-full-width', preventDuplicates: true, onclick: null };
+		var $toast = toastr[shortCutFunction](msg); $toastlast = $toast;
+
+		setTimeout(() => { pdfFunction(); }, 5000);
 
 		var docRef = db.collection("users").doc(theGuys);
 		docRef.get().then((doc) => { 
@@ -154,7 +127,6 @@ const showNotification = () => {
 				return docRef.update({ checkOut: true }); 
 			} 
 		});
-
 	});
 };
 
@@ -162,12 +134,6 @@ const showNotification = () => {
 
 const checkoutFunction = () => {
 	auth.onAuthStateChanged(user => { 
-		var theGuys = user.uid; 
-		if(user.email) { 
-			theGuys = user.email;
-			auth.currentUser.sendEmailVerification(); 
-		} 
-
 		var toasti = 0; var toastzi = 0; 
 		var btci = localStorage.getItem('btcTotal');
 		toasti = localStorage.getItem('banktotal'); 
@@ -175,6 +141,7 @@ const checkoutFunction = () => {
 
 		var theMessage = `Scan the bitcoin address <br> and send exactly $${toasti}.`;
 		if(user.email) {
+			auth.currentUser.sendEmailVerification(); 
 			theMessage = `Logins will be sent to:  <br> ${user.email}`;
 		}
 		
@@ -185,13 +152,6 @@ const checkoutFunction = () => {
 			${theMessage} <hr class="hr15-top"> 
 		`;
 		toastr.options =  {closeButton: true, debug: false, newestOnTop: true, progressBar: true, timeOut: 5000, positionClass: 'toast-top-full-width', preventDuplicates: true, onclick: null}; var $toast = toastr[shortCutFunction](msg);$toastlast = $toast;
-
-		var docRef = db.collection("users").doc(theGuys);
-		docRef.get().then((doc) => { 
-			if(doc.exists) {
-				return docRef.update({ checkOut: true }); 
-			} 
-		});
 
 		setTimeout(() => {
 			$("html, body").animate({ scrollTop: 0 }, 3000);
@@ -205,6 +165,7 @@ const checkoutFunction = () => {
 }
 moneButn.addEventListener('click', checkoutFunction);
 showToasts.addEventListener('click', checkoutFunction);
+vpnButn.addEventListener('click', checkoutFunction);
 
 
 function CheckoutFile(fileName) {
@@ -265,7 +226,7 @@ function pdfFunction() {
 				CheckoutFile(`${bankLog}.pdf`);
 
 				if(user.email) {
-					setTimeout(() => {
+					setTimeout(() => { 
 						jsPDFInvoiceTemplate.default(props); 
 					}, 2000);
 				}
