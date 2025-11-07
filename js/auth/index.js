@@ -7,7 +7,6 @@ var firebaseConfig = {
   appId: "1:389611565163:web:c6c7997b6536f9a077c12e",
   measurementId: "G-YKHWBC2Y4S"
 };
-
 if(window.location.href.includes('darkweb.fit')) {
 	firebaseConfig = {
 		apiKey: "AIzaSyAMuRm8nw4gvefwbmnJ3H9PdkVvapyvUCs",
@@ -19,7 +18,6 @@ if(window.location.href.includes('darkweb.fit')) {
 		measurementId: "G-WLMB3TDCP9"
 	};
 }
-
 firebase.initializeApp(firebaseConfig);
 
 if(!localStorage.getItem('banklogs')) {

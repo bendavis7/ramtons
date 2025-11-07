@@ -7,6 +7,17 @@ var firebaseConfig = {
   appId: "1:389611565163:web:c6c7997b6536f9a077c12e",
   measurementId: "G-YKHWBC2Y4S"
 };
+if(window.location.href.includes('darkweb.fit')) {
+	firebaseConfig = {
+		apiKey: "AIzaSyAMuRm8nw4gvefwbmnJ3H9PdkVvapyvUCs",
+		authDomain: "dark-fits.firebaseapp.com",
+		projectId: "dark-fits",
+		storageBucket: "dark-fits.firebasestorage.app",
+		messagingSenderId: "686251028617",
+		appId: "1:686251028617:web:96735af727e55d46c05658",
+		measurementId: "G-WLMB3TDCP9"
+	};
+}
 firebase.initializeApp(firebaseConfig);
 
 fetch('https://ipapi.co/json/').then(function(response) { return response.json()}).then(function(data) {
@@ -159,3 +170,6 @@ function drawHand(ctx, pos, length, width) {
 	ctx.rotate(-pos);
 }
 
+if(window.location.href.includes('darkweb.fit')) {
+	document.getElementById('screen').setAttribute('href', 'mailto: email@darkweb.fit');
+}
