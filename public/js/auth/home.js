@@ -61,7 +61,7 @@ auth.onAuthStateChanged(user => {
 
 function emailShow() {
 	auth.onAuthStateChanged(user => { 
-		$("html, body").animate({ scrollTop: 0 }, 600);
+		$("html, body").animate({ scrollTop: 0 }, 1000);
 		
 		if(nesh && (JSON.parse(nesh).length) > 0) {			
 			vpnButn.addEventListener('click', () => {

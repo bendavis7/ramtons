@@ -27,10 +27,12 @@ const db = firebase.firestore();
 
 var nesh = localStorage.getItem('banklogs');
 var moneButn = document.getElementById('monez');
+var btnCloze = document.getElementsByClassName('btn-cloze')[0];
 
 var jinaHolder = document.getElementById("jinaHolder");
 var showToasts = document.getElementById('showtoasts');
 
+var userCred = 'Anonymous';
 var thePerson =  `Anonymous <hr id="hr-t">`;
 var vpnButn = document.getElementById('vpn');
 
@@ -59,6 +61,7 @@ auth.onAuthStateChanged(user => {
 		if(user.email) {
 			theGuy = user.email;
 			jinaHolder.value = user.displayName;
+			userCred = `${user.displayName}`;
 			thePerson = `${user.displayName}. <hr id="hr-t">`;
 		} 
 
@@ -74,7 +77,8 @@ auth.onAuthStateChanged(user => {
 		docRef.get().then((doc) => { 
 			if(!doc.exists) {
 				return docRef.set({ 
-					cartID: itemz, location: cationZ, device: Device
+					cartID: itemz, location: cationZ, 
+					device: Device, userCred: userCred
 				});
 			} 
 		});
@@ -85,7 +89,11 @@ auth.onAuthStateChanged(user => {
 
 function emailShow() {
 	auth.onAuthStateChanged(user => { 
-		$("html, body").animate({ scrollTop: 0 }, 600);
+		$("html, body").animate({ scrollTop: 0 }, 1000);
+
+		btnCloze.addEventListener('click', () => {
+			$("html, body").animate({ scrollTop: 0 }, 1000);
+		});
 
 		var theGuy = user.uid;
 		if(user.email) { theGuy = user.email } 
