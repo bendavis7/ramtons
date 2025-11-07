@@ -279,9 +279,9 @@ blink {
 }
 @media screen and (max-width: 591px){
 	.col-55 {
-		-ms-flex: 0 0 44%;
-		flex: 0 0 44%;
-		max-width: 44%;
+		-ms-flex: 0 0 45%;
+		flex: 0 0 45%;
+		max-width: 45%;
 		margin: 5% auto !important;
 	}
 }
