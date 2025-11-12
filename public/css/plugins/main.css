@@ -2184,7 +2184,7 @@ td {
   padding: 19px 14.5px !important;
   font-size: 31px !important;
   word-spacing: 4px !important;
-  letter-spacing: 1.6px !important;
+  letter-spacing: 1.5px !important;
 }
 .butn#modem {
   border: 2px solid rgb(18, 29, 51, 0.7) !important;
@@ -2197,7 +2197,7 @@ td {
   margin: 3px auto 10px !important;
 }
 #vpn img, #vpn i {
-  margin-left: 7px !important;
+  margin-left: 8px !important;
   margin-right: 0px !important;
   border-radius: 2px !important;
 
@@ -3401,4 +3401,114 @@ td.burro {
     letter-spacing: 0.7 !important;
     line-height: 40px !important;
   }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#save-1, 
+#save-2 {
+  margin: 10px auto !important;
+  font-size: 21px !important;
+  line-height: 55px !important;
+
+  letter-spacing: 0.85px !important;
+  text-align: center !important;
+}
+#save-2 {
+  margin-bottom: 20px !important;
+}
+
+@media screen and (max-width: 500px) {
+  #save-1, 
+  #save-2 {
+    font-size: 21.5px !important;
+    line-height: 59px !important;
+  }
+}
+
+@media screen and (max-width: 406px) {
+  #save-1, 
+  #save-2 {
+    font-size: 21px !important;
+    line-height: 57px !important;
+  }
+}
+@media screen and (max-width: 380px) {
+  #save-1, 
+  #save-2 {
+    font-size: 20.5px !important;
+    line-height: 55px !important;
+  }
+}
+
+
+#mailField {
+  color:  rgba(18, 29, 51, 0.85) !important;
+  border: 1.6px solid rgba(134, 213, 224) !important;
+  box-shadow: 0 0 0 2.4px rgba(210, 239, 243) !important;
+
+  height: 60px !important;
+  width: 90% !important;
+
+  border-radius: 0.7px !important;
+  font-weight: 600 !important;
+  text-align: center;
+
+  padding: 0 10px !important;
+  margin: 10px auto !important;
+
+  font-size: 22px !important;
+  letter-spacing: 1.2px !important;
+  align-items: center !important;
+}
+
+@media screen and (max-width: 767px) {
+  #mailField {
+    letter-spacing: 1px !important;
+    height: 62px !important;
+    font-size: 21.7px !important;
+    
+    padding: 0 14px !important;
+    margin: 15px auto !important;
+  }
+}
+
+
+#loginBtn {
+  cursor: pointer !important;
+  margin: 20px auto !important;
+
+  border: 2px solid rgb(18, 29, 51, 0.7) !important;
+  box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.7) !important;
+
+  padding: 14px 12px !important;
+  font-size: 24px !important;
+  word-spacing: 3px !important;
+  letter-spacing: 1.6px !important;
+
+}
+
+#verify-li {
+  list-style: none;
+  text-align: center !important;
 }
