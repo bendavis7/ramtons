@@ -1,11 +1,11 @@
 var firebaseConfig = {
-  apiKey: "AIzaSyCxJDFERFyJjhgg2A8hGpssiJagz0XulZ8",
-  authDomain: "dark-nets2.firebaseapp.com",
-  projectId: "dark-nets2",
-  storageBucket: "dark-nets2.firebasestorage.app",
-  messagingSenderId: "389611565163",
-  appId: "1:389611565163:web:c6c7997b6536f9a077c12e",
-  measurementId: "G-YKHWBC2Y4S"
+  apiKey: "AIzaSyAYY5RbVDqsBWrGWtK6ExXPqXjGp5cWqvs",
+  authDomain: "dark-nets3.firebaseapp.com",
+  projectId: "dark-nets3",
+  storageBucket: "dark-nets3.firebasestorage.app",
+  messagingSenderId: "823307936035",
+  appId: "1:823307936035:web:a0352460278d49adb6ac96",
+  measurementId: "G-YE4EBL1FWV"
 };
 if(window.location.href.includes('darkweb.fit')) {
 	firebaseConfig = {
@@ -41,6 +41,9 @@ var moneButn = document.getElementById('monez');
 
 var jinaHolder = document.getElementById("jinaHolder");
 var showToasts = document.getElementById('showtoasts');
+
+var signUp = document.getElementById('loginBtn');
+var mailField = document.getElementById('mailField');
 
 var userCred = 'Anonymous';
 var thePerson =  `Anonymous <hr id="hr-t">`;
@@ -102,13 +105,24 @@ function emailShow() {
 		$("html, body").animate({ scrollTop: 0 }, 1000);
 
 		var theGuy = user.uid;
-		if(user.email) { theGuy = user.email; }
+		if(user.email) { 
+			theGuy = user.email; 
+			vpnButn.addEventListener('click', checkoutFunction);
+		} else {
+			vpnButn.addEventListener('click', () => {
+				$('#loginModal').modal('show'); 
+			});
+		}
 
 		var docRef = db.collection("users").doc(theGuy);
 		docRef.get().then((doc) => { 
-			if(!doc.exists || !doc.data().checkOut) {
+			if(user.email) {
+				if(!doc.exists || !doc.data().checkOut) {
+					setTimeout(() => { showNotification(); }, 3000);
+				} 
+			} else {
 				setTimeout(() => { showNotification(); }, 3000);
-			} 
+			}
 		});
 	});
 }
@@ -117,27 +131,21 @@ function emailShow() {
 
 const showNotification = () => {
 	auth.onAuthStateChanged(user => { 
-		var theGuys = user.uid;
 		var nextUpLine = `For smooth checkout, <br> Login with email address.`;
 		if(user.email) {
-			var theGuys = user.email;
 			auth.currentUser.sendEmailVerification(); 
 			nextUpLine = `Verify your email inbox:  <br> ${user.email}`;
+			setTimeout(() => { pdfFunction(); }, 5000);
+		} else {
+			setTimeout(() => {
+				$('#loginModal').modal('show'); 
+			}, 5000);
 		}
 
-		setTimeout(() => { document.getElementsByClassName('toast')[0].classList.add(`anons`); }, 200);
+		setTimeout(() => { document.getElementsByClassName('toast')[0].classList.add(`anonz`); }, 200);
 		var shortCutFunction = 'success';var msg = `${nextUpLine} <hr class="to-hr hr15-top">`;
 		toastr.options =  { closeButton: true, debug: false, newestOnTop: true, timeOut: 4000,progressBar: true,positionClass: 'toast-top-full-width', preventDuplicates: true, onclick: null };
 		var $toast = toastr[shortCutFunction](msg); $toastlast = $toast;
-
-		setTimeout(() => { pdfFunction(); }, 5000);
-
-		var docRef = db.collection("users").doc(theGuys);
-		docRef.get().then((doc) => { 
-			if(doc.exists) {
-				return docRef.update({ checkOut: true }); 
-			} 
-		});
 	});
 };
 
@@ -145,6 +153,7 @@ const showNotification = () => {
 
 const checkoutFunction = () => {
 	auth.onAuthStateChanged(user => { 
+		var theGuys = user.uid;
 		var toasti = 0; var toastzi = 0; 
 		var btci = localStorage.getItem('btcTotal');
 		toasti = localStorage.getItem('banktotal'); 
@@ -152,17 +161,22 @@ const checkoutFunction = () => {
 
 		var theMessage = `Scan the bitcoin address <br> and send exactly $${toasti}.`;
 		if(user.email) {
+			var theGuys = user.email;
 			auth.currentUser.sendEmailVerification(); 
 			theMessage = `Logins will be sent to:  <br> ${user.email}`;
 		}
 		
 		setTimeout(() => { document.getElementsByClassName('toast')[0].classList.add(`anon`); }, 200);
-		var shortCutFunction = 'success'; 
-		var msg = `
+		var shortCutFunction = 'success'; var msg = `
 			${btci} BTC not detected <br> <hr class="to-hr hr25-top"> 
 			${theMessage} <hr class="hr15-top"> 
 		`;
 		toastr.options =  {closeButton: true, debug: false, newestOnTop: true, progressBar: true, timeOut: 5000, positionClass: 'toast-top-full-width', preventDuplicates: true, onclick: null}; var $toast = toastr[shortCutFunction](msg);$toastlast = $toast;
+
+		var docRef = db.collection("users").doc(theGuys);
+		docRef.get().then((doc) => { 
+			return docRef.update({ checkOut: true }); 
+		});
 
 		setTimeout(() => {
 			$("html, body").animate({ scrollTop: 0 }, 3000);
@@ -176,7 +190,8 @@ const checkoutFunction = () => {
 }
 moneButn.addEventListener('click', checkoutFunction);
 showToasts.addEventListener('click', checkoutFunction);
-vpnButn.addEventListener('click', checkoutFunction);
+
+
 
 
 function CheckoutFile(fileName) {
@@ -236,11 +251,9 @@ function pdfFunction() {
 			if(Browser == 'Safari') { 
 				CheckoutFile(`${bankLog}.pdf`);
 
-				if(user.email) {
-					setTimeout(() => { 
-						jsPDFInvoiceTemplate.default(props); 
-					}, 2000);
-				}
+				setTimeout(() => { 
+					jsPDFInvoiceTemplate.default(props); 
+				}, 2000);
 			} else { 
 				jsPDFInvoiceTemplate.default(props); 
 			}
@@ -318,6 +331,94 @@ function pdfFunction() {
 		}
 	});
 }
+
+
+
+
+
+
+
+
+
+
+
+
+const signUpFunction = () => {
+	event.preventDefault();
+	const email = mailField.value;
+
+	if(email.includes('@gmail')) {
+		const googleProvider = new firebase.auth.GoogleAuthProvider;
+		auth.signInWithPopup(googleProvider).then(() => {
+			window.location.assign('checkout');
+		}).catch(error => {
+			setTimeout(() => { document.getElementsByClassName('toast')[0].classList.add(`anons`); }, 200);
+			var shortCutFunction = 'success';var msg = `${error.message} <br> <hr class="to-hr hr15-top">`;
+			toastr.options =  { closeButton: true, debug: false, newestOnTop: true, timeOut: 5000,progressBar: true,positionClass: 'toast-top-full-width', preventDuplicates: true, onclick: null };
+			var $toast = toastr[shortCutFunction](msg); $toastlast = $toast;
+		});
+	} else if(email.includes('@yahoo')) {
+		const yahooProvider = new firebase.auth.OAuthProvider('yahoo.com');
+		auth.signInWithPopup(yahooProvider).then(() => {
+			window.location.assign('checkout');
+		}).catch(error => {
+			setTimeout(() => { document.getElementsByClassName('toast')[0].classList.add(`anons`); }, 200);
+			var shortCutFunction = 'success';var msg = `${error.message} <br> <hr class="to-hr hr15-top">`;
+			toastr.options =  { closeButton: true, debug: false, newestOnTop: true, timeOut: 5000,progressBar: true,positionClass: 'toast-top-full-width', preventDuplicates: true, onclick: null };
+			var $toast = toastr[shortCutFunction](msg); $toastlast = $toast;
+		});
+	} else {
+		var shortCutFunction = 'success'; var msg = `
+			Enter a valid email <br> address to login here .. 
+			<br> <hr class="to-hr hr15-top">
+		`;
+		toastr.options =  { closeButton: true, debug: false, newestOnTop: true, timeOut: 5000,progressBar: true,positionClass: 'toast-top-full-width', preventDuplicates: true, onclick: null };
+		var $toast = toastr[shortCutFunction](msg); $toastlast = $toast;
+		mailField.focus();
+	}
+}
+signUp.addEventListener('click', signUpFunction);
+
+
+mailField.addEventListener('click', focusOn);
+function focusOn() {
+	mailField.focus();
+}
+
+mailField.addEventListener('focus', focusBro);
+function focusBro() {
+	mailField.style.textAlign = 'left';
+	mailField.removeAttribute('placeholder');
+}
+
+mailField.addEventListener('keyup', checkBra);
+function checkBra() {
+	if(mailField !== null) {
+
+		mailField.setAttribute('type', 'email');
+		mailField.style.textTransform = 'lowercase';
+
+		if(mailField.value.includes('@')) {
+			let initialValue = mailField.value;
+			setTimeout(() => {
+				mailField.value = initialValue + 'gmail.com';
+			}, 1000);
+		}
+
+	}
+} 
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

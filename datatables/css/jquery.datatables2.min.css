@@ -307,11 +307,6 @@ table.dataTable td{
   font-size: 17px;
   font-weight: 600;
 }
-.dataTables_wrapper .dataTables_length select{
-  border-radius: 0;
-  border: 1px solid rgb(18, 29, 51, 0.7) !important;
-  box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.7) !important;
-}
 .dataTables_wrapper .dataTables_filter input{
   border: 1px solid rgb(18, 29, 51, 0.7) !important;
   box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.7) !important;
@@ -355,13 +350,13 @@ table.dataTable td{
 .dataTables_wrapper .dataTables_paginate .paginate_button{
   box-sizing:border-box;
   display:inline-block;
-  padding: 10px 16px !important;
-  margin-left: 10px;
+  padding: 11px 17px !important;
+  margin-left: 11px;
   text-align:center;
   text-decoration:none !important;
   cursor:pointer;
   cursor:hand;
-  font-size: 20.5px;
+  font-size: 21px;
   font-weight: 600 !important;
   outline:none;
   box-shadow:inset 0 0 3px lightblue;
@@ -369,6 +364,19 @@ table.dataTable td{
   border-radius: 2px !important;
   width: auto !important;
 }
+@media screen and (max-width: 420px) {
+  .dataTables_wrapper .dataTables_paginate{
+    padding: 6px 3px;
+  }
+
+  .dataTables_wrapper .dataTables_paginate .paginate_button{
+    padding: 10px 16px !important;
+    margin-left: 10px;
+    font-size: 20.5px;
+  }
+
+}
+
 @media screen and (max-width: 380px) {
   .dataTables_wrapper .dataTables_paginate{
     padding: 6px 2px;

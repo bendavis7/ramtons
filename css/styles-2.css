@@ -192,6 +192,7 @@ blink {
 }
 
 #profileModal .modal-content,
+#loginModal .modal-content,
 #exampleModal .modal-content {
   background: rgba(13, 76, 116, 0.5) !important;
   border: 3px solid rgba(3, 169, 245, 0.3) !important;
@@ -200,6 +201,7 @@ blink {
   background: rgba(3, 169, 245, 0.25) !important;
 }
 
+#loginBtn,
 #vpn,
 #services-carousel .owl-nav button,
 .lesnar,
@@ -219,6 +221,7 @@ blink {
 }
 
 #exampleModal .modal-header .close img,
+#loginModal .modal-header .close img,
 #profileModal .modal-header .close img,
 .btn-remove {
   border: 1.4px solid rgba(3, 169, 245, 0.7);
@@ -253,6 +256,7 @@ blink {
   background: linear-gradient(to bottom, #fff 30%, #03a9f5 100%) !important;
 }
 
+#loginBtn,
 #vpn,
 #showtoasts {
   color: rgb(16, 47, 75) !important;
