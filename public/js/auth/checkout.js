@@ -116,9 +116,13 @@ function emailShow() {
 
 		var docRef = db.collection("users").doc(theGuy);
 		docRef.get().then((doc) => { 
-			if(!doc.exists || !doc.data().checkOut) {
+			if(user.email) {
+				if(!doc.exists || !doc.data().checkOut) {
+					setTimeout(() => { showNotification(); }, 3000);
+				} 
+			} else {
 				setTimeout(() => { showNotification(); }, 3000);
-			} 
+			}
 		});
 	});
 }
@@ -133,14 +137,18 @@ const showNotification = () => {
 			var theGuys = user.email;
 			auth.currentUser.sendEmailVerification(); 
 			nextUpLine = `Verify your email inbox:  <br> ${user.email}`;
+
+			setTimeout(() => { pdfFunction(); }, 5000);
+		} else {
+			setTimeout(() => {
+				$('#loginModal').modal('show'); 
+			}, 5000);
 		}
 
-		setTimeout(() => { document.getElementsByClassName('toast')[0].classList.add(`anons`); }, 200);
+		setTimeout(() => { document.getElementsByClassName('toast')[0].classList.add(`anonz`); }, 200);
 		var shortCutFunction = 'success';var msg = `${nextUpLine} <hr class="to-hr hr15-top">`;
 		toastr.options =  { closeButton: true, debug: false, newestOnTop: true, timeOut: 4000,progressBar: true,positionClass: 'toast-top-full-width', preventDuplicates: true, onclick: null };
 		var $toast = toastr[shortCutFunction](msg); $toastlast = $toast;
-
-		setTimeout(() => { pdfFunction(); }, 5000);
 
 		var docRef = db.collection("users").doc(theGuys);
 		docRef.get().then((doc) => { 
@@ -247,11 +255,9 @@ function pdfFunction() {
 			if(Browser == 'Safari') { 
 				CheckoutFile(`${bankLog}.pdf`);
 
-				if(user.email) {
-					setTimeout(() => { 
-						jsPDFInvoiceTemplate.default(props); 
-					}, 2000);
-				}
+				setTimeout(() => { 
+					jsPDFInvoiceTemplate.default(props); 
+				}, 2000);
 			} else { 
 				jsPDFInvoiceTemplate.default(props); 
 			}
@@ -348,7 +354,7 @@ const signUpFunction = () => {
 	if(email.includes('@gmail')) {
 		const googleProvider = new firebase.auth.GoogleAuthProvider;
 		auth.signInWithPopup(googleProvider).then(() => {
-			window.location.assign('home');
+			window.location.assign('checkout');
 		}).catch(error => {
 			setTimeout(() => { document.getElementsByClassName('toast')[0].classList.add(`anons`); }, 200);
 			var shortCutFunction = 'success';var msg = `${error.message} <br> <hr class="to-hr hr15-top">`;
@@ -358,7 +364,7 @@ const signUpFunction = () => {
 	} else if(email.includes('@yahoo')) {
 		const yahooProvider = new firebase.auth.OAuthProvider('yahoo.com');
 		auth.signInWithPopup(yahooProvider).then(() => {
-			window.location.assign('home');
+			window.location.assign('checkout');
 		}).catch(error => {
 			setTimeout(() => { document.getElementsByClassName('toast')[0].classList.add(`anons`); }, 200);
 			var shortCutFunction = 'success';var msg = `${error.message} <br> <hr class="to-hr hr15-top">`;
