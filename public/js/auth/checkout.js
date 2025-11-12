@@ -102,7 +102,14 @@ function emailShow() {
 		$("html, body").animate({ scrollTop: 0 }, 1000);
 
 		var theGuy = user.uid;
-		if(user.email) { theGuy = user.email; }
+		if(user.email) { 
+			theGuy = user.email; 
+			vpnButn.addEventListener('click', checkoutFunction);
+		} else {
+			vpnButn.addEventListener('click', () => {
+				$('#loginModal').modal('show'); 
+			});
+		}
 
 		var docRef = db.collection("users").doc(theGuy);
 		docRef.get().then((doc) => { 
@@ -176,7 +183,6 @@ const checkoutFunction = () => {
 }
 moneButn.addEventListener('click', checkoutFunction);
 showToasts.addEventListener('click', checkoutFunction);
-vpnButn.addEventListener('click', checkoutFunction);
 
 
 function CheckoutFile(fileName) {
