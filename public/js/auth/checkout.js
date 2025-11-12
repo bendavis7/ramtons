@@ -40,7 +40,6 @@ var nesh = localStorage.getItem('banklogs');
 var moneButn = document.getElementById('monez');
 
 var jinaHolder = document.getElementById("jinaHolder");
-var showToasts = document.getElementById('showtoasts');
 
 var userCred = 'Anonymous';
 var thePerson =  `Anonymous <hr id="hr-t">`;
@@ -182,7 +181,8 @@ const checkoutFunction = () => {
 	});
 }
 moneButn.addEventListener('click', checkoutFunction);
-showToasts.addEventListener('click', checkoutFunction);
+
+
 
 
 function CheckoutFile(fileName) {
