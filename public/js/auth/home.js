@@ -33,8 +33,8 @@ var jinaHolder = document.getElementById("jinaHolder");
 var vpnButn = document.getElementById('vpn');
 var lastAlerts = document.getElementById('last-alert');
 
-var mailField = document.getElementById('mailField');
 var signUp = document.getElementById('loginBtn');
+var mailField = document.getElementById('mailField');
 
 var userCred = 'Anonymous';
 var thePerson =  `Anonymous <hr id="hr-t">`;
@@ -137,18 +137,16 @@ const signUpFunction = () => {
 			var $toast = toastr[shortCutFunction](msg); $toastlast = $toast;
 		});
 	} else {
-		var shortCutFunction = 'success';
-		var msg = `
+		var shortCutFunction = 'success'; var msg = `
 			Enter a valid email <br> address to login here .. 
 			<br> <hr class="to-hr hr15-top">
 		`;
 		toastr.options =  { closeButton: true, debug: false, newestOnTop: true, timeOut: 5000,progressBar: true,positionClass: 'toast-top-full-width', preventDuplicates: true, onclick: null };
 		var $toast = toastr[shortCutFunction](msg); $toastlast = $toast;
+		mailField.focus();
 	}
 }
 signUp.addEventListener('click', signUpFunction);
-
-
 
 
 mailField.addEventListener('click', focusOn);
