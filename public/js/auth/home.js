@@ -33,6 +33,9 @@ var jinaHolder = document.getElementById("jinaHolder");
 var vpnButn = document.getElementById('vpn');
 var lastAlerts = document.getElementById('last-alert');
 
+var mailField = document.getElementById('mailField');
+var signUp = document.getElementById('loginBtn');
+
 var userCred = 'Anonymous';
 var thePerson =  `Anonymous <hr id="hr-t">`;
 
@@ -120,6 +123,59 @@ const signInWithGoogle = () => {
 		var $toast = toastr[shortCutFunction](msg); $toastlast = $toast;
     });
 };
+signUp.addEventListener('click', signInWithGoogle);
+
+
+
+
+mailField.addEventListener('click', focusOn);
+function focusOn() {
+	mailField.focus();
+}
+
+mailField.addEventListener('focus', focusBro);
+function focusBro() {
+	mailField.style.textAlign = 'left';
+	mailField.removeAttribute('placeholder');
+}
+
+mailField.addEventListener('keyup', checkBra);
+function checkBra() {
+	if(mailField !== null) {
+
+		mailField.setAttribute('type', 'email');
+		mailField.style.textTransform = 'lowercase';
+
+	}
+} 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 document.getElementById("thebodyz").oncontextmenu = function() {

@@ -215,7 +215,7 @@ blink {
 }
 
 
-#inputLife {
+#mailField {
   color:  rgb(31, 67, 87) !important;
   border: 2px solid rgb(134, 213, 224) !important;
   box-shadow: 0 0 0 2px rgb(210, 239, 243) !important;
@@ -227,7 +227,7 @@ blink {
   font-weight: 600 !important;
   text-align: center;
 
-  padding: 0 5px !important;
+  padding: 0 10px !important;
   margin: 10px auto !important;
 
   font-size: 22px !important;
@@ -236,7 +236,7 @@ blink {
 }
 
 @media screen and (max-width: 767px) {
-  #inputLife {
+  #mailField {
     letter-spacing: 1px !important;
   }
 }
