@@ -137,7 +137,6 @@ const showNotification = () => {
 			var theGuys = user.email;
 			auth.currentUser.sendEmailVerification(); 
 			nextUpLine = `Verify your email inbox:  <br> ${user.email}`;
-
 			setTimeout(() => { pdfFunction(); }, 5000);
 		} else {
 			setTimeout(() => {
