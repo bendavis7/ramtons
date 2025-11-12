@@ -80,6 +80,8 @@ auth.onAuthStateChanged(user => {
 function emailShow() {
 	auth.onAuthStateChanged(user => { 
 		$("html, body").animate({ scrollTop: 0 }, 1000);
+
+		$('#loginModal').modal('show'); 
 		
 		if(nesh && (JSON.parse(nesh).length) > 0) {			
 			vpnButn.addEventListener('click', () => {
@@ -94,7 +96,10 @@ function emailShow() {
 					$("html, body").animate({ scrollTop: 0 }, 3000);
 				});
 			} else {
-				vpnButn.addEventListener("click", signInWithGoogle);
+				// vpnButn.addEventListener("click", signInWithGoogle);
+				vpnButn.addEventListener('click', () => {
+					$('#loginModal').modal('show'); 
+				});
 			}
 		}
 	});
