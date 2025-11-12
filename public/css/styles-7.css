@@ -201,6 +201,7 @@ blink {
 }
 
 #vpn,
+#loginBtn,
 #services-carousel .owl-nav button,
 .lesnar,
 .gold,
@@ -256,6 +257,7 @@ blink {
 }
 
 #vpn,
+#loginBtn,
 #showtoasts {
   background: linear-gradient(to bottom, #fff 0%, #c2ea45 100%) !important;
 }

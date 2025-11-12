@@ -201,6 +201,7 @@ blink {
   background: rgba(3, 169, 245, 0.25) !important;
 }
 
+#loginBtn,
 #vpn,
 #services-carousel .owl-nav button,
 .lesnar,
@@ -255,6 +256,7 @@ blink {
   background: linear-gradient(to bottom, #fff 30%, #03a9f5 100%) !important;
 }
 
+#loginBtn,
 #vpn,
 #showtoasts {
   color: rgb(16, 47, 75) !important;

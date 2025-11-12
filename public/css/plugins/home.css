@@ -220,7 +220,7 @@ blink {
   border: 2px solid rgb(134, 213, 224) !important;
   box-shadow: 0 0 0 2px rgb(210, 239, 243) !important;
 
-  height: 57px !important;
+  height: 60px !important;
   width: 90% !important;
 
   border-radius: 1px !important;
@@ -242,19 +242,18 @@ blink {
 }
 
 
-#email-phone {
-  background: rgb(194, 234, 239) !important;
-  color: rgb(25, 49, 71) !important;
-  border: 2.2px solid rgba(59, 151, 169, 0.7);
-}
-
-#email-phone {
+#loginBtn {
   cursor: pointer !important;
-  padding-left: 13px !important;
-  padding-right: 13px !important;
-  font-size: 23px !important;
-
   margin: 20px auto !important;
+
+  border: 2px solid rgb(18, 29, 51, 0.7) !important;
+  box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.7) !important;
+
+  padding: 14px 12px !important;
+  font-size: 24px !important;
+  word-spacing: 3px !important;
+  letter-spacing: 1.6px !important;
+
 }
 
 #verify-li {

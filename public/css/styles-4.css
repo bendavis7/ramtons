@@ -202,6 +202,7 @@ blink {
 .lesnar,
 .gold,
 #vpn,
+#loginBtn,
 #services-carousel .owl-nav button,
 .navbar-nav li.nav-small a,
 #showtoasts,
@@ -254,6 +255,7 @@ blink {
 }
 
 #vpn,
+#loginBtn,
 #showtoasts {
   color: rgb(25, 36, 63) !important;
   border: 2.2px solid rgba(58, 73, 120, 0.7);
