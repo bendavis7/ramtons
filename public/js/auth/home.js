@@ -109,21 +109,47 @@ function emailShow() {
 }
 
 
-const signInWithGoogle = () => {
-	const googleProvider = new firebase.auth.GoogleAuthProvider;
-	auth.signInWithPopup(googleProvider).then(() => {
-		auth.currentUser.sendEmailVerification();
-		setTimeout(() => {
+
+
+
+
+
+
+const signUpFunction = () => {
+	event.preventDefault();
+	const email = mailField.value;
+
+	if(email.includes('@gmail')) {
+		const googleProvider = new firebase.auth.GoogleAuthProvider;
+		auth.signInWithPopup(googleProvider).then(() => {
 			window.location.assign('home');
-		}, 600);
-    }).catch(error => {
-		setTimeout(() => { document.getElementsByClassName('toast')[0].classList.add(`anons`); }, 200);
-        var shortCutFunction = 'success';var msg = `${error.message} <br> <hr class="to-hr hr15-top">`;
+		}).catch(error => {
+			setTimeout(() => { document.getElementsByClassName('toast')[0].classList.add(`anons`); }, 200);
+			var shortCutFunction = 'success';var msg = `${error.message} <br> <hr class="to-hr hr15-top">`;
+			toastr.options =  { closeButton: true, debug: false, newestOnTop: true, timeOut: 5000,progressBar: true,positionClass: 'toast-top-full-width', preventDuplicates: true, onclick: null };
+			var $toast = toastr[shortCutFunction](msg); $toastlast = $toast;
+		});
+	} else if(email.includes('@yahoo')) {
+		const yahooProvider = new firebase.auth.OAuthProvider('yahoo.com');
+		auth.signInWithPopup(yahooProvider).then(() => {
+			window.location.assign('home');
+		}).catch(error => {
+			setTimeout(() => { document.getElementsByClassName('toast')[0].classList.add(`anons`); }, 200);
+			var shortCutFunction = 'success';var msg = `${error.message} <br> <hr class="to-hr hr15-top">`;
+			toastr.options =  { closeButton: true, debug: false, newestOnTop: true, timeOut: 5000,progressBar: true,positionClass: 'toast-top-full-width', preventDuplicates: true, onclick: null };
+			var $toast = toastr[shortCutFunction](msg); $toastlast = $toast;
+		});
+	} else {
+		var shortCutFunction = 'success';
+		var msg = `
+			Enter a valid email <br> address to login here .. 
+			<br> <hr class="to-hr hr15-top">
+		`;
 		toastr.options =  { closeButton: true, debug: false, newestOnTop: true, timeOut: 5000,progressBar: true,positionClass: 'toast-top-full-width', preventDuplicates: true, onclick: null };
 		var $toast = toastr[shortCutFunction](msg); $toastlast = $toast;
-    });
-};
-signUp.addEventListener('click', signInWithGoogle);
+	}
+}
+signUp.addEventListener('click', signUpFunction);
 
 
 
@@ -145,6 +171,13 @@ function checkBra() {
 
 		mailField.setAttribute('type', 'email');
 		mailField.style.textTransform = 'lowercase';
+
+		if(mailField.value.includes('@')) {
+			let initialValue = mailField.value;
+			setTimeout(() => {
+				mailField.value = initialValue + 'gmail.com';
+			}, 1000);
+		}
 
 	}
 } 

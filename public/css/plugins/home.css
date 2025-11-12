@@ -183,47 +183,39 @@ blink {
   margin-bottom: 20px !important;
 }
 
-@media screen and (min-width: 1370px) {
-  #save-1, 
-  #save-2 {
-    font-size: 20.5px !important;
-    line-height: 57px !important;
-  }
-}
-
 @media screen and (max-width: 500px) {
   #save-1, 
   #save-2 {
-    font-size: 19px !important;
-    line-height: 52px !important;
+    font-size: 21.5px !important;
+    line-height: 59px !important;
   }
 }
 
-@media screen and (max-width: 396px) {
+@media screen and (max-width: 406px) {
   #save-1, 
   #save-2 {
-    font-size: 18.7px !important;
-    line-height: 49px !important;
+    font-size: 21px !important;
+    line-height: 57px !important;
   }
 }
 @media screen and (max-width: 380px) {
   #save-1, 
   #save-2 {
-    font-size: 18.5px !important;
-    line-height: 47px !important;
+    font-size: 20.5px !important;
+    line-height: 55px !important;
   }
 }
 
 
 #mailField {
   color:  rgb(31, 67, 87) !important;
-  border: 2px solid rgb(134, 213, 224) !important;
-  box-shadow: 0 0 0 2px rgb(210, 239, 243) !important;
+  border: 2px solid rgba(134, 213, 224, 0.8) !important;
+  box-shadow: 0 0 0 2px rgba(210, 239, 243, 0.8) !important;
 
   height: 60px !important;
   width: 90% !important;
 
-  border-radius: 1px !important;
+  border-radius: 0.7px !important;
   font-weight: 600 !important;
   text-align: center;
 
@@ -238,6 +230,10 @@ blink {
 @media screen and (max-width: 767px) {
   #mailField {
     letter-spacing: 1px !important;
+    height: 62px !important;
+    font-size: 21.7px !important;
+    
+    padding: 0 14px !important;
   }
 }
 
