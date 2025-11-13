@@ -85,6 +85,7 @@ if(localStorage.getItem('banklogs')){
 
         for(var i = 0; i < items.length; i++) {
             var cartRow = document.createElement('tr');
+            cartRow.classList.add('big-margin');
             var cartRow2 = document.createElement('li');
             cartRow.classList.add('table-warning');
             cartRow2.classList.add('total','bg-black');
@@ -116,11 +117,11 @@ if(localStorage.getItem('banklogs')){
         }
 
         
-        // var removeFromCartButtons = document.getElementsByClassName('btn-remove');
-        // for(var i = 0; i <removeFromCartButtons.length; i++){
-        //     var button = removeFromCartButtons[i];
-        //     button.addEventListener('click', removeCartItem)
-        // }
+        var removeFromCartButtons = document.getElementsByClassName('btn-remove');
+        for(var i = 0; i <removeFromCartButtons.length; i++){
+            var button = removeFromCartButtons[i];
+            button.addEventListener('click', removeCartItem)
+        }
 
         cartLen.classList.remove('display-none');
         updateCartTotal();
@@ -189,49 +190,49 @@ for(j=0; j< jobs.length; j++) {
 
 
 
-// function removeCartItem(event) {
-//     var buttonClicked = event.target
-//     var cartItem = buttonClicked.parentElement.parentElement;
-//     var pric = cartItem.children[4].innerText;
-//     var price = "Price: " + pric;
-//     var balanc = cartItem.children[1].children[2].innerText;
-//     var balance = "Balance: " + balanc;
-//     var account = cartItem.children[2].innerText;
-//     var website = cartItem.children[10].innerText;
-//     var image = cartItem.children[0].children[0].src;
-//     var info1 = cartItem.children[6].innerText;
-//     var info2 = cartItem.children[7].innerText;
-//     var info3 = cartItem.children[8].innerText;
-//     var info4 = cartItem.children[9].innerText;
+function removeCartItem(event) {
+    var buttonClicked = event.target
+    var cartItem = buttonClicked.parentElement.parentElement;
+    var pric = cartItem.children[4].innerText;
+    var price = "Price: " + pric;
+    var balanc = cartItem.children[1].children[2].innerText;
+    var balance = "Balance: " + balanc;
+    var account = cartItem.children[2].innerText;
+    var website = cartItem.children[10].innerText;
+    var image = cartItem.children[0].children[0].src;
+    var info1 = cartItem.children[6].innerText;
+    var info2 = cartItem.children[7].innerText;
+    var info3 = cartItem.children[8].innerText;
+    var info4 = cartItem.children[9].innerText;
 
     
-//     removeItemFromCart(price, balance, account,website,image,info1,info2,info3,info4);
-//     buttonClicked.parentElement.parentElement.remove();
-// }
+    removeItemFromCart(price, balance, account,website,image,info1,info2,info3,info4);
+    buttonClicked.parentElement.parentElement.remove();
+}
 
 
-// function removeItemFromCart(price, balance,account,website,image,info1,info2,info3,info4){
-//     let item = {
-//         price: price,
-//         balance: balance,
-//         account: account,
-//         website: website,
-//         image: image,
-//         info1: info1,
-//         info2: info2,
-//         info3: info3,
-//         info4: info4
-//     }
-//     function checkAdult(items) {
-//         return JSON.stringify(items) !== JSON.stringify(item)
-//     }
-//     localStorage.setItem('banklogs', JSON.stringify(items.filter(checkAdult)));
-//     items = items.filter(checkAdult);
+function removeItemFromCart(price, balance,account,website,image,info1,info2,info3,info4){
+    let item = {
+        price: price,
+        balance: balance,
+        account: account,
+        website: website,
+        image: image,
+        info1: info1,
+        info2: info2,
+        info3: info3,
+        info4: info4
+    }
+    function checkAdult(items) {
+        return JSON.stringify(items) !== JSON.stringify(item)
+    }
+    localStorage.setItem('banklogs', JSON.stringify(items.filter(checkAdult)));
+    items = items.filter(checkAdult);
 
-//     $("html, body").animate({ scrollTop: 0 }, 3000);
+    $("html, body").animate({ scrollTop: 0 }, 3000);
     
-//     window.location.reload()
-// }
+    window.location.reload()
+}
 
 
 

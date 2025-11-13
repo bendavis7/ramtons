@@ -1338,14 +1338,6 @@ td {
   animation-timing-function: ease-in-out;
 }
 
-#showtoasts.checkouts {
-  font-size: 29px !important;
-  padding: 16px 13.5px !important;
-  letter-spacing: 1.5px !important;
-
-  margin: 18px 20px !important;
-}
-
 
 #showtoasts i {
   margin-left: 6px !important;
@@ -2155,7 +2147,7 @@ td {
 
 @media screen and (max-width: 767px) {
   .vpn-section .butn#vpn {
-    margin: 60px auto 145px !important;
+    margin: 60px auto 150px !important;
 
     padding: 19px 15.5px !important;
     font-size: 31.5px !important;
@@ -2165,7 +2157,7 @@ td {
 
 @media screen and (max-width: 420px) {
   .vpn-section .butn#vpn {
-    margin: 55px auto 135px !important;
+    margin: 55px auto 140px !important;
 
     padding: 18.5px 15px !important;
     font-size: 31px !important;
@@ -2175,7 +2167,7 @@ td {
 
 @media screen and (max-width: 407px) {
   .vpn-section .butn#vpn {
-    margin: 50px auto 125px !important;
+    margin: 50px auto 130px !important;
 
     padding: 18px 14.5px !important;
     font-size: 30px !important;
@@ -2932,13 +2924,13 @@ button.butn.in-cart,
 
   border-radius: 0.5px !important;
 
-  border: 1.6px solid rgb(18, 29, 51, 0.7) !important;
-  box-shadow: 0 0 0 2.2px rgba(255, 255, 255, 0.7) !important;
+  border: 1.8px solid rgb(18, 29, 51, 0.7) !important;
+  box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.7) !important;
 }
 
 
 .dataTables_wrapper .dataTables_filter {
-  margin: 10px 10px 1px !important;
+  margin: 10px 10px 5px !important;
   letter-spacing: 1.5px !important;
   word-spacing: 2px !important;
   font-size: 23px !important;
@@ -2983,7 +2975,7 @@ button.butn.in-cart,
 @media screen and (max-width: 520px) {
   .dataTables_wrapper .dataTables_filter {
     width: 65% !important;
-    margin: 4px 14px !important;
+    margin: 5px 15px !important;
   }
   .dataTables_wrapper .dataTables_filter input{
     width: 60% !important;
@@ -2994,7 +2986,7 @@ button.butn.in-cart,
   }
 
   .dataTables_wrapper .dataTables_length {
-    margin: 12px 14px !important;
+    margin: 15px 20px !important;
   }
   .dataTables_wrapper .dataTables_length select {
     font-size: 17px !important;
@@ -3006,7 +2998,7 @@ button.butn.in-cart,
 @media screen and (max-width: 420px) {
   .dataTables_wrapper .dataTables_filter {
     width: 65% !important;
-    margin: -3px 15px !important;
+    margin: 5px 15px !important;
   }
   .dataTables_wrapper .dataTables_filter input{
     width: 60% !important;
@@ -3017,7 +3009,7 @@ button.butn.in-cart,
   }
 
   .dataTables_wrapper .dataTables_length {
-    margin: 8px 15px !important;
+    margin: 15px 15px !important;
   }
   .dataTables_wrapper .dataTables_length select {
     font-size: 16.5px !important;

@@ -300,40 +300,45 @@ section #section-x {
 
 
 
-#example tr::nth-child(1) {
-  line-height: 400px !important;
-}
-
-/* td:first-child {
+tr.big-margin td {
   font-size: 17.4px !important;
-  line-height: 400px !important;
-  color: #121d33;
-  font-weight: 500 !important;
-} */
+  line-height: 50px !important;
 
-@media screen and (max-width: 508px) {
-  td {
+  padding-bottom: 50px !important;
+}
+
+
+@media (max-width: 769px) {
+  tr.big-margin td {
     font-size: 17.9px !important;
-    line-height: 47px !important;
+    line-height: 50px !important;
+
+    padding-bottom: 30px !important;
   }
 }
-
-@media screen and (max-width: 420px) {
-  td {
+@media (max-width: 420px) {
+  tr.big-margin td {
     font-size: 17.85px !important;
-    line-height: 45px !important;
+    line-height: 50px !important;
+
+    padding-bottom: 30px !important;
+  }
+}
+@media (max-width: 409px) {
+  tr.big-margin td {
+    font-size: 17.9px !important;
+    line-height: 50px !important;
+
+    padding-bottom: 30px !important;
   }
 }
 
-@media screen and (max-width: 408px) {
-  td {
-    font-size: 17.8px !important;
-    line-height: 43px !important;
-  }
-}
 
 
 
 section .dataTables_wrapper .dataTables_paginate {
   display: none !important;
 }
+
+
+
