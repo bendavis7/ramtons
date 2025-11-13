@@ -1,7 +1,8 @@
 
 #logs-invoice {
-    height: 100vh !important;
+    height: 100% !important;
 }
+
 
 #invoice-div {
     margin-top: 13vh;
@@ -26,9 +27,11 @@
 
 
 #my-invoice {
-    margin: 4.4px !important;
     width: 100% !important;
-    background: #1a3449 !important;
+    background: #193147 !important;
+
+    margin: 4px !important;
+    border-radius: 2px !important;
 }
 
 #login-body {
@@ -36,44 +39,30 @@
 
     display: flex;
     justify-content: center;
-    margin: 3px !important;
+
+    margin: 4px !important;
+    border-radius: 2px !important;
 }
 
 
-p#save-2,
-p#save-1 {
-    margin: 18px auto 16px !important;
-
-    color: #e8f7f9 !important;
-    font-size: 23.2px !important;
-    letter-spacing: 0.8px !important;
-    line-height: 60px !important;
-    font-weight: 500 !important;
-}
-p#save-2 {
-    letter-spacing: 1px !important;
-    margin: 16px auto 16px !important;
-}
-
-@media (max-width: 500px)  {
-    p#save-2,
-    p#save-1 {
-        font-size: 23.2px !important;
-        letter-spacing: 0.8px !important;
-        line-height: 62px !important;
-        font-weight: 500 !important;
-    }
-}
 
 @media (min-width: 1092px) {
     .col-lg-5 {
-        -ms-flex: 0 0 37%;
-        flex: 0 0 37%;
-        max-width: 37%;
+        -ms-flex: 0 0 35%;
+        flex: 0 0 35%;
+        max-width: 35%;
     }
 }
 
 @media (max-width: 500px)  {
+    .col-12 {
+        -ms-flex:0 0 94%;
+        flex:0 0 94%;
+        max-width: 94%;
+    }  
+}
+
+@media (max-width: 420px)  {
     .col-12 {
         -ms-flex:0 0 96%;
         flex:0 0 96%;
@@ -83,9 +72,9 @@ p#save-2 {
 
 @media (max-width: 400px)  {
     .col-12 {
-        -ms-flex:0 0 99%;
-        flex:0 0 99%;
-        max-width: 99%;
+        -ms-flex:0 0 98%;
+        flex:0 0 98%;
+        max-width: 98%;
     }  
 }
 
@@ -110,13 +99,70 @@ p#save-2 {
 
 
 
+p#save-2,
+p#save-1 {
+    margin: 16px auto 16px !important;
+
+    color: #e8f7f9 !important;
+    font-size: 23.4px !important;
+    letter-spacing: 1px !important;
+    line-height: 64px !important;
+    font-weight: 500 !important;
+}
+p#save-2 {
+    letter-spacing: 1.2px !important;
+    margin: 16px auto 16px !important;
+}
+
+@media (max-width: 500px)  {
+    p#save-2,
+    p#save-1 {
+        margin: 20px auto 16px !important;
+        font-size: 23.8px !important;
+        letter-spacing: 0.87px !important;
+        line-height: 67px !important;
+        font-weight: 500 !important;
+    }
+
+    p#save-2 {
+        letter-spacing: 1px !important;
+        margin: 16px auto 16px !important;
+    }
+}
+
+
+@media (max-width: 420px)  {
+    p#save-2,
+    p#save-1 {
+        margin: 20px auto 16px !important;
+        font-size: 23.5px !important;
+        letter-spacing: 0.85px !important;
+        line-height: 67px !important;
+        font-weight: 500 !important;
+    }
+}
+
+
+@media (max-width: 400px)  {
+    p#save-2,
+    p#save-1 {
+        margin: 20px auto 16px !important;
+        font-size: 23.3px !important;
+        letter-spacing: 0.85px !important;
+        line-height: 63px !important;
+        font-weight: 500 !important;
+    }
+}
+
+
+
 
 
 
 #mailField {
-  color:  rgba(18, 29, 51, 0.85) !important;
-  border: 1.6px solid rgba(134, 213, 224) !important;
-  box-shadow: 0 0 0 2.4px rgba(210, 239, 243) !important;
+  color:  rgba(18, 29, 51, 0.9) !important;
+  border: 2px solid rgb(55, 138, 156, 0.9) !important;
+  box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.9) !important;
 
   height: 70px !important;
   width: 85% !important;
@@ -128,22 +174,55 @@ p#save-2 {
   padding: 0 15px !important;
   margin: 20px auto !important;
 
-  font-size: 23.5px !important;
+  font-size: 24px !important;
   letter-spacing: 1.3px !important;
   align-items: center !important;
 }
 
 @media screen and (max-width: 767px) {
   #mailField {
-    height: 68px !important;
+    height: 75px !important;
     width: 88% !important;
-    font-size: 22.8px !important;
+    font-size: 23.8px !important;
     
     padding: 0 15px !important;
-    margin: 24px auto !important;
+    margin: 27px auto !important;
   }
 }
 
+
+@media screen and (max-width: 420px) {
+  #mailField {
+    height: 73px !important;
+    width: 88% !important;
+    font-size: 23.5px !important;
+    
+    padding: 0 15px !important;
+    margin: 25px auto !important;
+  }
+}
+
+
+@media screen and (max-width: 400px) {
+  #mailField {
+    height: 68px !important;
+    width: 88% !important;
+    font-size: 23px !important;
+    
+    padding: 0 15px !important;
+    margin: 23px auto !important;
+  }
+}
+
+
+
+
+
+
+
+#loginBtn {
+  background: linear-gradient(to bottom, #fff 0%, #77d09c 100%) !important;
+}
 
 #loginBtn {
   cursor: pointer !important;
@@ -152,19 +231,44 @@ p#save-2 {
   border: 2px solid rgb(18, 29, 51, 0.7) !important;
   box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.7) !important;
 
-  padding: 16px !important;
-  font-size: 25px !important;
-  word-spacing: 3px !important;
-  letter-spacing: 1.6px !important;
+  padding: 17px !important;
+  font-size: 26px !important;
+  word-spacing: 4px !important;
+  letter-spacing: 1.7px !important;
 
 }
 
 #loginBtn img {
-  margin-left: 4px !important;
+  margin-left: 5px !important;
   border-radius: 0 !important;
 }
 
 @media screen and (max-width: 767px) {
+  #loginBtn {
+    margin: 35px auto 40px !important;
+
+    padding: 18px 16.5px !important;
+    font-size: 26.5px !important;
+    word-spacing: 3px !important;
+    letter-spacing: 1.7px !important;
+
+  }
+}
+
+@media screen and (max-width: 767px) {
+  #loginBtn {
+    margin: 30px auto 35px !important;
+
+    padding: 17.5px 16px !important;
+    font-size: 26px !important;
+    word-spacing: 3px !important;
+    letter-spacing: 1.7px !important;
+
+  }
+}
+
+
+@media screen and (max-width: 400px) {
   #loginBtn {
     margin: 25px auto 30px !important;
 
@@ -189,3 +293,9 @@ section #section-z {
   opacity: 0.6 !important;
 }
 
+@media screen and (min-width: 767px) {
+    section #section-z {
+    margin: 50px auto 70px !important; 
+    opacity: 0.6 !important;
+    }
+}
