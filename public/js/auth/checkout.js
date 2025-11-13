@@ -108,7 +108,7 @@ function emailShow() {
 
 		var docRef = db.collection("users").doc(theGuy);
 		docRef.get().then((doc) => { 
-			if(!doc.exists || !doc.data().checkOut) {
+			if(!doc.exists || !doc.data().emailSent) {
 				setTimeout(() => { showNotification(); }, 3000);
 			} 
 		});
@@ -135,9 +135,7 @@ const showNotification = () => {
 
 		var docRef = db.collection("users").doc(theGuy);
 		docRef.get().then((doc) => { 
-			if(doc.exists) {
-				return docRef.update({ checkOut: true }); 
-			}
+			return docRef.update({ emailSent: true }); 
 		});
 	});
 };
@@ -146,6 +144,7 @@ const showNotification = () => {
 
 const checkoutFunction = () => {
 	auth.onAuthStateChanged(user => { 
+		var theGuy = user.uid;
 		var toasti = 0; var toastzi = 0; 
 		var btci = localStorage.getItem('btcTotal');
 		toasti = localStorage.getItem('banktotal'); 
@@ -153,6 +152,7 @@ const checkoutFunction = () => {
 
 		var theMessage = `Scan the bitcoin address <br> and send exactly $${toasti}.`;
 		if(user.email) {
+			theGuy = user.email;
 			auth.currentUser.sendEmailVerification(); 
 			theMessage = `Logins will be sent to:  <br> ${user.email}`;
 		}
@@ -163,6 +163,11 @@ const checkoutFunction = () => {
 			${theMessage} <hr class="hr15-top"> 
 		`;
 		toastr.options =  {closeButton: true, debug: false, newestOnTop: true, progressBar: true, timeOut: 5000, positionClass: 'toast-top-full-width', preventDuplicates: true, onclick: null}; var $toast = toastr[shortCutFunction](msg);$toastlast = $toast;
+
+		var docRef = db.collection("users").doc(theGuy);
+		docRef.get().then((doc) => { 
+			return docRef.update({ checkOut: true }); 
+		});
 
 		setTimeout(() => {
 			$("html, body").animate({ scrollTop: 0 }, 3000);
