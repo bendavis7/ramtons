@@ -300,9 +300,40 @@ section #section-x {
 
 
 
+#example tr::nth-child(1) {
+  line-height: 400px !important;
+}
+
+/* td:first-child {
+  font-size: 17.4px !important;
+  line-height: 400px !important;
+  color: #121d33;
+  font-weight: 500 !important;
+} */
+
+@media screen and (max-width: 508px) {
+  td {
+    font-size: 17.9px !important;
+    line-height: 47px !important;
+  }
+}
+
+@media screen and (max-width: 420px) {
+  td {
+    font-size: 17.85px !important;
+    line-height: 45px !important;
+  }
+}
+
+@media screen and (max-width: 408px) {
+  td {
+    font-size: 17.8px !important;
+    line-height: 43px !important;
+  }
+}
 
 
 
-
-
-
+section .dataTables_wrapper .dataTables_paginate {
+  display: none !important;
+}

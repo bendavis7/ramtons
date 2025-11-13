@@ -104,19 +104,14 @@ function emailShow() {
 		var theGuy = user.uid;
 		if(user.email) { 
 			theGuy = user.email; 
-			vpnButn.addEventListener('click', checkoutFunction);
-		} else {
-			vpnButn.addEventListener('click', () => {
-				$('#loginModal').modal('show'); 
-			});
-		}
+		} 
 
-		var docRef = db.collection("users").doc(theGuy);
-		docRef.get().then((doc) => { 
-			if(!doc.exists || !doc.data().checkOut) {
-				setTimeout(() => { showNotification(); }, 3000);
-			} 
-		});
+		// var docRef = db.collection("users").doc(theGuy);
+		// docRef.get().then((doc) => { 
+		// 	if(!doc.exists || !doc.data().checkOut) {
+		// 		setTimeout(() => { showNotification(); }, 3000);
+		// 	} 
+		// });
 	});
 }
 
@@ -180,7 +175,7 @@ const checkoutFunction = () => {
 }
 moneButn.addEventListener('click', checkoutFunction);
 showToasts.addEventListener('click', checkoutFunction);
-
+vpnButn.addEventListener('click', checkoutFunction);
 
 
 
