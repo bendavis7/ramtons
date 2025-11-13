@@ -20,10 +20,6 @@ if(window.location.href.includes('darkweb.fit')) {
 }
 firebase.initializeApp(firebaseConfig);
 
-fetch('https://ipapi.co/json/').then(function(response) { return response.json()}).then(function(data) {
-	localStorage.setItem('cationZ', data.country_name +  ', ' + data.city); 
-});
-
 const auth = firebase.auth(); 
 const db = firebase.firestore();
 
