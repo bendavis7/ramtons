@@ -3135,13 +3135,6 @@ hr#hr-t {
 }
 
 
-#my-invoice {
-  margin: 3px !important;
-  padding: 0px !important;
-  background: rgb(19, 42, 60, 0.7) !important;
-  width: 100% !important;
-}
-
 span#in-span {
   color: rgb(139, 209, 68) !important;
 }
@@ -3394,81 +3387,3 @@ td.burro {
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-#mailField {
-  color:  rgba(18, 29, 51, 0.85) !important;
-  border: 1.6px solid rgba(134, 213, 224) !important;
-  box-shadow: 0 0 0 2.4px rgba(210, 239, 243) !important;
-
-  height: 70px !important;
-  width: 85% !important;
-
-  border-radius: 0.5px !important;
-  font-weight: 600 !important;
-  text-align: center;
-
-  padding: 0 15px !important;
-  margin: 20px auto !important;
-
-  font-size: 23.5px !important;
-  letter-spacing: 1.3px !important;
-  align-items: center !important;
-}
-
-@media screen and (max-width: 767px) {
-  #mailField {
-    letter-spacing: 1px !important;
-    height: 62px !important;
-    font-size: 21.7px !important;
-    
-    padding: 0 14px !important;
-    margin: 15px auto !important;
-  }
-}
-
-
-#loginBtn {
-  cursor: pointer !important;
-  margin: 30px auto 20px !important;
-
-  border: 2px solid rgb(18, 29, 51, 0.7) !important;
-  box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.7) !important;
-
-  padding: 16px !important;
-  font-size: 25px !important;
-  word-spacing: 3px !important;
-  letter-spacing: 1.6px !important;
-
-}
-
-#loginBtn img {
-  margin-left: 4px !important;
-  border-radius: 0 !important;
-}
-
-@media screen and (max-width: 767px) {
-  #loginBtn {
-    margin: 20px auto !important;
-
-    padding: 15px 12px !important;
-    font-size: 24px !important;
-    word-spacing: 3px !important;
-    letter-spacing: 1.6px !important;
-
-  }
-}
-
-#verify-li {
-  list-style: none;
-  text-align: center !important;
-}

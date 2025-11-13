@@ -28,7 +28,7 @@
 #my-invoice {
     margin: 5px !important;
     width: 100% !important;
-    background: #1b384d !important;
+    background: #1a3449 !important;
 }
 
 #login-body {
@@ -39,13 +39,36 @@
     margin: 3px !important;
 }
 
-#my-invoice p {
-    color: #e8f7f9 !important;
+
+p#save-2,
+p#save-1 {
     margin: 18px auto 16px !important;
+
+    color: #e8f7f9 !important;
     font-size: 23.2px !important;
     letter-spacing: 0.8px !important;
     line-height: 60px !important;
     font-weight: 500 !important;
+}
+p#save-2 {
+    margin: 16px auto 16px !important;
+}
+
+@media (max-width: 500px)  {
+    p#save-2,
+    p#save-1 {
+        margin: 18px auto 16px !important;
+
+        color: #e8f7f9 !important;
+        font-size: 23.2px !important;
+        letter-spacing: 0.8px !important;
+        line-height: 60px !important;
+        font-weight: 500 !important;
+    }
+
+    p#save-2 {
+        margin: 16px auto 16px !important;
+    }
 }
 
 @media (min-width: 1092px) {
@@ -62,5 +85,115 @@
         flex:0 0 96%;
         max-width: 96%;
     }  
+}
+
+@media (max-width: 400px)  {
+    .col-12 {
+        -ms-flex:0 0 99%;
+        flex:0 0 99%;
+        max-width: 99%;
+    }  
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#mailField {
+  color:  rgba(18, 29, 51, 0.85) !important;
+  border: 1.6px solid rgba(134, 213, 224) !important;
+  box-shadow: 0 0 0 2.4px rgba(210, 239, 243) !important;
+
+  height: 70px !important;
+  width: 85% !important;
+
+  border-radius: 0.5px !important;
+  font-weight: 600 !important;
+  text-align: center;
+
+  padding: 0 15px !important;
+  margin: 20px auto !important;
+
+  font-size: 23.5px !important;
+  letter-spacing: 1.3px !important;
+  align-items: center !important;
+}
+
+@media screen and (max-width: 767px) {
+  #mailField {
+    letter-spacing: 1.2px !important;
+    height: 67px !important;
+    width: 90% !important;
+    font-size: 22.5px !important;
+    
+    padding: 0 15px !important;
+    margin: 24px auto !important;
+    
+  }
+}
+
+
+#loginBtn {
+  cursor: pointer !important;
+  margin: 30px auto 20px !important;
+
+  border: 2px solid rgb(18, 29, 51, 0.7) !important;
+  box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.7) !important;
+
+  padding: 16px !important;
+  font-size: 25px !important;
+  word-spacing: 3px !important;
+  letter-spacing: 1.6px !important;
+
+}
+
+#loginBtn img {
+  margin-left: 4px !important;
+  border-radius: 0 !important;
+}
+
+@media screen and (max-width: 767px) {
+  #loginBtn {
+    margin: 25px auto 30px !important;
+
+    padding: 15px 14px !important;
+    font-size: 24px !important;
+    word-spacing: 3px !important;
+    letter-spacing: 1.6px !important;
+
+  }
+}
+
+#verify-li {
+  list-style: none;
+  text-align: center !important;
+}
+
+
+
+
+section #section-z {
+  margin: 70px auto 50px !important; 
+  opacity: 0.4 !important;
 }
 

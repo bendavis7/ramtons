@@ -103,7 +103,7 @@ function showThis() {
     login.onAuthStateChanged(user => { 		
 		if(user) {
             setTimeout(() => {
-                window.location.assign('checkout');
+                window.location.assign('invoice');
             }, 1000);
 		} 
 	});
