@@ -117,9 +117,10 @@ p#save-2 {
 @media (max-width: 500px)  {
     p#save-2,
     p#save-1 {
-        font-size: 23.2px !important;
-        letter-spacing: 0.8px !important;
-        line-height: 62px !important;
+        margin: 20px auto 16px !important;
+        font-size: 23.5px !important;
+        letter-spacing: 0.85px !important;
+        line-height: 67px !important;
         font-weight: 500 !important;
     }
 
@@ -128,6 +129,26 @@ p#save-2 {
         margin: 16px auto 16px !important;
     }
 }
+
+
+@media (max-width: 400px)  {
+    p#save-2,
+    p#save-1 {
+        margin: 20px auto 16px !important;
+        font-size: 23.3px !important;
+        letter-spacing: 0.85px !important;
+        line-height: 63px !important;
+        font-weight: 500 !important;
+    }
+
+    p#save-2 {
+        letter-spacing: 1px !important;
+        margin: 16px auto 16px !important;
+    }
+}
+
+
+
 
 
 
@@ -153,14 +174,31 @@ p#save-2 {
 
 @media screen and (max-width: 767px) {
   #mailField {
-    height: 68px !important;
+    height: 73px !important;
     width: 88% !important;
-    font-size: 22.8px !important;
+    font-size: 23.5px !important;
     
     padding: 0 15px !important;
-    margin: 24px auto !important;
+    margin: 25px auto !important;
   }
 }
+
+
+@media screen and (max-width: 400px) {
+  #mailField {
+    height: 68px !important;
+    width: 88% !important;
+    font-size: 23px !important;
+    
+    padding: 0 15px !important;
+    margin: 23px auto !important;
+  }
+}
+
+
+
+
+
 
 
 #loginBtn {
@@ -187,6 +225,24 @@ p#save-2 {
 }
 
 @media screen and (max-width: 767px) {
+  #loginBtn {
+    margin: 30px auto 35px !important;
+
+    padding: 17.5px 16px !important;
+    font-size: 26px !important;
+    word-spacing: 3px !important;
+    letter-spacing: 1.7px !important;
+
+  }
+
+  #loginBtn img {
+    margin-left: 5px !important;
+    border-radius: 0 !important;
+ }
+}
+
+
+@media screen and (max-width: 400px) {
   #loginBtn {
     margin: 25px auto 30px !important;
 
