@@ -118,8 +118,8 @@ p#save-2 {
     p#save-2,
     p#save-1 {
         margin: 20px auto 16px !important;
-        font-size: 23.5px !important;
-        letter-spacing: 0.85px !important;
+        font-size: 23.8px !important;
+        letter-spacing: 0.87px !important;
         line-height: 67px !important;
         font-weight: 500 !important;
     }
@@ -127,6 +127,18 @@ p#save-2 {
     p#save-2 {
         letter-spacing: 1px !important;
         margin: 16px auto 16px !important;
+    }
+}
+
+
+@media (max-width: 420px)  {
+    p#save-2,
+    p#save-1 {
+        margin: 20px auto 16px !important;
+        font-size: 23.5px !important;
+        letter-spacing: 0.85px !important;
+        line-height: 67px !important;
+        font-weight: 500 !important;
     }
 }
 
@@ -139,11 +151,6 @@ p#save-2 {
         letter-spacing: 0.85px !important;
         line-height: 63px !important;
         font-weight: 500 !important;
-    }
-
-    p#save-2 {
-        letter-spacing: 1px !important;
-        margin: 16px auto 16px !important;
     }
 }
 
@@ -173,6 +180,18 @@ p#save-2 {
 }
 
 @media screen and (max-width: 767px) {
+  #mailField {
+    height: 75px !important;
+    width: 88% !important;
+    font-size: 23.8px !important;
+    
+    padding: 0 15px !important;
+    margin: 27px auto !important;
+  }
+}
+
+
+@media screen and (max-width: 420px) {
   #mailField {
     height: 73px !important;
     width: 88% !important;
@@ -226,6 +245,18 @@ p#save-2 {
 
 @media screen and (max-width: 767px) {
   #loginBtn {
+    margin: 35px auto 40px !important;
+
+    padding: 18px 16.5px !important;
+    font-size: 26.5px !important;
+    word-spacing: 3px !important;
+    letter-spacing: 1.7px !important;
+
+  }
+}
+
+@media screen and (max-width: 767px) {
+  #loginBtn {
     margin: 30px auto 35px !important;
 
     padding: 17.5px 16px !important;
@@ -234,11 +265,6 @@ p#save-2 {
     letter-spacing: 1.7px !important;
 
   }
-
-  #loginBtn img {
-    margin-left: 5px !important;
-    border-radius: 0 !important;
- }
 }
 
 
@@ -252,11 +278,6 @@ p#save-2 {
     letter-spacing: 1.7px !important;
 
   }
-
-  #loginBtn img {
-    margin-left: 5px !important;
-    border-radius: 0 !important;
- }
 }
 
 #verify-li {
