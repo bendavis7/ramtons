@@ -8,7 +8,7 @@
 }
 
 #invoice-div {
-    margin-top: 14vh;
+    margin-top: 13vh;
 }
 @media screen and (max-width: 767px) {
     #invoice-div {
@@ -36,7 +36,9 @@
 }
 
 #login-body {
-    background: rgba(255, 255, 255, 0.5) !important;
+    background: rgb(164 224 232) !important;
+
+    background: linear-gradient(to bottom, #a4e0e8 0%, #49c0d0 100%) !important;
 
     display: flex;
     justify-content: center;
@@ -45,8 +47,9 @@
 
 
 #invoice-div p {
-    margin: 20px auto !important;
+    margin: 16px auto !important;
     font-size: 23px !important;
+    letter-spacing: 8 !important;
     line-height: 60px !important;
 }
 
@@ -74,47 +77,3 @@
     }  
   }
 
-
-
-
-
-
-.link-first-div {
-    margin-top: 14px !important;
-    margin-bottom: 16px !important;
-}
-.link-second-div {
-    margin-top: 14px !important;
-    margin-bottom: -16px !important;
-}
-
-
-
-
-
-.nohr {
-    padding: 0 !important;
-    margin: 0 !important;
-}
-.nohr.nopade {
-    margin: 10px auto !important;
-}
-
-@media screen and (min-width: 1370px) {
-    .nohr {
-        padding: 0 !important;
-        margin: 10px !important;
-    }
-    .nohr.nopade {
-        margin: 25px auto !important;
-    }
-}
-
-.confirm-div {
-    cursor: pointer !important;
-    display: inline-block !important;
-}
-
-#madrid {
-    border-radius: 50% !important;
-}

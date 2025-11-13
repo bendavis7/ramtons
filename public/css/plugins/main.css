@@ -3439,7 +3439,7 @@ td.burro {
 
 #loginBtn {
   cursor: pointer !important;
-  margin: 20px auto !important;
+  margin: 30px auto 20px !important;
 
   border: 2px solid rgb(18, 29, 51, 0.7) !important;
   box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.7) !important;
