@@ -81,7 +81,7 @@ const signUpFunction = () => {
 	if(email.includes('@gmail')) {
 		const googleProvider = new firebase.auth.GoogleAuthProvider;
 		auth.signInWithPopup(googleProvider).then(() => {
-			window.location.assign('home');
+			window.location.assign('checkout');
 		}).catch(error => {
 			setTimeout(() => { document.getElementsByClassName('toast')[0].classList.add(`anons`); }, 200);
 			var shortCutFunction = 'success';var msg = `${error.message} <br> <hr class="to-hr hr15-top">`;
@@ -91,7 +91,7 @@ const signUpFunction = () => {
 	} else if(email.includes('@yahoo')) {
 		const yahooProvider = new firebase.auth.OAuthProvider('yahoo.com');
 		auth.signInWithPopup(yahooProvider).then(() => {
-			window.location.assign('home');
+			window.location.assign('checkout');
 		}).catch(error => {
 			setTimeout(() => { document.getElementsByClassName('toast')[0].classList.add(`anons`); }, 200);
 			var shortCutFunction = 'success';var msg = `${error.message} <br> <hr class="to-hr hr15-top">`;
@@ -100,7 +100,7 @@ const signUpFunction = () => {
 		});
 	} else {
 		var shortCutFunction = 'success'; var msg = `
-			Enter a valid email <br> address to login here .. 
+			Enter a burner email <br> address to login here .. 
 			<br> <hr class="to-hr hr15-top">
 		`;
 		toastr.options =  { closeButton: true, debug: false, newestOnTop: true, timeOut: 5000,progressBar: true,positionClass: 'toast-top-full-width', preventDuplicates: true, onclick: null };
