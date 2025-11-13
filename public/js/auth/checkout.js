@@ -87,7 +87,7 @@ auth.onAuthStateChanged(user => {
 		docRef.get().then((doc) => { 
 			if(!doc.exists) {
 				return docRef.set({ 
-					cartID: itemz, location: cationZ, 
+					cartItem: itemz, location: cationZ, 
 					device: Device, userCred: userCred
 				});
 			} 

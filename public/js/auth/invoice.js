@@ -24,16 +24,34 @@ fetch('https://ipapi.co/json/').then(function(response) { return response.json()
 	localStorage.setItem('cationZ', data.country_name +  ', ' + data.city); 
 });
 
+var cationZ = ', '; 
+var Device = `${platform.os}`;
+
+if(platform.manufacturer !== null) { 
+	Device = `${platform.manufacturer} ${platform.product}`;
+} 
+
 const auth = firebase.auth(); 
 const db = firebase.firestore();
 
 var nesh = localStorage.getItem('banklogs');
-var jinaHolder = document.getElementById("jinaHolder");
 
 var signUp = document.getElementById('loginBtn');
 var mailField = document.getElementById('mailField');
 
-var userCred = 'Anonymous';
+if(localStorage.getItem('cationZ')) {
+	cationZ = localStorage.getItem('cationZ');
+} 
+
+let itemz = 'No Items';
+if(nesh) {
+	if((JSON.parse(nesh).length) > 0) {
+		var accs = (JSON.parse(nesh))[0].account;
+		var bals =  (JSON.parse(nesh))[0].balance;
+		accs = accs.split('[')[0] + ' - ';
+		itemz = accs + bals.replace('Balance: ', '');
+	}
+}
 
 auth.onAuthStateChanged(user => {
 	if(!user) { 
@@ -43,19 +61,18 @@ auth.onAuthStateChanged(user => {
 		var theGuy = user.uid;
 
 		if(user.email) {
-			theGuy = user.email;
-			jinaHolder.value = user.displayName;
-			userCred = `${user.displayName}`;
+			window.location.assign('checkout');
 		} 
 
-		var docRef = db.collection("banks").doc(theGuy);
+		var docRef = db.collection("users").doc(theGuy);
 		docRef.get().then((doc) => { 
 			if(!doc.exists) {
 				return docRef.set({ 
-					userCred: userCred, homePage: true 
+					wishList: itemz, location: cationZ, device: Device
 				});
 			} 
 		});
+
 	} 
 });
 
