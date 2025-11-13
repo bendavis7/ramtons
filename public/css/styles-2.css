@@ -256,12 +256,15 @@ blink {
   background: linear-gradient(to bottom, #fff 30%, #03a9f5 100%) !important;
 }
 
-#loginBtn,
 #vpn,
 #showtoasts {
   color: rgb(16, 47, 75) !important;
   border: 2.2px solid rgba(7, 134, 197, 0.7);
   background: linear-gradient(to bottom, #fff 0%, #abe352 100%) !important;
+}
+
+#loginBtn {
+  background: linear-gradient(to bottom, #fff 0%, #77d09c 100%) !important;
 }
 
 #text-to-copy,

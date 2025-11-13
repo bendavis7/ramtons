@@ -1,18 +1,11 @@
-.bg-animate{
-    background-position:0 0;
-    background-repeat:repeat-x;
-    animation:animatedBackground 70s linear infinite 
-}
-#confirm, 
+
 #logs-invoice {
     padding: 0px  10px !important;
     height: 100vh !important;
 }
-#confirm div, 
 #logs-invoice div {
     overflow: hidden !important;
 }
-#confirm .section-heading h4, 
 #logs-invoice .section-heading h4 {
     color: #121d33;
 }
@@ -168,9 +161,6 @@
 @media screen and (max-width: 500px) {
     #invoice-div {
         margin-top: 14vh;
-    }
-    #confirm-div {
-        margin-top: 4vh;
     }
 }
 @media screen and (max-width: 381px) {

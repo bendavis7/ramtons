@@ -1640,23 +1640,35 @@ td {
 }
 
 @media screen and (max-width: 570px) {
-  #loginModal .modal-dialog,
+  #loginModal .modal-dialog {
+    top: 13vh !important;
+    max-width: 82vw !important;
+  }
+
   #exampleModal .modal-dialog {
     top: 15vh !important;
     max-width: 81vw !important;
   }
 }
+
 @media screen and (max-width: 420px) {
-  #loginModal .modal-dialog,
+  #loginModal .modal-dialog {
+    top: 13vh !important;
+    max-width: 85vw !important;
+  }
+
   #exampleModal .modal-dialog {
     top: 15vh !important;
     max-width: 84vw !important;
   }
 }
 
-
 @media screen and (max-width: 376px) {
-  #loginModal .modal-dialog,
+  #loginModal .modal-dialog {
+    top: 13vh !important;
+    max-width: 88vw !important;
+  }
+
   #exampleModal .modal-dialog {
     top: 15vh !important;
     max-width: 87vw !important;
@@ -3445,23 +3457,23 @@ td.burro {
 @media screen and (max-width: 500px) {
   #save-1, 
   #save-2 {
-    font-size: 21.5px !important;
-    line-height: 59px !important;
+    font-size: 22px !important;
+    line-height: 60px !important;
   }
 }
 
 @media screen and (max-width: 406px) {
   #save-1, 
   #save-2 {
-    font-size: 21px !important;
-    line-height: 57px !important;
+    font-size: 21.5px !important;
+    line-height: 58px !important;
   }
 }
 @media screen and (max-width: 380px) {
   #save-1, 
   #save-2 {
-    font-size: 20.5px !important;
-    line-height: 55px !important;
+    font-size: 21px !important;
+    line-height: 56px !important;
   }
 }
 

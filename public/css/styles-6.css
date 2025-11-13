@@ -259,9 +259,12 @@ blink {
 }
 
 #vpn,
-#loginBtn,
 #showtoasts {
   background: linear-gradient(to bottom, #fff 0%, #efe31c 100%) !important;
+}
+
+#loginBtn {
+  background: linear-gradient(to bottom, #fff 0%, #77d09c 100%) !important;
 }
 
 #text-to-copy,

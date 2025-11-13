@@ -285,11 +285,14 @@ blink {
 }
 
 #vpn,
-#loginBtn,
 #showtoasts {
   color: rgb(33, 49, 53) !important;
   border: 2.2px solid rgba(105, 148, 62, 0.7);
   background: linear-gradient(to bottom, #fff 0%, #d7e916 100%) !important;
+}
+
+#loginBtn {
+  background: linear-gradient(to bottom, #fff 0%, #77d09c 100%) !important;
 }
 
 #text-to-copy,

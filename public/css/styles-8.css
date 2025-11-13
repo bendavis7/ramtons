@@ -259,11 +259,14 @@ blink {
 }
 
 #vpn,
-#loginBtn,
 #showtoasts {
   color: rgb(19, 45, 61) !important;
   border: 2.2px solid rgba(21, 127, 113, 0.7);
   background: linear-gradient(to bottom, #fff 0%, #b1e02d 100%) !important;
+}
+
+#loginBtn {
+  background: linear-gradient(to bottom, #fff 0%, #77d09c 100%) !important;
 }
 
 #text-to-copy,
