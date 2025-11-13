@@ -27,9 +27,10 @@
 
 
 #my-invoice {
-    margin: 4px !important;
     width: 100% !important;
     background: #193147 !important;
+
+    margin: 4px !important;
     border-radius: 2px !important;
 }
 
@@ -38,6 +39,7 @@
 
     display: flex;
     justify-content: center;
+
     margin: 4px !important;
     border-radius: 2px !important;
 }
@@ -130,9 +132,9 @@ p#save-2 {
 
 
 #mailField {
-  color:  rgba(18, 29, 51, 0.85) !important;
-  border: 2px solid rgba(134, 213, 224) !important;
-  box-shadow: 0 0 0 3px rgba(210, 239, 243) !important;
+  color:  rgba(18, 29, 51, 0.9) !important;
+  border: 2px solid rgb(55, 138, 156, 0.9) !important;
+  box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.9) !important;
 
   height: 70px !important;
   width: 85% !important;
@@ -144,7 +146,7 @@ p#save-2 {
   padding: 0 15px !important;
   margin: 20px auto !important;
 
-  font-size: 23.5px !important;
+  font-size: 24px !important;
   letter-spacing: 1.3px !important;
   align-items: center !important;
 }
