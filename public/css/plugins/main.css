@@ -3524,6 +3524,10 @@ td.burro {
 
 }
 
+#loginBtn img {
+  margin-left: 4px !important;
+}
+
 @media screen and (max-width: 767px) {
   #loginBtn {
     margin: 20px auto !important;
