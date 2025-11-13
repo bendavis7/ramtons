@@ -3135,13 +3135,10 @@ hr#hr-t {
 }
 
 
-#my-invoice span {
-  font-weight: 600;
-}
 #my-invoice {
   margin: 3px !important;
   padding: 0px !important;
-  background: rgb(19, 42, 60) !important;
+  background: rgb(19, 42, 60, 0.7) !important;
   width: 100% !important;
 }
 
@@ -3408,53 +3405,12 @@ td.burro {
 
 
 
-
-
-
-
-#save-1, 
-#save-2 {
-  margin: 10px auto !important;
-  font-size: 21px !important;
-  line-height: 55px !important;
-
-  letter-spacing: 0.85px !important;
-  text-align: center !important;
-}
-#save-2 {
-  margin-bottom: 20px !important;
-}
-
-@media screen and (max-width: 500px) {
-  #save-1, 
-  #save-2 {
-    font-size: 22px !important;
-    line-height: 60px !important;
-  }
-}
-
-@media screen and (max-width: 406px) {
-  #save-1, 
-  #save-2 {
-    font-size: 21.5px !important;
-    line-height: 58px !important;
-  }
-}
-@media screen and (max-width: 380px) {
-  #save-1, 
-  #save-2 {
-    font-size: 21px !important;
-    line-height: 56px !important;
-  }
-}
-
-
 #mailField {
   color:  rgba(18, 29, 51, 0.85) !important;
   border: 1.6px solid rgba(134, 213, 224) !important;
   box-shadow: 0 0 0 2.4px rgba(210, 239, 243) !important;
 
-  height: 62px !important;
+  height: 70px !important;
   width: 90% !important;
 
   border-radius: 0.5px !important;
@@ -3464,8 +3420,8 @@ td.burro {
   padding: 0 12px !important;
   margin: 12px auto !important;
 
-  font-size: 22px !important;
-  letter-spacing: 1.2px !important;
+  font-size: 23px !important;
+  letter-spacing: 1.3px !important;
   align-items: center !important;
 }
 

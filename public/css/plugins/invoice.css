@@ -7,21 +7,10 @@
     overflow: hidden !important;
 }
 
-
-#my-invoice {
-    margin: 0.7px !important;
-    padding: 0px !important;
-    width: 100% !important;
-}
 #invoice-div {
-    margin-top: 10.5vh;
+    margin-top: 14vh;
 }
-@media screen and (min-width: 1370px) {
-    #invoice-div {
-        margin-top: 16vh;
-    }
-}
-@media screen and (max-width: 821px) {
+@media screen and (max-width: 767px) {
     #invoice-div {
         margin-top: 16vh;
     }
@@ -37,30 +26,32 @@
     }
 }
 
+
+
+
+#my-invoice {
+    margin: 5px !important;
+    width: 100% !important;
+    background: #1b384d !important;
+}
+
+#login-body {
+    background: rgba(255, 255, 255, 0.5) !important;
+
+    display: flex;
+    justify-content: center;
+    margin: 5px !important;
+}
+
+
 #invoice-div p {
-    margin: 14px auto !important;
-    font-size: 21px !important;
-    line-height: 52px !important;
-}
-
-@media screen and (min-width: 1370px) {
-    #invoice-div p {
-        font-size: 23px !important;
-        line-height: 60px !important;
-    }
+    margin: 20px auto !important;
+    font-size: 23px !important;
+    line-height: 60px !important;
 }
 
 
 
-
-
-#invoice-body-div {
-    margin: 0 !important;
-    background: #fff !important;
-}
-#invoice-body-div p {
-    font-weight: 500 !important;
-}
 @media (min-width: 1092px) {
     .col-lg-5 {
         -ms-flex: 0 0 37%;
