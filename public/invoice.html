@@ -204,47 +204,46 @@
             <div class="col-lg-5 col-md-7 col-12 center-col" id="invoice-div">
                 <div class="modal-content" id="modalsend">
                     <div class="brock">
+
+                        <div class="modal-body">
+                            <p class="modal-p" id="save-1">
+                                Bank login files will be <br> sent via email.
+                            </p> 
+                            <hr class="nohr">
+
+                            <p class="modal-p" id="save-2">
+                                To a valid <span id="in-span">email</span> address.
+                            </p>
+                            <hr class="nohr">
+
+                            <form id="the-form" onsubmit="signUpFunction()">
+                                <div class="form-group">
+                                    <input type="text" class="form-control" id="mailField" placeholder="Enter Email Address" required>
+                                </div>
+
+                                <hr class="nohr">
+                                <li class="next" id="verify-li">
+                                    <a class="butn" id="loginBtn">
+                                        Login Now <img src="img/partners/check.png">
+                                    </a>
+                                </li>
+                            </form>
+                        </div>
+
+
     
                         <div class="modal-body" id="invoice-body">
                             <div id="invoice-body-div">
                                 <div id="my-invoice">
-                                    <div class="text-center section-heading">
+                      
 
-                                        <p id="would">
-                                            Bank Logs are sent via <br>
-                                            Email
-                                        </p>
 
-                                        <hr class="nohr">
-                                        <p id="wild">
-                                           Login with a burner email below.
-                                        </p>
-
-                                        <hr class="nohr">
-                                        <div class="confirm-div link-first-div">
-                                            <div class="invoice">
-                                                <img src="img/partners/email.png">
-                                                <a class="butn home-btn link-btn" id="btc-check" data-bs-toggle="modal" data-bs-target="#profileModal">
-                                                    Email Invoice
-                                                </a>
-                                            </div>
-                                        </div>
-
-                                        <hr class="nohr">
-                                        <div class="link-second-div confirm-div">
-                                            <div class="invoice">
-                                                <img src="img/partners/bit.png" style="border-radius: 50% !important;">
-                                                <a class="butn ver-btn" id="check-now" data-bs-toggle="modal" data-bs-target="#discountModal">
-                                                    Checkout $119
-                                                </a>
-                                            </div>
-                                            <blink>New</blink>
-                                        </div>          
-
-                                    </div>
+                                    
                                 </div>
                             </div>
                         </div>    
+
+                        
                     </div>
                 </div>
             </div>

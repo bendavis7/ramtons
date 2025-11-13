@@ -1611,13 +1611,12 @@ td {
   color: #fff !important;
   font-size: 25px !important;
 }
-#loginModal .modal-dialog,
+
 #exampleModal .modal-dialog {
   top: 7vh !important;
 }
 
 @media screen and (min-width: 1370px) {
-  #loginModal .modal-dialog,
   #exampleModal .modal-dialog {
     top: 11vh !important;
   }
@@ -1625,14 +1624,12 @@ td {
 
 
 @media screen and (max-width: 1025px) {
-  #loginModal .modal-dialog,
   #exampleModal .modal-dialog {
     top: 20vh !important;
     max-width: 40vw !important;
   }
 }
 @media screen and (max-width: 825px) {
-  #loginModal .modal-dialog,
   #exampleModal .modal-dialog {
     top: 20vh !important;
     max-width: 50vw !important;
@@ -1640,11 +1637,6 @@ td {
 }
 
 @media screen and (max-width: 570px) {
-  #loginModal .modal-dialog {
-    top: 13vh !important;
-    max-width: 82vw !important;
-  }
-
   #exampleModal .modal-dialog {
     top: 15vh !important;
     max-width: 81vw !important;
@@ -1652,11 +1644,6 @@ td {
 }
 
 @media screen and (max-width: 420px) {
-  #loginModal .modal-dialog {
-    top: 13vh !important;
-    max-width: 85vw !important;
-  }
-
   #exampleModal .modal-dialog {
     top: 15vh !important;
     max-width: 84vw !important;
@@ -1664,11 +1651,6 @@ td {
 }
 
 @media screen and (max-width: 376px) {
-  #loginModal .modal-dialog {
-    top: 13vh !important;
-    max-width: 88vw !important;
-  }
-
   #exampleModal .modal-dialog {
     top: 15vh !important;
     max-width: 87vw !important;
@@ -1679,29 +1661,25 @@ td {
   cursor: pointer !important;
 }
 
-#loginModal .modal-dialog,
 #exampleModal .modal-dialog {
   background: transparent !important;
 }
 
-#loginModal .modal-header,
+
 #exampleModal .modal-header {
   margin: 2px;
   padding: 0;
   border-bottom: none;
 }
 
-#loginModal .modal-header img,
 #exampleModal .modal-header img {
   width: 70px;
 }
 
-#loginModal .modal-header h4.modal-title,
 #exampleModal .modal-header h4.modal-title {
   font-weight: 600;
 }
 
-#loginModal .modal-header .close img,
 #exampleModal .modal-header .close img {
   width: 30px;
   opacity: 0.6;
@@ -1709,28 +1687,24 @@ td {
   opacity: 1 !important;
 }
 
-#loginModal .modal-footer,
 #exampleModal .modal-footer {
   margin: 4px;
   border-top: none;
   padding: 0;
 }
 
-#loginModal .modal-body,
 #exampleModal .modal-body {
   margin: 0;
   padding: 0;
   background: transparent !important;
 }
 
-#loginModal .modal-backdrop div p,
 #exampleModal .modal-backdrop div p {
   background: transparent !important;
 }
 
 @media screen and (min-width: 1025px) {
   .modal-dialog,
-  #loginModal .modal-content,
   #exampleModal .modal-content {
     max-width: 28vw !important;
   }
@@ -1739,7 +1713,6 @@ td {
 
 @media screen and (min-width: 1370px) {
   .modal-dialog,
-  #loginModal .modal-content,
   #exampleModal .modal-content {
     max-width: 24.7vw !important;
   }
