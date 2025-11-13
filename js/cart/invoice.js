@@ -45,49 +45,6 @@ if(localStorage.getItem('banklogs')) {
         });
 
 
-        for(var i = 0; i < items.length; i++) {
-
-            var cartCol = document.createElement('div');
-            cartCol.classList.add('alert','alert-warning','alert-dismissible');
-            var cartColItems = document.getElementsByClassName('cart-alerts')[0];
-            var cartColContents = `
-                <i class="fas fa-spin fa-sync-alt spinner-bordez"></i> 
-                Pending Sale <strong>${items[i].account}</strong>, ${items[i].balance}
-                <button type="button" class="btn-close" data-bs-dismiss="alert">&times;</button>
-            `;
-        
-            var cartRow = document.createElement('tr');
-            var cartRow2 = document.createElement('li');
-            cartRow.classList.add('table-warning');
-            cartRow2.classList.add('total','bg-black');
-            var cartItems =  document.getElementsByClassName('champez3')[0];
-    
-            var cartRowContents = `
-                <td><img src=${items[i].image}></td>       
-                <td>
-                    WAIT
-                    <i class="fas fa-spin fa-sync-alt spinner-bordez"></i>
-                    <hr id="hr-pend">
-                    <span>${(items[i].balance).replace('Balance: ','')}</span> 
-                </td>
-                <td>${items[i].account}</td>
-                <td id=${'table-id' + items.indexOf(items[i])} style="filter: blur(0px); white-space: normal !important;"></td>  
-                
-                <td>${(items[i].price).replace('Price: ', '')}</td>
-                <td>${items[i].info1}</td>
-                <td>${items[i].info2}</td>
-                <td>${items[i].info3}</td>
-                <td>${items[i].info4}</td>
-                <td>${items[i].website}</td>
-            `;
-            cartRow.innerHTML = cartRowContents;
-            cartItems.prepend(cartRow);
-
-            cartCol.innerHTML = cartColContents;
-            cartColItems.prepend(cartCol);
-        }
-
-        document.getElementById('last-alert').classList.add('display-none');
 
         var removeFromCartButtons = document.getElementsByClassName('btn-remove');
         for(var i = 0; i <removeFromCartButtons.length; i++){
@@ -103,50 +60,13 @@ function showThis() {
     login.onAuthStateChanged(user => { 		
 		if(user) {
             setTimeout(() => {
-                window.location.assign('invoice');
+                window.location.assign('checkout');
             }, 1000);
 		} 
 	});
 }
 showToast.addEventListener('click', showThis);
 
-
-
-
-document.getElementById('balance1').innerHTML = '$5,540';
-document.getElementById('balance2').innerHTML = '$6,280';
-document.getElementById('balance3').innerHTML = '$6,609';
-document.getElementById('balance4').innerHTML = '$6,523';
-document.getElementById('balance5').innerHTML = '$7,702';
-document.getElementById('balance6').innerHTML = '$6,340';
-document.getElementById('balance7').innerHTML = '$8,087';
-document.getElementById('balance8').innerHTML = '$5,259';
-document.getElementById('balance9').innerHTML = '$5,820';
-
-document.getElementById('balance10').innerHTML = '$6,805';
-document.getElementById('balance11').innerHTML = '$7,214';
-document.getElementById('balance12').innerHTML = '$6,390';
-document.getElementById('balance13').innerHTML = '$5,832';
-document.getElementById('balance14').innerHTML = '$6,439';
-document.getElementById('balance15').innerHTML = '$6,228';
-document.getElementById('balance16').innerHTML = '$7,910';
-document.getElementById('balance17').innerHTML = '$5,104';
-document.getElementById('balance18').innerHTML = '$6,724';
-document.getElementById('balance19').innerHTML = '$5,863';
-document.getElementById('balance20').innerHTML = '$5,270';
-
-document.getElementById('balance21').innerHTML = '$6,309';
-document.getElementById('balance22').innerHTML = '$5,340';
-document.getElementById('balance23').innerHTML = '$4,739';
-
-var jobs = document.getElementsByClassName('prized');
-for(j=0; j< jobs.length; j++) {
-    var theJob = jobs[j];
-    var thePrize = theJob.parentElement.children[1].children[2].innerText;
-    
-    var thePr = parseFloat((thePrize.replace("$", "").replace(",", "") / 37).toFixed(0)).toLocaleString();
-    theJob.innerHTML = '$'+ thePr;
-}
 
 
 

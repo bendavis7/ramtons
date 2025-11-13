@@ -191,7 +191,6 @@ blink {
 }
 
 #profileModal .modal-content,
-#loginModal .modal-content,
 #exampleModal .modal-content {
   background: rgba(32, 70, 90, 0.5) !important;
   border: 3px solid rgba(73, 192, 208, 0.3) !important;
@@ -220,7 +219,6 @@ blink {
 }
 
 #exampleModal .modal-header .close img,
-#loginModal .modal-header .close img,
 #profileModal .modal-header .close img,
 .btn-remove {
   border: 1.4px solid rgba(73, 192, 208, 0.7);
@@ -257,10 +255,14 @@ blink {
 }
 
 #vpn,
-#loginBtn,
 #showtoasts {
   background: linear-gradient(to bottom, #fff 0%, #c2ea45 100%) !important;
 }
+
+#loginBtn {
+  background: linear-gradient(to bottom, #fff 0%, #77d09c 100%) !important;
+}
+
 
 #text-to-copy,
 .progress{

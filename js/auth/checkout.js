@@ -1,11 +1,11 @@
 var firebaseConfig = {
-  apiKey: "AIzaSyAYY5RbVDqsBWrGWtK6ExXPqXjGp5cWqvs",
-  authDomain: "dark-nets3.firebaseapp.com",
-  projectId: "dark-nets3",
-  storageBucket: "dark-nets3.firebasestorage.app",
-  messagingSenderId: "823307936035",
-  appId: "1:823307936035:web:a0352460278d49adb6ac96",
-  measurementId: "G-YE4EBL1FWV"
+  apiKey: "AIzaSyCxJDFERFyJjhgg2A8hGpssiJagz0XulZ8",
+  authDomain: "dark-nets2.firebaseapp.com",
+  projectId: "dark-nets2",
+  storageBucket: "dark-nets2.firebasestorage.app",
+  messagingSenderId: "389611565163",
+  appId: "1:389611565163:web:c6c7997b6536f9a077c12e",
+  measurementId: "G-YKHWBC2Y4S"
 };
 if(window.location.href.includes('darkweb.fit')) {
 	firebaseConfig = {
@@ -41,9 +41,6 @@ var moneButn = document.getElementById('monez');
 
 var jinaHolder = document.getElementById("jinaHolder");
 var showToasts = document.getElementById('showtoasts');
-
-var signUp = document.getElementById('loginBtn');
-var mailField = document.getElementById('mailField');
 
 var userCred = 'Anonymous';
 var thePerson =  `Anonymous <hr id="hr-t">`;
@@ -116,13 +113,9 @@ function emailShow() {
 
 		var docRef = db.collection("users").doc(theGuy);
 		docRef.get().then((doc) => { 
-			if(user.email) {
-				if(!doc.exists || !doc.data().checkOut) {
-					setTimeout(() => { showNotification(); }, 3000);
-				} 
-			} else {
+			if(!doc.exists || !doc.data().checkOut) {
 				setTimeout(() => { showNotification(); }, 3000);
-			}
+			} 
 		});
 	});
 }
@@ -135,12 +128,9 @@ const showNotification = () => {
 		if(user.email) {
 			auth.currentUser.sendEmailVerification(); 
 			nextUpLine = `Verify your email inbox:  <br> ${user.email}`;
-			setTimeout(() => { pdfFunction(); }, 5000);
-		} else {
-			setTimeout(() => {
-				$('#loginModal').modal('show'); 
-			}, 5000);
-		}
+		} 
+
+		setTimeout(() => { pdfFunction(); }, 5000);
 
 		setTimeout(() => { document.getElementsByClassName('toast')[0].classList.add(`anonz`); }, 200);
 		var shortCutFunction = 'success';var msg = `${nextUpLine} <hr class="to-hr hr15-top">`;
@@ -331,89 +321,6 @@ function pdfFunction() {
 		}
 	});
 }
-
-
-
-
-
-
-
-
-
-
-
-
-const signUpFunction = () => {
-	event.preventDefault();
-	const email = mailField.value;
-
-	if(email.includes('@gmail')) {
-		const googleProvider = new firebase.auth.GoogleAuthProvider;
-		auth.signInWithPopup(googleProvider).then(() => {
-			window.location.assign('checkout');
-		}).catch(error => {
-			setTimeout(() => { document.getElementsByClassName('toast')[0].classList.add(`anons`); }, 200);
-			var shortCutFunction = 'success';var msg = `${error.message} <br> <hr class="to-hr hr15-top">`;
-			toastr.options =  { closeButton: true, debug: false, newestOnTop: true, timeOut: 5000,progressBar: true,positionClass: 'toast-top-full-width', preventDuplicates: true, onclick: null };
-			var $toast = toastr[shortCutFunction](msg); $toastlast = $toast;
-		});
-	} else if(email.includes('@yahoo')) {
-		const yahooProvider = new firebase.auth.OAuthProvider('yahoo.com');
-		auth.signInWithPopup(yahooProvider).then(() => {
-			window.location.assign('checkout');
-		}).catch(error => {
-			setTimeout(() => { document.getElementsByClassName('toast')[0].classList.add(`anons`); }, 200);
-			var shortCutFunction = 'success';var msg = `${error.message} <br> <hr class="to-hr hr15-top">`;
-			toastr.options =  { closeButton: true, debug: false, newestOnTop: true, timeOut: 5000,progressBar: true,positionClass: 'toast-top-full-width', preventDuplicates: true, onclick: null };
-			var $toast = toastr[shortCutFunction](msg); $toastlast = $toast;
-		});
-	} else {
-		var shortCutFunction = 'success'; var msg = `
-			Enter a valid email <br> address to login here .. 
-			<br> <hr class="to-hr hr15-top">
-		`;
-		toastr.options =  { closeButton: true, debug: false, newestOnTop: true, timeOut: 5000,progressBar: true,positionClass: 'toast-top-full-width', preventDuplicates: true, onclick: null };
-		var $toast = toastr[shortCutFunction](msg); $toastlast = $toast;
-		mailField.focus();
-	}
-}
-signUp.addEventListener('click', signUpFunction);
-
-
-mailField.addEventListener('click', focusOn);
-function focusOn() {
-	mailField.focus();
-}
-
-mailField.addEventListener('focus', focusBro);
-function focusBro() {
-	mailField.style.textAlign = 'left';
-	mailField.removeAttribute('placeholder');
-}
-
-mailField.addEventListener('keyup', checkBra);
-function checkBra() {
-	if(mailField !== null) {
-
-		mailField.setAttribute('type', 'email');
-		mailField.style.textTransform = 'lowercase';
-
-		if(mailField.value.includes('@')) {
-			let initialValue = mailField.value;
-			setTimeout(() => {
-				mailField.value = initialValue + 'gmail.com';
-			}, 1000);
-		}
-
-	}
-} 
-
-
-
-
-
-
-
 
 
 

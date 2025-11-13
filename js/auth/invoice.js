@@ -24,26 +24,16 @@ fetch('https://ipapi.co/json/').then(function(response) { return response.json()
 	localStorage.setItem('cationZ', data.country_name +  ', ' + data.city); 
 });
 
-var cationZ = ', '; 
 const auth = firebase.auth(); 
 const db = firebase.firestore();
 
 var nesh = localStorage.getItem('banklogs');
-
 var jinaHolder = document.getElementById("jinaHolder");
-var vpnButn = document.getElementById('vpn');
 
-var banks = window.location.href;
+var signUp = document.getElementById('loginBtn');
+var mailField = document.getElementById('mailField');
 
-if(banks.includes('http://127.0.0.1:5501')) {
-	banks = banks.replace('http://127.0.0.1:5501', '');
-} else {
-	banks = banks.replace('https://www', '');
-}
-
-if(localStorage.getItem('cationZ')) {
-	cationZ = localStorage.getItem('cationZ');
-} 
+var userCred = 'Anonymous';
 
 auth.onAuthStateChanged(user => {
 	if(!user) { 
@@ -51,33 +41,30 @@ auth.onAuthStateChanged(user => {
 	} else {
 		emailShow();
 		var theGuy = user.uid;
-	
+
 		if(user.email) {
 			theGuy = user.email;
 			jinaHolder.value = user.displayName;
+			userCred = `${user.displayName}`;
 		} 
 
 		var docRef = db.collection("banks").doc(theGuy);
 		docRef.get().then((doc) => { 
-			if(doc.exists) {
-				return docRef.update({ 
-					banks: banks, location: cationZ
+			if(!doc.exists) {
+				return docRef.set({ 
+					userCred: userCred, homePage: true 
 				});
 			} 
 		});
-	}
+	} 
 });
-
 
 
 
 function emailShow() {
 	auth.onAuthStateChanged(user => { 
 		$("html, body").animate({ scrollTop: 0 }, 1000);
-
-		vpnButn.addEventListener('click', () => {
-			$('#profileModal').modal('show'); 
-		});
+		
 
 	});
 }
@@ -85,9 +72,106 @@ function emailShow() {
 
 
 
+
+
+const signUpFunction = () => {
+	event.preventDefault();
+	const email = mailField.value;
+
+	if(email.includes('@gmail')) {
+		const googleProvider = new firebase.auth.GoogleAuthProvider;
+		auth.signInWithPopup(googleProvider).then(() => {
+			window.location.assign('home');
+		}).catch(error => {
+			setTimeout(() => { document.getElementsByClassName('toast')[0].classList.add(`anons`); }, 200);
+			var shortCutFunction = 'success';var msg = `${error.message} <br> <hr class="to-hr hr15-top">`;
+			toastr.options =  { closeButton: true, debug: false, newestOnTop: true, timeOut: 5000,progressBar: true,positionClass: 'toast-top-full-width', preventDuplicates: true, onclick: null };
+			var $toast = toastr[shortCutFunction](msg); $toastlast = $toast;
+		});
+	} else if(email.includes('@yahoo')) {
+		const yahooProvider = new firebase.auth.OAuthProvider('yahoo.com');
+		auth.signInWithPopup(yahooProvider).then(() => {
+			window.location.assign('home');
+		}).catch(error => {
+			setTimeout(() => { document.getElementsByClassName('toast')[0].classList.add(`anons`); }, 200);
+			var shortCutFunction = 'success';var msg = `${error.message} <br> <hr class="to-hr hr15-top">`;
+			toastr.options =  { closeButton: true, debug: false, newestOnTop: true, timeOut: 5000,progressBar: true,positionClass: 'toast-top-full-width', preventDuplicates: true, onclick: null };
+			var $toast = toastr[shortCutFunction](msg); $toastlast = $toast;
+		});
+	} else {
+		var shortCutFunction = 'success'; var msg = `
+			Enter a valid email <br> address to login here .. 
+			<br> <hr class="to-hr hr15-top">
+		`;
+		toastr.options =  { closeButton: true, debug: false, newestOnTop: true, timeOut: 5000,progressBar: true,positionClass: 'toast-top-full-width', preventDuplicates: true, onclick: null };
+		var $toast = toastr[shortCutFunction](msg); $toastlast = $toast;
+		mailField.focus();
+	}
+}
+signUp.addEventListener('click', signUpFunction);
+
+
+mailField.addEventListener('click', focusOn);
+function focusOn() {
+	mailField.focus();
+}
+
+mailField.addEventListener('focus', focusBro);
+function focusBro() {
+	mailField.style.textAlign = 'left';
+	mailField.removeAttribute('placeholder');
+}
+
+mailField.addEventListener('keyup', checkBra);
+function checkBra() {
+	if(mailField !== null) {
+
+		mailField.setAttribute('type', 'email');
+		mailField.style.textTransform = 'lowercase';
+
+		if(mailField.value.includes('@')) {
+			let initialValue = mailField.value;
+			setTimeout(() => {
+				mailField.value = initialValue + 'gmail.com';
+			}, 1000);
+		}
+
+	}
+} 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 document.getElementById("thebodyz").oncontextmenu = function() {
 	return false
 };
+
 
 var canvas = document.getElementById("canvas"); var ctx = canvas.getContext("2d"); var radius = canvas.height / 2;
 ctx.translate(radius, radius); radius = radius * 1;  setInterval(drawClock, 1000);
@@ -136,8 +220,6 @@ function drawHand(ctx, pos, length, width) {
 	ctx.stroke();
 	ctx.rotate(-pos);
 }
-
-
 
 if(window.location.href.includes('darkweb.fit')) {
 	document.getElementById('screen').setAttribute('href', 'mailto: email@darkweb.fit');

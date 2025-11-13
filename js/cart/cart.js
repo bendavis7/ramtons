@@ -61,24 +61,13 @@ function showThis() {
     login.onAuthStateChanged(user => { 		
 		if(user) {
             setTimeout(() => {
-                window.location.assign('checkout');
+                window.location.assign('invoice');
             }, 1000);
 		} 
 	});
 }
 showToast.addEventListener('click', showThis);
 
-
-const signInWithGoogle = () => {
-    const googleProvider = new firebase.auth.GoogleAuthProvider;
-    auth.signInWithPopup(googleProvider).then(() => {
-        window.location.assign('checkout');
-    }).catch(error => {
-        setTimeout(() => {
-            window.location.assign('checkout');
-        }, 2000);
-    });
-};
 
 
 var addToCartButton = document.getElementsByClassName('money');
