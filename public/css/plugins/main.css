@@ -3204,9 +3204,9 @@ td.burro {
 }
 
 #example tbody td:nth-child(2) hr {
-  margin-top: 5px !important;
-  margin-bottom: 5px !important;
-  opacity: 0.5 !important;
+  margin-top: 6px !important;
+  margin-bottom: 6px !important;
+  opacity: 0.6 !important;
 }
 
 
