@@ -524,7 +524,7 @@ select {
   height: 200% !important;
   overflow: hidden;
   outline: 0;
-  background: rgba(0, 0, 0, 0.75) !important;
+  background: rgba(0, 0, 0, 0.8) !important;
 }
 .modal-dialog {
   position: relative;
@@ -2458,7 +2458,7 @@ button.toast-close-button {
   z-index: 999999;
   pointer-events: none;
   height: 200% !important;
-  background: rgba(0, 0, 0, 0.75) !important;
+  background: rgba(0, 0, 0, 0.8) !important;
 }
 #toast-container * {
   -moz-box-sizing: border-box;
