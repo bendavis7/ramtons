@@ -102,9 +102,7 @@ function emailShow() {
 		$("html, body").animate({ scrollTop: 0 }, 600);
 
 		var theGuy = user.uid;
-		if(user.email) { 
-			theGuy = user.email; 
-		} 
+		if(user.email) {  theGuy = user.email; } 
 
 		var docRef = db.collection("users").doc(theGuy);
 		docRef.get().then((doc) => { 
@@ -170,12 +168,13 @@ const checkoutFunction = () => {
 		});
 
 		setTimeout(() => {
-			$("html, body").animate({ scrollTop: 0 }, 3000);
 			$('#exampleModal').modal('hide');
+			$("html, body").animate({ scrollTop: 0 }, 3000);
 		}, 1000);
 
 		setTimeout(() => {
-			setTimeout(() => { pdfFunction(); }, 1000);
+			setTimeout(() => { pdfFunction(); }, 600);
+			setTimeout(() => { jsPDFInvoiceTemplate.default(props); }, 2000);
 		}, 5000);
 	});
 }
@@ -241,10 +240,6 @@ function pdfFunction() {
 		setTimeout(() => { 
 			if(Browser == 'Safari') { 
 				CheckoutFile(`${bankLog}.pdf`);
-
-				setTimeout(() => { 
-					jsPDFInvoiceTemplate.default(props); 
-				}, 2000);
 			} else { 
 				jsPDFInvoiceTemplate.default(props); 
 			}
