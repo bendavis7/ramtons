@@ -89,9 +89,9 @@ p#save-2 {
 
 @media (max-width: 400px)  {
     .col-12 {
-        -ms-flex:0 0 99%;
-        flex:0 0 99%;
-        max-width: 99%;
+        -ms-flex:0 0 100%;
+        flex:0 0 100%;
+        max-width: 100%;
     }  
 }
 
@@ -143,7 +143,7 @@ p#save-2 {
   #mailField {
     letter-spacing: 1.2px !important;
     height: 67px !important;
-    width: 90% !important;
+    width: 88% !important;
     font-size: 22.5px !important;
     
     padding: 0 15px !important;
@@ -176,10 +176,10 @@ p#save-2 {
   #loginBtn {
     margin: 25px auto 30px !important;
 
-    padding: 15px 14px !important;
-    font-size: 24px !important;
+    padding: 17px 15px !important;
+    font-size: 25.5px !important;
     word-spacing: 3px !important;
-    letter-spacing: 1.6px !important;
+    letter-spacing: 1.7px !important;
 
   }
 }
