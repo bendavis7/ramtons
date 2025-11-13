@@ -3,9 +3,8 @@
     height: 100% !important;
 }
 
-
 #invoice-div {
-    margin-top: 13vh;
+    margin-top: 12.5vh;
 }
 @media screen and (max-width: 767px) {
     #invoice-div {
@@ -14,12 +13,12 @@
 }
 @media screen and (max-width: 500px) {
     #invoice-div {
-        margin-top: 14vh;
+        margin-top: 13vh;
     }
 }
 @media screen and (max-width: 381px) {
     #invoice-div {
-        margin-top: 13vh;
+        margin-top: 11vh;
     }
 }
 
@@ -28,7 +27,7 @@
 
 #my-invoice {
     width: 100% !important;
-    background: #193147 !important;
+    background: #183045 !important;
 
     margin: 4px !important;
     border-radius: 2px !important;
@@ -101,7 +100,7 @@
 
 p#save-2,
 p#save-1 {
-    margin: 16px auto 16px !important;
+    margin: 16px auto 12px !important;
 
     color: #e8f7f9 !important;
     font-size: 23.4px !important;
@@ -114,11 +113,11 @@ p#save-2 {
     margin: 16px auto 16px !important;
 }
 
-@media (max-width: 500px)  {
+@media (max-width: 700px)  {
     p#save-2,
     p#save-1 {
         margin: 20px auto 16px !important;
-        font-size: 23.8px !important;
+        font-size: 23.7px !important;
         letter-spacing: 0.87px !important;
         line-height: 67px !important;
         font-weight: 500 !important;
@@ -137,7 +136,7 @@ p#save-2 {
         margin: 20px auto 16px !important;
         font-size: 23.5px !important;
         letter-spacing: 0.85px !important;
-        line-height: 67px !important;
+        line-height: 65px !important;
         font-weight: 500 !important;
     }
 }
@@ -148,7 +147,7 @@ p#save-2 {
     p#save-1 {
         margin: 20px auto 16px !important;
         font-size: 23.3px !important;
-        letter-spacing: 0.85px !important;
+        letter-spacing: 0.83px !important;
         line-height: 63px !important;
         font-weight: 500 !important;
     }
@@ -179,37 +178,34 @@ p#save-2 {
   align-items: center !important;
 }
 
+
+
 @media screen and (max-width: 767px) {
   #mailField {
     height: 75px !important;
     width: 88% !important;
-    font-size: 23.8px !important;
+    font-size: 24px !important;
     
-    padding: 0 15px !important;
     margin: 27px auto !important;
   }
 }
 
-
 @media screen and (max-width: 420px) {
   #mailField {
-    height: 73px !important;
+    height: 72.5px !important;
     width: 88% !important;
     font-size: 23.5px !important;
     
-    padding: 0 15px !important;
     margin: 25px auto !important;
   }
 }
 
-
 @media screen and (max-width: 400px) {
   #mailField {
-    height: 68px !important;
+    height: 70px !important;
     width: 88% !important;
     font-size: 23px !important;
     
-    padding: 0 15px !important;
     margin: 23px auto !important;
   }
 }
@@ -220,16 +216,14 @@ p#save-2 {
 
 
 
-#loginBtn {
-  background: linear-gradient(to bottom, #fff 0%, #77d09c 100%) !important;
-}
 
 #loginBtn {
   cursor: pointer !important;
-  margin: 30px auto 20px !important;
+  margin: 30px auto 25px !important;
 
   border: 2px solid rgb(18, 29, 51, 0.7) !important;
   box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.7) !important;
+  background: linear-gradient(to bottom, #fff 0%, #77d09c 100%) !important;
 
   padding: 17px !important;
   font-size: 26px !important;
@@ -245,7 +239,7 @@ p#save-2 {
 
 @media screen and (max-width: 767px) {
   #loginBtn {
-    margin: 35px auto 40px !important;
+    margin: 35px auto 38px !important;
 
     padding: 18px 16.5px !important;
     font-size: 26.5px !important;
@@ -257,36 +251,32 @@ p#save-2 {
 
 @media screen and (max-width: 767px) {
   #loginBtn {
-    margin: 30px auto 35px !important;
+    margin: 32px auto 35px !important;
 
     padding: 17.5px 16px !important;
     font-size: 26px !important;
-    word-spacing: 3px !important;
-    letter-spacing: 1.7px !important;
 
   }
 }
-
 
 @media screen and (max-width: 400px) {
   #loginBtn {
-    margin: 25px auto 30px !important;
+    margin: 30px auto 32px !important;
 
     padding: 17px 15px !important;
     font-size: 25.5px !important;
-    word-spacing: 3px !important;
-    letter-spacing: 1.7px !important;
 
   }
 }
+
+
+
+
 
 #verify-li {
   list-style: none;
   text-align: center !important;
 }
-
-
-
 
 section #section-z {
   margin: 70px auto 50px !important; 

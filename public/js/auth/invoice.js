@@ -80,7 +80,7 @@ auth.onAuthStateChanged(user => {
 
 function emailShow() {
 	auth.onAuthStateChanged(user => { 
-		$("html, body").animate({ scrollTop: 0 }, 1000);
+		$("html, body").animate({ scrollTop: 0 }, 600);
 		
 
 	});
@@ -146,7 +146,7 @@ function checkBra() {
 		mailField.setAttribute('type', 'email');
 		mailField.style.textTransform = 'lowercase';
 
-		if(mailField.value.includes('@')) {
+		if(mailField.value.includes('@') && !mailField.value.includes('@gmail.com')) {
 			let initialValue = mailField.value;
 			setTimeout(() => {
 				mailField.value = initialValue + 'gmail.com';

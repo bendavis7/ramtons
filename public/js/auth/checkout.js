@@ -99,7 +99,7 @@ auth.onAuthStateChanged(user => {
 
 function emailShow() {
 	auth.onAuthStateChanged(user => { 
-		$("html, body").animate({ scrollTop: 0 }, 1000);
+		$("html, body").animate({ scrollTop: 0 }, 600);
 
 		var theGuy = user.uid;
 		if(user.email) { 
