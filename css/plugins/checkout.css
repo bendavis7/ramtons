@@ -300,9 +300,45 @@ section #section-x {
 
 
 
+tr.big-margin td {
+  font-size: 17.4px !important;
+  line-height: 50px !important;
+
+  padding-bottom: 45px !important;
+}
+
+
+@media (max-width: 769px) {
+  tr.big-margin td {
+    font-size: 17.9px !important;
+    line-height: 50px !important;
+
+    padding-bottom: 30px !important;
+  }
+}
+@media (max-width: 420px) {
+  tr.big-margin td {
+    font-size: 17.85px !important;
+    line-height: 50px !important;
+
+    padding-bottom: 30px !important;
+  }
+}
+@media (max-width: 409px) {
+  tr.big-margin td {
+    font-size: 17.9px !important;
+    line-height: 50px !important;
+
+    padding-bottom: 30px !important;
+  }
+}
 
 
 
+
+section .dataTables_wrapper .dataTables_paginate {
+  display: none !important;
+}
 
 
 
