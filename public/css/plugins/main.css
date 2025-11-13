@@ -977,21 +977,21 @@ td {
 @media screen and (max-width: 508px) {
   td {
     font-size: 17.9px !important;
-    line-height: 46px !important;
+    line-height: 47px !important;
   }
 }
 
 @media screen and (max-width: 420px) {
   td {
     font-size: 17.85px !important;
-    line-height: 44px !important;
+    line-height: 45px !important;
   }
 }
 
 @media screen and (max-width: 408px) {
   td {
     font-size: 17.8px !important;
-    line-height: 42px !important;
+    line-height: 43px !important;
   }
 }
 
@@ -2196,7 +2196,7 @@ td {
   padding: 19px 15px !important;
   font-size: 31px !important;
   word-spacing: 4px !important;
-  letter-spacing: 1.5px !important;
+  letter-spacing: 1.7px !important;
 }
 .butn#modem {
   border: 2px solid rgb(18, 29, 51, 0.7) !important;
@@ -2216,15 +2216,13 @@ td {
   margin-top: -12px !important;
 }
 
-@media screen and (max-width: 967px) {
+@media screen and (max-width: 767px) {
   .vpn-section .butn#vpn {
     margin: 60px auto 145px !important;
 
     padding: 19px 15.5px !important;
-    font-size: 32px !important;
-    word-spacing: 1.4px !important;
-    letter-spacing: 1.8px !important;
-
+    font-size: 31.5px !important;
+    word-spacing: 1.5px !important;
   }
 }
 
