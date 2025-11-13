@@ -1,0 +1,337 @@
+.bg-animate{
+    background-position:0 0;
+    background-repeat:repeat-x;
+    animation:animatedBackground 70s linear infinite 
+}
+#confirm, 
+#logs-invoice {
+    padding: 0px  10px !important;
+    height: 100vh !important;
+}
+#confirm div, 
+#logs-invoice div {
+    overflow: hidden !important;
+}
+#confirm .section-heading h4, 
+#logs-invoice .section-heading h4 {
+    color: #121d33;
+}
+.butn.ver-btn,
+.butn.home-btn, 
+.butn.phone-btn {
+    margin: 3vh 3vh 1vh 1vh;
+    color: #121d33 !important;
+    font-size: 22px;
+    cursor: pointer !important;
+    border-radius: 1.3px !important;
+    line-height: 35px;
+    white-space: nowrap !important;
+    padding: 7.8px 16.7px;
+    box-shadow: 1px 1px 3px 1px rgba(18, 29, 51, 0.5) !important;
+}
+@media screen and (max-width: 770px) {
+    .butn.ver-btn,
+    .butn.home-btn, 
+    .butn.phone-btn {
+        margin: 3vh 2vh 1vh 0;
+    }
+}
+.butn.home-btn.emp-btn{
+    margin-top: 7vh;
+    color: #121d33 !important;
+    font-size: 24px;
+    line-height: 35px;
+    padding: 10px;
+}
+.butn.modal-btn {
+    margin: 3vh 0 2vh;
+    font-size: 22px;
+    cursor: pointer !important;
+    line-height: 35px;
+    white-space: nowrap !important;
+    padding: 7.5px 14px;
+}
+.butn.home-btn.check {
+    padding: 7.8px 14px;
+}
+.butn.link-btn {
+    padding: 7.8px 16.5px;
+}
+
+
+.butn#code-email {
+    padding: 7.5px 20px;
+    letter-spacing: 1px !important;
+    word-spacing: 5px !important;
+}
+.butn#code-home {
+    padding: 7.5px 15px;
+    letter-spacing: 1px !important;
+    word-spacing: 3px !important;
+}
+  
+.butn#btc-check {
+    padding: 7.8px 13px !important;
+}
+
+.butn#check-now {
+    padding: 7.8px 15px !important;
+}
+
+.muher {
+    margin-left: 3px !important;
+    font-weight: 700 !important;
+}
+
+.invoice img {
+    width: 51px !important;
+    height: 51px !important;
+    margin: 21px 20px 0 !important;
+}
+@media screen and (max-width: 1070px) {
+    .invoice img {
+        margin: 43px 27px 0 !important;
+    }
+}
+@media screen and (max-width: 821px) {
+    .invoice img {
+        margin: 37px 25px 0 !important;
+    }
+}
+@media screen and (max-width: 769px) {
+    .invoice img {
+        margin: 31px 29px 0 !important;
+    }
+}
+@media screen and (max-width: 470px) {
+    .invoice img {
+        margin: 28px 21px 0 !important;
+    }
+}
+
+@media screen and (max-width: 390px) {
+    .butn.modal-btn,
+    .butn.ver-btn,
+    .butn.home-btn,
+    .butn.phone-btn {
+        font-size: 20.5px;
+        padding: 7.5px 16.5px;
+   }
+   .butn.home-btn.check {
+        padding: 7.5px 13.5px;
+    }
+    .butn.link-btn {
+        padding: 7.5px 16.5px;
+    }
+
+    .butn#btc-check {
+        padding: 7.5px 13px !important;
+    }
+
+    .butn#check-now {
+        padding: 7.5px 13px !important;
+    }
+
+   .invoice img {
+        width: 49px !important;
+        height: 49px !important;
+        margin: 26px 19.5px 0 !important;
+    }
+}
+
+
+.butn.modal-btn img,
+.butn.ver-btn img,
+.butn.home-btn img, 
+.butn.phone-btn img {
+    width: 27px;
+    border-radius: 4px;
+}
+#my-invoice {
+    margin: 0.7px !important;
+    padding: 0px !important;
+    width: 100% !important;
+}
+#invoice-div {
+    margin-top: 10.5vh;
+}
+@media screen and (min-width: 1370px) {
+    #invoice-div {
+        margin-top: 16vh;
+    }
+}
+@media screen and (max-width: 821px) {
+    #invoice-div {
+        margin-top: 16vh;
+    }
+}
+@media screen and (max-width: 500px) {
+    #invoice-div {
+        margin-top: 14vh;
+    }
+    #confirm-div {
+        margin-top: 4vh;
+    }
+}
+@media screen and (max-width: 381px) {
+    #invoice-div {
+        margin-top: 13vh;
+    }
+}
+
+#invoice-div p {
+    margin: 14px auto !important;
+    font-size: 21px !important;
+    line-height: 52px !important;
+}
+
+@media screen and (min-width: 1370px) {
+    #invoice-div p {
+        font-size: 23px !important;
+        line-height: 60px !important;
+    }
+}
+#invoice-div p span {
+    font-weight: 600;
+}
+@media screen and (max-width: 574px) {
+    #invoice-div p {
+        font-size: 20px !important;
+        line-height: 51px !important;
+    }
+}
+@media screen and (max-width: 404px) {
+    #invoice-div p {
+        font-size: 19.5px !important;
+        line-height: 50px !important;
+    }
+}
+@media screen and (max-width: 380px) {
+    #invoice-div p {
+        font-size: 19.3px !important;
+        line-height: 49px !important;
+    }
+}
+@media screen and (max-width: 370px) {
+    #invoice-div p {
+        font-size: 17.5px !important;
+        line-height: 48px !important;
+    }
+}
+#my-invoice span {
+    font-weight: 600;
+}
+.invoice {
+    display: flex;
+    margin-left: -14px !important;
+}
+blink {
+    position: relative;
+    top: -70px !important;
+    left: 118px !important;
+    z-index: 999 !important;
+}
+@media screen and (max-width: 500px) {
+    blink {
+        left: 113px !important;
+    }
+}
+@media screen and (max-width: 380px) {
+    blink {
+        left: 110px !important;
+    }
+}
+
+blink.disc {
+    position: relative !important;
+    top: -70px !important;
+    left: 110px !important;
+    z-index: 999 !important;
+}
+@media screen and (max-width: 500px) {
+    blink.disc {
+        left: 105px !important;
+    }
+}
+@media screen and (max-width: 390px) {
+    blink.disc {
+        left: 100px !important;
+    }
+}
+
+
+
+
+#invoice-body-div {
+    margin: 0 !important;
+    background: #fff !important;
+}
+#invoice-body-div p {
+    font-weight: 500 !important;
+}
+@media (min-width: 1092px) {
+	.col-lg-5 {
+		-ms-flex: 0 0 38.5%;
+		flex: 0 0 38.5%;
+		max-width: 38.5%;
+   }
+}
+@media (max-width: 500px) {
+    .col-11-5{
+      -ms-flex:0 0 93%;
+      flex:0 0 93%;
+      max-width: 93%;
+    }  
+  }
+  @media (max-width: 500px)  {
+    .col-12 {
+      -ms-flex:0 0 96%;
+      flex:0 0 96%;
+      max-width: 96%;
+    }  
+  }
+
+
+
+
+
+
+.link-first-div {
+    margin-top: 14px !important;
+    margin-bottom: 16px !important;
+}
+.link-second-div {
+    margin-top: 14px !important;
+    margin-bottom: -16px !important;
+}
+
+
+
+
+
+.nohr {
+    padding: 0 !important;
+    margin: 0 !important;
+}
+.nohr.nopade {
+    margin: 10px auto !important;
+}
+
+@media screen and (min-width: 1370px) {
+    .nohr {
+        padding: 0 !important;
+        margin: 10px !important;
+    }
+    .nohr.nopade {
+        margin: 25px auto !important;
+    }
+}
+
+.confirm-div {
+    cursor: pointer !important;
+    display: inline-block !important;
+}
+
+#madrid {
+    border-radius: 50% !important;
+}

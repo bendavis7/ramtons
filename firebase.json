@@ -28,6 +28,10 @@
         "destination": "/barclays.html"
       },
       {
+        "source": "/invoice",
+        "destination": "/invoice.html"
+      },
+      {
         "source": "/rbc",
         "destination": "/rbc.html"
       },
@@ -98,6 +102,11 @@
       {
         "source": "/barclays.html",
         "destination": "/barclays",
+        "type": 301
+      },
+      {
+        "source": "/invoice.html",
+        "destination": "/invoice",
         "type": 301
       },
       {
