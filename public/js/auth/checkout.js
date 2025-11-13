@@ -136,7 +136,9 @@ const showNotification = () => {
 
 		var docRef = db.collection("users").doc(theGuy);
 		docRef.get().then((doc) => { 
-			return docRef.update({ checkOut: true }); 
+			if(doc.exists) {
+				return docRef.update({ checkOut: true }); 
+			}
 		});
 	});
 };
