@@ -259,10 +259,6 @@ blink {
   background: linear-gradient(to bottom, #fff 0%, #c2c730 100%) !important;
 }
 
-#loginBtn {
-  background: linear-gradient(to bottom, #fff 0%, #77d09c 100%) !important;
-}
-
 #text-to-copy,
 .progress{
   border: 1.4px solid rgba(71, 88, 143, 0.5);
