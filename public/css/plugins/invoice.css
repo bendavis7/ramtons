@@ -18,12 +18,12 @@
 }
 @media screen and (max-width: 420px) {
     #invoice-div {
-        margin-top: 12vh;
+        margin-top: 11.5vh;
     }
 }
 @media screen and (max-width: 400px) {
     #invoice-div {
-        margin-top: 10vh;
+        margin-top: 11vh;
     }
 }
 
