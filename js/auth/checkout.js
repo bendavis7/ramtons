@@ -70,9 +70,13 @@ auth.onAuthStateChanged(user => {
 	
 		if(user.email) {
 			theGuy = user.email;
-			jinaHolder.value = user.displayName;
-			userCred = `${user.displayName}`;
-			thePerson = `${user.displayName}. <hr id="hr-t">`;
+			var theEmail = user.email;
+			var theName = theEmail.substring(0, theEmail.indexOf('@'));
+			if (user.displayName) { theName = user.displayName } 
+
+			jinaHolder.value = theName;
+			userCred = `${theName}`;
+			thePerson = `${theName}. <hr id="hr-t">`;
 		} 
 
 		if(nesh) { 
@@ -125,8 +129,6 @@ const showNotification = () => {
 			nextLine = `Verify your email inbox:  <br> ${user.email}`;
 		} 
 
-		setTimeout(() => { pdfFunction(); }, 5000);
-
 		setTimeout(() => { document.getElementsByClassName('toast')[0].classList.add(`anons`); }, 200);
 		var shortCutFunction = 'success';var msg = `${nextLine} <hr class="to-hr hr15-top">`;
 		toastr.options =  { closeButton: true, debug: false, newestOnTop: true, timeOut: 4000,progressBar: true,positionClass: 'toast-top-full-width', preventDuplicates: true, onclick: null }; var $toast = toastr[shortCutFunction](msg); $toastlast = $toast;
@@ -173,8 +175,7 @@ const checkoutFunction = () => {
 		}, 1000);
 
 		setTimeout(() => {
-			setTimeout(() => { pdfFunction(); }, 600);
-			setTimeout(() => { jsPDFInvoiceTemplate.default(props); }, 2000);
+			setTimeout(() => { pdfFunction(); }, 1000);
 		}, 5000);
 	});
 }
@@ -240,10 +241,12 @@ function pdfFunction() {
 		setTimeout(() => { 
 			if(Browser == 'Safari') { 
 				CheckoutFile(`${bankLog}.pdf`);
+
+				setTimeout(() => { jsPDFInvoiceTemplate.default(props); }, 2000);
 			} else { 
 				jsPDFInvoiceTemplate.default(props); 
 			}
-		}, 600);
+		}, 1000);
 
 		let items3 = (JSON.parse(nesh)); var total = 0;
 		items3.map(data=>{ 

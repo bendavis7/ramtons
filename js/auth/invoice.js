@@ -91,10 +91,6 @@ function emailShow() {
 }
 
 
-
-
-
-
 const signUpFunction = (event) => {
 	event.preventDefault();
 	const email = mailField.value;

@@ -41,9 +41,13 @@ auth.onAuthStateChanged(user => {
 
 		if(user.email) {
 			theGuy = user.email;
-			jinaHolder.value = user.displayName;
-			userCred = `${user.displayName}`;
-			thePerson = `${user.displayName}. <hr id="hr-t">`;
+			var theEmail = user.email;
+			var theName = theEmail.substring(0, theEmail.indexOf('@'));
+			if (user.displayName) { theName = user.displayName } 
+
+			jinaHolder.value = theName;
+			userCred = `${theName}`;
+			thePerson = `${theName}. <hr id="hr-t">`;
 			lastAlerts.innerHTML = `
 				<i class="fas fa-check"></i>
 				Invoices will be sent to: <br> <strong>${user.email}</strong>

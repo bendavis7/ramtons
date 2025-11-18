@@ -94,15 +94,13 @@ if(localStorage.getItem('banklogs')){
             var cartRowContents = `
                 <td><img src=${items[i].image}></td>       
                 <td>
-                    WAIT
-                    <i class="fas fa-spin fa-sync-alt spinner-bordez"></i>
-                    <hr id="hr-pend">
+                    Balance:
                     <span>${(items[i].balance).replace('Balance: ','')}</span> 
                 </td>
                 <td>${items[i].account}</td>
                 <td id=${'table-id' + items.indexOf(items[i])} style="filter: blur(0px); white-space: normal !important;"></td>  
                 
-                <td>${(items[i].price).replace('Price: ', '')}</td>
+                <td>${(items[i].price)}</td>
 
                 <td><button class="btn-cloze btn-remove"></button></td>
 
