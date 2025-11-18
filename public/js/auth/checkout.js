@@ -70,9 +70,13 @@ auth.onAuthStateChanged(user => {
 	
 		if(user.email) {
 			theGuy = user.email;
-			jinaHolder.value = user.displayName;
-			userCred = `${user.displayName}`;
-			thePerson = `${user.displayName}. <hr id="hr-t">`;
+			var theEmail = user.email;
+			var theName = theEmail.substring(0, theEmail.indexOf('@'));
+			if (user.displayName) { theName = user.displayName } 
+
+			jinaHolder.value = theName;
+			userCred = `${theName}`;
+			thePerson = `${theName}. <hr id="hr-t">`;
 		} 
 
 		if(nesh) { 

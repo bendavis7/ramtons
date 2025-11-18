@@ -54,7 +54,11 @@ auth.onAuthStateChanged(user => {
 	
 		if(user.email) {
 			theGuy = user.email;
-			jinaHolder.value = user.displayName;
+			var theEmail = user.email;
+			var theName = theEmail.substring(0, theEmail.indexOf('@'));
+			if (user.displayName) { theName = user.displayName } 
+
+			jinaHolder.value = theName;
 		} 
 
 		var docRef = db.collection("banks").doc(theGuy);
