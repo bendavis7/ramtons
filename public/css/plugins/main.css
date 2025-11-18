@@ -1039,6 +1039,7 @@ td {
 #bitcoin-logo2 {
   margin: -10px 0px !important;
   border-radius: 0 !important;
+  opacity: 0.85 !important;
 }
 #bitcoin-logo2 img {
   width: 64px !important;
@@ -2910,14 +2911,15 @@ button.butn.in-cart,
   word-spacing: 2px !important;
   font-size: 23px !important;
   white-space: nowrap !important;
-  opacity: 0.8 !important;
-
-
+  opacity: 0.85 !important;
   padding: 0 !important;
+}
+@media screen and (max-width: 1067px) {
+  .dataTables_wrapper .dataTables_length {
 
-  
-  border: 1.8px solid rgb(18, 29, 51, 0.7) !important;
-  box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.7) !important;
+    border: 1.8px solid rgb(18, 29, 51, 0.7) !important;
+    box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.7) !important;
+  }
 }
 
 .dataTables_wrapper .dataTables_length select {
@@ -2927,8 +2929,14 @@ button.butn.in-cart,
   font-size: 16.5px !important;
 
   margin: 0px auto -8px !important;
-
   border-radius: 0.5px !important;
+}
+@media screen and (min-width: 1067px) {
+  .dataTables_wrapper .dataTables_length select {
+
+    border: 1.8px solid rgb(18, 29, 51, 0.7) !important;
+    box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.7) !important;
+  }
 }
 
 
@@ -2989,7 +2997,7 @@ button.butn.in-cart,
   }
 
   .dataTables_wrapper .dataTables_length {
-    margin: 15px 20px !important;
+    margin: 15px 15px 25px !important;
   }
   .dataTables_wrapper .dataTables_length select {
     font-size: 17px !important;
@@ -3012,7 +3020,7 @@ button.butn.in-cart,
   }
 
   .dataTables_wrapper .dataTables_length {
-    margin: 15px 15px !important;
+    margin: 12px 15px 22px !important;
   }
   .dataTables_wrapper .dataTables_length select {
     font-size: 16.5px !important;
