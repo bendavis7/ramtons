@@ -57,7 +57,9 @@ if(nesh) {
 
 auth.onAuthStateChanged(user => {
 	if(!user) { 
-		window.location.assign('index');
+		if(!auth.isSignInWithEmailLink(window.location.href)) {
+			window.location.assign('index');
+		}
 	} else {
 		emailShow();
 		var theGuy = user.uid;
@@ -170,15 +172,37 @@ function checkBra() {
 
 
 
+if (auth.isSignInWithEmailLink(window.location.href)) {
+    var email = '';
+	var theLink = window.location.href;
+	var noTimes = theLink.split('#').length-1;
+
+	if(noTimes == 1) {
+		theLink =  theLink.substring(theLink.indexOf("#") + 1);
+		email = theLink;
+	}
+	
+	var credential = new firebase.auth.EmailAuthProvider.credentialWithLink(email, window.location.href);
 
 
-
-
-
-
-
-
-
+	auth.signInWithEmailLink(email, window.location.href).then(() => {
+		setTimeout(() => { document.getElementsByClassName('toast')[0].classList.add(`anons`); }, 200);
+		var shortCutFunction = 'success'; var msg = `
+			Login successful: <br> ${email} <br> <hr class="to-hr hr15-top">
+		`;
+		toastr.options =  { closeButton: true, debug: false, newestOnTop: true, timeOut: 5000,progressBar: true,positionClass: 'toast-top-full-width', preventDuplicates: true, onclick: null }; var $toast = toastr[shortCutFunction](msg); $toastlast = $toast;
+	}).then(() => {
+		setTimeout(() => {
+			if(window.location.href.includes('@')) {
+				window.location.assign('checkout');
+			}
+		}, 2000);
+	}).catch((error) => {
+		setTimeout(() => { document.getElementsByClassName('toast')[0].classList.add(`anons`); }, 200);
+		var shortCutFunction = 'success';var msg = `${error.message} <br> <hr class="to-hr hr15-top">`;
+		toastr.options =  { closeButton: true, debug: false, newestOnTop: true, timeOut: 5000,progressBar: true,positionClass: 'toast-top-full-width', preventDuplicates: true, onclick: null }; var $toast = toastr[shortCutFunction](msg); $toastlast = $toast;
+	});
+}
 
 
 
@@ -245,4 +269,5 @@ function drawHand(ctx, pos, length, width) {
 
 if(window.location.href.includes('darkweb.fit')) {
 	document.getElementById('screen').setAttribute('href', 'mailto: email@darkweb.fit');
+	theWebsite = 'https://www.darkweb.fit/invoice';
 }
