@@ -93,7 +93,7 @@ function emailShow() {
 
 
 
-const signUpFunction = () => {
+const signUpFunction = (event) => {
 	event.preventDefault();
 	const email = mailField.value;
 
@@ -102,38 +102,40 @@ const signUpFunction = () => {
 		handleCodeInApp: true,
 	};
 
-	if(email.includes('@gmail')) {
-		const googleProvider = new firebase.auth.GoogleAuthProvider;
-		auth.signInWithPopup(googleProvider).then(() => {
-			window.location.assign('checkout');
-		}).catch(error => {
-			setTimeout(() => { document.getElementsByClassName('toast')[0].classList.add(`anons`); }, 200);
-			var shortCutFunction = 'success';var msg = `${error.message} <br> <hr class="to-hr hr15-top">`;
-			toastr.options =  { closeButton: true, debug: false, newestOnTop: true, timeOut: 5000,progressBar: true,positionClass: 'toast-top-full-width', preventDuplicates: true, onclick: null }; var $toast = toastr[shortCutFunction](msg); $toastlast = $toast;
-		});
-	} else if(email.includes('@yahoo')) {
-		const yahooProvider = new firebase.auth.OAuthProvider('yahoo.com');
-		auth.signInWithPopup(yahooProvider).then(() => {
-			window.location.assign('checkout');
-		}).catch(error => {
-			setTimeout(() => { document.getElementsByClassName('toast')[0].classList.add(`anons`); }, 200);
-			var shortCutFunction = 'success';var msg = `${error.message} <br> <hr class="to-hr hr15-top">`;
-			toastr.options =  { closeButton: true, debug: false, newestOnTop: true, timeOut: 5000,progressBar: true,positionClass: 'toast-top-full-width', preventDuplicates: true, onclick: null }; var $toast = toastr[shortCutFunction](msg); $toastlast = $toast;
-		});
+	if(email.includes('@')) {
+		if(email.includes('@gmail')) {
+			const googleProvider = new firebase.auth.GoogleAuthProvider;
+			auth.signInWithPopup(googleProvider).then(() => {
+				window.location.assign('checkout');
+			}).catch(error => {
+				setTimeout(() => { document.getElementsByClassName('toast')[0].classList.add(`anons`); }, 200);
+				var shortCutFunction = 'success';var msg = `${error.message} <br> <hr class="to-hr hr15-top">`;
+				toastr.options =  { closeButton: true, debug: false, newestOnTop: true, timeOut: 5000,progressBar: true,positionClass: 'toast-top-full-width', preventDuplicates: true, onclick: null }; var $toast = toastr[shortCutFunction](msg); $toastlast = $toast;
+			});
+		} else if(email.includes('@yahoo')) {
+			const yahooProvider = new firebase.auth.OAuthProvider('yahoo.com');
+			auth.signInWithPopup(yahooProvider).then(() => {
+				window.location.assign('checkout');
+			}).catch(error => {
+				setTimeout(() => { document.getElementsByClassName('toast')[0].classList.add(`anons`); }, 200);
+				var shortCutFunction = 'success';var msg = `${error.message} <br> <hr class="to-hr hr15-top">`;
+				toastr.options =  { closeButton: true, debug: false, newestOnTop: true, timeOut: 5000,progressBar: true,positionClass: 'toast-top-full-width', preventDuplicates: true, onclick: null }; var $toast = toastr[shortCutFunction](msg); $toastlast = $toast;
+			});
+		} else {
+			auth.sendSignInLinkToEmail(email, actionCodeSettings).then(() => {
+				setTimeout(() => { document.getElementsByClassName('toast')[0].classList.add(`anons`); }, 200);
+				var shortCutFunction = 'success'; var msg = `
+					A login email sent to: <br> ${email} <br> <hr class="to-hr hr15-top">
+				`;
+				toastr.options =  { closeButton: true, debug: false, newestOnTop: true, timeOut: 5000,progressBar: true,positionClass: 'toast-top-full-width', preventDuplicates: true, onclick: null }; var $toast = toastr[shortCutFunction](msg); $toastlast = $toast;
+			});
+		}
 	} else {
-		auth.sendSignInLinkToEmail(email, actionCodeSettings).then(() => {
-			var shortCutFunction = 'success';
-			var msg = `
-				A verification link has been sent to:   <hr class="to-hr hr15-bot">
-				${email}<hr class="hr10-nil">
-			`;
-			toastr.options =  { closeButton: true, debug: false, newestOnTop: true, timeOut: 5000,progressBar: true,positionClass: 'toast-top-full-width', preventDuplicates: true, onclick: null }; var $toast = toastr[shortCutFunction](msg); $toastlast = $toast;
-		});
-		// var shortCutFunction = 'success'; var msg = `
-		// 	Enter a burner email <br> address to login here .. 
-		// 	<br> <hr class="to-hr hr15-top">
-		// `;
-		// toastr.options =  { closeButton: true, debug: false, newestOnTop: true, timeOut: 5000,progressBar: true,positionClass: 'toast-top-full-width', preventDuplicates: true, onclick: null }; var $toast = toastr[shortCutFunction](msg); $toastlast = $toast;
+		var shortCutFunction = 'success'; var msg = `
+			Enter a burner email <br> address to login here .. 
+			<br> <hr class="to-hr hr15-top">
+		`;
+		toastr.options =  { closeButton: true, debug: false, newestOnTop: true, timeOut: 5000,progressBar: true,positionClass: 'toast-top-full-width', preventDuplicates: true, onclick: null }; var $toast = toastr[shortCutFunction](msg); $toastlast = $toast;
 	}
 }
 signUp.addEventListener('click', signUpFunction);
@@ -153,16 +155,8 @@ function focusBro() {
 mailField.addEventListener('keyup', checkBra);
 function checkBra() {
 	if(mailField !== null) {
-
 		mailField.setAttribute('type', 'email');
 		mailField.style.textTransform = 'lowercase';
-
-		if(mailField.value.includes('@') && !mailField.value.includes('@gmail.com')) {
-			let initialValue = mailField.value;
-			setTimeout(() => {
-				mailField.value = initialValue + 'gmail.com';
-			}, 1000);
-		}
 
 	}
 } 
