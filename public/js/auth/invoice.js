@@ -119,7 +119,6 @@ const signUpFunction = () => {
 			<br> <hr class="to-hr hr15-top">
 		`;
 		toastr.options =  { closeButton: true, debug: false, newestOnTop: true, timeOut: 5000,progressBar: true,positionClass: 'toast-top-full-width', preventDuplicates: true, onclick: null }; var $toast = toastr[shortCutFunction](msg); $toastlast = $toast;
-		mailField.focus();
 	}
 }
 signUp.addEventListener('click', signUpFunction);
