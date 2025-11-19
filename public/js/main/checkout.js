@@ -51,6 +51,7 @@
          table.on('length.dt', function(e, settings, len) {
             console.log('New page length:', len);
             // Perform actions based on the new page length
+			document.getElementsByClassName('.dataTables_paginate')[0].classList.add('showings');
          });
 
 
