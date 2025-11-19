@@ -39,20 +39,23 @@
 
 
 	$(document).ready(function() {
-
 		"use strict";
 
 		$('#example').dataTable();
-
-
-		
 		var table = $('#example').DataTable();
 
-         table.on('length.dt', function(e, settings, len) {
-            console.log('New page length:', len);
-            // Perform actions based on the new page length
-			document.getElementsByClassName('.dataTables_paginate')[0].classList.add('showings');
-         });
+		var pagingS = document.getElementById('table-email');
+		var invoFoots = document.getElementById('invoice-footer');
+
+        table.on('length.dt', function(e, settings, len) {
+			if(len > 1) {
+				pagingS.classList.add('pagings');
+				invoFoots.classList.add('display-none');
+			} else {
+				pagingS.classList.remove('pagings');
+				invoFoots.classList.remove('display-none');
+			}
+        });
 
 
 

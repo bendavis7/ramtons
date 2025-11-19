@@ -336,8 +336,13 @@ tr.big-margin td {
 
 
 
-section .dataTables_wrapper .dataTables_paginate {
+#table-email .dataTables_wrapper .dataTables_paginate {
   display: none !important;
+}
+
+
+#table-email.pagings .dataTables_wrapper .dataTables_paginate {
+  display: block !important;
 }
 
 
