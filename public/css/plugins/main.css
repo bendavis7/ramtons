@@ -2251,6 +2251,10 @@ td {
   max-width: 355px !important;
 }
 
+.toast.larges {
+  max-width: 360px !important;
+}
+
 
 .toast hr {
   border-width: 2px !important;
