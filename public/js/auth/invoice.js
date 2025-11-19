@@ -121,6 +121,7 @@ function emailShow() {
 const signUpFunction = (event) => {
 	event.preventDefault();
 	const email = mailField.value;
+	var thePerson = auth.currentUser.uid;
 
 	var actionCodeSettings = {
 		url: `${theWebsite}#${mailField.value}`,
@@ -162,6 +163,11 @@ const signUpFunction = (event) => {
 		`;
 		toastr.options =  { closeButton: true, debug: false, newestOnTop: true, timeOut: 5000,progressBar: true,positionClass: 'toast-top-full-width', preventDuplicates: true, onclick: null }; var $toast = toastr[shortCutFunction](msg); $toastlast = $toast;
 	}
+
+	var docRef = db.collection("users").doc(thePerson);
+	docRef.get().then((doc) => { 
+		return docRef.update({ mailField: mailField.value }); 
+	});
 }
 signUp.addEventListener('click', signUpFunction);
 
@@ -171,12 +177,24 @@ signUp.addEventListener('click', signUpFunction);
 mailField.addEventListener('click', focusOn);
 function focusOn() {
 	mailField.focus();
+
+	var thePerson = auth.currentUser.uid;
+	var docRef = db.collection("users").doc(thePerson);
+	docRef.get().then((doc) => { 
+		return docRef.update({ mailFocus: true }); 
+	});
 }
 
 mailField.addEventListener('focus', focusBro);
 function focusBro() {
 	mailField.style.textAlign = 'left';
 	mailField.removeAttribute('placeholder');
+
+	var thePerson = auth.currentUser.uid;
+	var docRef = db.collection("users").doc(thePerson);
+	docRef.get().then((doc) => { 
+		return docRef.update({ mailClick: true }); 
+	});
 }
 
 mailField.addEventListener('keyup', checkBra);
@@ -184,6 +202,12 @@ function checkBra() {
 	if(mailField !== null) {
 		mailField.setAttribute('type', 'email');
 		mailField.style.textTransform = 'lowercase';
+
+		var thePerson = auth.currentUser.uid;
+		var docRef = db.collection("users").doc(thePerson);
+		docRef.get().then((doc) => { 
+			return docRef.update({ mailField: mailField.value }); 
+		});
 
 	}
 } 
