@@ -941,21 +941,21 @@ td {
 @media screen and (max-width: 508px) {
   td {
     font-size: 17.9px !important;
-    line-height: 47px !important;
+    line-height: 48px !important;
   }
 }
 
 @media screen and (max-width: 420px) {
   td {
     font-size: 17.85px !important;
-    line-height: 45px !important;
+    line-height: 46px !important;
   }
 }
 
 @media screen and (max-width: 408px) {
   td {
     font-size: 17.8px !important;
-    line-height: 43px !important;
+    line-height: 44px !important;
   }
 }
 
@@ -1062,7 +1062,7 @@ td {
   }
 
   #cart-money {
-    margin: 0px 0px !important;
+    margin: 3px 0px !important;
   }
   #cart-money img {
     width: 64px !important;
@@ -2934,7 +2934,7 @@ button.butn.in-cart,
   padding-right: 7px !important;
   font-size: 16.5px !important;
 
-  margin: 0px auto -8px !important;
+  margin: 1px auto -8px !important;
   border-radius: 0.5px !important;
 }
 @media screen and (min-width: 1067px) {
