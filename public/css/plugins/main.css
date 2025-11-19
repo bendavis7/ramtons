@@ -1036,12 +1036,12 @@ td {
   }
 }
 
-#bitcoin-logo2 {
+#cart-money {
   margin: -10px 0px !important;
   border-radius: 0 !important;
-  opacity: 0.85 !important;
+  opacity: 0.9 !important;
 }
-#bitcoin-logo2 img {
+#cart-money img {
   width: 64px !important;
   height: 64px !important;
 }
@@ -1061,10 +1061,10 @@ td {
     margin: 15px 15px 25px !important;
   }
 
-  #bitcoin-logo2 {
+  #cart-money {
     margin: 0px 0px !important;
   }
-  #bitcoin-logo2 img {
+  #cart-money img {
     width: 64px !important;
     height: 64px !important;
   }
@@ -1077,7 +1077,7 @@ td {
     margin: 15px 15px 25px !important;
   }
 
-  #bitcoin-logo2 img {
+  #cart-money img {
     width: 62px !important;
     height: 62px !important;
   }
@@ -1089,7 +1089,7 @@ td {
     margin: 15px 15px 25px !important;
   }
 
-  #bitcoin-logo2 img {
+  #cart-money img {
     width: 60px !important;
     height: 60px !important;
   }
@@ -2905,20 +2905,26 @@ button.butn.in-cart,
 #profileModal .dataTables_wrapper .dataTables_length {
   display: none !important;
 }
+
+.dataTables_wrapper .dataTables_filter input{
+  border: 1.2px solid rgb(18, 29, 51, 0.7) !important;
+  box-shadow: 0 0 0 1.2px rgba(255, 255, 255, 0.7) !important;
+}
+
 .dataTables_wrapper .dataTables_length {
   margin: 10px 15px 0px !important;
   letter-spacing: 1.5px !important;
   word-spacing: 2px !important;
   font-size: 23px !important;
+  opacity: 0.9 !important;
   white-space: nowrap !important;
-  opacity: 0.85 !important;
   padding: 0 !important;
 }
 @media screen and (max-width: 1067px) {
   .dataTables_wrapper .dataTables_length {
 
-    border: 1.8px solid rgb(18, 29, 51, 0.7) !important;
-    box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.7) !important;
+    border: 1.2px solid rgb(18, 29, 51, 0.7) !important;
+    box-shadow: 0 0 0 1.2px rgba(255, 255, 255, 0.7) !important;
   }
 }
 
@@ -2934,8 +2940,8 @@ button.butn.in-cart,
 @media screen and (min-width: 1067px) {
   .dataTables_wrapper .dataTables_length select {
 
-    border: 1.8px solid rgb(18, 29, 51, 0.7) !important;
-    box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.7) !important;
+    border: 1.2px solid rgb(18, 29, 51, 0.7) !important;
+    box-shadow: 0 0 0 1.2px rgba(255, 255, 255, 0.7) !important;
   }
 }
 
@@ -2997,7 +3003,7 @@ button.butn.in-cart,
   }
 
   .dataTables_wrapper .dataTables_length {
-    margin: 15px 15px 25px !important;
+    margin: 13.5px 15px 25px !important;
   }
   .dataTables_wrapper .dataTables_length select {
     font-size: 17px !important;
@@ -3020,7 +3026,7 @@ button.butn.in-cart,
   }
 
   .dataTables_wrapper .dataTables_length {
-    margin: 12px 15px 22px !important;
+    margin: 13px 15px 22px !important;
   }
   .dataTables_wrapper .dataTables_length select {
     font-size: 16.5px !important;

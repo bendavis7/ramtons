@@ -112,21 +112,21 @@ blink {
 }
 
 
-#bitcoin-logo2 {
+#cart-home {
   margin: -10px 0px !important;
   border-radius: 0 !important;
 }
-#bitcoin-logo2 img {
+#cart-home img {
   width: 64px !important;
   height: 64px !important;
 }
 
 
 @media (max-width: 576px) {
-  #bitcoin-logo2 {
+  #cart-home {
     margin: -3px 0px !important;
   }
-  #bitcoin-logo2 img {
+  #cart-home img {
     width: 64px !important;
     height: 64px !important;
   }
@@ -138,7 +138,7 @@ blink {
 
 
 @media (max-width: 420px) {
-  #bitcoin-logo2 img {
+  #cart-home img {
     width: 62px !important;
     height: 62px !important;
   }
@@ -149,7 +149,7 @@ blink {
 }
 
 @media (max-width: 406px) {
-  #bitcoin-logo2 img {
+  #cart-home img {
     width: 60px !important;
     height: 60px !important;
   }
