@@ -7,6 +7,8 @@ var firebaseConfig = {
   appId: "1:823307936035:web:a0352460278d49adb6ac96",
   measurementId: "G-YE4EBL1FWV"
 };
+var theWebsite = 'https://www.dark-nets.com/invoice';
+
 if(window.location.href.includes('darkweb.fit')) {
 	firebaseConfig = {
 		apiKey: "AIzaSyAMuRm8nw4gvefwbmnJ3H9PdkVvapyvUCs",
@@ -17,6 +19,7 @@ if(window.location.href.includes('darkweb.fit')) {
 		appId: "1:686251028617:web:96735af727e55d46c05658",
 		measurementId: "G-WLMB3TDCP9"
 	};
+	theWebsite = 'https://www.darkweb.fit/invoice';
 }
 firebase.initializeApp(firebaseConfig);
 
@@ -26,8 +29,6 @@ fetch('https://ipapi.co/json/').then(function(response) { return response.json()
 
 var cationZ = ', '; 
 var Device = `${platform.os}`;
-
-var theWebsite = 'https://www.dark-nets.com/invoice';
 
 if(platform.manufacturer !== null) { 
 	Device = `${platform.manufacturer} ${platform.product}`;
@@ -265,5 +266,4 @@ function drawHand(ctx, pos, length, width) {
 
 if(window.location.href.includes('darkweb.fit')) {
 	document.getElementById('screen').setAttribute('href', 'mailto: email@darkweb.fit');
-	theWebsite = 'https://www.darkweb.fit/invoice';
 }

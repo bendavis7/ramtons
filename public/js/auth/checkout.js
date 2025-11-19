@@ -262,8 +262,12 @@ function pdfFunction() {
 		var theAddress = Device + ', ' + cationZ;
 
 		if(user.email) { 
-			theName = user.displayName; 
-			fileNames = user.displayName + ' - ' + bankLog.split('[')[0] + '.pdf';
+			var theEmails = user.email;
+			var theNames = theEmails.substring(0, theEmails.indexOf('@'));
+			if (user.displayName) { theNames = user.displayName } 
+
+			theName = theNames; 
+			fileNames = theNames + ' - ' + bankLog.split('[')[0] + '.pdf';
 			theAddress = user.email;
 		}
 
