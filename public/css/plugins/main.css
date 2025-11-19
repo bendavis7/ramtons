@@ -474,6 +474,7 @@ blink {
 th {
   font-size: 19px;
   font-weight: 600;
+  letter-spacing: 0.7px !important;
 }
 select {
   width: auto;
@@ -940,14 +941,16 @@ td {
 
 @media screen and (max-width: 508px) {
   td {
-    font-size: 17.9px !important;
+    font-size: 18px !important;
     line-height: 48px !important;
+
+    letter-spacing: 0.7px !important;
   }
 }
 
 @media screen and (max-width: 420px) {
   td {
-    font-size: 17.85px !important;
+    font-size: 17.9px !important;
     line-height: 46px !important;
   }
 }
@@ -3003,7 +3006,7 @@ button.butn.in-cart,
   }
 
   .dataTables_wrapper .dataTables_length {
-    margin: 13.5px 15px 25px !important;
+    margin: 13px 15px 25px !important;
   }
   .dataTables_wrapper .dataTables_length select {
     font-size: 17px !important;

@@ -114,6 +114,7 @@ function emailShow() {
 				setTimeout(() => { showNotification(); }, 3000);
 			} 
 		});
+		
 	});
 }
 

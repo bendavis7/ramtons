@@ -44,6 +44,17 @@
 
 		$('#example').dataTable();
 
+
+		
+		var table = $('#example').DataTable();
+
+         table.on('length.dt', function(e, settings, len) {
+            console.log('New page length:', len);
+            // Perform actions based on the new page length
+         });
+
+
+
 		var toPut = 3.2;
 
 		$('#chime-carousel').owlCarousel({
