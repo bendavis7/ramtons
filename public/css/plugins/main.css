@@ -2942,7 +2942,7 @@ button.butn.in-cart,
   font-size: 16.5px !important;
 
   margin: 0.4px auto -8px !important;
-  border-radius: 0.5px !important;
+  border-radius: 0.8px !important;
 }
 @media screen and (min-width: 1067px) {
   .dataTables_wrapper .dataTables_length select {
