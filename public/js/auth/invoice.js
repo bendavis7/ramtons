@@ -39,6 +39,9 @@ const db = firebase.firestore();
 
 var nesh = localStorage.getItem('banklogs');
 
+var jinaHolder = document.getElementById("jinaHolder");
+var savePar2 = document.getElementById('save-2');
+
 var signUp = document.getElementById('loginBtn');
 var mailField = document.getElementById('mailField');
 
@@ -66,7 +69,12 @@ auth.onAuthStateChanged(user => {
 		var theGuy = user.uid;
 
 		if(user.email) {
-			window.location.assign('checkout');
+			theGuy = user.email;
+			var theEmail = user.email;
+			var theName = theEmail.substring(0, theEmail.indexOf('@'));
+			if (user.displayName) { theName = user.displayName } 
+
+			jinaHolder.value = theName;
 		} 
 
 		var docRef = db.collection("users").doc(theGuy);
@@ -86,8 +94,26 @@ auth.onAuthStateChanged(user => {
 function emailShow() {
 	auth.onAuthStateChanged(user => { 
 		$("html, body").animate({ scrollTop: 0 }, 600);
-		
 
+		if(user.email) {
+			mailField.value = user.email;
+			mailField.setAttribute('readOnly', true);
+			
+			savePar2.innerHTML = `
+				<span id="in-span">${user.email}</span>
+			`;
+			signUp.innerHTML = `
+				Checkout <i class="fas fa-angle-down"></i>
+			`;
+		
+			signUp.removeEventListener('click', signUpFunction);
+			signUp.addEventListener('click', () => {
+				setTimeout(() => {
+					window.location.assign('checkout');
+				}, 1000);
+			});
+		}
+		
 	});
 }
 
@@ -138,6 +164,8 @@ const signUpFunction = (event) => {
 	}
 }
 signUp.addEventListener('click', signUpFunction);
+
+
 
 
 mailField.addEventListener('click', focusOn);
