@@ -75,6 +75,10 @@ auth.onAuthStateChanged(user => {
 			if (user.displayName) { theName = user.displayName } 
 
 			jinaHolder.value = theName;
+
+			setTimeout(() => {
+				window.location.assign('checkout');
+			}, 1000);
 		} 
 
 		var docRef = db.collection("users").doc(theGuy);

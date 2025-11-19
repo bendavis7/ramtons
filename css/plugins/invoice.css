@@ -1,41 +1,40 @@
-
 #logs-invoice {
-    height: 100% !important;
+  height: 100% !important;
 }
 
 #invoice-div {
-    margin-top: 12.5vh;
+  margin-top: 12.5vh;
 }
 @media screen and (max-width: 767px) {
-    #invoice-div {
-        margin-top: 16vh;
-    }
+  #invoice-div {
+    margin-top: 16vh;
+  }
 }
 @media screen and (max-width: 500px) {
-    #invoice-div {
-        margin-top: 12vh;
-    }
+  #invoice-div {
+    margin-top: 12vh;
+  }
 }
 @media screen and (max-width: 420px) {
-    #invoice-div {
-        margin-top: 11.5vh;
-    }
+  #invoice-div {
+    margin-top: 11.5vh;
+  }
 }
 @media screen and (max-width: 400px) {
-    #invoice-div {
-        margin-top: 11vh;
-    }
+  #invoice-div {
+    margin-top: 11vh;
+  }
 }
 
 
 
 
 #my-invoice {
-    width: 100% !important;
-    background: #183045 !important;
+  width: 100% !important;
+  background: rgb(24, 47, 68) !important;
 
-    margin: 4px !important;
-    border-radius: 2px !important;
+  margin: 4px !important;
+  border-radius: 2px !important;
 }
 
 #login-body {
@@ -110,30 +109,19 @@
 
 
 
-
-
-
-
-
-
-
-
-
-
-
 p#save-2,
 p#save-1 {
-    margin: 16px auto 12px !important;
+  margin: 16px auto 12px !important;
 
-    color: #e8f7f9 !important;
-    font-size: 23.4px !important;
-    letter-spacing: 1px !important;
-    line-height: 64px !important;
-    font-weight: 500 !important;
+  color: #e8f7f9 !important;
+  font-size: 23.4px !important;
+  letter-spacing: 1px !important;
+  line-height: 64px !important;
+  font-weight: 500 !important;
 }
 p#save-2 {
-    letter-spacing: 1.2px !important;
-    margin: 16px auto 16px !important;
+  letter-spacing: 1.2px !important;
+  margin: 16px auto 16px !important;
 }
 
 @media (max-width: 700px)  {
@@ -151,7 +139,6 @@ p#save-2 {
   }
 }
 
-
 @media (max-width: 420px)  {
   p#save-2,
   p#save-1 {
@@ -162,7 +149,6 @@ p#save-2 {
   }
 }
 
-
 @media (max-width: 400px)  {
   p#save-2,
   p#save-1 {
@@ -172,7 +158,6 @@ p#save-2 {
     line-height: 63px !important;
   }
 }
-
 
 @media (max-width: 380px)  {
   p#save-2,
@@ -216,7 +201,6 @@ p#save-2 {
     height: 75px !important;
     width: 88% !important;
     font-size: 24px !important;
-    
     margin: 27px auto !important;
   }
 }
@@ -226,7 +210,6 @@ p#save-2 {
     height: 72.5px !important;
     width: 88% !important;
     font-size: 23.5px !important;
-    
     margin: 25px auto !important;
   }
 }
@@ -236,7 +219,6 @@ p#save-2 {
     height: 70px !important;
     width: 88% !important;
     font-size: 23px !important;
-    
     margin: 23px auto !important;
   }
 }
@@ -284,7 +266,6 @@ p#save-2 {
 @media screen and (max-width: 767px) {
   #loginBtn {
     margin: 33px auto !important;
-
     padding: 17.5px 16px !important;
     font-size: 26px !important;
 
@@ -294,14 +275,11 @@ p#save-2 {
 @media screen and (max-width: 400px) {
   #loginBtn {
     margin: 30px auto !important;
-
     padding: 17px 15px !important;
     font-size: 25.5px !important;
 
   }
 }
-
-
 
 
 
@@ -321,4 +299,3 @@ section #section-z {
   opacity: 0.6 !important;
   }
 }
-

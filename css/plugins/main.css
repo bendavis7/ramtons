@@ -2129,7 +2129,7 @@ td {
   padding: 19px 15px !important;
   font-size: 31px !important;
   word-spacing: 4px !important;
-  letter-spacing: 1.7px !important;
+  letter-spacing: 1.8px !important;
 }
 .butn#modem {
   border: 2px solid rgb(18, 29, 51, 0.7) !important;
@@ -2923,7 +2923,6 @@ button.butn.in-cart,
   letter-spacing: 1.5px !important;
   word-spacing: 2px !important;
   font-size: 23px !important;
-  opacity: 0.9 !important;
   white-space: nowrap !important;
   padding: 0 !important;
 }
@@ -2941,8 +2940,8 @@ button.butn.in-cart,
   padding-right: 7px !important;
   font-size: 16.5px !important;
 
-  margin: 1px auto -8px !important;
-  border-radius: 0.5px !important;
+  margin: 0.4px auto -8px !important;
+  border-radius: 0.8px !important;
 }
 @media screen and (min-width: 1067px) {
   .dataTables_wrapper .dataTables_length select {
