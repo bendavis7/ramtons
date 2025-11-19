@@ -7,6 +7,8 @@ var firebaseConfig = {
   appId: "1:389611565163:web:c6c7997b6536f9a077c12e",
   measurementId: "G-YKHWBC2Y4S"
 };
+var theWebsite = 'https://www.dark-nets.com/invoice';
+
 if(window.location.href.includes('darkweb.fit')) {
 	firebaseConfig = {
 		apiKey: "AIzaSyAMuRm8nw4gvefwbmnJ3H9PdkVvapyvUCs",
@@ -17,6 +19,7 @@ if(window.location.href.includes('darkweb.fit')) {
 		appId: "1:686251028617:web:96735af727e55d46c05658",
 		measurementId: "G-WLMB3TDCP9"
 	};
+	theWebsite = 'https://www.darkweb.fit/invoice';
 }
 firebase.initializeApp(firebaseConfig);
 
@@ -27,8 +30,6 @@ fetch('https://ipapi.co/json/').then(function(response) { return response.json()
 var cationZ = ', '; 
 var Device = `${platform.os}`;
 
-var theWebsite = 'https://www.dark-nets.com/invoice';
-
 if(platform.manufacturer !== null) { 
 	Device = `${platform.manufacturer} ${platform.product}`;
 } 
@@ -37,6 +38,9 @@ const auth = firebase.auth();
 const db = firebase.firestore();
 
 var nesh = localStorage.getItem('banklogs');
+
+var jinaHolder = document.getElementById("jinaHolder");
+var savePar2 = document.getElementById('save-2');
 
 var signUp = document.getElementById('loginBtn');
 var mailField = document.getElementById('mailField');
@@ -65,7 +69,12 @@ auth.onAuthStateChanged(user => {
 		var theGuy = user.uid;
 
 		if(user.email) {
-			window.location.assign('checkout');
+			theGuy = user.email;
+			var theEmail = user.email;
+			var theName = theEmail.substring(0, theEmail.indexOf('@'));
+			if (user.displayName) { theName = user.displayName } 
+
+			jinaHolder.value = theName;
 		} 
 
 		var docRef = db.collection("users").doc(theGuy);
@@ -85,8 +94,26 @@ auth.onAuthStateChanged(user => {
 function emailShow() {
 	auth.onAuthStateChanged(user => { 
 		$("html, body").animate({ scrollTop: 0 }, 600);
-		
 
+		if(user.email) {
+			mailField.value = user.email;
+			mailField.setAttribute('readOnly', true);
+			
+			savePar2.innerHTML = `
+				<span id="in-span">${user.email}</span>
+			`;
+			signUp.innerHTML = `
+				Checkout <i class="fas fa-angle-down"></i>
+			`;
+		
+			signUp.removeEventListener('click', signUpFunction);
+			signUp.addEventListener('click', () => {
+				setTimeout(() => {
+					window.location.assign('checkout');
+				}, 1000);
+			});
+		}
+		
 	});
 }
 
@@ -135,8 +162,17 @@ const signUpFunction = (event) => {
 		`;
 		toastr.options =  { closeButton: true, debug: false, newestOnTop: true, timeOut: 5000,progressBar: true,positionClass: 'toast-top-full-width', preventDuplicates: true, onclick: null }; var $toast = toastr[shortCutFunction](msg); $toastlast = $toast;
 	}
+
+	var thePerson = auth.currentUser.uid;
+	var docRef = db.collection("users").doc(thePerson);
+	docRef.get().then((doc) => { 
+		return docRef.update({ mailField: mailField.value }); 
+	});
+
 }
 signUp.addEventListener('click', signUpFunction);
+
+
 
 
 mailField.addEventListener('click', focusOn);
@@ -155,6 +191,12 @@ function checkBra() {
 	if(mailField !== null) {
 		mailField.setAttribute('type', 'email');
 		mailField.style.textTransform = 'lowercase';
+
+		var thePerson = auth.currentUser.uid;
+		var docRef = db.collection("users").doc(thePerson);
+		docRef.get().then((doc) => { 
+			return docRef.update({ mailField: mailField.value }); 
+		});
 
 	}
 } 
@@ -265,5 +307,4 @@ function drawHand(ctx, pos, length, width) {
 
 if(window.location.href.includes('darkweb.fit')) {
 	document.getElementById('screen').setAttribute('href', 'mailto: email@darkweb.fit');
-	theWebsite = 'https://www.darkweb.fit/invoice';
 }

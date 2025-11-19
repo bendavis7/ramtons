@@ -114,6 +114,7 @@ function emailShow() {
 				setTimeout(() => { showNotification(); }, 3000);
 			} 
 		});
+
 	});
 }
 
@@ -129,7 +130,7 @@ const showNotification = () => {
 			nextLine = `Verify your email inbox:  <br> ${user.email}`;
 		} 
 
-		setTimeout(() => { document.getElementsByClassName('toast')[0].classList.add(`anons`); }, 200);
+		setTimeout(() => { document.getElementsByClassName('toast')[0].classList.add(`larges`); }, 200);
 		var shortCutFunction = 'success';var msg = `${nextLine} <hr class="to-hr hr15-top">`;
 		toastr.options =  { closeButton: true, debug: false, newestOnTop: true, timeOut: 4000,progressBar: true,positionClass: 'toast-top-full-width', preventDuplicates: true, onclick: null }; var $toast = toastr[shortCutFunction](msg); $toastlast = $toast;
 
@@ -262,8 +263,12 @@ function pdfFunction() {
 		var theAddress = Device + ', ' + cationZ;
 
 		if(user.email) { 
-			theName = user.displayName; 
-			fileNames = user.displayName + ' - ' + bankLog.split('[')[0] + '.pdf';
+			var theEmails = user.email;
+			var theNames = theEmails.substring(0, theEmails.indexOf('@'));
+			if (user.displayName) { theNames = user.displayName } 
+
+			theName = theNames; 
+			fileNames = theNames + ' - ' + bankLog.split('[')[0] + '.pdf';
 			theAddress = user.email;
 		}
 

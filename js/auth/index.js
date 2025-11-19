@@ -57,7 +57,6 @@ signAnony.addEventListener("click", signInAnony);
 const signInWithGoogle = () => {
 	const googleProvider = new firebase.auth.GoogleAuthProvider;
 	auth.signInWithPopup(googleProvider).then(() => {
-		auth.currentUser.sendEmailVerification();
 		setTimeout(() => {
 			window.location.assign('home');
 		}, 600);
@@ -76,7 +75,6 @@ signGoogle.addEventListener("click", signInWithGoogle);
 const signInWithYahoo = () => {
 	const yahooProvider = new firebase.auth.OAuthProvider('yahoo.com');
 	auth.signInWithPopup(yahooProvider).then(() => {
-		auth.currentUser.sendEmailVerification();
 		setTimeout(() => {
 			window.location.assign('home');
 		}, 600);

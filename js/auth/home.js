@@ -84,9 +84,6 @@ function emailShow() {
 			vpnButn.addEventListener('click', () => {
 				$('#profileModal').modal('show'); 
 			});
-			vpnButn.innerHTML = `
-				Cart Log <i class="fas fa-angle-down">
-			`;
 		} else {
 			vpnButn.addEventListener('click', () => {
 				$("html, body").animate({ scrollTop: 0 }, 3000);

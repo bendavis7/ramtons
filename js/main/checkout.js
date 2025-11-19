@@ -39,10 +39,25 @@
 
 
 	$(document).ready(function() {
-
 		"use strict";
 
 		$('#example').dataTable();
+		var table = $('#example').DataTable();
+
+		var pagingS = document.getElementById('table-email');
+		var invoFoots = document.getElementById('invoice-footer');
+
+        table.on('length.dt', function(e, settings, len) {
+			if(len > 1) {
+				pagingS.classList.add('pagings');
+				invoFoots.classList.add('display-none');
+			} else {
+				pagingS.classList.remove('pagings');
+				invoFoots.classList.remove('display-none');
+			}
+        });
+
+
 
 		var toPut = 3.2;
 

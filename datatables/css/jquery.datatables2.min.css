@@ -307,10 +307,7 @@ table.dataTable td{
   font-size: 17px;
   font-weight: 600;
 }
-.dataTables_wrapper .dataTables_filter input{
-  border: 1px solid rgb(18, 29, 51, 0.7) !important;
-  box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.7) !important;
-}
+
 .dataTables_wrapper .dataTables_filter{
   float:right;
   text-align:right;
