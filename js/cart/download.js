@@ -137,7 +137,8 @@ if(localStorage.getItem('banklogs')){
 }
 
 function emptyCart() {
-    login.onAuthStateChanged(user => { 		
+    login.onAuthStateChanged(user => { 	
+        setTimeout(() => { document.getElementsByClassName('toast')[0].classList.add(`anons`); }, 200);	
         var shortCutFunction = 'success'; var msg = `Your cart is empty.. <br> add bank logs to cart. <hr class="hr15-bot">`; 
         toastr.options =  {closeButton: true, debug: false, newestOnTop: true, timeOut: 4000,progressBar: true,positionClass: 'toast-top-full-width', preventDuplicates: true, onclick: null}; var $toast = toastr[shortCutFunction](msg);$toastlast = $toast; 
         setTimeout(() => { 

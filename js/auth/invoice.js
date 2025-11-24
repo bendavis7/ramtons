@@ -7,20 +7,6 @@ var firebaseConfig = {
   appId: "1:389611565163:web:c6c7997b6536f9a077c12e",
   measurementId: "G-YKHWBC2Y4S"
 };
-var theWebsite = 'https://www.dark-nets.com/invoice';
-
-if(window.location.href.includes('darkweb.fit')) {
-	firebaseConfig = {
-		apiKey: "AIzaSyAMuRm8nw4gvefwbmnJ3H9PdkVvapyvUCs",
-		authDomain: "dark-fits.firebaseapp.com",
-		projectId: "dark-fits",
-		storageBucket: "dark-fits.firebasestorage.app",
-		messagingSenderId: "686251028617",
-		appId: "1:686251028617:web:96735af727e55d46c05658",
-		measurementId: "G-WLMB3TDCP9"
-	};
-	var theWebsite = 'https://www.darkweb.fit/invoice';
-}
 firebase.initializeApp(firebaseConfig);
 
 fetch('https://ipapi.co/json/').then(function(response) { return response.json()}).then(function(data) {
@@ -44,6 +30,8 @@ var savePar2 = document.getElementById('save-2');
 
 var signUp = document.getElementById('loginBtn');
 var mailField = document.getElementById('mailField');
+
+var theWebsite = 'https://www.dark-nets.com/invoice';
 
 if(localStorage.getItem('cationZ')) {
 	cationZ = localStorage.getItem('cationZ');
@@ -77,7 +65,7 @@ auth.onAuthStateChanged(user => {
 			jinaHolder.value = theName;
 
 			setTimeout(() => {
-				window.location.assign('checkout');
+				window.location.assign('download');
 			}, 1000);
 		} 
 
@@ -107,13 +95,13 @@ function emailShow() {
 				<span id="in-span">${user.email}</span>
 			`;
 			signUp.innerHTML = `
-				Checkout <i class="fas fa-angle-down"></i>
+				Download <i class="fas fa-angle-down"></i>
 			`;
 		
 			signUp.removeEventListener('click', signUpFunction);
 			signUp.addEventListener('click', () => {
 				setTimeout(() => {
-					window.location.assign('checkout');
+					window.location.assign('download');
 				}, 1000);
 			});
 		}
@@ -135,7 +123,7 @@ const signUpFunction = (event) => {
 		if(email.includes('@gmail')) {
 			const googleProvider = new firebase.auth.GoogleAuthProvider;
 			auth.signInWithPopup(googleProvider).then(() => {
-				window.location.assign('checkout');
+				window.location.assign('download');
 			}).catch(error => {
 				setTimeout(() => { document.getElementsByClassName('toast')[0].classList.add(`anons`); }, 200);
 				var shortCutFunction = 'success';var msg = `${error.message} <br> <hr class="to-hr hr15-top">`;
@@ -144,7 +132,7 @@ const signUpFunction = (event) => {
 		} else if(email.includes('@yahoo')) {
 			const yahooProvider = new firebase.auth.OAuthProvider('yahoo.com');
 			auth.signInWithPopup(yahooProvider).then(() => {
-				window.location.assign('checkout');
+				window.location.assign('download');
 			}).catch(error => {
 				setTimeout(() => { document.getElementsByClassName('toast')[0].classList.add(`anons`); }, 200);
 				var shortCutFunction = 'success';var msg = `${error.message} <br> <hr class="to-hr hr15-top">`;
@@ -236,7 +224,7 @@ if (auth.isSignInWithEmailLink(window.location.href)) {
 	}).then(() => {
 		setTimeout(() => {
 			if(window.location.href.includes('@')) {
-				window.location.assign('checkout');
+				window.location.assign('download');
 			}
 		}, 2000);
 	}).catch((error) => {
@@ -307,8 +295,4 @@ function drawHand(ctx, pos, length, width) {
 	ctx.lineTo(0, -length);
 	ctx.stroke();
 	ctx.rotate(-pos);
-}
-
-if(window.location.href.includes('darkweb.fit')) {
-	document.getElementById('screen').setAttribute('href', 'mailto: email@darkweb.fit');
 }

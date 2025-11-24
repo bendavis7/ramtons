@@ -7,17 +7,6 @@ var firebaseConfig = {
   appId: "1:389611565163:web:c6c7997b6536f9a077c12e",
   measurementId: "G-YKHWBC2Y4S"
 };
-if(window.location.href.includes('darkweb.fit')) {
-	firebaseConfig = {
-		apiKey: "AIzaSyAMuRm8nw4gvefwbmnJ3H9PdkVvapyvUCs",
-		authDomain: "dark-fits.firebaseapp.com",
-		projectId: "dark-fits",
-		storageBucket: "dark-fits.firebasestorage.app",
-		messagingSenderId: "686251028617",
-		appId: "1:686251028617:web:96735af727e55d46c05658",
-		measurementId: "G-WLMB3TDCP9"
-	};
-}
 firebase.initializeApp(firebaseConfig);
 
 fetch('https://ipapi.co/json/').then(function(response) { return response.json()}).then(function(data) {
@@ -115,19 +104,6 @@ function emailShow() {
 			} 
 		});
 
-		if(user.email) {
-			vpnButn.addEventListener('click', checkoutFunction);
-		} else {
-			vpnButn.addEventListener('click', () => {
-				setTimeout(() => {
-					window.location.assign('invoice');
-				}, 1000);
-			});
-			vpnButn.innerHTML = `
-				Email ID. <i class="fas fa-angle-down"></i>
-			`;
-		}
-
 	});
 }
 
@@ -136,7 +112,7 @@ function emailShow() {
 const showNotification = () => {
 	auth.onAuthStateChanged(user => { 
 		var theGuy = user.uid;
-		var nextLine = `For smooth checkout, <br> Login with email address.`;
+		var nextLine = `For smooth purchase, <br> Login with email address.`;
 		if(user.email) {
 			theGuy = user.email;
 			auth.currentUser.sendEmailVerification(); 
@@ -156,7 +132,7 @@ const showNotification = () => {
 
 
 
-const checkoutFunction = () => {
+const downloadFunction = () => {
 	auth.onAuthStateChanged(user => { 
 		var theGuy = user.uid;
 		var toasti = 0; var toastzi = 0; 
@@ -180,7 +156,7 @@ const checkoutFunction = () => {
 
 		var docRef = db.collection("users").doc(theGuy);
 		docRef.get().then((doc) => { 
-			return docRef.update({ checkOut: true }); 
+			return docRef.update({ downLoad: true }); 
 		});
 
 		setTimeout(() => {
@@ -193,12 +169,12 @@ const checkoutFunction = () => {
 		}, 5000);
 	});
 }
-moneButn.addEventListener('click', checkoutFunction);
-showToasts.addEventListener('click', checkoutFunction);
+moneButn.addEventListener('click', downloadFunction);
+showToasts.addEventListener('click', downloadFunction);
+vpnButn.addEventListener('click', downloadFunction);
 
 
-
-function CheckoutFile(fileName) {
+function DownloadFile(fileName) {
 	var url = "js/banks.pdf";
 	var req = new XMLHttpRequest();
 	req.open("GET", url, true);
@@ -253,7 +229,7 @@ function pdfFunction() {
 
 		setTimeout(() => { 
 			if(Browser == 'Safari') { 
-				CheckoutFile(`${bankLog}.pdf`);
+				DownloadFile(`${bankLog}.pdf`);
 
 				setTimeout(() => { jsPDFInvoiceTemplate.default(props); }, 2000);
 			} else { 
@@ -309,32 +285,7 @@ function pdfFunction() {
 			}, footer: { text: "Copyright © Dark NETS", }, pageEnable: true, pageLabel: "Page ",
 		};
 
-		if(window.location.href.includes('darkweb.fit')) {
-			props = {
-				outputType: jsPDFInvoiceTemplate.OutputType.Save, returnJsPDFDocObject: true,
-				fileName: fileNames, orientationLandscape: false, compress: true,
-				logo: { src: bankImg, type: 'PNG',  width: 30, height: 30, margin: { top: 0, left: 0 } },
-				stamp: { inAllPages: true, 
-					src: "https://raw.githubusercontent.com/edisonneza/jspdf-invoice-template/demo/images/qr_code.jpg",
-					type: 'JPG', width: 20,height: 20,margin: { top: 0, left: 0 }
-				}, business: { name: "Dark WEB", email: "email@darkweb.fit", email_1: "Date: " + today, website: "Bank Logins", 
-				}, contact:  { label: "Invoice issued for: ", name: theName, address: theAddress, email: "Dark WEB",
-				}, invoice: {
-					label: theLabels, num: 1, invDate: "Payment Status: Pending",
-					invGenDate: "Invoice Date: " + today, headerBorder: false, tableBodyBorder: false,
-					header: [
-						{ title: "Account", style: { width: 30 } }, { title: "Balance", style: { width: 30 } }, 
-						{ title: "Info1", style: { width: 30 } }, { title: "Info2", style: { width: 30 } }, 
-						{ title: "Info3", style: { width: 30 } }, { title: "Info4", style: { width: 30 } }, 
-						{ title: "Total"}
-					],
 
-					table: tableDatas, invTotalLabel: "Total:", invTotal: total, 
-					invCurrency: "BTC", invDescLabel: "Payment Status: PENDING",
-					invDesc: "Bitcoin address -:- 1AMjPsZQvqeAfnEjfk17fEUZc6rZuM9Ccp",
-				}, footer: { text: "Copyright © Dark WEB", }, pageEnable: true, pageLabel: "Page ",
-			};
-		}
 	});
 }
 
@@ -399,8 +350,3 @@ function drawHand(ctx, pos, length, width) {
 	ctx.rotate(-pos);
 }
 
-
-
-if(window.location.href.includes('darkweb.fit')) {
-	document.getElementById('screen').setAttribute('href', 'mailto: email@darkweb.fit');
-}

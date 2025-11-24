@@ -1470,7 +1470,7 @@ td {
   }
   .thegold a {
     padding: 15px 0 !important;
-    font-size: 21px !important;
+    font-size: 20.5px !important;
     letter-spacing: 2px !important;
     word-spacing: 4px !important;
   }
@@ -2129,7 +2129,7 @@ td {
   padding: 19px 15px !important;
   font-size: 31px !important;
   word-spacing: 4px !important;
-  letter-spacing: 1.9px !important;
+  letter-spacing: 1.8px !important;
 }
 .butn#modem {
   border: 2px solid rgb(18, 29, 51, 0.7) !important;
@@ -2141,7 +2141,8 @@ td {
   word-spacing: 1px !important;
   margin: 3px auto 10px !important;
 }
-#vpn img, #vpn i {
+
+#vpn i {
   margin-left: 7px !important;
   margin-right: 0px !important;
   border-radius: 2px !important;
@@ -2153,7 +2154,7 @@ td {
   .vpn-section .butn#vpn {
     margin: 60px auto 150px !important;
 
-    padding: 19px 15.5px !important;
+    padding: 19px 16px !important;
     font-size: 31.5px !important;
     word-spacing: 2px !important;
   }
@@ -2163,7 +2164,7 @@ td {
   .vpn-section .butn#vpn {
     margin: 55px auto 140px !important;
 
-    padding: 18.5px 15px !important;
+    padding: 18.5px 15.5px !important;
     font-size: 31px !important;
 
   }
@@ -2173,7 +2174,7 @@ td {
   .vpn-section .butn#vpn {
     margin: 50px auto 130px !important;
 
-    padding: 18px 14.5px !important;
+    padding: 18px 15px !important;
     font-size: 30px !important;
 
   }
