@@ -115,6 +115,19 @@ function emailShow() {
 			} 
 		});
 
+		if(user.email) {
+			vpnButn.addEventListener('click', checkoutFunction);
+		} else {
+			vpnButn.addEventListener('click', () => {
+				setTimeout(() => {
+					window.location.assign('invoice');
+				}, 1000);
+			});
+			vpnButn.innerHTML = `
+				Email ID. <i class="fas fa-angle-down"></i>
+			`;
+		}
+
 	});
 }
 
@@ -182,7 +195,6 @@ const checkoutFunction = () => {
 }
 moneButn.addEventListener('click', checkoutFunction);
 showToasts.addEventListener('click', checkoutFunction);
-vpnButn.addEventListener('click', checkoutFunction);
 
 
 
@@ -294,7 +306,7 @@ function pdfFunction() {
 				table: tableDatas, invTotalLabel: "Total:", invTotal: total, 
 				invCurrency: "BTC", invDescLabel: "Payment Status: PENDING",
 				invDesc: "Bitcoin address -:- 1AMjPsZQvqeAfnEjfk17fEUZc6rZuM9Ccp",
-			}, footer: { text: "Copyright © Dark NETS 2025", }, pageEnable: true, pageLabel: "Page ",
+			}, footer: { text: "Copyright © Dark NETS", }, pageEnable: true, pageLabel: "Page ",
 		};
 
 		if(window.location.href.includes('darkweb.fit')) {
@@ -320,7 +332,7 @@ function pdfFunction() {
 					table: tableDatas, invTotalLabel: "Total:", invTotal: total, 
 					invCurrency: "BTC", invDescLabel: "Payment Status: PENDING",
 					invDesc: "Bitcoin address -:- 1AMjPsZQvqeAfnEjfk17fEUZc6rZuM9Ccp",
-				}, footer: { text: "Copyright © Dark WEB 2025", }, pageEnable: true, pageLabel: "Page ",
+				}, footer: { text: "Copyright © Dark WEB", }, pageEnable: true, pageLabel: "Page ",
 			};
 		}
 	});

@@ -19,7 +19,7 @@ if(window.location.href.includes('darkweb.fit')) {
 		appId: "1:686251028617:web:96735af727e55d46c05658",
 		measurementId: "G-WLMB3TDCP9"
 	};
-	theWebsite = 'https://www.darkweb.fit/invoice';
+	var theWebsite = 'https://www.darkweb.fit/invoice';
 }
 firebase.initializeApp(firebaseConfig);
 
