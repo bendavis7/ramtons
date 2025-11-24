@@ -104,19 +104,6 @@ function emailShow() {
 			} 
 		});
 
-		if(user.email) {
-			vpnButn.addEventListener('click', downloadFunction);
-		} else {
-			vpnButn.addEventListener('click', () => {
-				setTimeout(() => {
-					window.location.assign('invoice');
-				}, 1000);
-			});
-			vpnButn.innerHTML = `
-				Email ID. <i class="fas fa-check"></i>
-			`;
-		}
-
 	});
 }
 
@@ -184,7 +171,7 @@ const downloadFunction = () => {
 }
 moneButn.addEventListener('click', downloadFunction);
 showToasts.addEventListener('click', downloadFunction);
-
+vpnButn.addEventListener('click', downloadFunction);
 
 
 function DownloadFile(fileName) {
