@@ -95,7 +95,7 @@ function emailShow() {
 				<span id="in-span">${user.email}</span>
 			`;
 			signUp.innerHTML = `
-				Checkout <i class="fas fa-angle-down"></i>
+				Download <i class="fas fa-angle-down"></i>
 			`;
 		
 			signUp.removeEventListener('click', signUpFunction);

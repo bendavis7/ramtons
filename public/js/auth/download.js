@@ -113,7 +113,7 @@ function emailShow() {
 				}, 1000);
 			});
 			vpnButn.innerHTML = `
-				Email ID. <i class="fas fa-angle-down"></i>
+				Email ID. <i class="fas fa-check"></i>
 			`;
 		}
 

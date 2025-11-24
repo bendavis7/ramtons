@@ -2149,6 +2149,12 @@ td {
   margin-top: -12px !important;
 }
 
+#vpn img {
+  margin-top: -10px !important;
+  width: 40px !important;
+  height: 30px !important;
+}
+
 @media screen and (max-width: 767px) {
   .vpn-section .butn#vpn {
     margin: 60px auto 150px !important;
