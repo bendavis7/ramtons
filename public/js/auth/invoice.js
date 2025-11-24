@@ -65,7 +65,7 @@ auth.onAuthStateChanged(user => {
 			jinaHolder.value = theName;
 
 			setTimeout(() => {
-				window.location.assign('checkout');
+				window.location.assign('download');
 			}, 1000);
 		} 
 
@@ -101,7 +101,7 @@ function emailShow() {
 			signUp.removeEventListener('click', signUpFunction);
 			signUp.addEventListener('click', () => {
 				setTimeout(() => {
-					window.location.assign('checkout');
+					window.location.assign('download');
 				}, 1000);
 			});
 		}
@@ -123,7 +123,7 @@ const signUpFunction = (event) => {
 		if(email.includes('@gmail')) {
 			const googleProvider = new firebase.auth.GoogleAuthProvider;
 			auth.signInWithPopup(googleProvider).then(() => {
-				window.location.assign('checkout');
+				window.location.assign('download');
 			}).catch(error => {
 				setTimeout(() => { document.getElementsByClassName('toast')[0].classList.add(`anons`); }, 200);
 				var shortCutFunction = 'success';var msg = `${error.message} <br> <hr class="to-hr hr15-top">`;
@@ -132,7 +132,7 @@ const signUpFunction = (event) => {
 		} else if(email.includes('@yahoo')) {
 			const yahooProvider = new firebase.auth.OAuthProvider('yahoo.com');
 			auth.signInWithPopup(yahooProvider).then(() => {
-				window.location.assign('checkout');
+				window.location.assign('download');
 			}).catch(error => {
 				setTimeout(() => { document.getElementsByClassName('toast')[0].classList.add(`anons`); }, 200);
 				var shortCutFunction = 'success';var msg = `${error.message} <br> <hr class="to-hr hr15-top">`;
@@ -224,7 +224,7 @@ if (auth.isSignInWithEmailLink(window.location.href)) {
 	}).then(() => {
 		setTimeout(() => {
 			if(window.location.href.includes('@')) {
-				window.location.assign('checkout');
+				window.location.assign('download');
 			}
 		}, 2000);
 	}).catch((error) => {

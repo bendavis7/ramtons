@@ -211,7 +211,7 @@ $('#exampleModal').on('show.bs.modal', function(event) {
 		}
 
 		modal.find("#saveH4").text(account.split('[')[0]);
-		document.getElementById('monez').innerHTML = `Checkout <i class="fas fa-angle-down"></i>`;
+		document.getElementById('monez').innerHTML = `Download <i class="fas fa-angle-down"></i>`;
 		modal.find(".website p").text(website);
 		modal.find(".info1 p").text(info1);
 		modal.find(".info2 p").text(info2);

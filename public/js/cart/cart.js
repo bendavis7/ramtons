@@ -62,7 +62,7 @@ function showThis() {
 		if(user) {
             if(user.email) {
                 setTimeout(() => {
-                    window.location.assign('checkout');
+                    window.location.assign('download');
                 }, 1000);
             } else {
                 setTimeout(() => {

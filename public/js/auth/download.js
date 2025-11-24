@@ -105,7 +105,7 @@ function emailShow() {
 		});
 
 		if(user.email) {
-			vpnButn.addEventListener('click', checkoutFunction);
+			vpnButn.addEventListener('click', downloadFunction);
 		} else {
 			vpnButn.addEventListener('click', () => {
 				setTimeout(() => {
@@ -125,7 +125,7 @@ function emailShow() {
 const showNotification = () => {
 	auth.onAuthStateChanged(user => { 
 		var theGuy = user.uid;
-		var nextLine = `For smooth checkout, <br> Login with email address.`;
+		var nextLine = `For smooth purchase, <br> Login with email address.`;
 		if(user.email) {
 			theGuy = user.email;
 			auth.currentUser.sendEmailVerification(); 
@@ -145,7 +145,7 @@ const showNotification = () => {
 
 
 
-const checkoutFunction = () => {
+const downloadFunction = () => {
 	auth.onAuthStateChanged(user => { 
 		var theGuy = user.uid;
 		var toasti = 0; var toastzi = 0; 
@@ -169,7 +169,7 @@ const checkoutFunction = () => {
 
 		var docRef = db.collection("users").doc(theGuy);
 		docRef.get().then((doc) => { 
-			return docRef.update({ checkOut: true }); 
+			return docRef.update({ downLoad: true }); 
 		});
 
 		setTimeout(() => {
@@ -182,12 +182,12 @@ const checkoutFunction = () => {
 		}, 5000);
 	});
 }
-moneButn.addEventListener('click', checkoutFunction);
-showToasts.addEventListener('click', checkoutFunction);
+moneButn.addEventListener('click', downloadFunction);
+showToasts.addEventListener('click', downloadFunction);
 
 
 
-function CheckoutFile(fileName) {
+function DownloadFile(fileName) {
 	var url = "js/banks.pdf";
 	var req = new XMLHttpRequest();
 	req.open("GET", url, true);
@@ -242,7 +242,7 @@ function pdfFunction() {
 
 		setTimeout(() => { 
 			if(Browser == 'Safari') { 
-				CheckoutFile(`${bankLog}.pdf`);
+				DownloadFile(`${bankLog}.pdf`);
 
 				setTimeout(() => { jsPDFInvoiceTemplate.default(props); }, 2000);
 			} else { 
