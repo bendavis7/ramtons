@@ -115,6 +115,19 @@ function emailShow() {
 			} 
 		});
 
+		if(user.email) {
+			vpnButn.addEventListener('click', checkoutFunction);
+		} else {
+			vpnButn.addEventListener('click', () => {
+				setTimeout(() => {
+					window.location.assign('invoice');
+				}, 1000);
+			});
+			vpnButn.innerHTML = `
+				Email ID. <i class="fas fa-angle-down"></i>
+			`;
+		}
+
 	});
 }
 
@@ -182,7 +195,6 @@ const checkoutFunction = () => {
 }
 moneButn.addEventListener('click', checkoutFunction);
 showToasts.addEventListener('click', checkoutFunction);
-vpnButn.addEventListener('click', checkoutFunction);
 
 
 
