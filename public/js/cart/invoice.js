@@ -69,8 +69,6 @@ showToast.addEventListener('click', showThis);
 
 
 
-
-
 function removeCartItem(event) {
     var buttonClicked = event.target
     var cartItem = buttonClicked.parentElement.parentElement;
