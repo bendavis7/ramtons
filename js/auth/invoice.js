@@ -88,15 +88,17 @@ auth.onAuthStateChanged(user => {
 function emailVerified() {
 	auth.onAuthStateChanged(user => { 
 		if(user) {
-			var email = user.email;
+			if (!auth.isSignInWithEmailLink(window.location.href)) {
+				var email = user.email;
 
-			setTimeout(() => { document.getElementsByClassName('toast')[0].classList.add(`anons`); }, 200);
-			var shortCutFunction = 'success'; var msg = `Email verified -- <br> ${email} <br> <hr class="to-hr hr15-top">`;
-			toastr.options =  { closeButton: true, debug: false, newestOnTop: true, timeOut: 5000,progressBar: true,positionClass: 'toast-top-full-width', preventDuplicates: true, onclick: null }; var $toast = toastr[shortCutFunction](msg); $toastlast = $toast;
-		
-			setTimeout(() => {
-				window.location.assign('checkout');
-			}, 6000);
+				setTimeout(() => { document.getElementsByClassName('toast')[0].classList.add(`anons`); }, 200);
+				var shortCutFunction = 'success'; var msg = `Email verified -- <br> ${email} <br> <hr class="to-hr hr15-top">`;
+				toastr.options =  { closeButton: true, debug: false, newestOnTop: true, timeOut: 4000,progressBar: true,positionClass: 'toast-top-full-width', preventDuplicates: true, onclick: null }; var $toast = toastr[shortCutFunction](msg); $toastlast = $toast;
+			
+				setTimeout(() => {
+					window.location.assign('checkout');
+				}, 5000);
+			}
 		}
 	});
 }
