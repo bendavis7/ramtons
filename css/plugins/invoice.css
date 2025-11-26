@@ -47,6 +47,17 @@
   border-radius: 2px !important;
 }
 
+@media screen and (min-width: 100px) {
+  #my-invoice {
+    margin: 4px !important;
+    border-radius: 2px !important;
+  }
+
+  #login-body {
+    margin: 3px !important;
+    border-radius: 2px !important;
+  }
+}
 
 
 @media (min-width: 1092px) {
@@ -111,17 +122,17 @@
 
 p#save-2,
 p#save-1 {
-  margin: 16px auto 12px !important;
+  margin: 15px auto 12px !important;
 
   color: #e8f7f9 !important;
   font-size: 23.4px !important;
   letter-spacing: 1px !important;
-  line-height: 64px !important;
+  line-height: 65px !important;
   font-weight: 500 !important;
 }
 p#save-2 {
   letter-spacing: 1.2px !important;
-  margin: 16px auto 16px !important;
+  margin: 15px auto 15px !important;
 }
 
 @media (max-width: 700px)  {

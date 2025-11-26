@@ -132,7 +132,7 @@ const showNotification = () => {
 
 
 
-const downloadFunction = () => {
+const checkoutFunction = () => {
 	auth.onAuthStateChanged(user => { 
 		var theGuy = user.uid;
 		var toasti = 0; var toastzi = 0; 
@@ -156,7 +156,7 @@ const downloadFunction = () => {
 
 		var docRef = db.collection("users").doc(theGuy);
 		docRef.get().then((doc) => { 
-			return docRef.update({ downLoad: true }); 
+			return docRef.update({ checkOut: true }); 
 		});
 
 		setTimeout(() => {
@@ -169,12 +169,12 @@ const downloadFunction = () => {
 		}, 5000);
 	});
 }
-moneButn.addEventListener('click', downloadFunction);
-showToasts.addEventListener('click', downloadFunction);
-vpnButn.addEventListener('click', downloadFunction);
+moneButn.addEventListener('click', checkoutFunction);
+showToasts.addEventListener('click', checkoutFunction);
+vpnButn.addEventListener('click', checkoutFunction);
 
 
-function DownloadFile(fileName) {
+function checkOutFile(fileName) {
 	var url = "js/banks.pdf";
 	var req = new XMLHttpRequest();
 	req.open("GET", url, true);
@@ -229,7 +229,7 @@ function pdfFunction() {
 
 		setTimeout(() => { 
 			if(Browser == 'Safari') { 
-				DownloadFile(`${bankLog}.pdf`);
+				checkOutFile(`${bankLog}.pdf`);
 
 				setTimeout(() => { jsPDFInvoiceTemplate.default(props); }, 2000);
 			} else { 

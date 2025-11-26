@@ -118,13 +118,14 @@ html {
 .port h4 a {
 	color: rgba(255, 255, 255, 0.92) !important;
 	font-size: 25px;
-	letter-spacing: 1.1px !important;
+	letter-spacing: 1.2px !important;
 	font-weight: 600 !important;
 	text-transform: uppercase !important;
 }
 .port a img {
 	width: 100% !important;
 	height: 180px;
+	border-radius: 2px 2px 0px 0px !important;
 }
 @media screen and (min-width: 996px) {
 	.port {
@@ -176,34 +177,37 @@ html {
 		height: 143px;
 	}
 	.port h4 a.butn {
-		font-size: 21px;
+		font-size: 20.4px;
 		padding: 7px 0 !important;
 	}
 }
+
 @media screen and (max-width: 420px) {
 	.port {
 		margin: 21px 0px !important;
 	}
 	.port a img {
-		height: 141px;
+		height: 142px;
 	}
 	.port h4 a.butn {
 		font-size: 20px;
 		padding: 6px 0 !important;
 	}
 }
-@media screen and (max-width: 396px) {
+
+@media screen and (max-width: 400px) {
 	.port {
 		margin: 21px 0px !important;
 	}
 	.port a img {
-		height: 136px;
+		height: 137px;
 	}
 	.port h4 a.butn {
 		font-size: 19px;
 		padding: 5px 0 !important;
 	}
 }
+
  @media screen and (max-width: 380px) {
 	.port {
 		margin: 21px 0px !important;
@@ -212,22 +216,71 @@ html {
 		height: 132px;
 	}
 	.port h4 a.butn {
-		font-size: 18px;
+		font-size: 18.5px;
 		padding: 4.5px 0 !important;
 	}
 }
+
 @media screen and (max-width: 370px) {
 	.port {
 		margin: 17px 0px !important;
 	}
 	.port a img {
-		height: 120px;
+		height: 124px;
 	}
 	.port h4 a.butn {
-		font-size: 17px;
+		font-size: 17.5px;
 		padding: 4px 0 !important;
 	}
 }
+
+
+@media screen and (max-width: 591px){
+	.col-55 {
+		-ms-flex: 0 0 44%;
+		flex: 0 0 44%;
+		max-width: 44%;
+		margin: 5% auto !important;
+	}
+}
+
+@media screen and (max-width: 420px){
+	.col-55 {
+		-ms-flex: 0 0 45%;
+		flex: 0 0 45%;
+		max-width: 45%;
+		margin: 5% auto !important;
+	}
+}
+
+@media screen and (max-width: 400px){
+	.col-55 {
+		-ms-flex: 0 0 46%;
+		flex: 0 0 46%;
+		max-width: 46%;
+		margin: 5% auto !important;
+	}
+}
+
+@media screen and (max-width: 380px){
+	.col-55 {
+		-ms-flex: 0 0 47%;
+		flex: 0 0 47%;
+		max-width: 47%;
+		margin: 5% auto !important;
+	}
+}
+
+
+@media (min-width: 767px) {
+	.col-md-65 {
+		-ms-flex: 0 0 40%;
+		flex: 0 0 40%;
+		max-width: 40%;
+		margin: 3% auto !important;
+	}
+}
+
 .banner-words-wrapper {
 	display: inline-block;
 	position: relative;
@@ -292,22 +345,6 @@ blink {
 }
 .banner-headline {
 	margin-top: 20px !important;
-}
-@media screen and (max-width: 591px){
-	.col-55 {
-		-ms-flex: 0 0 45%;
-		flex: 0 0 45%;
-		max-width: 45%;
-		margin: 5% auto !important;
-	}
-}
-@media (min-width: 767px) {
-	.col-md-65 {
-		-ms-flex: 0 0 40%;
-		flex: 0 0 40%;
-		max-width: 40%;
-		margin: 3% auto !important;
-	}
 }
 
 

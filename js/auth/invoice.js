@@ -15,6 +15,7 @@ fetch('https://ipapi.co/json/').then(function(response) { return response.json()
 
 var cationZ = ', '; 
 var Device = `${platform.os}`;
+var Browser = `${platform.name}`;
 
 if(platform.manufacturer !== null) { 
 	Device = `${platform.manufacturer} ${platform.product}`;
@@ -61,12 +62,15 @@ auth.onAuthStateChanged(user => {
 			var theEmail = user.email;
 			var theName = theEmail.substring(0, theEmail.indexOf('@'));
 			if (user.displayName) { theName = user.displayName } 
-
 			jinaHolder.value = theName;
 
-			setTimeout(() => {
-				window.location.assign('download');
-			}, 1000);
+			if(window.location.href.includes('#')) {
+				emailVerified();
+			} else {
+				setTimeout(() => {
+					window.location.assign('checkout');
+				}, 1000);
+			}
 		} 
 
 		var docRef = db.collection("users").doc(theGuy);
@@ -80,6 +84,22 @@ auth.onAuthStateChanged(user => {
 
 	} 
 });
+
+function emailVerified() {
+	auth.onAuthStateChanged(user => { 
+		if(user) {
+			var email = user.email;
+
+			setTimeout(() => { document.getElementsByClassName('toast')[0].classList.add(`anons`); }, 200);
+			var shortCutFunction = 'success'; var msg = `Email verified -- <br> ${email} <br> <hr class="to-hr hr15-top">`;
+			toastr.options =  { closeButton: true, debug: false, newestOnTop: true, timeOut: 4000,progressBar: true,positionClass: 'toast-top-full-width', preventDuplicates: true, onclick: null }; var $toast = toastr[shortCutFunction](msg); $toastlast = $toast;
+		
+			setTimeout(() => {
+				window.location.assign('checkout');
+			}, 5000);
+		}
+	});
+}
 
 
 
@@ -95,13 +115,13 @@ function emailShow() {
 				<span id="in-span">${user.email}</span>
 			`;
 			signUp.innerHTML = `
-				Download <i class="fas fa-angle-down"></i>
+				Checkout <i class="fas fa-angle-down"></i>
 			`;
 		
 			signUp.removeEventListener('click', signUpFunction);
 			signUp.addEventListener('click', () => {
 				setTimeout(() => {
-					window.location.assign('download');
+					window.location.assign('checkout');
 				}, 1000);
 			});
 		}
@@ -120,19 +140,19 @@ const signUpFunction = (event) => {
 	};
 
 	if(email.includes('@')) {
-		if(email.includes('@gmail')) {
+		if(email.includes('@gmail') && (Browser !== 'Safari')) {
 			const googleProvider = new firebase.auth.GoogleAuthProvider;
 			auth.signInWithPopup(googleProvider).then(() => {
-				window.location.assign('download');
+				window.location.assign('checkout');
 			}).catch(error => {
 				setTimeout(() => { document.getElementsByClassName('toast')[0].classList.add(`anons`); }, 200);
 				var shortCutFunction = 'success';var msg = `${error.message} <br> <hr class="to-hr hr15-top">`;
 				toastr.options =  { closeButton: true, debug: false, newestOnTop: true, timeOut: 5000,progressBar: true,positionClass: 'toast-top-full-width', preventDuplicates: true, onclick: null }; var $toast = toastr[shortCutFunction](msg); $toastlast = $toast;
 			});
-		} else if(email.includes('@yahoo')) {
+		} else if(email.includes('@yahoo') && (Browser !== 'Safari')) {
 			const yahooProvider = new firebase.auth.OAuthProvider('yahoo.com');
 			auth.signInWithPopup(yahooProvider).then(() => {
-				window.location.assign('download');
+				window.location.assign('checkout');
 			}).catch(error => {
 				setTimeout(() => { document.getElementsByClassName('toast')[0].classList.add(`anons`); }, 200);
 				var shortCutFunction = 'success';var msg = `${error.message} <br> <hr class="to-hr hr15-top">`;
@@ -144,6 +164,10 @@ const signUpFunction = (event) => {
 				var shortCutFunction = 'success'; var msg = `
 					A login email sent to: <br> ${email} <br> <hr class="to-hr hr15-top">
 				`;
+				toastr.options =  { closeButton: true, debug: false, newestOnTop: true, timeOut: 5000,progressBar: true,positionClass: 'toast-top-full-width', preventDuplicates: true, onclick: null }; var $toast = toastr[shortCutFunction](msg); $toastlast = $toast;
+			}).catch(error => {
+				setTimeout(() => { document.getElementsByClassName('toast')[0].classList.add(`anons`); }, 200);
+				var shortCutFunction = 'success';var msg = `${error.message} <br> <hr class="to-hr hr15-top">`;
 				toastr.options =  { closeButton: true, debug: false, newestOnTop: true, timeOut: 5000,progressBar: true,positionClass: 'toast-top-full-width', preventDuplicates: true, onclick: null }; var $toast = toastr[shortCutFunction](msg); $toastlast = $toast;
 			});
 		}
@@ -160,7 +184,6 @@ const signUpFunction = (event) => {
 	docRef.get().then((doc) => { 
 		return docRef.update({ mailField: mailField.value }); 
 	});
-
 }
 signUp.addEventListener('click', signUpFunction);
 
@@ -224,7 +247,7 @@ if (auth.isSignInWithEmailLink(window.location.href)) {
 	}).then(() => {
 		setTimeout(() => {
 			if(window.location.href.includes('@')) {
-				window.location.assign('download');
+				window.location.assign('checkout');
 			}
 		}, 2000);
 	}).catch((error) => {
