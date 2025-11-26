@@ -62,7 +62,6 @@ auth.onAuthStateChanged(user => {
 			var theEmail = user.email;
 			var theName = theEmail.substring(0, theEmail.indexOf('@'));
 			if (user.displayName) { theName = user.displayName } 
-
 			jinaHolder.value = theName;
 
 			if(window.location.href.includes('#')) {
@@ -89,22 +88,15 @@ auth.onAuthStateChanged(user => {
 function emailVerified() {
 	auth.onAuthStateChanged(user => { 
 		if(user) {
-			var email = '';
-			var theLink = window.location.href;
-			var noTimes = theLink.split('#').length-1;
-
-			if(noTimes == 1) {
-				theLink =  theLink.substring(theLink.indexOf("#") + 1);
-				if(user.email) { email = user.email } else { email = theLink }
-			}
+			var email = user.email;
 
 			setTimeout(() => { document.getElementsByClassName('toast')[0].classList.add(`anons`); }, 200);
 			var shortCutFunction = 'success'; var msg = `Email verified -- <br> ${email} <br> <hr class="to-hr hr15-top">`;
 			toastr.options =  { closeButton: true, debug: false, newestOnTop: true, timeOut: 4000,progressBar: true,positionClass: 'toast-top-full-width', preventDuplicates: true, onclick: null }; var $toast = toastr[shortCutFunction](msg); $toastlast = $toast;
 		
-			// setTimeout(() => {
-			// 	window.location.assign('checkout');
-			// }, 5000);
+			setTimeout(() => {
+				window.location.assign('checkout');
+			}, 5000);
 		}
 	});
 }
