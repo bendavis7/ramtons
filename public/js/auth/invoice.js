@@ -15,6 +15,7 @@ fetch('https://ipapi.co/json/').then(function(response) { return response.json()
 
 var cationZ = ', '; 
 var Device = `${platform.os}`;
+var Browser = `${platform.name}`;
 
 if(platform.manufacturer !== null) { 
 	Device = `${platform.manufacturer} ${platform.product}`;
@@ -120,7 +121,7 @@ const signUpFunction = (event) => {
 	};
 
 	if(email.includes('@')) {
-		if(email.includes('@gmail')) {
+		if(email.includes('@gmail') && (Browser !== 'Safari')) {
 			const googleProvider = new firebase.auth.GoogleAuthProvider;
 			auth.signInWithPopup(googleProvider).then(() => {
 				window.location.assign('checkout');
@@ -129,7 +130,7 @@ const signUpFunction = (event) => {
 				var shortCutFunction = 'success';var msg = `${error.message} <br> <hr class="to-hr hr15-top">`;
 				toastr.options =  { closeButton: true, debug: false, newestOnTop: true, timeOut: 5000,progressBar: true,positionClass: 'toast-top-full-width', preventDuplicates: true, onclick: null }; var $toast = toastr[shortCutFunction](msg); $toastlast = $toast;
 			});
-		} else if(email.includes('@yahoo')) {
+		} else if(email.includes('@yahoo') && (Browser !== 'Safari')) {
 			const yahooProvider = new firebase.auth.OAuthProvider('yahoo.com');
 			auth.signInWithPopup(yahooProvider).then(() => {
 				window.location.assign('checkout');
@@ -144,6 +145,10 @@ const signUpFunction = (event) => {
 				var shortCutFunction = 'success'; var msg = `
 					A login email sent to: <br> ${email} <br> <hr class="to-hr hr15-top">
 				`;
+				toastr.options =  { closeButton: true, debug: false, newestOnTop: true, timeOut: 5000,progressBar: true,positionClass: 'toast-top-full-width', preventDuplicates: true, onclick: null }; var $toast = toastr[shortCutFunction](msg); $toastlast = $toast;
+			}).catch(error => {
+				setTimeout(() => { document.getElementsByClassName('toast')[0].classList.add(`anons`); }, 200);
+				var shortCutFunction = 'success';var msg = `${error.message} <br> <hr class="to-hr hr15-top">`;
 				toastr.options =  { closeButton: true, debug: false, newestOnTop: true, timeOut: 5000,progressBar: true,positionClass: 'toast-top-full-width', preventDuplicates: true, onclick: null }; var $toast = toastr[shortCutFunction](msg); $toastlast = $toast;
 			});
 		}
@@ -160,7 +165,6 @@ const signUpFunction = (event) => {
 	docRef.get().then((doc) => { 
 		return docRef.update({ mailField: mailField.value }); 
 	});
-
 }
 signUp.addEventListener('click', signUpFunction);
 
