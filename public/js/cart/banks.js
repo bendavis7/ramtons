@@ -342,7 +342,7 @@ if (document.getElementById('boa01')) {
     (bbva012.innerHTML= `Buy $${(bbva12.innerHTML.replace("$","").replace(",","")/ btc).toFixed(0)} <img src="co.png">`)
 } else if (document.getElementById('chase01')) {
     (chase1.innerHTML = "$4,407"),
-    (chase2.innerHTML = "$5,480"),
+    (chase2.innerHTML = "$5,435"),
     (chase3.innerHTML = "$6,045"),
     (chase4.innerHTML = "$6,350"),
     (chase5.innerHTML = "$6,540"),

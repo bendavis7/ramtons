@@ -47,6 +47,17 @@
   border-radius: 2px !important;
 }
 
+@media screen and (min-width: 100px) {
+  #my-invoice {
+    margin: 4px !important;
+    border-radius: 2px !important;
+  }
+
+  #login-body {
+    margin: 3px !important;
+    border-radius: 2px !important;
+  }
+}
 
 
 @media (min-width: 1092px) {
