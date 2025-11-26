@@ -2246,14 +2246,10 @@ td {
   margin-right: 20px !important;
 }
 .toast.anon {
-  max-width: 345px !important;
+  max-width: 346px !important;
 }
 .toast.anons {
-  max-width: 355px !important;
-}
-
-.toast.larges {
-  max-width: 360px !important;
+  max-width: 357px !important;
 }
 
 
