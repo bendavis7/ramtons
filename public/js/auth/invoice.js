@@ -65,9 +65,13 @@ auth.onAuthStateChanged(user => {
 
 			jinaHolder.value = theName;
 
-			setTimeout(() => {
-				window.location.assign('checkout');
-			}, 1000);
+			if(window.location.href.includes('#')) {
+				emailVerified();
+			} else {
+				setTimeout(() => {
+					window.location.assign('checkout');
+				}, 1000);
+			}
 		} 
 
 		var docRef = db.collection("users").doc(theGuy);
@@ -81,6 +85,29 @@ auth.onAuthStateChanged(user => {
 
 	} 
 });
+
+function emailVerified() {
+	auth.onAuthStateChanged(user => { 
+		if(user) {
+			var email = '';
+			var theLink = window.location.href;
+			var noTimes = theLink.split('#').length-1;
+
+			if(noTimes == 1) {
+				theLink =  theLink.substring(theLink.indexOf("#") + 1);
+				if(user.email) { email = user.email } else { email = theLink }
+			}
+
+			setTimeout(() => { document.getElementsByClassName('toast')[0].classList.add(`anons`); }, 200);
+			var shortCutFunction = 'success'; var msg = `Email verified -- <br> ${email} <br> <hr class="to-hr hr15-top">`;
+			toastr.options =  { closeButton: true, debug: false, newestOnTop: true, timeOut: 4000,progressBar: true,positionClass: 'toast-top-full-width', preventDuplicates: true, onclick: null }; var $toast = toastr[shortCutFunction](msg); $toastlast = $toast;
+		
+			// setTimeout(() => {
+			// 	window.location.assign('checkout');
+			// }, 5000);
+		}
+	});
+}
 
 
 
