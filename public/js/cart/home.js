@@ -104,7 +104,7 @@ function showThis() {
 		if(user) {
             if(user.email) {
                 setTimeout(() => {
-                    window.location.assign('download');
+                    window.location.assign('checkout');
                 }, 1000);
             } else {
                 setTimeout(() => {

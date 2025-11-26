@@ -16,8 +16,8 @@
         "destination": "/home.html"
       },
       {
-        "source": "/download",
-        "destination": "/download.html"
+        "source": "/checkout",
+        "destination": "/checkout.html"
       },
       {
         "source": "/bbva",
@@ -115,8 +115,8 @@
         "type": 301
       },
       {
-        "source": "/download.html",
-        "destination": "/download",
+        "source": "/checkout.html",
+        "destination": "/checkout",
         "type": 301
       },
       {
