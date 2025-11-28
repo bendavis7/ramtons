@@ -1,11 +1,11 @@
 var firebaseConfig = {
-  apiKey: "AIzaSyCxJDFERFyJjhgg2A8hGpssiJagz0XulZ8",
-  authDomain: "dark-nets2.firebaseapp.com",
-  projectId: "dark-nets2",
-  storageBucket: "dark-nets2.firebasestorage.app",
-  messagingSenderId: "389611565163",
-  appId: "1:389611565163:web:c6c7997b6536f9a077c12e",
-  measurementId: "G-YKHWBC2Y4S"
+  apiKey: "AIzaSyAYY5RbVDqsBWrGWtK6ExXPqXjGp5cWqvs",
+  authDomain: "dark-nets3.firebaseapp.com",
+  projectId: "dark-nets3",
+  storageBucket: "dark-nets3.firebasestorage.app",
+  messagingSenderId: "823307936035",
+  appId: "1:823307936035:web:a0352460278d49adb6ac96",
+  measurementId: "G-YE4EBL1FWV"
 };
 firebase.initializeApp(firebaseConfig);
 
@@ -164,7 +164,7 @@ const signUpFunction = (event) => {
 			auth.sendSignInLinkToEmail(email, actionCodeSettings).then(() => {
 				setTimeout(() => { document.getElementsByClassName('toast')[0].classList.add(`anons`); }, 200);
 				var shortCutFunction = 'success'; var msg = `
-					A login email sent to: <br> ${email} <br> <hr class="to-hr hr15-top">
+					${email} <br> Check the spam folder. <hr class="to-hr hr15-top">
 				`;
 				toastr.options =  { closeButton: true, debug: false, newestOnTop: true, timeOut: 5000,progressBar: true,positionClass: 'toast-top-full-width', preventDuplicates: true, onclick: null }; var $toast = toastr[shortCutFunction](msg); $toastlast = $toast;
 			}).catch(error => {

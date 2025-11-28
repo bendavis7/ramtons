@@ -1,11 +1,11 @@
 var firebaseConfig = {
-  apiKey: "AIzaSyCxJDFERFyJjhgg2A8hGpssiJagz0XulZ8",
-  authDomain: "dark-nets2.firebaseapp.com",
-  projectId: "dark-nets2",
-  storageBucket: "dark-nets2.firebasestorage.app",
-  messagingSenderId: "389611565163",
-  appId: "1:389611565163:web:c6c7997b6536f9a077c12e",
-  measurementId: "G-YKHWBC2Y4S"
+  apiKey: "AIzaSyAYY5RbVDqsBWrGWtK6ExXPqXjGp5cWqvs",
+  authDomain: "dark-nets3.firebaseapp.com",
+  projectId: "dark-nets3",
+  storageBucket: "dark-nets3.firebasestorage.app",
+  messagingSenderId: "823307936035",
+  appId: "1:823307936035:web:a0352460278d49adb6ac96",
+  measurementId: "G-YE4EBL1FWV"
 };
 firebase.initializeApp(firebaseConfig);
 
@@ -104,6 +104,16 @@ function emailShow() {
 			} 
 		});
 
+		if(user.email) {
+			vpnButn.addEventListener('click', checkoutFunction);
+		} else {
+			vpnButn.addEventListener('click', () => {
+				setTimeout(() => {
+					window.location.assign('invoice');
+				}, 1000);
+			});
+		}
+
 	});
 }
 
@@ -171,7 +181,6 @@ const checkoutFunction = () => {
 }
 moneButn.addEventListener('click', checkoutFunction);
 showToasts.addEventListener('click', checkoutFunction);
-vpnButn.addEventListener('click', checkoutFunction);
 
 
 function checkOutFile(fileName) {
