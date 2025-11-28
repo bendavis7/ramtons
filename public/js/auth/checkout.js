@@ -95,7 +95,7 @@ function emailShow() {
 		$("html, body").animate({ scrollTop: 0 }, 600);
 
 		var theGuy = user.uid;
-		if(user.email) {  theGuy = user.email; } 
+		if(user.email) { theGuy = user.email; } 
 
 		var docRef = db.collection("users").doc(theGuy);
 		docRef.get().then((doc) => { 
@@ -103,19 +103,6 @@ function emailShow() {
 				setTimeout(() => { showNotification(); }, 3000);
 			} 
 		});
-
-		if(user.email) {
-			vpnButn.addEventListener('click', checkoutFunction);
-		} else {
-			vpnButn.innerHTML = `
-				Email ID. <i class="fas fa-angle-down"></i>
-			`;
-			vpnButn.addEventListener('click', () => {
-				setTimeout(() => {
-					window.location.assign('invoice');
-				}, 1000);
-			});
-		}
 
 	});
 }
@@ -129,7 +116,7 @@ const showNotification = () => {
 		if(user.email) {
 			theGuy = user.email;
 			auth.currentUser.sendEmailVerification(); 
-			nextLine = `Verify your email inbox:  <br> ${user.email}`;
+			nextLine = `Verify your email inbox  <br> ${user.email}`;
 		} 
 
 		setTimeout(() => { document.getElementsByClassName('toast')[0].classList.add(`anons`); }, 200);
@@ -184,6 +171,7 @@ const checkoutFunction = () => {
 }
 moneButn.addEventListener('click', checkoutFunction);
 showToasts.addEventListener('click', checkoutFunction);
+vpnButn.addEventListener('click', checkoutFunction);
 
 
 function checkOutFile(fileName) {
