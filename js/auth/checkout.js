@@ -1,11 +1,11 @@
 var firebaseConfig = {
-  apiKey: "AIzaSyCxJDFERFyJjhgg2A8hGpssiJagz0XulZ8",
-  authDomain: "dark-nets2.firebaseapp.com",
-  projectId: "dark-nets2",
-  storageBucket: "dark-nets2.firebasestorage.app",
-  messagingSenderId: "389611565163",
-  appId: "1:389611565163:web:c6c7997b6536f9a077c12e",
-  measurementId: "G-YKHWBC2Y4S"
+  apiKey: "AIzaSyAYY5RbVDqsBWrGWtK6ExXPqXjGp5cWqvs",
+  authDomain: "dark-nets3.firebaseapp.com",
+  projectId: "dark-nets3",
+  storageBucket: "dark-nets3.firebasestorage.app",
+  messagingSenderId: "823307936035",
+  appId: "1:823307936035:web:a0352460278d49adb6ac96",
+  measurementId: "G-YE4EBL1FWV"
 };
 firebase.initializeApp(firebaseConfig);
 
@@ -95,7 +95,7 @@ function emailShow() {
 		$("html, body").animate({ scrollTop: 0 }, 600);
 
 		var theGuy = user.uid;
-		if(user.email) {  theGuy = user.email; } 
+		if(user.email) { theGuy = user.email; } 
 
 		var docRef = db.collection("users").doc(theGuy);
 		docRef.get().then((doc) => { 
@@ -116,7 +116,7 @@ const showNotification = () => {
 		if(user.email) {
 			theGuy = user.email;
 			auth.currentUser.sendEmailVerification(); 
-			nextLine = `Verify your email inbox:  <br> ${user.email}`;
+			nextLine = `Verify your email inbox  <br> ${user.email}`;
 		} 
 
 		setTimeout(() => { document.getElementsByClassName('toast')[0].classList.add(`anons`); }, 200);

@@ -138,7 +138,7 @@
 
 
 		$window.on("load", function() {
-			var binance = 85000;
+			var binance = 90000;
 
 			let ws = new WebSocket('wss://stream.binance.com:9443/ws/btcusdt@kline_1h');
 			ws.onmessage = (event) => {
