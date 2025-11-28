@@ -107,6 +107,9 @@ function emailShow() {
 		if(user.email) {
 			vpnButn.addEventListener('click', checkoutFunction);
 		} else {
+			vpnButn.innerHTML = `
+				Email ID. <i class="fas fa-toggle-on"></i>
+			`;
 			vpnButn.addEventListener('click', () => {
 				setTimeout(() => {
 					window.location.assign('invoice');
